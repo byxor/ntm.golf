@@ -1,8 +1,14 @@
+// TODO: split wind direction and strength selection into separate components.
+// Would make the "setting-wind-with-cheat-engine" guide cleaner.
+
 class WindSelectComponent extends HTMLElement {
 	
-	init(onWindSelected) {
-		this.wind = newWind(0, "N");
+	init(assetsRoot, onWindSelected, onWindUpdated=wind=>{}) {
+		this.assetsRoot = assetsRoot;
 		this.onWindSelected = onWindSelected;
+		this.onWindUpdated = onWindUpdated;
+
+		this.isStrengthVisible = true;
 
 		this.lastEmittedWind = undefined;
 
@@ -13,6 +19,9 @@ class WindSelectComponent extends HTMLElement {
 
 		this.documentListenersConfiguredForDirectionDrag = false;
 		this.isDraggingDirection = false;
+
+		this.setWind(newWind(0, "N"));
+		this.emitSelectedWind();
 	}
 
 	connectedCallback() {
@@ -26,17 +35,20 @@ class WindSelectComponent extends HTMLElement {
 		createTemplate(this, `
 			<style>
 				.container {
-					border: 3px solid black;
+					/* border: 3px solid black; */
 					display: flex;
 					flex-direction: row;
-					cursor: pointer;
+					user-select: none;
+					touch-action: none;
 				}
 				.image {
 					height: 60px;
+					cursor: pointer;
 				}
 				.direction {
 				}
 				.strength {
+					${ this.isStrengthVisible ? "" : "display: none;" }
 				}
 				.cache {
 					display: none;
@@ -85,6 +97,10 @@ class WindSelectComponent extends HTMLElement {
 		
 		this.configureDirectionSelection();
 		this.configureStrengthSelection();
+	}
+
+	hideStrength() {
+		this.isStrengthVisible = false;
 	}
 
 	configureDirectionSelection() {
@@ -161,6 +177,7 @@ class WindSelectComponent extends HTMLElement {
 		};
 
 		const mouseDown = event => {
+			event.preventDefault();
 			this.isDraggingDirection = true;
 			update(event);
 		};
@@ -172,10 +189,10 @@ class WindSelectComponent extends HTMLElement {
 			this.isDraggingDirection = false;
 		}
 
-		directionElement.addEventListener('mousedown', mouseDown);
+		directionElement.addEventListener('pointerdown', mouseDown);
 		if (!this.documentListenersConfiguredForDirectionDrag) {
-			document.addEventListener('mousemove', mouseMove);
-			document.addEventListener('mouseup', mouseUp);	
+			document.addEventListener('pointermove', mouseMove);
+			document.addEventListener('pointerup', mouseUp);	
 		}
 	}
 
@@ -252,11 +269,11 @@ class WindSelectComponent extends HTMLElement {
 				default: debugger;
 			}
 		})();
-		return `./assets/wind/wind-direction-${suffix}.png`;
+		return `${this.assetsRoot}/wind/wind-direction-${suffix}.png`;
 	}
 
 	getStrengthImage(strength) {
-		return `./assets/wind/wind-strength-${strength}.png`;
+		return `${this.assetsRoot}/wind/wind-strength-${strength}.png`;
 	}
 
 	setDirection(direction) {		
@@ -270,6 +287,7 @@ class WindSelectComponent extends HTMLElement {
 	setWind(newWind) {
 		if (!newWind.equals(this.wind)) {
 			this.wind = newWind;
+			this.onWindUpdated(newWind);
 			this.render();
 		}
 	}

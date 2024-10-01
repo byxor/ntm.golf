@@ -1,13 +1,19 @@
 # ntm.golf
 
-Course notes for Neo Turf Masters.
+![NTM logo small](./assets/ntm-logo-small.png)
 
-Specifically for Fernando Almeida (Power Golfer), though more golfers may come later.
+## Guides
 
-[Check it out](https://ntm.golf)...
+- [Setting wind in NTM](https://ntm.golf/guides/setting-wind-with-cheat-engine).
 
-Built with HTML/CSS/JS/WebComponents, no external dependencies.
+## Course Notes
+
+Course notes for Fernando Almeida (Power Golfer). More golfers may come later if I decide to learn them.
 
 Parses notes from the `notes/` folder.
 
+Built with HTML/CSS/JS/WebComponents, no external dependencies.
+
 UI misbehaves locally, must be hosted on a web server to avoid CORS restrictions on image masks.
+
+~~[Check it out](https://ntm.golf)...~~ :warning: **Under construction. Not finished yet.**

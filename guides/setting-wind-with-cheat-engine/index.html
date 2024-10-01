@@ -7,6 +7,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js
 "></script>
 	<script src="./content.js"></script>
+	<script src="../../models/wind.js"></script>
+	<script src="../../components/index.js"></script>
+	<script src="../../components/navigation/wind-select.js"></script>
 
 	<style>
 		@media (pointer: fine) {
@@ -23,8 +26,39 @@
 	</div>
 
 	<script>
+		const contentContainer = document.querySelector('.content');
+
 		const converter = new showdown.Converter();
 		const html = converter.makeHtml(CONTENT);
-		document.querySelector('.content').innerHTML = html;
+		contentContainer.innerHTML = html;
+
+		const windDirectionContainer = contentContainer.querySelector('.wind-direction-container');
+		const windValueContainer = contentContainer.querySelector('.wind-value-container');
+
+		const windSelectComponent = document.createElement('wind-select');
+		windSelectComponent.init("../../assets", wind => {}, wind => {
+			const value = {
+				"N": 0,
+				"N+1": 1,
+				"NE": 2,
+				"NE+1": 3,
+				"E": 4,
+				"E+1": 5,
+				"SE": 6,
+				"SE+1": 7,
+				"S": 8,
+				"S+1": 9,
+				"SW": 10,
+				"SW+1": 11,
+				"W": 12,
+				"W+1": 13,
+				"NW": 14,
+				"NW+1": 15,
+			}[wind.direction];
+			windValueContainer.innerHTML = `<i class="grey">&larr; Interactive (Click and drag to see values).</i><br/><span>...has a direction value of <b>${value}</b>.</span>`;
+		});
+		windSelectComponent.hideStrength();
+		windDirectionContainer.appendChild(windSelectComponent);
+
 	</script>
 </body>

@@ -1,6 +1,9 @@
 function constrainedImage(src, alt="", classes="") {
-	return `<img src="${src}" alt="${alt}" onclick="this.requestFullscreen()" class="constrained-image ${classes}"></img>`
+	return `<img src="${src}" alt="${alt}" onclick="this.requestFullscreen({navigationUI: 'show'})" class="constrained-image ${classes}"></img>`
 }
+
+// TODO: Alt text on all images.
+// TODO: Better fullscreen UX.
 
 const CONTENT = `
 <style>
@@ -25,7 +28,7 @@ const CONTENT = `
 	@media (pointer: fine) {
 		.probability-table {
 			font-size: 18px;
-		}
+		} 
 	}
 	@media (pointer: coarse) {
 		.probability-table {
@@ -71,36 +74,51 @@ const CONTENT = `
 		height: 70px;
 	}
 
-	@media (pointer: fine) {
-		.direction-table {
-			font-size: 18px;
+	.interactive-wind-direction * {
+		display: inline-block;
+	}
+	.wind-direction-container {
+		box-shadow: 0 0 0 rgba(204,169,44, 0.4);
+ 		animation: pulse 2s infinite;
+	}
+	.wind-value-container {
+		padding-left: 18px;
+	}
+	@media (pointer: coarse) {
+		.wind-value-container {
+			font-size: 30px;
 		}
 	}
 	@media (pointer: coarse) {
-		.direction-table {
-			font-size: 34px;
+		.content hr {
+			margin-top: 25px;
+			margin-bottom: 25px;
+		}
+		.content h2 {
+			margin-top: 40px;
+		}
+		.content h3 {
+			margin-top: 40px;
 		}
 	}
-	.direction-table th {
-		background-color: #e3e3e3;
+	@-webkit-keyframes pulse {
+		0%   { -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4); }
+		70%  { -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0); }
+		100% { -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0); }
 	}
-	.direction-table th, .direction-table td {
-		padding-left: 10px;
-		padding-right: 10px;
-	 	border: 1px solid black;
-	}
-	.direction-table .center {
-		text-align: center;
-	}
-	.direction-table .right {
-		text-align: right;
-	}
-	.direction-table .left {
-		text-align: left;
-	}
-	.direction-table .direction {
-	}
-	.direction-table .value {
+	@keyframes pulse {
+		0% {
+			-moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+			box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+		}
+		70% {
+			-moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+			box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+		}
+		100% {
+			-moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+			box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+		}
 	}
 </style>
 
@@ -176,13 +194,13 @@ If you try this online, you'll just desync, so there's no need to worry about ch
 2. [Opening The Tools](#opening-the-tools)
 3. [Finding The Wind In Memory](#finding-the-wind-in-memory)
 4. [Setting The Wind](#setting-the-wind)
-5. [Additional Notes](#additional-notes)
+5. [Final Notes](#final-notes)
 
 ---
 
 <div id="installing-cheat-engine"></div>
 ## 1. Installing Cheat Engine
-![](./cheatengine-logo.png =32x32)
+![](./images/cheatengine-logo.png =32x32)
 
 Cheat Engine is an open-source tool for Windows. It lets you select a process on your machine, read its memory, and write to it.
 For this reason, it is often flagged by AntiVirus tools as a potentially unsafe program, as this is the sort of thing a virus might do.
@@ -205,15 +223,15 @@ The source code is available on <a href="https://github.com/cheat-engine/cheat-e
 
 1. Run the installer.
 
-	- <img src="./installer-2-welcome.png" alt="Installer step 1: welcome" onclick="this.requestFullscreen()" class="constrained-image"></img>
+	- <img src="./images/installer-2-welcome.png" alt="Installer step 1: welcome" onclick="this.requestFullscreen()" class="constrained-image"></img>
 
 2. **Decline all unwanted suggestions.**
 
-	- <img src="./installer-3-decline-red.png" alt="Installer step 2: decline all unwanted suggestions" onclick="this.requestFullscreen()" class="constrained-image"></img>
+	- <img src="./images/installer-3-decline-red.png" alt="Installer step 2: decline all unwanted suggestions" onclick="this.requestFullscreen()" class="constrained-image"></img>
 
 3. **Finish.**
 
-	- <img src="./installer-4-finished.png" alt="Installer step 3: finish" onclick="this.requestFullscreen()" class="constrained-image"></img>
+	- <img src="./images/installer-4-finished.png" alt="Installer step 3: finish" onclick="this.requestFullscreen()" class="constrained-image"></img>
 
 ---
 
@@ -222,17 +240,17 @@ The source code is available on <a href="https://github.com/cheat-engine/cheat-e
 
 - Open your emulator of choice. I'm using FBNeo for demonstration.
 
-	- <img class="constrained-image" src="./fbneo-title-screen.png" onclick="this.requestFullscreen()"></img>
+	- ${constrainedImage("./images/fbneo-title-screen.png", "FBNeo: NTM title screen")}
 
 - Open Cheat Engine.
 
-	- <img class="constrained-image" src="./cheatengine-1-open.png" onclick="this.requestFullscreen()"></img>
+	- ${constrainedImage("./images/cheatengine-1-open.png", "Cheat Engine: startup screen")}
 
 - Select the emulator process in Cheat Engine.
 
-	- ${constrainedImage("./cheatengine-2-open-process.png")}
+	- ${constrainedImage("./images/cheatengine-2-open-process.png", "Cheat Engine: opening a process")}
 
-	- ${constrainedImage("./cheatengine-3-process-select.png")}
+	- ${constrainedImage("./images/cheatengine-3-process-select.png", "Cheat Engine: selecting a process")}
 
 - You're now ready to scan the game's memory.
 
@@ -243,25 +261,25 @@ The source code is available on <a href="https://github.com/cheat-engine/cheat-e
 
 Before we can set the wind, we need to find the relevant addresses in memory.
 
-### Finding The Strength
+### Finding The Strength (1 Byte)
 
 - Before starting the scan, set the **Value Type** to **Byte**.
 
-	- ${constrainedImage("./cheatengine-4-value-type-byte.png")}
+	- ${constrainedImage("./images/cheatengine-4-value-type-byte.png", "Cheat Engine: setting the value type to byte")}
 
 - Begin a game.
 
-	- ${constrainedImage("./fbneo-1st-shot.png")}
+	- ${constrainedImage("./images/fbneo-1st-shot.png", "In-Game: Taking first shot")}
 
 	- Here we can see that the **wind has a strength of 0**.
 
 	- Enter **0** into Cheat Engine and click **First Scan**.
 
-	- ${constrainedImage("./cheatengine-5-first-scan.png")}
+	- ${constrainedImage("./images/cheatengine-5-first-scan.png", "Cheat Engine: first scan")}
 
 	- Cheat Engine will show us all bytes that have a value of **0**.
 
-	- ${constrainedImage("./cheatengine-6-first-scan-results.png")}
+	- ${constrainedImage("./images/cheatengine-6-first-scan-results.png", "Cheat Engine: first scan results")}
 
 	- There are over 26 million possible addresses! We need to narrow our results with more scans.
 
@@ -269,37 +287,37 @@ Before we can set the wind, we need to find the relevant addresses in memory.
 
 	- In-game, go to the next shot (to re-roll the wind).
 
-	- ${constrainedImage("./fbneo-2nd-shot.png")}
+	- ${constrainedImage("./images/fbneo-2nd-shot.png", "In-Game: Taking second shot")}
 
 	- Here we can see that the **wind has a strength of 3**.
 
 	- Enter **3** into Cheat Engine and click **Next Scan**.
 
-	- ${constrainedImage("./cheatengine-7-second-scan.png")}
+	- ${constrainedImage("./images/cheatengine-7-second-scan.png", "Cheat Engine: second scan")}
 
-	- ${constrainedImage("./cheatengine-8-second-scan-results.png")}
+	- ${constrainedImage("./images/cheatengine-8-second-scan-results.png", "Cheat Engine: second scan results")}
 
 	- Now there are only 2000 possible addresses.
 
-	- Continue repeating this process until there's only 1 address left.
+	- Repeat this process until there's only 1 address left.
 
 - After a few more scans, there will only be 1 address left.
 
-	- ${constrainedImage("./cheatengine-9-one-address-left.png")}
+	- ${constrainedImage("./images/cheatengine-9-one-address-left.png", "Cheat Engine: one address left")}
 
 	- Select the address and click the red arrow to add it to the address list.
 
-	- ${constrainedImage("./cheatengine-10-address-added-to-list.png")}
+	- ${constrainedImage("./images/cheatengine-10-address-added-to-list.png", "Cheat Engine: address added to list")}
 
 	- Once the address is in the list, you can edit the description to something meaningful like *"Wind Strength"*.
 
-	- ${constrainedImage("./cheatengine-11-name-wind-strength.png")}
+	- ${constrainedImage("./images/cheatengine-11-name-wind-strength.png", "Cheat Engine: setting address description for wind strength")}
 
-### Finding The Direction
+### Finding The Direction (1 Byte)
 
 - Now that we know the memory address for the wind strength, it's easy to find the address of the wind direction.
 
-- If you only care about 0 wind setups, you can skip this step.
+- If you only care about 0 wind setups, you can skip this step, since direction is meaningless on 0 wind.
 
 - The address of the wind direction will be the **address of the wind strength + 2**.
 
@@ -307,32 +325,31 @@ Before we can set the wind, we need to find the relevant addresses in memory.
 
 - Adding 2 to this address (in hexadecimal) gives us **0x0ED6B02A**, which is the address of the wind direction.
 
-- ${constrainedImage("./cheatengine-12-add-address-manually.png")}
+- ${constrainedImage("./images/cheatengine-12-add-address-manually.png", "Cheat Engine: add address manually")}
 
 - Click "Add Address Manually" and enter the relevant details (address, description, type).
 
-- ${constrainedImage("./cheatengine-13-add-wind-direction.png")}
+- ${constrainedImage("./images/cheatengine-13-add-wind-direction.png", "Cheat Engine: adding wind direction address")}
 
-- ${constrainedImage("./cheatengine-14-got-both-addresses.png")}
+- ${constrainedImage("./images/cheatengine-14-got-both-addresses.png", "Cheat Engine: got both addresses")}
 
 - Now you should be able to see the wind strength and direction in your address list.
 
-### Note
-
-- These **addresses will change** every time you open the emulator.
-
-- If you re-open the emulator, you'll need to re-open the process in Cheat Engine and repeat the scanning process.
-
-- Someone with more experience with Cheat Engine might know a faster way of finding these addresses. Please get in touch if you know how.
+- ${constrainedImage("../../assets/wind/wind-direction-11-west.png", "wind direction north +1", "wind-indicator")}
+	${constrainedImage("../../assets/wind/wind-strength-3.png", "wind strength 15", "wind-indicator")}
 
 ---
 
 <div id="setting-the-wind"></div>
 ## 4. Setting The Wind
 
-- Now that you've got the addresses, you can double click the value in Cheat Engine to assign a new value.
+### Setting Values
 
-	- (screenshot of setting new value)
+- Once you've found the addresses, you can double click the value in Cheat Engine to assign a new value.
+
+	- ${constrainedImage("./images/cheatengine-15-setting-value.png", "Cheat Engine: setting values")}
+
+### Possible Values
 
 - The **wind strength** can be any number between **0** and **15**.
 	
@@ -340,113 +357,42 @@ Before we can set the wind, we need to find the relevant addresses in memory.
 
 - The **wind direction** can be any number between **0** and **15**.
 
-    - TODO: turn this table into a more compact image?
+    - <div class="interactive-wind-direction"><div class="wind-direction-container"></div><div class="wind-value-container"></div></div>
 
-	- <table class="direction-table">
-		<thead>
-			<tr>
-				<th>Direction</th>
-				<th>Value</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-00-north.png", "wind direction north", "wind-indicator")}</td>
-				<td>0</td>
-	  		</tr>
-			<tr>
-			    <td>${constrainedImage("../../assets/wind/wind-direction-01-north.png", "wind direction north+1", "wind-indicator")}</td>
-			    <td>1</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-02-northeast.png", "wind direction northeast", "wind-indicator")}</td>
-				<td>2</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-03-east.png", "wind direction northeast+1", "wind-indicator")}</td>
-				<td>3</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-04-east.png", "wind direction east", "wind-indicator")}</td>
-				<td>4</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-05-east.png", "wind direction east+1", "wind-indicator")}</td>
-				<td>5</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-06-southeast.png", "wind direction southeast", "wind-indicator")}</td>
-				<td>6</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-07-south.png", "wind direction southeast+1", "wind-indicator")}</td>
-				<td>7</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-08-south.png", "wind direction south", "wind-indicator")}</td>
-				<td>8</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-09-south.png", "wind direction south+1", "wind-indicator")}</td>
-				<td>9</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-10-southwest.png", "wind direction southwest", "wind-indicator")}</td>
-				<td>10</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-11-west.png", "wind direction southwest+1", "wind-indicator")}</td>
-				<td>11</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-12-west.png", "wind direction west", "wind-indicator")}</td>
-				<td>12</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-13-west.png", "wind direction west+1", "wind-indicator")}</td>
-				<td>13</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-14-northwest.png", "wind direction northwest", "wind-indicator")}</td>
-				<td>14</td>
-			</tr>
-			<tr>
-				<td>${constrainedImage("../../assets/wind/wind-direction-15-north.png", "wind direction northwest+1", "wind-indicator")}</td>
-				<td>15</td>
-			</tr>
-		</tbody>
-	</table>
+### Locking Values
 
+- By selecting the "Active" checkbox, you can lock a memory address to maintain a particular value.
 
+	- ${constrainedImage("./images/cheatengine-16-locking-value.png", "Cheat Engine: locking value")}
 
+	- Here the wind strength will be locked to **0** for every shot.
 
+### That's it!
 
+${constrainedImage("./images/japan-6-hole-in-one.gif", "In-Game: Hole-in-one on Japan 6 (Par 4) with Almeida")}
 
-
-
-
-
-
-
-
-
-
-
-(explanation of max wind being 19)
-
-(direction table)
-
-(how to lock the values)
+Have fun learning new setups!
 
 ---
 
-<div id="additional-notes"></div>
+<div id="final-notes"></div>
 
-## Additional Notes
+## Final Notes
 
-<working ram error etc>
+- These **addresses will change** every time you open the emulator.
 
-<br/>
+- If you re-open the emulator, you'll need to select the new process in Cheat Engine and **repeat the scanning process**.
+
+- **You may see this error** when resetting the game if you have any locked values:
+
+	- ${constrainedImage("./images/fbneo-work-ram-error-cropped.png", "In-Game: Work RAM error")}
+
+	- **Unlock the values** in Cheat Engine **and reset** the emulator to fix this.
+
+	- You can lock the values again afterwards.
+
+- Someone with more experience with Cheat Engine might know a faster way of finding these addresses. Please **get in touch** if you know how.
+
 <br/>
 <br/>
 <br/>
@@ -455,7 +401,7 @@ Before we can set the wind, we need to find the relevant addresses in memory.
 
 ---
 
-_(Last updated: 30th September 2024)_
+_(Last updated: 1st October 2024)_
 <br/>
 <br/>
 If you have any questions, suggestions or concerns, contact **@byxor** on Discord.

@@ -63,7 +63,7 @@ class NavigationComponent extends HTMLElement {
 
 		const windSelectContainer = this.shadowRoot.querySelector(".wind-select");
 		const windSelectComponent = document.createElement('wind-select');
-		windSelectComponent.init(wind => {
+		windSelectComponent.init("./assets", wind => {
 			console.log(`Wind selected... ${wind.strength}w(${wind.direction})`);
 		});
 		windSelectContainer.appendChild(windSelectComponent);
