@@ -1,0 +1,30 @@
+<head>
+
+	<link rel="icon" type="image/png" href="../../assets/flags/flag-circle.png"/>
+	<title>Setting wind in NTM</title>
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js
+"></script>
+	<script src="./content.js"></script>
+
+	<style>
+		@media (pointer: fine) {
+			.content {
+				max-width: 500px;
+			}
+		}
+		.content {
+			font-family: Arial Narrow, Arial, sans-serif; 
+		}
+	</style>
+
+	<div class="content">
+	</div>
+
+	<script>
+		const converter = new showdown.Converter();
+		const html = converter.makeHtml(CONTENT);
+		document.querySelector('.content').innerHTML = html;
+	</script>
+</body>
