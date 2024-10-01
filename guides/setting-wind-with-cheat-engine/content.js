@@ -122,7 +122,7 @@ const CONTENT = `
 	}
 </style>
 
-# Setting Wind in NTM
+# Setting Wind in NTM (With Cheat Engine)
 
 In Neo Turf Masters, the wind is controlled by random numbers.
 
