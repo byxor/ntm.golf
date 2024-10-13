@@ -10,7 +10,7 @@ class Setup {
 		power,
 		height,
 		spin,
-		outcome
+		outcome,
 	) {
 		this.stroke = this.validateStroke(stroke);
 		this.wind = this.validateWind(wind);
@@ -23,6 +23,10 @@ class Setup {
 		this.height = this.validateHeight(height);
 		this.spin = this.validateSpin(spin);
 		this.outcome = this.validateOutcome(outcome);
+
+		// (these get set later by property assignment)
+		this.parent = undefined;
+		this.children = undefined;
 	}
 
 	validateStroke(stroke) {

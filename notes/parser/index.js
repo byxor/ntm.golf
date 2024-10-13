@@ -3,24 +3,24 @@ function parseNotes(notes, courseName) {
 	let i = 0;
 	lines.forEach(line => {
 		i++;
-		console.log(`${i}: ${line}`);
+		// console.log(`${i}: ${line}`);
 	});
-	console.log("---------------------------------");
+	// console.log("---------------------------------");
 
 	function parseCourse(lineNumber) {
 		const start = lineNumber;
 
-		const holes = [];
+		const unindexedHoles = [];
 		let line = lines[lineNumber];
 
 		while (lineNumber < lines.length) {
 			line = lines[lineNumber];
 			
-			if (line.trim() === "") {
+			if (line.trim() === "" || line.trim().startsWith("//")) {
 				lineNumber++;
 			} else if (line.startsWith("#")) {
 				const [hole, nextLineNumber] = parseHole(lineNumber);
-				holes.push(hole);
+				unindexedHoles.push(hole);
 				lineNumber = nextLineNumber;
 			} else {
 				throw "idk";
@@ -28,7 +28,13 @@ function parseNotes(notes, courseName) {
 
 		}
 
-		console.log(`Parsed Course, lines[${start}->${lineNumber-1}])`);
+		const holes = Array(18).fill(undefined);
+		unindexedHoles.forEach(hole => {
+			const index = hole.number - 1;
+			holes[index] = hole;
+		});
+
+		// console.log(`Parsed Course, lines[${start}->${lineNumber-1}])`);
 		const course = new Course(courseName, holes);
 		return course;
 	}
@@ -42,6 +48,9 @@ function parseNotes(notes, courseName) {
 			lineNumber++;
 			return parseInt(segments[segments.length - 1]);
 		})();
+
+		const [notes, nextLineNumber] = parseHoleNotes(lineNumber);
+		lineNumber = nextLineNumber;
 
 		const pins = [];
 		while (lineNumber < lines.length) {
@@ -61,10 +70,36 @@ function parseNotes(notes, courseName) {
 			}
 		}
 
-		console.log(`Parsed Hole ${holeNumber}, lines[${start}->${lineNumber-1}]`);
+		// console.log(`Parsed Hole ${holeNumber}, lines[${start}->${lineNumber-1}]`);
 		const par = undefined;
-		const hole = new Hole(holeNumber, par, pins);
+		const hole = new Hole(holeNumber, par, notes, pins, courseName);
 		return [hole, lineNumber];
+	}
+
+	function parseHoleNotes(lineNumber) {
+		const start = lineNumber;
+		function line() {
+			return lines[lineNumber].trim();
+		}
+
+		notes = [];
+		while (lineNumber < lines.length) {
+			if (line() === "" || line().startsWith("//")) {
+				lineNumber++;
+			} else if (line().startsWith("#")) {
+				break; // stop parsing
+			} else if (line().startsWith("-")) {
+				// text note
+				notes.push(new TextHoleNote(line().substring(2, line().length)));
+				lineNumber++;
+			} else {
+				// image note
+				notes.push(new ImageHoleNote(line()));
+				lineNumber++;
+			}
+		}
+
+		return [notes, lineNumber];
 	}
 
 	function parsePin(lineNumber) {
@@ -90,6 +125,8 @@ function parseNotes(notes, courseName) {
 				const [shotOption, nextLineNumber] = parseSetup(lineNumber, stroke, 0);
 				lineNumber = nextLineNumber;
 				shotOptions.push(shotOption);
+			} else if (line.trim().startsWith("//")) {
+				lineNumber++;
 			} else if (line.trim() === "") {
 				lineNumber++;
 			} else {
@@ -99,7 +136,7 @@ function parseNotes(notes, courseName) {
 			}
 		}
 
-		console.log(`Parsed Pin, lines[${start}->${lineNumber-1}]`);
+		// console.log(`Parsed Pin, lines[${start}->${lineNumber-1}]`);
 		const image = "";
 		const pin = new Pin(label, distance, image, shotOptions);
 		return [pin, lineNumber]
@@ -109,12 +146,14 @@ function parseNotes(notes, courseName) {
 		const start = lineNumber;
 		const line = lines[lineNumber];
 
-		const stripped = line.substring(2, line.length).trim();
+		let stripped = line.trim();
+		stripped = stripped.substring(2, stripped.length);
 		const segments = stripped.split(", ");
 
 		let i = 0;
 
 		const wind = parseWind(segments[i++]);
+
 		const reference = parseReference(segments[i++]);
 		
 		const subpixel = parseSubpixel(segments[i]);
@@ -140,6 +179,12 @@ function parseNotes(notes, courseName) {
 
 		lineNumber++;
 
+		// just guess the surface for now, but should probably encode
+		// this in the notes at some point
+		const surface = stroke === 1 ? TEE_SURFACE : FAIRWAY_SURFACE;
+
+		const setup = new Setup(stroke, wind, reference, subpixel, surface, stance, club, power, height, spin, outcome);
+
 		const subSetups = [];
 		while (lineNumber < lines.length) {
 			if (lineNumber < lines.length - 1) {
@@ -155,8 +200,13 @@ function parseNotes(notes, courseName) {
 
 				if (nextIndentation > indentation) {
 					const [subSetup, nextLineNumber] = parseSetup(lineNumber, stroke+1, nextIndentation);
+					subSetup.parent = setup;
 					subSetups.push(subSetup);
 					lineNumber = nextLineNumber;
+				} else if (nextLine.trim() == "") {
+					lineNumber++;
+				} else if (nextLine.trim().startsWith("//")) {
+					lineNumber++;
 				} else {
 					break;
 				}
@@ -165,11 +215,9 @@ function parseNotes(notes, courseName) {
 			}
 		}
 
-		// just guess this for now, but should probably encode this in the notes
-		// at some point
-		const surface = stroke === 1 ? TEE_SURFACE : FAIRWAY_SURFACE;
-		console.log(`Parsed Setup, lines[${start+1}->${lineNumber}] (indentation ${indentation})`);	
-		const setup = new Setup(stroke, wind, reference, subpixel, surface, stance, club, power, height, spin, outcome);
+		setup.children = subSetups;
+
+		// console.log(`Parsed Setup, lines[${start+1}->${lineNumber}] (indentation ${indentation})`);	
 		return [setup, lineNumber]
 	}
 
@@ -303,7 +351,6 @@ function parseNotes(notes, courseName) {
 				parts = segment.split(" ");
 				rest = parseInt(parts[1]);
 				segments.splice(i, 1);
-				console.log("GOT REST: " + rest);
 				break;
 			}
 		}

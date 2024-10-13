@@ -1,12 +1,22 @@
 class Power {
 	constructor(value, direction) {
 		this.value = value;
-		this.direction = this.validateDirection(direction);
-		// todo: validate that the power and direction are possible
+		this.direction = direction;
+
+		this.#validateValue();
+		this.#validateDirection();
+		// TODO: validate that the power and direction are possible
 	}
 
-	validateDirection(direction) {
-		return direction;
+	#validateValue() {
+
+	}
+
+	#validateDirection() {
+		if (this.value !== "max%" && this.direction === undefined) {
+			throw `Power value '${this.value}' has an undefined direction`;
+		}
+		// TODO
 	}
 }
 

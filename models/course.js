@@ -14,7 +14,8 @@ class Course {
 			throw `Holes '${this.holes}' is not an array`;
 		}
 		for (let i = 0; i < this.holes.length; i++) {
-			if (!(this.holes[i] instanceof Hole)) {
+			const hole = this.holes[i];
+			if (!(hole === undefined || hole instanceof Hole)) {
 				throw `holes[${i}] is not a Hole`;
 			}
 		}
@@ -24,9 +25,9 @@ class Course {
 class Courses {
 	constructor() {
 		this.germany = parseNotes(GERMANY_NOTES, "Germany");
-		this.japan = parseNotes(GERMANY_NOTES, "Japan");
-		this.australia = parseNotes(GERMANY_NOTES, "Australia");
-		this.usa = parseNotes(GERMANY_NOTES, "USA");
+		this.japan = parseNotes(``, "Japan");
+		this.australia = parseNotes(``, "Australia");
+		this.usa = parseNotes(``, "USA");
 		// TODO: add course notes.
 		// TODO: add scotland?
 	}

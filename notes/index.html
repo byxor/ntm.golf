@@ -1,0 +1,87 @@
+<head>
+	<title>Neo Turf Masters Notes</title>
+	<link rel="icon" type="image/png" href="/assets/flags/flag-circle.png"/>
+	<style>
+		body {
+ 			font-family: Tahoma, sans-serif;
+		}
+
+		html, body {
+			margin: 0;
+			height: 100%;
+		}
+
+		app * {
+		    -webkit-touch-callout: none;
+		      -webkit-user-select: none;
+		       -khtml-user-select: none;
+		         -moz-user-select: none;
+		          -ms-user-select: none;
+		              user-select: none;
+		}
+	</style>
+</head>
+
+<body>
+	<script src="/models/wind.js"></script>
+	<script src="/models/reference.js"></script>
+	<script src="/models/subpixel.js"></script>
+	<script src="/models/surface.js"></script>
+	<script src="/models/stance.js"></script>
+	<script src="/models/club.js"></script>
+	<script src="/models/power.js"></script>
+	<script src="/models/height.js"></script>
+	<script src="/models/spin.js"></script>
+	<script src="/models/outcome.js"></script>
+	<script src="/models/setup.js"></script>
+	<script src="/models/pin.js"></script>
+	<script src="/models/hole.js"></script>
+	<script src="/models/hole-note.js"></script>
+	<script src="/models/course.js"></script>
+
+	<script src="/notes/germany.js"></script>
+	<script src="/notes/parser/index.js"></script>
+	<script src="/notes/browser/index.js"></script>
+
+	<script src="/components/index.js"></script>
+	<script src="/notes/browser/components/breadcrumb.js"></script>
+	<script src="/notes/browser/components/breadcrumbs.js"></script>
+	<script src="/notes/browser/components/club.js"></script>
+	<script src="/notes/browser/components/course-select.js"></script>
+	<script src="/notes/browser/components/course.js"></script>
+	<script src="/notes/browser/components/hole-select.js"></script>
+	<script src="/notes/browser/components/hole-notes.js"></script>
+	<script src="/notes/browser/components/hole.js"></script>
+	<script src="/notes/browser/components/notes-browser.js"></script>
+	<script src="/notes/browser/components/notes.js"></script>
+	<script src="/notes/browser/components/outcome.js"></script>
+	<script src="/notes/browser/components/pin-select.js"></script>
+	<script src="/notes/browser/components/setup.js"></script>
+	<script src="/notes/browser/components/setups.js"></script>
+	<script src="/notes/browser/components/shot-meter.js"></script>
+	<script src="/notes/browser/components/stance.js"></script>
+	<script src="/notes/browser/components/wind-select.js"></script>
+
+	<div id="app">
+		<div id="notes-browser"></div>
+	</div>
+
+	<script>
+		const notesBrowser = new NotesBrowser("notes-browser");
+	</script>
+
+<!-- Hello there, you have a keen eye. Please don't uncomment me; I'm work in progress!
+<!-- <style>
+	body {
+		background-color: black;
+	}
+	a {
+		color: white;
+	}
+</style>
+<img src="/assets/under-construction.gif"></img>
+<br/>
+<br/>
+<br/>
+<a href="/guides/setting-wind-with-cheat-engine/">Guide: Setting wind in NTM</a> -->
+</body>

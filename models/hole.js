@@ -1,12 +1,23 @@
 class Hole {
-	constructor(number, par, pins) {
-		this.number = this.validateHoleNumber(number);
-		this.par = this.validatePar(par);
-		this.pins = this.validatePins(pins);
-		// <todo: general notes - (text and images?)>
+	constructor(number, par, notes, pins, courseName) {
+		this.number = this.#validateHoleNumber(number);
+		this.par = this.#validatePar(par);
+		this.notes = this.#validateNotes(notes);
+		this.pins = this.#validatePins(pins);
+		this.courseName = this.#validateCourseName(courseName);	
 	}
 
-	validateHoleNumber(number) {
+	equals(other) {
+		if (other === undefined) {
+			return false;
+		}
+		return (
+			this.courseName === other.courseName &&
+			this.number === other.number
+		);
+	}
+
+	#validateHoleNumber(number) {
 		if (typeof number !== "number") {
 			throw `Hole number '${number}' is not a number`;
 		}
@@ -16,7 +27,7 @@ class Hole {
 		return number;
 	}
 
-	validatePar(par) {
+	#validatePar(par) {
 		if (par !== undefined) {
 			if (!(par === undefined || typeof par === "number")) {
 				throw `par '${par}' is not a number or undefined`;
@@ -25,11 +36,22 @@ class Hole {
 				throw `par '${par}' is out of range (3-5)`
 			}	
 		}
-		// TODO: validate between 3 and 5 (or empty?)
 		return par;
 	}
 
-	validatePins(pins) {
+	#validateNotes(notes) {
+		if (!Array.isArray(notes)) {
+			throw `Notes '${notes}' is not an array`;
+		}
+		for (let i = 0; i < notes.length; i++) {
+			if (!(notes[i] instanceof HoleNote)) {
+				throw `notes[${i}] is not a HoleNote`;
+			}
+		}
+		return notes;
+	}
+
+	#validatePins(pins) {
 		if (!Array.isArray(pins)) {
 			throw `Pins '${pins}' is not an array`;
 		}
@@ -39,5 +61,21 @@ class Hole {
 			}
 		}
 		return pins;
+	}
+
+	#validateCourseName(courseName) {
+		if (typeof courseName !== "string") {
+			throw `Hole courseName '${courseName}' is not a string`;
+		}
+		const VALID_COURSE_NAMES = [
+			"Germany",
+			"Japan",
+			"Australia",
+			"USA",
+		]
+		if (!VALID_COURSE_NAMES.includes(courseName)) {
+			throw `'${courseName}' is not a valid course name`;
+		}
+		return courseName;
 	}
 }

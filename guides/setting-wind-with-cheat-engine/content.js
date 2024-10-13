@@ -1,5 +1,15 @@
-function constrainedImage(src, alt="", classes="") {
-	return `<img src="${src}" alt="${alt}" onclick="this.requestFullscreen({navigationUI: 'show'})" class="constrained-image ${classes}"></img>`
+function constrainedImage(src, alt="", classes="", fullscreen=true) {
+	if (fullscreen) {
+		classes += "constrained-image-pointer";
+	}
+	const html = `<img
+		src="${src}"
+		alt="${alt}"
+		${fullscreen ? `onclick="this.requestFullscreen({navigationUI: 'show'})"` : ""} class="constrained-image ${classes}"
+		draggable="false"
+	>
+	</img>`
+	return html;
 }
 
 // TODO: Alt text on all images.
@@ -22,7 +32,10 @@ const CONTENT = `
 		border: 1px solid grey;
 		border-radius: 5px;
 		box-shadow: -2px 2px #888888;
-		cursor: pointer;]
+	}
+
+	.constrained-image-pointer {
+		cursor: pointer;
 	}
 
 	@media (pointer: fine) {
@@ -65,13 +78,17 @@ const CONTENT = `
 		color: #bebebe;
 	}
 
+	.greyscale {
+		filter: grayscale(60%);
+	}
+
 	.die {
 		width: 18px;
 		height: 18px;
 	}
 
 	.wind-indicator {
-		height: 70px;
+		height: 50px;
 	}
 
 	.interactive-wind-direction * {
@@ -131,8 +148,8 @@ On each shot, the game generates:
 - The wind direction (16 possible values).
 
 <div>
-	${constrainedImage("../../assets/wind/wind-direction-01-north.png", "wind direction north +1", "wind-indicator")}
-	${constrainedImage("../../assets/wind/wind-strength-15.png", "wind strength 15", "wind-indicator")}
+	${constrainedImage("../../assets/wind/wind-direction-01-north.png", "wind direction north +1", "wind-indicator greyscale", false)}
+	${constrainedImage("../../assets/wind/wind-strength-15.png", "wind strength 15", "wind-indicator", false)}
 </div>
 
 The exact probabilities are as follows:
@@ -223,15 +240,15 @@ The source code is available on <a href="https://github.com/cheat-engine/cheat-e
 
 1. Run the installer.
 
-	- <img src="./images/installer-2-welcome.png" alt="Installer step 1: welcome" onclick="this.requestFullscreen()" class="constrained-image"></img>
+	- ${constrainedImage("./images/installer-2-welcome.png", "Installer step 1: welcome")}
 
 2. **Decline all unwanted suggestions.**
 
-	- <img src="./images/installer-3-decline-red.png" alt="Installer step 2: decline all unwanted suggestions" onclick="this.requestFullscreen()" class="constrained-image"></img>
+	- ${constrainedImage("./images/installer-3-decline-red.png", "Installer step 2: decline all unwanted suggestions")}
 
 3. **Finish.**
 
-	- <img src="./images/installer-4-finished.png" alt="Installer step 3: finish" onclick="this.requestFullscreen()" class="constrained-image"></img>
+	- ${constrainedImage("./images/installer-4-finished.png", "Installer step 3: finish")}
 
 ---
 
@@ -333,10 +350,12 @@ Before we can set the wind, we need to find the relevant addresses in memory.
 
 - ${constrainedImage("./images/cheatengine-14-got-both-addresses.png", "Cheat Engine: got both addresses")}
 
-- Now you should be able to see the wind strength and direction in your address list.
+- <div>
+       ${constrainedImage("../../assets/wind/wind-direction-11-west.png", "wind direction sw+1", "wind-indicator greyscale", false)}
+	   ${constrainedImage("../../assets/wind/wind-strength-3.png", "wind strength 3", "wind-indicator", false)} <i class="grey">&nbsp;&larr;&nbsp;&nbsp;(Current wind)</i>
+  </div>
 
-- ${constrainedImage("../../assets/wind/wind-direction-11-west.png", "wind direction north +1", "wind-indicator")}
-	${constrainedImage("../../assets/wind/wind-strength-3.png", "wind strength 15", "wind-indicator")}
+- Now you should be able to see the wind strength and direction in your address list.
 
 ---
 
@@ -369,7 +388,7 @@ Before we can set the wind, we need to find the relevant addresses in memory.
 
 ### That's it!
 
-${constrainedImage("./images/japan-6-hole-in-one.gif", "In-Game: Hole-in-one on Japan 6 (Par 4) with Almeida")}
+${constrainedImage("./images/japan-6-hole-in-one.gif", "In-Game: Hole-in-one on Japan 6 Par 4) with Almeida")}
 
 Have fun learning new setups!
 
@@ -401,7 +420,7 @@ Have fun learning new setups!
 
 ---
 
-_(Last updated: 1st October 2024)_
+_(Last updated: 12th October 2024)_  
 <br/>
 <br/>
 If you have any questions, suggestions or concerns, contact **@byxor** on Discord.

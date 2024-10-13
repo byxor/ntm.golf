@@ -14,6 +14,23 @@ class Wind {
 		return this.strength === other.strength && this.direction === other.direction;
 	}
 
+	logicallyEquals(other) {
+		if (other === undefined) {
+			return false;
+		}
+		if (this.strength === 0) {
+			return other.strength === 0;
+		}
+		return this.equals(other);
+	}
+
+	toString() {
+		if (this.strength === 0) {
+			return "0w";
+		}
+		return `${this.strength}w(${this.direction})`;
+	}
+
 	#validateStrength() {
 		if (this.strength < 0 || this.strength > 15) {
 			throw `Wind strength '${this.strength}' must be between 0 and 15`;

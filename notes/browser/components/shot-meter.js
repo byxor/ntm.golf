@@ -1,5 +1,65 @@
 class ShotMeterComponent extends HTMLElement {
+	init(surface, club, power, height, spin, numberOfNotes, consistent) {
+		this.surface = surface;
+		this.club = club;
+		this.power = power;
+		this.height = height;
+		this.spin = spin;
+
+		this.backgroundImage = `/assets/meter/background.png`;
+		this.backgroundMask = (() => {
+			let suffix = "";
+			if (numberOfNotes >= 3) {
+				suffix = "-hide50";
+			}
+			return `/assets/meter/mask-background${suffix}.png`
+		})();
+
+		this.surfaceImage = `/assets/meter/surfaces/${this.surface.name}.png`;
+		this.surfaceMask = `/assets/meter/surfaces/mask-9.png`;
+
+		this.powerImage = `/assets/meter/powers/${this.power.value.slice(0, -1)}.png`;
+		this.powerMask = `/assets/meter/powers/mask.png`;
+
+		this.heightRangeImage = `/assets/meter/heights/range-${this.club.heightRange}.png`;
+		this.heightRangeMask = `/assets/meter/heights/mask-range.png`;
+		this.heightMask = `/assets/meter/heights/mask-${this.height.value}.png`;
+
+		this.directionIndicatorImage = `/assets/meter/indicators/power-and-height-4.png`;
+		this.powerDirectionIndicatorMask = this.power.direction !== "" ?
+			`/assets/meter/indicators/mask-power-${this.power.direction}.png` : "";
+
+		this.heightDirectionIndicatorMask = `/assets/meter/indicators/mask-height-${this.height.direction}.png`;
+
+		this.spinXOffset = (() => {
+			if (this.spin === BACKSPIN) {
+				return 0.5;
+			} else {
+				return 0;
+			}
+		})();
+		this.spinYOffset = (() => {
+			if (this.spin === BACKSPIN) {
+				return 20;
+			} else {
+				return 0;
+			}
+		})();
+		this.spinText = (() => {
+			if (this.spin === TOPSPIN) {
+				return "&uarr;&uarr;"; // ↑
+			} else if (this.spin === BACKSPIN) {
+				return "&Darr;&Darr;"; // ↡
+			} else {
+				return "";
+			}
+		})();
+
+		this.consistent = consistent;
+	}
+
 	connectedCallback() {
+		// TODO: use original grey/black gradient for "unverified" consistency
 		createTemplate(this, `
 			<style>
 				.container {
@@ -7,7 +67,14 @@ class ShotMeterComponent extends HTMLElement {
 					height: 343px;
 					border: 1px solid black;
 					border-radius: 4px;
-					background-image: linear-gradient(to bottom right, black, grey);
+				}
+
+				.inconsistent {
+					background-image: linear-gradient(to bottom right, darkred, grey);
+				}
+
+				.consistent {
+					background-image: linear-gradient(to bottom right, darkgreen, grey);
 				}
 
 				.background-container {
@@ -194,7 +261,7 @@ class ShotMeterComponent extends HTMLElement {
 					top: ${106 + this.spinYOffset}px;
 				}
 			</style>
-			<div class="container">
+			<div class="container ${this.consistent ? "consistent" : "inconsistent"}">
 				<div class="background-container"></div>
 				<div class="parts-container">
 					<div class="surface"></div>
@@ -213,63 +280,6 @@ class ShotMeterComponent extends HTMLElement {
 				</div>
 			</div>
 		`);
-	}
-
-	init(surface, club, power, height, spin, numberOfNotes) {
-		this.surface = surface;
-		this.club = club;
-		this.power = power;
-		this.height = height;
-		this.spin = spin;
-
-		this.backgroundImage = `./assets/meter/background.png`;
-		this.backgroundMask = (() => {
-			let suffix = "";
-			if (numberOfNotes >= 3) {
-				suffix = "-hide50";
-			}
-			return `./assets/meter/mask-background${suffix}.png`
-		})();
-
-		this.surfaceImage = `./assets/meter/surfaces/${this.surface.name}.png`;
-		this.surfaceMask = `./assets/meter/surfaces/mask-9.png`;
-
-		this.powerImage = `./assets/meter/powers/${this.power.value.slice(0, -1)}.png`;
-		this.powerMask = `./assets/meter/powers/mask.png`;
-
-		this.heightRangeImage = `./assets/meter/heights/range-${this.club.heightRange}.png`;
-		this.heightRangeMask = `./assets/meter/heights/mask-range.png`;
-		this.heightMask = `./assets/meter/heights/mask-${this.height.value}.png`;
-
-		this.directionIndicatorImage = `./assets/meter/indicators/power-and-height-4.png`;
-		this.powerDirectionIndicatorMask = this.power.direction !== "" ?
-			`./assets/meter/indicators/mask-power-${this.power.direction}.png` : "";
-
-		this.heightDirectionIndicatorMask = `./assets/meter/indicators/mask-height-${this.height.direction}.png`;
-
-		this.spinXOffset = (() => {
-			if (this.spin === BACKSPIN) {
-				return 0.5;
-			} else {
-				return 0;
-			}
-		})();
-		this.spinYOffset = (() => {
-			if (this.spin === BACKSPIN) {
-				return 20;
-			} else {
-				return 0;
-			}
-		})();
-		this.spinText = (() => {
-			if (this.spin === TOPSPIN) {
-				return "&uarr;&uarr;"; // ↑
-			} else if (this.spin === BACKSPIN) {
-				return "&Darr;&Darr;"; // ↡
-			} else {
-				return "";
-			}
-		})();
 	}
 }
 

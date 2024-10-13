@@ -1,8 +1,8 @@
 class Height {
 	constructor(value, direction, club) {
-		this.value = this.validateValue(value);
-		this.direction = this.validateDirection(direction);
-		this.club = this.validateClub(club);
+		this.value = this.#validateValue(value);
+		this.direction = this.#validateDirection(direction);
+		this.club = this.#validateClub(club);
 		this.isRelative = (() => {
 			if (this.value === "H") {
 				return true;
@@ -17,12 +17,12 @@ class Height {
 		})();
 	}
 
-	validateValue(value) {
+	#validateValue(value) {
 		// TODO?
 		return value;
 	}
 
-	validateDirection(direction) {
+	#validateDirection(direction) {
 		const VALID_DIRECTIONS = [
 			"up",
 			"down",
@@ -33,7 +33,7 @@ class Height {
 		return direction;
 	}
 
-	validateClub(club) {
+	#validateClub(club) {
 		if (!(club instanceof Club)) {
 			throw `'${club}' is not a Club`;
 		}

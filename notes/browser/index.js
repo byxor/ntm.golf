@@ -1,36 +1,182 @@
+class NavigationController {
+
+	// TODO: allow URL-based navigation with queryparameters
+
+	// TODO: use the browser history API to enable back/forward to work
+
+	#courses;
+	
+	#onCourseChangedListeners = [];
+	#onHoleChangedListeners = [];
+	#onPinChangedListeners = [];
+	#onSetupChangedListeners = [];
+	#onWindChangedListeners = [];
+
+	#course;
+	#hole;
+	#pin;
+	#setup;
+	#wind;
+
+	constructor(courses) {
+		this.#courses = courses;
+
+		this.#course = undefined;
+		this.#hole = undefined;
+		this.#pin = undefined;
+		this.#wind = undefined;
+	}
+
+	setCourse(course) {
+		console.log(`NavigationController: setCourse(${course.name})`);
+
+		this.#course = course;
+		this.#onCourseChangedListeners.forEach(listener => listener(course));
+
+		if (this.#hole !== undefined) {
+			const holeWithSameNumber = (() =>
+				this.#course.holes.find(hole =>
+					hole?.number === this.#hole.number
+			))();
+			this.setHole(holeWithSameNumber);
+		} else {
+			this.setHole(this.#course.holes[0]);
+		}
+	}
+
+	setHole(hole) {
+		console.log(`NavigationController: setHole(${hole})`);
+
+		this.#hole = hole;
+		this.#onHoleChangedListeners.forEach(listener => listener(hole));
+
+		// choose first pin if it exists
+		if (this.#hole?.pins?.length > 0) {
+			this.setPin(this.#hole.pins[0]);
+		} else {
+			this.setPin(undefined);
+		}
+	}
+
+	setPin(pin) {
+		console.log(`NavigationController: setPin(${pin?.distance}Y ${pin?.label})`);
+		
+		this.#pin = pin;
+		this.#onPinChangedListeners.forEach(listener => listener(pin));
+
+		this.setSetup(undefined);
+	}
+
+	nextHole() {
+		if (this.#hole.number < 18) {
+			this.setHole(this.#course.holes[this.#hole.number]);
+		}
+	}
+
+	setSetup(setup) {
+		console.log(`NavigationController: setSetup(${setup})`);
+
+		this.#setup = setup;
+		this.#onSetupChangedListeners.forEach(listener => listener(setup));
+	}
+
+	setWind(wind) {
+		console.log(`NavigationController: setWind(${wind})`);
+
+		this.#wind = wind;
+		this.#onWindChangedListeners.forEach(listener => listener(wind));
+	}
+
+	onCourseChanged(listener) {
+		this.#onCourseChangedListeners.push(listener);
+	}
+
+	onHoleChanged(listener) {
+		this.#onHoleChangedListeners.push(listener);
+	}
+
+	onPinChanged(listener) {
+		this.#onPinChangedListeners.push(listener);
+	}
+
+	onSetupChanged(listener) {
+		this.#onSetupChangedListeners.push(listener);
+	}
+
+	onWindChanged(listener) {
+		this.#onWindChangedListeners.push(listener);
+	}
+}
+
 class NotesBrowser {
 	constructor(containerId) {
-		this.courses = new Courses();
-
-		// navigate to relevant setup based on URL
-
-		// https://ntm.golf/
-		// (loads germany I guess)
-
-		// https://ntm.golf/?course=usa
-		// (loads USA?)
-
-		// idk, figure this out later
-
-		this.chosenCourse = this.courses.germany;
-		this.chosenHole = this.chosenCourse.holes[0];
-		this.chosenPin = this.chosenHole.pins[0];
-		this.chosenSetup = undefined;
-
-
-		console.log(this.chosenPin);
-
 		const container = document.getElementById(containerId);
 
-		const navigationComponent = document.createElement('navigation-');
-		navigationComponent.init(this.courses);
-		container.appendChild(navigationComponent);
+		let courses;
+		try {
+			courses = new Courses();
+		} catch (e) {
+			const headerElement = document.createElement('h1');
+			headerElement.innerHTML = "Error: failed to parse notes";
+			headerElement.style.color = "red";
+			headerElement.style.textDecoration = "underline";
+			container.appendChild(headerElement);
 
-		this.chosenPin.setups.forEach(setup => {
-			const setupComponent = document.createElement('setup-');
-			setupComponent.init(setup, 0);
-			container.appendChild(setupComponent);
-		});
+			const errorElement = document.createElement('h2');
+			errorElement.innerHTML = e;
+			container.appendChild(errorElement);
+
+			const explanationText = document.createElement('p');
+			explanationText.style.paddingTop = 50;
+			explanationText.innerHTML = `(WIP) Error message may be misleading...<br/><br/>Check console for details...`;
+			container.appendChild(explanationText);
+
+			throw e;
+		}
+
+		const navigationController = new NavigationController(courses);
+
+		const notesBrowserComponent = document.createElement('notes-browser');
+		notesBrowserComponent.init(navigationController, courses);
+
+		container.appendChild(notesBrowserComponent);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// this.chosenPin.setups.forEach(setup => {
+		// 	const setupComponent = document.createElement('setup-');
+		// 	setupComponent.init(setup, 0);
+		// 	container.appendChild(setupComponent);
+		// });
 
 		// {
 		// 	const stroke = 1;
@@ -118,24 +264,3 @@ class NotesBrowser {
 
 		// 	console.log(setup);
 		// }
-	}
-
-	onCourseSelected(courseName) {
-		console.log(`NotesBrowser: selected course '${courseName}'`);
-		this.chosenCourse = this.courses[name];
-	}
-
-	onHoleSelected(number) {
-		console.log(`NotesBrowser: selected hole ${number}`);
-		this.chosenHole = number;
-	}
-
-	onPinSelected(pin) {
-		console.log(`NotesBrowser: selected pin ${pin}`);
-		this.chosenPin = pin;
-	}
-
-	onSetupSelected(setup) {
-
-	}
-}

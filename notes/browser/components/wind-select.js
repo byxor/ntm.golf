@@ -239,10 +239,10 @@ class WindSelectComponent extends HTMLElement {
 			this.isDraggingStrength = false;
 		};
 
-		strengthElement.addEventListener('mousedown', mouseDown);
+		strengthElement.addEventListener('pointerdown', mouseDown);
 		if (!this.documentListenersConfiguredForStrengthDrag) {
-			document.addEventListener('mouseup', mouseUp);
-			document.addEventListener('mousemove', mouseMove);	
+			document.addEventListener('pointerup', mouseUp);
+			document.addEventListener('pointermove', mouseMove);	
 			this.documentListenersConfiguredForStrengthDrag = true;
 		}
 	}

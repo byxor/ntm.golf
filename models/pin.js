@@ -1,33 +1,43 @@
 class Pin {
 	constructor(label, distance, image, setups) {
-		this.label = this.validateLabel(label);
-		this.distance = this.validateDistance(distance);
-		this.image = this.validateImage(image);
-		this.setups = this.validateSetups(setups);
+		this.label = this.#validateLabel(label);
+		this.distance = this.#validateDistance(distance);
+		this.image = this.#validateImage(image);
+		this.setups = this.#validateSetups(setups);
 	}
 
-	validateLabel(label) {
+	equals(other) {
+		if (other === undefined) {
+			return false;
+		}
+		return (
+			this.distance === other.distance &&
+			this.label === other.label
+		);
+	}
+
+	#validateLabel(label) {
 		if (typeof label !== "string") {
 			throw `Label '${label}' is not a string`;
 		}
 		return label;
 	}
 
-	validateDistance(distance) {
+	#validateDistance(distance) {
 		if (typeof distance !== "number") {
 			throw `Distance '${distance}' is not a number`;
 		}
 		return distance;
 	}
 
-	validateImage(image) {
+	#validateImage(image) {
 		if (typeof image !== "string") {
 			throw `Image '${image}' is not a string`;
 		}
 		return image;
 	}
 
-	validateSetups(setups) {
+	#validateSetups(setups) {
 		if (!Array.isArray(setups)) {
 			throw `Setups '${setups}' is not an array`;
 		}
