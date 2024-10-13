@@ -109,7 +109,7 @@ class SetupComponent extends HTMLElement {
 				<div class="${this.#halfBlackedOut ? "blackout" : ""}"></div>
 				<div class="club"></div>
 				<div class="stance"></div>
-				<img class="die ${isDieShown ? "" : "hidden"}" src="./assets/dice/die.png" draggable="false"></img>
+				<img class="die ${isDieShown ? "" : "hidden"}" src="/assets/dice/die.png" draggable="false"></img>
 				<div class="notes"></div>
 				<div class="outcome"></div>
 				<div class="shot-meter"></div>
