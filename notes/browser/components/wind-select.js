@@ -3,8 +3,9 @@
 
 class WindSelectComponent extends HTMLElement {
 	
-	init(assetsRoot, onWindSelected, onWindUpdated=wind=>{}) {
-		this.assetsRoot = assetsRoot;
+	init(navigationController, onWindSelected, onWindUpdated=wind=>{}) {
+		this.navigationController = navigationController;
+
 		this.onWindSelected = onWindSelected;
 		this.onWindUpdated = onWindUpdated;
 
@@ -21,7 +22,14 @@ class WindSelectComponent extends HTMLElement {
 		this.isDraggingDirection = false;
 
 		this.setWind(newWind(0, "N"));
+
 		this.emitSelectedWind();
+
+		this.navigationController.onWindChanged(wind => {
+			if (!wind.logicallyEquals(this.wind)) {
+				this.setWind(wind);
+			}
+		});
 	}
 
 	connectedCallback() {
@@ -269,11 +277,11 @@ class WindSelectComponent extends HTMLElement {
 				default: debugger;
 			}
 		})();
-		return `${this.assetsRoot}/wind/wind-direction-${suffix}.png`;
+		return `/assets/wind/wind-direction-${suffix}.png`;
 	}
 
 	getStrengthImage(strength) {
-		return `${this.assetsRoot}/wind/wind-strength-${strength}.png`;
+		return `/assets/wind/wind-strength-${strength}.png`;
 	}
 
 	setDirection(direction) {		

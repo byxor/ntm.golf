@@ -1,11 +1,5 @@
 function parseNotes(notes, courseName) {
 	const lines = notes.split("\n");
-	let i = 0;
-	lines.forEach(line => {
-		i++;
-		// console.log(`${i}: ${line}`);
-	});
-	// console.log("---------------------------------");
 
 	function parseCourse(lineNumber) {
 		const start = lineNumber;
@@ -22,10 +16,7 @@ function parseNotes(notes, courseName) {
 				const [hole, nextLineNumber] = parseHole(lineNumber);
 				unindexedHoles.push(hole);
 				lineNumber = nextLineNumber;
-			} else {
-				throw "idk";
 			}
-
 		}
 
 		const holes = Array(18).fill(undefined);
@@ -34,7 +25,6 @@ function parseNotes(notes, courseName) {
 			holes[index] = hole;
 		});
 
-		// console.log(`Parsed Course, lines[${start}->${lineNumber-1}])`);
 		const course = new Course(courseName, holes);
 		return course;
 	}
@@ -57,7 +47,6 @@ function parseNotes(notes, courseName) {
 			line = lines[lineNumber];
 			
 			if (line.trim() === "") {
-				// skip
 				lineNumber++;
 			} else if (line.startsWith("##")) {
 				const [pin, nextLineNumber] = parsePin(lineNumber);
@@ -70,7 +59,6 @@ function parseNotes(notes, courseName) {
 			}
 		}
 
-		// console.log(`Parsed Hole ${holeNumber}, lines[${start}->${lineNumber-1}]`);
 		const par = undefined;
 		const hole = new Hole(holeNumber, par, notes, pins, courseName);
 		return [hole, lineNumber];
@@ -131,12 +119,9 @@ function parseNotes(notes, courseName) {
 				lineNumber++;
 			} else {
 				break;
-				console.log(`${lineNumber}: ${line}`);
-				throw `idk3`;
 			}
 		}
 
-		// console.log(`Parsed Pin, lines[${start}->${lineNumber-1}]`);
 		const image = "";
 		const pin = new Pin(label, distance, image, shotOptions);
 		return [pin, lineNumber]
@@ -217,7 +202,6 @@ function parseNotes(notes, courseName) {
 
 		setup.children = subSetups;
 
-		// console.log(`Parsed Setup, lines[${start+1}->${lineNumber}] (indentation ${indentation})`);	
 		return [setup, lineNumber]
 	}
 
@@ -344,7 +328,6 @@ function parseNotes(notes, courseName) {
 		onSegment("consistent", () => { consistent = true });
 
 		// parse remaining distance if it exists
-
 		for (let i = 0; i < segments.length; i++) {
 			const segment = segments[i];
 			if (segment.trim().startsWith("rest")) {

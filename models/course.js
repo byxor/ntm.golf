@@ -26,9 +26,8 @@ class Courses {
 	constructor() {
 		this.germany = parseNotes(GERMANY_NOTES, "Germany");
 		this.japan = parseNotes(``, "Japan");
-		this.australia = parseNotes(``, "Australia");
+		this.australia = parseNotes(AUSTRALIA_NOTES, "Australia");
 		this.usa = parseNotes(``, "USA");
-		// TODO: add course notes.
 		// TODO: add scotland?
 	}
 }

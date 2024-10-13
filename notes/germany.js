@@ -39,7 +39,7 @@ const GERMANY_NOTES = `
 
 - 0w, no-aim, 280Y, max%, N^, rest 128 Y
   - 0w, flag, rightmost, 120Y, max-2%^, NS+1v, topspin, 4th bounce
-  - 0w, flag, rightmost, 120Y, max-1%^, L+4^, 5th bounce
+  - 0w, flag, rightmost, 120Y, max-1%^, NT-2^, 5th bounce
   - 0w, flag, rightmost, 120Y, max%, NT-1^, backspin, 4th bounce
 
 
@@ -135,7 +135,7 @@ const GERMANY_NOTES = `
 - 1w(N), flag+1, rightmost, 140Y, max-2%^, NBv, backspin, 2nd bounce, consistent
 
 - 1w(N+1), flag+2, rightmost, 140Y, 105%^, NSv, 2nd bounce, consistent, rough if miss
-- 1w(N+1), flag+2, rightmost, 140Y, max-3%^, L+4^, backspin, 4th bounce, consistent
+- 1w(N+1), flag+2, rightmost, 140Y, max-3%^, NT-2^, backspin, 4th bounce, consistent
 - 1w(N+1), flag+2, rightmost, 140Y, max-3%^, L+3^, backspin, 4th bounce, consistent
 - 1w(N+1), flag+2, rightmost, 140Y, max-2%^, N^, backspin, 2nd bounce
 - 1w(N+1), flag+2, rightmost, 140Y, max-2%^, N-1^, backspin, 2nd bounce, consistent
@@ -243,7 +243,7 @@ const GERMANY_NOTES = `
 
 ## Middle on top: 117 Y
 
-- 0w, flag, rightmost, 120Y, max-3%^, L+4^, 2nd bounce
+- 0w, flag, rightmost, 120Y, max-3%^, NT-2^, 2nd bounce
 - 0w, flag, rightmost, 120Y, max-2%^, Nv, backspin, 2nd bounce
 - 0w, flag, rightmost, 120Y, max-1%^, N-1v, backspin, 2nd bounce
 

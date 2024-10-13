@@ -18,7 +18,7 @@ class NotesBrowserComponent extends HTMLElement {
 		this.#courseSelectComponent.init(navigationController, courses);
 		this.#holeSelectComponent.init(navigationController);
 		this.#windSelectComponent.init(
-			"/assets",
+			this.#navigationController,
 			wind => {},
 			wind => navigationController.setWind(wind),
 		);
@@ -120,9 +120,11 @@ class NotesBrowserComponent extends HTMLElement {
 		// TODO: wait for all the components to be connected
 		// instead of using a timeout
 		// setTimeout(() => {
-			this.#navigationController.setCourse(this.#courses.germany);
-			this.#navigationController.setHole(this.#courses.germany.holes[0]);
+			// this.#navigationController.setCourse(this.#courses.germany);
+			// this.#navigationController.setHole(this.#courses.germany.holes[0]);
 		// }, 500);
+
+		this.#navigationController.navigateViaUrl();
 	}
 }
 

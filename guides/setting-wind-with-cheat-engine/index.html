@@ -64,7 +64,7 @@ This guide explains how to manually set the wind strength and direction on PC, f
 		const windValueContainer = contentContainer.querySelector('.wind-value-container');
 
 		const windSelectComponent = document.createElement('wind-select');
-		windSelectComponent.init("../../assets", wind => {}, wind => {
+		windSelectComponent.init(undefined, wind => {}, wind => {
 			const value = {
 				"N": 0,
 				"N+1": 1,

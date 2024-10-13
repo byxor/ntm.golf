@@ -1,7 +1,21 @@
+const addQueryParam = (key, value) => {
+	const url = new URL(window.location.href);
+	url.searchParams.set(key, value);
+	window.history.pushState({}, '', url.toString());
+};
+
+const removeQueryParam = (key) => {
+	window.history.replaceState(key, null);
+}
+
+const getQueryParam = (key) => {
+	const url = new URL(window.location.href);
+	return url.searchParams.get(key) || '';
+};
+
 class NavigationController {
 
 	// TODO: allow URL-based navigation with queryparameters
-
 	// TODO: use the browser history API to enable back/forward to work
 
 	#courses;
@@ -12,6 +26,7 @@ class NavigationController {
 	#onSetupChangedListeners = [];
 	#onWindChangedListeners = [];
 
+	#golfer;
 	#course;
 	#hole;
 	#pin;
@@ -21,10 +36,98 @@ class NavigationController {
 	constructor(courses) {
 		this.#courses = courses;
 
+		this.#golfer = "almeida"; // TODO: use proper model
 		this.#course = undefined;
 		this.#hole = undefined;
 		this.#pin = undefined;
 		this.#wind = undefined;
+
+		// window.navigation.addEventListener("navigate", (event) => {
+			// setTimeout(() => this.navigateViaUrl(), 5000);
+		// })
+
+		setInterval(() => {
+			this.updateURL();
+		}, 500);
+	}
+
+	navigateViaUrl() {
+		const courseParam = getQueryParam("course");
+		const holeParam = getQueryParam("hole");
+		const windParam = getQueryParam("into");
+
+		if (courseParam) {
+			const course = (() => {
+				return {
+					"germany": this.#courses.germany,
+					"japan": this.#courses.japan,
+					"australia": this.#courses.australia,
+					"usa": this.#courses.usa,
+				}[courseParam] || "germany";
+			})();
+			this.setCourse(course);
+		} else {
+			this.setCourse(this.#courses.germany);
+		}
+
+		if (holeParam) {
+			const hole = (() => {
+				const holeNumber = parseInt(holeParam);
+				return this.#course.holes.find(hole => hole?.number === holeNumber);
+			})();
+			this.setHole(hole);
+		}
+
+		if (windParam) {
+			const wind = (() => {
+				const segments = windParam?.split("_");
+				const strength = parseInt(segments[0]);
+				const direction = segments[2]?.replace("1", "+1");
+				const wind = newWind(strength, direction);
+				return wind;
+			})();
+			this.setWind(wind);
+		}
+	}
+
+	updateURL() {
+		if (
+			(this.#golfer === this.lastGolfer) &&
+			(this.#course === this.lastCourse) &&
+			(this.#hole === this.lastHole) &&
+			(this.#pin === this.lastPin) &&
+			(this.#wind === this.lastWind)
+		) {
+			return;
+		}
+
+		window.history.pushState({}, document.title, window.location.pathname);
+
+		if (this.#course) {
+			addQueryParam("course", this.#course.name.toLowerCase());
+		}
+
+		if (this.#hole) {
+			addQueryParam("hole", this.#hole.number);
+		}
+
+		if (this.#pin) {
+			addQueryParam("pin", `${this.#pin.distance}-yds-${this.#pin.label.toLowerCase().replaceAll(" ", "-")}`);
+		}
+
+		addQueryParam("with", this.#golfer);
+
+		if (this.#wind) {
+			addQueryParam("into", this.#wind.toString().replace(")", "").replace("(", "_").replace("+", "").replace("w", "_wind"));
+		}
+
+		this.lastGolfer = this.#golfer;
+		this.lastCourse = this.#course;
+		this.lastHole = this.#hole;
+		this.lastPin = this.#pin;
+		this.lastWind = this.#wind;
+
+		console.log(`Url updated: ${window.location}`);
 	}
 
 	setCourse(course) {
@@ -40,12 +143,17 @@ class NavigationController {
 			))();
 			this.setHole(holeWithSameNumber);
 		} else {
-			this.setHole(this.#course.holes[0]);
+			const firstDefinedHole = this.#course.holes.find(hole => hole !== undefined);
+			if (firstDefinedHole) {
+				this.setHole(firstDefinedHole);
+			}
 		}
+
+		// this.updateURL();
 	}
 
 	setHole(hole) {
-		console.log(`NavigationController: setHole(${hole})`);
+		console.log(`NavigationController: setHole(${hole?.number})`);
 
 		this.#hole = hole;
 		this.#onHoleChangedListeners.forEach(listener => listener(hole));
@@ -56,6 +164,8 @@ class NavigationController {
 		} else {
 			this.setPin(undefined);
 		}
+
+		// this.updateURL();
 	}
 
 	setPin(pin) {
@@ -65,6 +175,8 @@ class NavigationController {
 		this.#onPinChangedListeners.forEach(listener => listener(pin));
 
 		this.setSetup(undefined);
+
+		// this.updateURL();
 	}
 
 	nextHole() {
@@ -78,6 +190,8 @@ class NavigationController {
 
 		this.#setup = setup;
 		this.#onSetupChangedListeners.forEach(listener => listener(setup));
+
+		// this.updateURL();
 	}
 
 	setWind(wind) {
@@ -85,6 +199,8 @@ class NavigationController {
 
 		this.#wind = wind;
 		this.#onWindChangedListeners.forEach(listener => listener(wind));
+
+		// this.updateURL();
 	}
 
 	onCourseChanged(listener) {
@@ -142,125 +258,3 @@ class NotesBrowser {
 		container.appendChild(notesBrowserComponent);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		// this.chosenPin.setups.forEach(setup => {
-		// 	const setupComponent = document.createElement('setup-');
-		// 	setupComponent.init(setup, 0);
-		// 	container.appendChild(setupComponent);
-		// });
-
-		// {
-		// 	const stroke = 1;
-		// 	const wind = newWind(5, "NE");
-		// 	const reference = new Reference();
-		// 	const subpixel = LEFTMOST_SUBPIXEL;
-		// 	const surface = TEE_SURFACE;
-		// 	const stance = STANCE_3x_HOOK;
-		// 	const club = CLUB_250Y;
-		// 	const power = newPower("104%", "up");
-		// 	const height = newHeight("N-2", "down", club);
-		// 	const spin = undefined;
-		// 	const outcome = new SuccessfulShot(2, 0, false, [
-		// 			"rough if miss",
-		// 			"very rarely goes in for some reason",
-		// 		]);
-		// 	const setup = new Setup(stroke, wind, reference, subpixel, surface, stance, club, power, height, spin, outcome);
-		// 	const setupComponent = document.createElement('setup-');
-		// 	setupComponent.init(setup, animationDelayIndex++);
-		// 	container.appendChild(setupComponent);
-
-		// 	console.log(setup);
-		// }
-
-		// {
-		// 	const stroke = 1;
-		// 	const wind = newWind(5, "NE");
-		// 	const reference = new Reference();
-		// 	const subpixel = LEFTMOST_SUBPIXEL;
-		// 	const surface = WATER_SURFACE;
-		// 	const stance = STANCE_2x_HOOK;
-		// 	const club = CLUB_160Y;
-		// 	const power = newPower("max%", "");
-		// 	const height = newHeight("N-2", "down", club);
-		// 	const spin = undefined;
-		// 	const outcome = new SuccessfulShot(2, 0, false, [
-		// 			"OOB if miss",
-		// 			"H topspin if max-1%",
-		// 			"needs work"
-		// 		]);
-		// 	const setup = new Setup(stroke, wind, reference, subpixel, surface, stance, club, power, height, spin, outcome);
-		// 	const setupComponent = document.createElement('setup-');
-		// 	setupComponent.init(setup, animationDelayIndex++);
-		// 	container.appendChild(setupComponent);
-
-		// 	console.log(setup);
-		// }
-
-		// {
-		// 	const stroke = 2;
-		// 	const wind = newWind(5, "NE");
-		// 	const reference = new Reference();
-		// 	const subpixel = LEFTMOST_SUBPIXEL;
-		// 	const surface = FAIRWAY_SURFACE;
-		// 	const stance = STANCE_1x_HOOK;
-		// 	const club = CLUB_160Y;
-		// 	const power = newPower("max-1%", "down");
-		// 	const height = newHeight("NS", "up", club);
-		// 	const spin = TOPSPIN;
-		// 	const outcome = new NotFinishedYet(200, []);
-		// 	const setup = new Setup(stroke, wind, reference, subpixel, surface, stance, club, power, height, spin, outcome);
-		// 	const setupComponent = document.createElement('setup-');
-		// 	setupComponent.init(setup, animationDelayIndex++);
-		// 	container.appendChild(setupComponent);
-
-		// 	console.log(setup);
-		// }
-
-		// {
-		// 	const stroke = 2;
-		// 	const wind = newWind(5, "NE");
-		// 	const reference = new Reference();
-		// 	const subpixel = LEFTMOST_SUBPIXEL;
-		// 	const surface = FAIRWAY_SURFACE;
-		// 	const stance = DEFAULT_STANCE;
-		// 	const club = CLUB_160Y;
-		// 	const power = newPower("max-1%", "down");
-		// 	const height = newHeight("NS", "up", club);
-		// 	const outcome = new SuccessfulShot(0, 3, false, []);
-		// 	const spin = BACKSPIN;
-		// 	const setup = new Setup(stroke, wind, reference, subpixel, surface, stance, club, power, height, spin, outcome);
-		// 	const setupComponent = document.createElement('setup-');
-		// 	setupComponent.init(setup, animationDelayIndex++);
-		// 	container.appendChild(setupComponent);
-
-		// 	console.log(setup);
-		// }
