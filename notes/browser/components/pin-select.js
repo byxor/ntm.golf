@@ -35,7 +35,7 @@ class PinSelectComponent extends HTMLElement {
 					gap: 2px;
 				}
 				.button {
-
+					cursor: pointer;
 				}
 				.selected {
 					-webkit-box-shadow:inset 0px 0px 0px 2px orange;
@@ -53,10 +53,11 @@ class PinSelectComponent extends HTMLElement {
 			const pinElement = document.createElement('input');
 			pinElement.setAttribute('type', 'button');
 			pinElement.setAttribute('value', `${pin.distance}Y: ${pin.label}`);
-	
+			pinElement.setAttribute('class', 'button');
+
 			if (this.#pin !== undefined) {
 				if (this.#pin.equals(pin)) {
-					pinElement.setAttribute('class', 'selected');
+					pinElement.setAttribute('class', 'selected button');
 				}
 			}
 

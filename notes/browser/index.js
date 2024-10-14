@@ -42,10 +42,6 @@ class NavigationController {
 		this.#pin = undefined;
 		this.#wind = undefined;
 
-		// window.navigation.addEventListener("navigate", (event) => {
-			// setTimeout(() => this.navigateViaUrl(), 5000);
-		// })
-
 		setInterval(() => {
 			this.updateURL();
 		}, 500);
@@ -141,15 +137,25 @@ class NavigationController {
 				this.#course.holes.find(hole =>
 					hole?.number === this.#hole.number
 			))();
-			this.setHole(holeWithSameNumber);
+
+			if (holeWithSameNumber) {
+				this.setHole(holeWithSameNumber);
+			} else {
+				const firstDefinedHole = this.#course.holes.find(hole => hole !== undefined);
+				if (firstDefinedHole) {
+					this.setHole(firstDefinedHole);
+				} else {
+					this.setHole(undefined);
+				}
+			}
 		} else {
 			const firstDefinedHole = this.#course.holes.find(hole => hole !== undefined);
 			if (firstDefinedHole) {
 				this.setHole(firstDefinedHole);
+			} else {
+				this.setHole(undefined);
 			}
 		}
-
-		// this.updateURL();
 	}
 
 	setHole(hole) {
@@ -164,8 +170,6 @@ class NavigationController {
 		} else {
 			this.setPin(undefined);
 		}
-
-		// this.updateURL();
 	}
 
 	setPin(pin) {
@@ -175,8 +179,6 @@ class NavigationController {
 		this.#onPinChangedListeners.forEach(listener => listener(pin));
 
 		this.setSetup(undefined);
-
-		// this.updateURL();
 	}
 
 	nextHole() {
@@ -190,8 +192,6 @@ class NavigationController {
 
 		this.#setup = setup;
 		this.#onSetupChangedListeners.forEach(listener => listener(setup));
-
-		// this.updateURL();
 	}
 
 	setWind(wind) {
@@ -199,8 +199,6 @@ class NavigationController {
 
 		this.#wind = wind;
 		this.#onWindChangedListeners.forEach(listener => listener(wind));
-
-		// this.updateURL();
 	}
 
 	onCourseChanged(listener) {

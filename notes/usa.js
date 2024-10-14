@@ -1,0 +1,8 @@
+const USA_NOTES = `
+
+
+
+
+
+
+`;
