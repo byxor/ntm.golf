@@ -156,6 +156,8 @@ class NavigationController {
 				this.setHole(undefined);
 			}
 		}
+
+		document.title = `Neo Turf Masters - ${course.name}`;
 	}
 
 	setHole(hole) {
