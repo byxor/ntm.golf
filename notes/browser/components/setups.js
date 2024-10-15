@@ -36,14 +36,13 @@ class SetupsComponent extends HTMLElement {
     }
 
     #onSetupChanged(setup) {
-        console.log("Setups: onSetupChanged");
         if (setup !== undefined) {
             this.#setup = setup;
             this.#setups = this.#setup?.children;
             this.#render();
         } else {
             this.#setup = setup;
-            this.#setups = this.#pin.setups;
+            this.#setups = this.#pin?.setups || [];
             this.#render();
         }
     }

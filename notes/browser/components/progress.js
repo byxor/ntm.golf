@@ -23,6 +23,11 @@ class ProgressComponent extends HTMLElement {
     }
 
     #calculatePinProgress() {
+        // TODO: very laggy, scales poorly...
+        // consider calculating once at parse time and never recomputing
+
+        console.log("Calculating pin coverage")
+
         const maximumWind = (() => {
             switch (this.#hole?.number) {
             case 1:
