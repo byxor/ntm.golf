@@ -27,7 +27,6 @@ class HoleComponent extends HTMLElement {
 	#render() {
 
 		const classes = (() => {
-
 			if (!this.#hole) {
 				return "no-notes";
 			}
@@ -35,8 +34,6 @@ class HoleComponent extends HTMLElement {
 			if (this.#selected) {
 				return "selected";
 			}
-
-
 
 			return "deselected";
 		})();

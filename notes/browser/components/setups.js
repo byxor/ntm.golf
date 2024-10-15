@@ -29,12 +29,36 @@ class SetupsComponent extends HTMLElement {
         });
     }
 
+    #onPinChanged(pin) {
+        this.#pin = pin;
+        this.#setups = this.#pin?.setups || [];
+        this.#render();
+    }
+
+    #onSetupChanged(setup) {
+        console.log("Setups: onSetupChanged");
+        if (setup !== undefined) {
+            this.#setup = setup;
+            this.#setups = this.#setup?.children;
+            this.#render();
+        } else {
+            this.#setup = setup;
+            this.#setups = this.#pin.setups;
+            this.#render();
+        }
+    }
+
+    #onWindChanged(wind) {
+        this.#wind = wind;
+        this.#render();
+    }
+
     connectedCallback() {
         this.#render();
     }
 
     #render() {
-        const setups = this.#setups.filter(setup => {
+        const setups = (this.#setups || []).filter(setup => {
             return setup.wind.logicallyEquals(this.#wind);
         });
 
@@ -156,25 +180,6 @@ class SetupsComponent extends HTMLElement {
             setupComponent.setHalfBlackedOut(halfBlackedOut);
             container.appendChild(setupComponent);    
         }
-    }
-
-    #onPinChanged(pin) {
-        this.#pin = pin;
-        this.#setups = this.#pin?.setups || [];
-        this.#render();
-    }
-
-    #onSetupChanged(setup) {
-        if (setup !== undefined) {
-            this.#setup = setup;
-            this.#setups = this.#setup?.children;
-            this.#render();
-        }
-    }
-
-    #onWindChanged(wind) {
-        this.#wind = wind;
-        this.#render();
     }
 }
 

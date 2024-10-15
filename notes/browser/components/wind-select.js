@@ -25,7 +25,7 @@ class WindSelectComponent extends HTMLElement {
 
 		this.emitSelectedWind();
 
-		this.navigationController.onWindChanged(wind => {
+		this.navigationController?.onWindChanged(wind => {
 			if (!wind.logicallyEquals(this.wind)) {
 				this.setWind(wind);
 			}

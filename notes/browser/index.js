@@ -15,8 +15,7 @@ const getQueryParam = (key) => {
 
 class NavigationController {
 
-	// TODO: allow URL-based navigation with queryparameters
-	// TODO: use the browser history API to enable back/forward to work
+	// TODO: use the browser history API to enable back/forward to work correctly
 
 	#courses;
 	
@@ -163,8 +162,10 @@ class NavigationController {
 	setHole(hole) {
 		console.log(`NavigationController: setHole(${hole?.number})`);
 
-		this.#hole = hole;
-		this.#onHoleChangedListeners.forEach(listener => listener(hole));
+		if (this.#hole !== hole) {
+			this.#hole = hole;
+			this.#onHoleChangedListeners.forEach(listener => listener(hole));
+		}
 
 		// choose first pin if it exists
 		if (this.#hole?.pins?.length > 0) {
@@ -177,8 +178,10 @@ class NavigationController {
 	setPin(pin) {
 		console.log(`NavigationController: setPin(${pin?.distance}Y ${pin?.label})`);
 		
-		this.#pin = pin;
-		this.#onPinChangedListeners.forEach(listener => listener(pin));
+		if (this.#pin !== pin) {
+			this.#pin = pin;
+			this.#onPinChangedListeners.forEach(listener => listener(pin));
+		}
 
 		this.setSetup(undefined);
 	}
@@ -199,8 +202,10 @@ class NavigationController {
 	setWind(wind) {
 		console.log(`NavigationController: setWind(${wind})`);
 
-		this.#wind = wind;
-		this.#onWindChangedListeners.forEach(listener => listener(wind));
+		if (!this.#wind?.logicallyEquals(wind)) {
+			this.#wind = wind;
+			this.#onWindChangedListeners.forEach(listener => listener(wind));
+		}
 	}
 
 	onCourseChanged(listener) {

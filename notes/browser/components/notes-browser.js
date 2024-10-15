@@ -10,6 +10,7 @@ class NotesBrowserComponent extends HTMLElement {
 	#breadcrumbsComponent = document.createElement('breadcrumbs-');
 	#holeNotesComponent = document.createElement('hole-notes');
 	#setupsComponent = document.createElement('setups-');
+	#progressComponent = document.createElement('progress-');
 
 	init(navigationController, courses) {
 		this.#navigationController = navigationController;
@@ -26,6 +27,7 @@ class NotesBrowserComponent extends HTMLElement {
 		this.#breadcrumbsComponent.init(navigationController);
 		this.#holeNotesComponent.init(navigationController);
 		this.#setupsComponent.init(navigationController);
+		this.#progressComponent.init(navigationController);
 	}
 
 	connectedCallback() {
@@ -72,6 +74,14 @@ class NotesBrowserComponent extends HTMLElement {
 					top: 92px;
 				}
 
+				.progress {
+					position: absolute;
+					width: auto;
+					height: auto;
+					left: 364px;
+					top: 102px;
+				}
+
 				.setups {
 
 				}
@@ -83,6 +93,7 @@ class NotesBrowserComponent extends HTMLElement {
 					<div class="wind-select"></div>
 					<div class="breadcrumbs"></div>
 					<div class="pin-select"></div>
+					<div class="progress"></div>
 					<div class="hole-notes"></div>
 					<div class="setups"></div>
 				</div>
@@ -106,6 +117,10 @@ class NotesBrowserComponent extends HTMLElement {
 			.appendChild(this.#pinSelectComponent);
 
 		this.shadowRoot
+			.querySelector(".progress")
+			.appendChild(this.#progressComponent);
+
+		this.shadowRoot
 			.querySelector(".setups")
 			.appendChild(this.#setupsComponent);
 		
@@ -116,13 +131,6 @@ class NotesBrowserComponent extends HTMLElement {
 		this.shadowRoot
 			.querySelector(".hole-notes")
 			.appendChild(this.#holeNotesComponent);
-
-		// TODO: wait for all the components to be connected
-		// instead of using a timeout
-		// setTimeout(() => {
-			// this.#navigationController.setCourse(this.#courses.germany);
-			// this.#navigationController.setHole(this.#courses.germany.holes[0]);
-		// }, 500);
 
 		this.#navigationController.navigateViaUrl();
 	}

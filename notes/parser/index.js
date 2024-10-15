@@ -1,3 +1,5 @@
+// TODO: better error messages (including line number etc)
+
 function parseNotes(notes, courseName) {
 	const lines = notes.split("\n");
 
