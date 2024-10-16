@@ -46,6 +46,10 @@ const GERMANY_NOTES = `
   - 0w, flag, rightmost, 120Y, max%, NT-1^, backspin, 4th bounce
 
 
+- 1w(SE+1), no-aim, 280Y, max%, N^, rest 129Y
+  - 3w(SE+1), ger1_129a, rightmost, 1x hook, 120Y, max%, NT-1^, topspin, 3rd bounce, consistent
+
+
 ## Middle left: 448 Y
 
 - 0w, no-aim, 280Y, max%, N^, rest 126 Y
@@ -95,6 +99,11 @@ const GERMANY_NOTES = `
 - 0w, no-aim, 1x slice, 240Y, max%, N^, rest 148Y
   - 0w, flag, leftmost, 140Y, max-1%^, NSv, 4th bounce
   - 0w, flag, leftmost, 140Y, max%, NBv, backspin, 2nd bounce
+
+## Middle right on flat: 427 Y
+
+- 1w(NE+1), no-aim, 1x slice, 250Y, max%, N^, rest 134Y
+  - 0w, ger2_134a, rightmost, 1x slice, 120Y, max%, N+2^, 3rd bounce
 
 
 ## Middle right on top: 421 Y
@@ -224,6 +233,8 @@ const GERMANY_NOTES = `
 // - 0w, flag, rightmost, 120Y, max-1%^, H-2v, 4th bounce
 // - 0w, flag, rightmost, 120Y, max%, Nv, backspin, 5th bounce
 
+- 1w(NE+1), ger3_124b, rightmost, 3x hook, 120Y, max%, L+3^, backspin, 2nd bounce
+
 - 2w(S+1), ger3_124a, leftmost, 3x slice, 120Y, max%, NS^, 3rd bounce, consistent
 
 
@@ -272,7 +283,8 @@ ger4_green
 - 4w(NE+1), no-aim, 280Y, max%, N^, rest 203Y
   - 1w(NW+1), ger4_203a, 2x hook, 210Y, max%, N+1^, backspin, 1st bounce, Kinda ridiculous., OOB if miss.
 
-
+- 8w(NW+1), no-aim, 1x slice, 280Y, max%, N^, rest 339y
+  - 7w(NW+1), ger4_190a, rightmost, 1x slice, 160Y, max%, L+2^, backspin, 4th bounce
 
 
 // ------------------------------------------------------
@@ -293,6 +305,11 @@ ger5_green
 - 13w(N), no-aim, 1x slice, 280Y, max%, N^, rest 119Y
   - 13w(E), ger5_119a, leftmost, 3x hook, 120Y, max%, N+2v, backspin, 4th bounce, Wacky curvature.
 
+## Middle left on top: 459 Y
+
+- 0w, no-aim, 1x slice, 280Y, max%, N^, rest 138Y, Clears river.
+  - 2w(NE), ger5_138a, leftmost, 3x slice, 120Y, max%, N-1^, topspin, 5th bounce
+
 // ------------------------------------------------------
 
 # Hole 6
@@ -305,6 +322,10 @@ ger5_green
 - 5w(SE+1), no-aim, 1x slice, 280Y, max%, N^, rest 127 y
   - 6w(SE+1), ger6_127a, rightmost, 140Y, max%, H-3v, backspin, 1st bounce
 
+## Top right on slope: 434 Y
+
+- 0w, no-aim, 1x slice, 260Y, max%, N^, rest 137 y
+  - 3w(E+1), ref, 140Y, max%, N+2^, backspin, 1st bounce, consistent
 
 // ------------------------------------------------------
 
@@ -321,7 +342,8 @@ ger7_green_approach
 - 5w(N+1), no-aim, 280Y, max%, N^, rest 206Y
   - 3w(N), ger7_206a, leftmost, 2x hook, 190Y, max%, NB^, backspin, 5th bounce
 
-
+- 5w(E), no-aim, 280Y, max%, N^, rest 225Y
+  - 6w(E+1), ger7_225a, rightmost, 2x hook, 220Y, max%, N^, 3rd bounce
 
 // ------------------------------------------------------
 
@@ -341,11 +363,12 @@ ger7_green_approach
 - 0w, ger8_163a, rightmost, 220Y, max%, N-2v, 2x tree, 2nd bounce, max-1 NB = safe miss 
 
 
-## Front middle on flat: 152 Y
+## Front right on flat: 152 Y
 
 - 0w, ger8_152a, rightmost, 190Y, max-1%^, L+2^, 1x tree, rolls in, MISSES BUT SAFE
 - 0w, ger8_152a, rightmost, 190Y, max%, L+2^, 1x tree, 2nd bounce
 
+- 1w(NE), ger8_152b, leftmost, 140Y, max%, NS+1^, backspin, 3rd bounce, Sometimes 4th bounce., Somewhat consistent.
 
 ## Front left on flat: 151 Y
 
@@ -358,6 +381,12 @@ ger7_green_approach
 # Hole 9
 
 ger9_landingpad
+
+## Back left on slope: 462 Y
+
+- 3w(NE+1), no-aim, 280Y, max%, N^, rest 138Y
+  - 0w, flag, rightmost, 140Y, 99%^, H^, topspin, 5th bounce
+  - 0w, flag, rightmost, 140Y, 101%^, L^, 3rd bounce, consistent
 
 ## Middle on top: 458 Y
 
@@ -373,6 +402,9 @@ ger9_landingpad
 - Rough bounce > landing in bunker.
 
 ## Middle back on slope: 574 Y
+
+- 4w(E), no-aim, 3x slice, 280Y, max%, N^, rest 266Y
+
 
 - 6w(NE+1), no-aim, 3x slice, 280Y, max%, N^, rest 262Y
   - 8w(E+1), ger10_262a, 3x hook, 260Y, max%, N-2^, rest 0y, Sticks to flag., Might go in with good grain.
@@ -410,6 +442,8 @@ ger9_landingpad
 
 - 0w, ger11_191a, 190Y, max%, H-2^, backspin, 4th bounce, Spam A., 
 
+- 5w(SW+1), ger11_191b, 190Y, max%, N+2^, backspin, 3rd bounce
+
 // ------------------------------------------------------
 
 # Hole 12
@@ -432,6 +466,12 @@ ger13_landing
   - 0w, flag, leftmost, 120Y, 8.1^, H-3^, backspin, 1st bounce
   - 0w, flag, leftmost, 120Y, 8.2^, H-2v, backspin, 1st bounce, consistent
 
+## Front middle on top: 373 Y
+
+- 5w(E+1), no-aim, 280Y, max%, N^, rest 79 Y
+  - 6w(S+1), ger13_79a, rightmost, 120Y, 9.1^, H-1v, backspin, 4th bounce
+
+
 // ------------------------------------------------------
 
 # Hole 14
@@ -440,6 +480,8 @@ ger13_landing
 
 - 0w, ger14_131a, rightmost, 2x slice, 120Y, max-1%^, NBv, topspin, rolls in, WARNING: CHANGE YOUR CLUB
 - 0w, ger14_131a, rightmost, 2x slice, 120Y, max%, H-1v, WARNING: CHANGE YOUR CLUB
+
+- 4w(E), ger14_131b, 120Y, max%, H-3^, 4th bounce, consistent
 
 
 ## Middle middle in valley: 125 Y
@@ -479,17 +521,23 @@ ger13_landing
   - 6w(S), ger15_205a, rightmost, 1x slice, 200Y, max%, N+1^, backspin, 3rd bounce
 
 
+## Middle right on slope: 396 Y
+
+- 5w(E+1), no-aim, 1x hook, 190Y, max%, N^, backspin, rest 200y
+  - 1w(SE+1), ger15_200a, leftmost, 200Y, max-1%^, NS+1v, backspin, 3rd bounce
+  - 1w(SE+1), ger15_200a, leftmost, 200Y, max%, L+2v, backspin, 1st bounce, Sometimes sticks., Rough if miss.
+
 // ------------------------------------------------------
 
 # Hole 16
+
+## Back left on flat: 446 Y
+
 
 ## Front right on slope: 429 Y
 
 - 11w(SW), no-aim, 3x hook, 260Y, max%, N^, rest 188Y
   - 13w(SW), ger16_188a, leftmost, 200Y, max%, NS^, rolls in, Probably grain-dependent.
-
-
-
 
 
 // ------------------------------------------------------
@@ -501,6 +549,10 @@ ger17_approach
 - First shot: 0w, reference 1, leftmost white arrow, 2x slice, 280Y, max%, NT
 - Second shot: 0w, reference 2, (guess white arrow), 3x slice, 260Y...
 - ...max-2%&rarr;max%, H, depending how far onto the green you want to land.
+
+## Front left on top: 612Y
+
+
 
 
 // ------------------------------------------------------
@@ -515,5 +567,7 @@ ger18_skip
 - (Thanks Wymek)
 
 // TODO: 15w(E) cartpath over river setups
+
+// TODO: front middle HIO setups
 
 `;

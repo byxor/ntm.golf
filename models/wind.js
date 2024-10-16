@@ -58,6 +58,7 @@ class Wind {
 		];
 		if (this.direction) {
 			if (typeof this.direction !== "string") {
+				debugger;
 				throw `Direction '${this.direction}' is not a string`;
 			}
 			if (!VALID_DIRECTIONS.includes(this.direction)) {

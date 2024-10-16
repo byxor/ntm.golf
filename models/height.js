@@ -28,6 +28,7 @@ class Height {
 			"down",
 		];
 		if (typeof direction !== "string") {
+			debugger;
 			throw `Direction '${direction}' is not a string`;
 		}
 		return direction;
