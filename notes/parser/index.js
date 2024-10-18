@@ -275,7 +275,7 @@ function parseNotes(notes, courseName) {
 			direction = "down";
 		}
 
-		return newPower(value, direction);;
+		return newPower(value, direction);
 	}
 
 	function parseHeight(segment, club) {

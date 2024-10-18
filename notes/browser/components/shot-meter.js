@@ -18,7 +18,7 @@ class ShotMeterComponent extends HTMLElement {
 		this.surfaceImage = `/assets/meter/surfaces/${this.surface.name}.png`;
 		this.surfaceMask = `/assets/meter/surfaces/mask-9.png`;
 
-		this.powerImage = `/assets/meter/powers/${this.power.value.slice(0, -1)}.png`;
+		this.powerImage = `/assets/meter/powers/${this.power.value.replace("%", "")}.png`;
 		this.powerMask = `/assets/meter/powers/mask.png`;
 
 		this.heightRangeImage = `/assets/meter/heights/range-${this.club.heightRange}.png`;

@@ -167,9 +167,11 @@ class NavigationController {
 			this.#onHoleChangedListeners.forEach(listener => listener(hole));
 		}
 
-		// choose first pin if it exists
-		if (this.#hole?.pins?.length > 0) {
-			this.setPin(this.#hole.pins[0]);
+		// choose first pin if it exists and pin is undefined
+		if (!pin) {
+			if (this.#hole?.pins?.length > 0) {
+				this.setPin(this.#hole.pins[0]);
+			}
 		} else {
 			this.setPin(undefined);
 		}
