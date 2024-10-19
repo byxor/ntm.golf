@@ -50,6 +50,7 @@ class NavigationController {
 		const courseParam = getQueryParam("course");
 		const holeParam = getQueryParam("hole");
 		const windParam = getQueryParam("into");
+		const pinParam = getQueryParam("pin");
 
 		if (courseParam) {
 			const course = (() => {
@@ -82,6 +83,10 @@ class NavigationController {
 				return wind;
 			})();
 			this.setWind(wind);
+		}
+
+		if (pinParam) {
+
 		}
 	}
 
@@ -167,11 +172,9 @@ class NavigationController {
 			this.#onHoleChangedListeners.forEach(listener => listener(hole));
 		}
 
-		// choose first pin if it exists and pin is undefined
-		if (!pin) {
-			if (this.#hole?.pins?.length > 0) {
-				this.setPin(this.#hole.pins[0]);
-			}
+		// choose first pin if it exists
+		if (this.#hole?.pins?.length > 0) {
+			this.setPin(this.#hole.pins[0]);
 		} else {
 			this.setPin(undefined);
 		}

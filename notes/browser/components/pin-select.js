@@ -38,9 +38,15 @@ class PinSelectComponent extends HTMLElement {
 					cursor: pointer;
 				}
 				.selected {
-					-webkit-box-shadow:inset 0px 0px 0px 2px orange;
+					/*-webkit-box-shadow:inset 0px 0px 0px 2px orange;
 				    -moz-box-shadow:inset 0px 0px 0px 2px orange;
-				    box-shadow:inset 0px 0px 0px 2px orange;
+				    box-shadow:inset 0px 0px 0px 2px orange;*/
+
+					box-shadow: 0px 0px 0px 2px orange;
+					-moz-box-shadow: 0px 0px 0px 2px orange;
+					-webkit-box-shadow: 0px 0px 0px 2px orange;
+					-ms-box-shadow: 0px 0px 0px 2px orange;
+					-o-box-shadow: 0px 0px 0px 2px orange; 
 				}
 			</style>
 			<div class="container">
