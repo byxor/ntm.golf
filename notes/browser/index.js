@@ -52,6 +52,17 @@ class NavigationController {
 		const windParam = getQueryParam("into");
 		const pinParam = getQueryParam("pin");
 
+		if (windParam) {
+			const wind = (() => {
+				const segments = windParam?.split("_");
+				const strength = parseInt(segments[0]);
+				const direction = segments[2]?.replace("1", "+1");
+				const wind = newWind(strength, direction);
+				return wind;
+			})();
+			this.setWind(wind);
+		}
+
 		if (courseParam) {
 			const course = (() => {
 				return {
@@ -72,17 +83,6 @@ class NavigationController {
 				return this.#course.holes.find(hole => hole?.number === holeNumber);
 			})();
 			this.setHole(hole);
-		}
-
-		if (windParam) {
-			const wind = (() => {
-				const segments = windParam?.split("_");
-				const strength = parseInt(segments[0]);
-				const direction = segments[2]?.replace("1", "+1");
-				const wind = newWind(strength, direction);
-				return wind;
-			})();
-			this.setWind(wind);
 		}
 
 		if (pinParam) {

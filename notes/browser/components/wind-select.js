@@ -21,6 +21,7 @@ class WindSelectComponent extends HTMLElement {
 		this.documentListenersConfiguredForDirectionDrag = false;
 		this.isDraggingDirection = false;
 
+		this.maxWind = 15;
 		this.setWind(newWind(0, "N"));
 
 		this.emitSelectedWind();
@@ -30,6 +31,14 @@ class WindSelectComponent extends HTMLElement {
 				this.setWind(wind);
 			}
 		});
+
+		this.navigationController?.onHoleChanged(hole => {
+			console.log(this.maxWind);
+			this.maxWind = hole?.maxWind || 15;
+			if (this.wind.strength > this.maxWind) {
+				this.setWind(newWind(this.maxWind, this.wind.direction));
+			}
+		})
 	}
 
 	connectedCallback() {
@@ -222,8 +231,8 @@ class WindSelectComponent extends HTMLElement {
 				const strengthDelta = Math.round(pixelsDragged / pixelsPerIncrement);
 
 				let strength = this.initialStrengthForDrag + strengthDelta;
-				if (strength > 15) {
-					strength = 15;
+				if (strength > this.maxWind) {
+					strength = this.maxWind;
 				} else if (strength < 0) {
 					strength = 0;
 				}

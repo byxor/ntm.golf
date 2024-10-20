@@ -5,6 +5,19 @@ class Hole {
 		this.notes = this.#validateNotes(notes);
 		this.pins = this.#validatePins(pins);
 		this.courseName = this.#validateCourseName(courseName);	
+		this.maxWind = (() => {
+			switch (number) {
+				case 1:
+				case 2:
+					return 3;
+				case 3:
+					return 5;
+				case 4:
+					return 8;
+				default:
+					return 15;
+			}
+		})();
 	}
 
 	equals(other) {
