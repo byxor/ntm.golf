@@ -23,11 +23,47 @@ class Course {
 }
 
 class Courses {
-	constructor() {
-		this.germany = parseNotes(GERMANY_NOTES, "Germany");
-		this.japan = parseNotes(JAPAN_NOTES, "Japan");
-		this.australia = parseNotes(AUSTRALIA_NOTES, "Australia");
-		this.usa = parseNotes(USA_NOTES, "USA");
+	
+	static async create() {
+		const fetches = [
+			fetch("/notes/germany.txt"),
+			fetch("/notes/japan.txt"),
+			fetch("/notes/australia.txt"),
+			fetch("/notes/usa.txt")
+		];
+
+		const responses = await Promise.all(fetches);
+
+		const notes = await Promise.all(responses.map((response, i) => {
+			if (!response.ok) {
+				const courseName = [
+					"Germany", "Japan", "Australia", "USA"
+				][i];
+				throw new Error(`Failed to fetch ${courseName} notes`);
+			}
+			return response.text();
+		}));
+
+		const [
+			germanyNotes,
+			japanNotes,
+			australiaNotes,
+			usaNotes
+		] = notes;
+
+		const germany = parseNotes(germanyNotes, "Germany");
+		const japan = parseNotes(japanNotes, "Japan");
+		const australia = parseNotes(australiaNotes, "Australia");
+		const usa = parseNotes(usaNotes, "USA");
 		// TODO: add scotland?
+
+		return new Courses(germany, japan, australia, usa);
+	}
+
+	constructor(germany, japan, australia, usa) {
+		this.germany = germany;
+		this.japan = japan;
+		this.australia = australia;
+		this.usa = usa;
 	}
 }

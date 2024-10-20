@@ -1,5 +1,3 @@
-const JAPAN_NOTES = `
-
 # Hole 3
 
 ## Back right on flat: 209 Y
@@ -117,9 +115,3 @@ const JAPAN_NOTES = `
 - 0w, jap3_188a, rightmost, 2x hook, 190Y, max%, N+2^, backspin, 1st bounce
 
 - 5w(S), jap3_188b, rightmost, 180Y, max%, NSv, backspin, 1x cartpath, 2nd bounce, unverified consistency
-
-
-
-
-
-`;

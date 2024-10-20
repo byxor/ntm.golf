@@ -25,8 +25,7 @@ class ProgressComponent extends HTMLElement {
     #calculatePinProgress() {
         // TODO: very laggy, scales poorly...
         // consider calculating once at parse time and never recomputing
-
-        console.log("Calculating pin coverage")
+        // - or just memoize results
 
         const maximumWind = (() => {
             switch (this.#hole?.number) {
@@ -87,7 +86,6 @@ class ProgressComponent extends HTMLElement {
         const percentageComplete = Math.round((knownSetups.size / numberOfWindCombinationsForPin) * 100);
 
         const pinProgressText = `Pin coverage: &nbsp;&nbsp;${knownSetups.size}/${numberOfWindCombinationsForPin}  (${percentageComplete}%)`;
-        console.log(pinProgressText);
         return pinProgressText;
     }
 

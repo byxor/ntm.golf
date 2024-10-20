@@ -240,12 +240,13 @@ class NavigationController {
 }
 
 class NotesBrowser {
-	constructor(containerId) {
+
+	static async create(containerId) {
 		const container = document.getElementById(containerId);
 
 		let courses;
 		try {
-			courses = new Courses();
+			courses = await Courses.create();
 		} catch (e) {
 			const headerElement = document.createElement('h1');
 			headerElement.innerHTML = "Error: failed to parse notes";
@@ -264,6 +265,11 @@ class NotesBrowser {
 
 			throw e;
 		}
+
+		return new NotesBrowser(container, courses);
+	}
+
+	constructor(container, courses) {
 
 		const navigationController = new NavigationController(courses);
 

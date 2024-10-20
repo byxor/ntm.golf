@@ -1,5 +1,3 @@
-const AUSTRALIA_NOTES = `
-
 # Hole 3
 
 ## Middle left on flat in cove: 150 Y
@@ -10,7 +8,7 @@ const AUSTRALIA_NOTES = `
 - 0w, flag, leftmost, 160Y, 104%^, HT^, backspin, 2nd bounce
 - 0w, flag, leftmost, 160Y, 105%^, L+2^, backspin, 3rd bounce
 
-// ## Front left on top: 143 Y
+## Front left on top: 143 Y
 
 ## Front right on top: 143 Y
 
@@ -29,7 +27,3 @@ const AUSTRALIA_NOTES = `
 - 0w, flag, rightmost, 140Y, max-3%^, NS+1v, topspin, 2nd bounce
 - 0w, flag, rightmost, 140Y, max-2%^, N-1^, backspin, 3rd bounce
 - 0w, flag, rightmost, 140Y, max-1%^, NS+1v, backspin, 2nd bounce
-
-
-
-`;

@@ -38,10 +38,10 @@
 	<script src="/models/hole-note.js"></script>
 	<script src="/models/course.js"></script>
 
-	<script src="/notes/germany.js"></script>
+	<!-- <script src="/notes/germany.js"></script>
 	<script src="/notes/japan.js"></script>
 	<script src="/notes/australia.js"></script>
-	<script src="/notes/usa.js"></script>
+	<script src="/notes/usa.js"></script> -->
 	<script src="/notes/parser/index.js"></script>
 	<script src="/notes/browser/index.js"></script>
 
@@ -70,8 +70,14 @@
 		<div id="notes-browser"></div>
 	</div>
 
-	<script>
-		const notesBrowser = new NotesBrowser("notes-browser");
+	<script async>
+		async function setup() {
+			const notesBrowser = await NotesBrowser.create("notes-browser");
+		}
+
+		setup().catch(error => {
+			console.error('Error initializing NotesBrowser:', error);
+		});
 	</script>
 
 </body>

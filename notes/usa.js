@@ -1,8 +1,0 @@
-const USA_NOTES = `
-
-
-
-
-
-
-`;
