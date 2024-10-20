@@ -17,6 +17,7 @@ class OutcomeComponent extends HTMLElement {
 	}
 
 	#setTopAndBottomText() {
+		// TODO: add cartpath bounces to outcome component
 		// TODO: update trees for other courses e.g. 🌴🌲🌳
 		if (this.#outcome instanceof SuccessfulShot) {
 			this.#topText = this.#outcome.trees > 0 ? `${this.#outcome.trees} x&#127794;` : ``;

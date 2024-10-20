@@ -55,7 +55,9 @@ class PinSelectComponent extends HTMLElement {
 
 		const container = this.shadowRoot.querySelector(".container");
 
-		this.#pins.forEach(pin => {
+		const pins = this.#pins.filter(pin => pin.setups.length > 0);
+
+		pins.forEach(pin => {
 			const pinElement = document.createElement('input');
 			pinElement.setAttribute('type', 'button');
 			pinElement.setAttribute('value', `${pin.distance}Y: ${pin.label}`);

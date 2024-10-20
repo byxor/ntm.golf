@@ -208,14 +208,55 @@ const GERMANY_NOTES = `
 - 1w(W+1), ger3_137e, rightmost, 140Y, max-1%^, NSv, backspin, 2nd bounce, consistent
 
 - 1w(NW), ger3_137f, rightmost, 140Y, max-3%^, NSv, backspin, 3rd bounce
-- 1w(NW), ger3_137f, rightmost, 140Y, max-2%^, L+1^, backspin, 3rd bounce, consistent
+- 1w(NW), ger3_137f, rightmost, 140Y, max-2%^, L+1^, backspin, 3rd bounce
 
 - 1w(NW+1), ger3_137g, rightmost, 2x hook, 140Y, max-1%^, L+1^, backspin, 5th bounce, consistent
 - 1w(NW+1), ger3_137g, rightmost, 2x hook, 140Y, max%, NS+1v, backspin, 1st bounce, consistent, rough if miss, sometimes does funny 2x bounce on pole
 
-- 2w(W), ger3_137i, leftmost, 1x slice, 140Y, 105%^, L+2^, 3rd bounce, might roll onto rough if unlucky with upward grain
-- 2w(W), ger3_137i, leftmost, 1x slice, 140Y, max-2%^, L+2^, backspin, 3rd bounce
-- 2w(W), ger3_137i, leftmost, 1x slice, 140Y, max-3%^, N-2^, backspin, 3rd bounce 
+- 2w(N), ger3_137l, leftmost, 120Y, max%, L+3^, 4th bounce, Check your club., N+1 topspin sometimes rolls in on max-1
+
+- 2w(N+1), ger3_137m, rightmost, 120Y, max%, NS^, 3rd bounce
+
+- 2w(NE), ger3_137n, rightmost, 3x hook, 140Y, max%, NSv, backspin, 1st bounce, consistent, OOB if miss.
+
+- 2w(NE+1), ger3_137o, leftmost, 2x hook, 140Y, max%, N+2^, backspin, 1st bounce, OOB if miss.
+
+- 2w(E), ger3_137p, rightmost, 140Y, max%, NSv, backspin, 1st bounce, OOB if miss.
+
+- 2w(E+1), ger3_137q, leftmost, 1x hook, 140Y, 105%^, NB^, 4th bounce
+- 2w(E+1), ger3_137q, leftmost, 1x hook, 140Y, max-3%^, L+1^, 4th bounce
+- 2w(E+1), ger3_137q, leftmost, 1x hook, 140Y, max-2%^, L+4^, 3rd bounce
+
+- 2w(SE), ger3_137r, leftmost, 1x hook, 140Y, max-3%^, H-3^, 4th bounce, Rarely goes in
+- 2w(SE), ger3_137r, leftmost, 1x hook, 140Y, max-2%^, N+2^, 3rd bounce, consistent
+
+- 2w(SE+1), ger3_137s, leftmost, 3x hook, 140Y, max%, NS+1^, backspin, 3rd bounce
+
+- 2w(S), ger3_137t, leftmost, 3x hook, 140Y, max%, N^, backspin, 2nd bounce
+
+- 2w(S+1), ger3_137u, leftmost, 3x hook, 140Y, max%, NSv, backspin, 3rd bounce
+
+- 2w(SW), ger3_137v, rightmost, 3x hook, 140Y, max%, H^, backspin, 5th bounce, Safe to spam A.
+
+- 2w(SW+1), ger3_137w, rightmost, 1x hook, 140Y, max%, N^, backspin, 1st bounce, OOB if miss., N+2, N-1 & NT can go in.
+
+- 2w(W), ger3_137x, leftmost, 1x slice, 120Y, max%, N-1^, topspin, 4th bounce
+
+// - 2w(W), ger3_137i, leftmost, 1x slice, 140Y, 105%^, L+2^, 3rd bounce, might roll onto rough if unlucky with upward grain
+// - 2w(W), ger3_137i, leftmost, 1x slice, 140Y, max-3%^, N-2^, backspin, 3rd bounce
+// - 2w(W), ger3_137i, leftmost, 1x slice, 140Y, max-2%^, L+2^, backspin, 3rd bounce
+
+- 2w(W+1), ger3_137y, rightmost, 2x hook, 140Y, max%, N^, backspin, 1st bounce, Rough if miss.
+
+- 2w(NW), ger3_137z, rightmost, 1x hook, 120Y, max%, NS^, 3rd bounce
+
+- 2w(NW+1), ger3_137aa, leftmost, 1x slice, 120Y, max%, N-1^, 3rd bounce
+
+- 3w(N), ger3_137ab, leftmost, 1x hook, 120Y, max%, L+2^, 3rd bounce
+
+- 3w(N+1), ger3_137ac, rightmost, 1x hook, 120Y, max%, L^, 4th bounce
+
+
 
 - 4w(NW), ger3_137k, 1x hook, 120Y, max%, L+3^, 3rd bounce, consistent
 
