@@ -178,8 +178,9 @@ class NavigationController {
 		}
 
 		// choose first pin if it exists
-		if (this.#hole?.pins?.length > 0) {
-			this.setPin(this.#hole.pins[0]);
+		const eligiblePins = this.#hole?.pins?.filter(pin => pin.setups.length > 0);
+		if (eligiblePins.length > 0) {
+			this.setPin(eligiblePins[0]);
 		} else {
 			this.setPin(undefined);
 		}
@@ -270,7 +271,6 @@ class NotesBrowser {
 	}
 
 	constructor(container, courses) {
-
 		const navigationController = new NavigationController(courses);
 
 		const notesBrowserComponent = document.createElement('notes-browser');

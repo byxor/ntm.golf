@@ -22,71 +22,20 @@ class ProgressComponent extends HTMLElement {
         this.#render();
     }
 
-    #calculatePinProgress() {
-        // TODO: very laggy, scales poorly...
-        // consider calculating once at parse time and never recomputing
-        // - or just memoize results
+    #calculateHoleProgressText() {
+        if (this.#hole && this.#hole.pins.length > 0) {
+            const holeCoverage = newHoleCoverage(this.#hole);
+            return `Hole Coverage: &nbsp;${holeCoverage.toString()}`;
+        }
+        return "...";
+    }
 
-        const maximumWind = (() => {
-            switch (this.#hole?.number) {
-            case 1:
-            case 2:
-                return 3;
-            case 3:
-                return 5;
-            case 4:
-                return 8;
-            default:
-                return 15;
-            }
-        })();
-
-        const numberOfDirections = 16;
-
-        const numberOfWindCombinationsPerStroke = (numberOfDirections * (maximumWind - 1)) + 1;
-
-        const numberOfStrokes = (() => {
-            // Guess the optimal number of strokes by choosing the highest stroke number from the setups.
-            // Will be incorrect if there's a setup that takes an unnecessarily long route, but why
-            // would we have one of those?
-            let strokes = 0;
-
-            const process = setup => {
-                if (strokes < setup?.stroke) {
-                    strokes = setup?.stroke;
-                }
-                setup.children.forEach(setup => process(setup));
-            };
-            this.#pin?.setups.forEach(setup => process(setup));
-
-            return strokes;
-        })();
-
-        const numberOfWindCombinationsForPin = numberOfWindCombinationsPerStroke * numberOfStrokes;
-
-        const knownSetups = new Set();
-        const process = setup => {
-            if (setup.children.length === 0) {
-                
-                let identifier = setup.wind.toString();
-
-                let temp = setup.parent;
-                while (temp !== undefined) {
-                    identifier = `${temp.wind.toString()}/${identifier}`;
-                    temp = temp.parent;
-                }
-
-                knownSetups.add(identifier);
-            } else {
-                setup.children.forEach(child => process(child));
-            }
-        };
-        this.#pin?.setups.forEach(setup => process(setup));
-
-        const percentageComplete = Math.round((knownSetups.size / numberOfWindCombinationsForPin) * 100);
-
-        const pinProgressText = `Pin coverage: &nbsp;&nbsp;${knownSetups.size}/${numberOfWindCombinationsForPin}  (${percentageComplete}%)`;
-        return pinProgressText;
+    #calculatePinProgressText() {
+        if (this.#hole && this.#pin) {
+            const pinCoverage = newPinCoverage(this.#hole, this.#pin);
+            return `Pin Coverage: &nbsp;&nbsp;&nbsp;${pinCoverage.toString()}`;
+        }
+        return "...";
     }
 
     #render() {
@@ -95,18 +44,24 @@ class ProgressComponent extends HTMLElement {
             return;
         }
 
-        const pinProgressText = this.#calculatePinProgress();
+        const holeProgressText = this.#calculateHoleProgressText();
+        const pinProgressText = this.#calculatePinProgressText();
 
         createTemplate(this, `
             <style>
                 .container {
-                    width: 220px;
+                    width: 240px;
                     height: auto;
+                    line-height: 180%;
+                }
+
+                .hole-progress {
+                    color: #8e8e8e;
                 }
             </style>
             <div class="container">
-                <span class="hole-progress"></span><br/>
-                <span class="pin-progress">${pinProgressText}</span>
+            <span class="pin-progress">${pinProgressText}</span><br/>
+                <span class="hole-progress">${holeProgressText}</span>
             </div>
         `);
     }

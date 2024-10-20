@@ -79,7 +79,7 @@ class NotesBrowserComponent extends HTMLElement {
 					width: auto;
 					height: auto;
 					left: 364px;
-					top: 102px;
+					top: 97px;
 				}
 
 				.setups {

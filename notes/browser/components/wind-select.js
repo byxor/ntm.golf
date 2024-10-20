@@ -33,7 +33,6 @@ class WindSelectComponent extends HTMLElement {
 		});
 
 		this.navigationController?.onHoleChanged(hole => {
-			console.log(this.maxWind);
 			this.maxWind = hole?.maxWind || 15;
 			if (this.wind.strength > this.maxWind) {
 				this.setWind(newWind(this.maxWind, this.wind.direction));
