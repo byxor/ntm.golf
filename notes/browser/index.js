@@ -86,7 +86,12 @@ class NavigationController {
 		}
 
 		if (pinParam) {
-
+			const pin = (() => {
+				return this.#hole.pins.find(pin => {
+					return pinParam === pin.toNavString();
+				})
+			})();
+			this.setPin(pin);
 		}
 	}
 
@@ -112,7 +117,7 @@ class NavigationController {
 		}
 
 		if (this.#pin) {
-			addQueryParam("pin", `${this.#pin.distance}-yds-${this.#pin.label.toLowerCase().replaceAll(" ", "-")}`);
+			addQueryParam("pin", this.#pin.toNavString());
 		}
 
 		addQueryParam("with", this.#golfer);

@@ -129,8 +129,8 @@ const GERMANY_NOTES = `
   - 0w, flag+1, rightmost, 160Y, 105%^, N+2^, backspin, 2nd bounce
 
 - 0w, no-aim, 1x slice, 240Y, max%, N^, rest 142Y
-  - 0w, 1x hook, 140Y, 105%^, L+1^, 4th bounce
-  - 0w, 1x hook, 140Y, max-3%^, L+2^, 3rd bounce
+  - 0w, no-aim, 1x hook, 140Y, 105%^, L+1^, 4th bounce
+  - 0w, no-aim, 1x hook, 140Y, max-3%^, L+2^, 3rd bounce
 
 - 2w(N+1), no-aim, 1x slice, 250Y, max%, N^, rest 127y
   - 2w(NE+1), ger1_127a, 3x hook, 120Y, max%, L+3^, backspin, 4th bounce
@@ -370,6 +370,11 @@ ger5_green
 
 - 7w(SW+1), no-aim, 1x slice, 280Y, max%, N-2^, rest 140 Y, Quite risky.
   - 7w(S+1), ger5_140a, 1x slice, 140Y, max%, NT^, 5th bounce
+
+
+## Front left on top: 451 Y
+
+- 0w, no-aim, 1x slice, 280Y, max%, N^, rest 129Y, Clears river.
 
 // ------------------------------------------------------
 

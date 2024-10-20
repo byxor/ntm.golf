@@ -16,6 +16,10 @@ class Pin {
 		);
 	}
 
+	toNavString() {
+		return `${this.distance}-yds-${this.label.toLowerCase().replaceAll(" ", "-")}`;
+	}
+
 	#validateLabel(label) {
 		if (typeof label !== "string") {
 			throw `Label '${label}' is not a string`;
