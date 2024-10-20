@@ -87,7 +87,9 @@ const newPinCoverage = (hole, pin) => {
 class HoleCoverage {
 
     constructor(hole) {
-        this.pinCoverages = hole.pins.map(pin => {
+        const eligiblePins = hole.pins.filter(pin => pin.setups.length > 0);
+
+        this.pinCoverages = eligiblePins.map(pin => {
             return newPinCoverage(hole, pin);
         });
 
@@ -99,7 +101,7 @@ class HoleCoverage {
     }
 
     toString() {
-        return `${this.knownSetups}/${this.numberOfPinAndWindCombinationsForHole}  (${Math.round(this.percentageCovered)}%)`;
+        return `${this.knownSetups}/${this.numberOfPinAndWindCombinationsForHole}  (~${Math.round(this.percentageCovered)}%)`;
     }
 
     #calculate() {

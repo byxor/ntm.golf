@@ -27,7 +27,7 @@ class ProgressComponent extends HTMLElement {
             const holeCoverage = newHoleCoverage(this.#hole);
             return `Hole Coverage: &nbsp;${holeCoverage.toString()}`;
         }
-        return "...";
+        return "";
     }
 
     #calculatePinProgressText() {
@@ -35,7 +35,7 @@ class ProgressComponent extends HTMLElement {
             const pinCoverage = newPinCoverage(this.#hole, this.#pin);
             return `Pin Coverage: &nbsp;&nbsp;&nbsp;${pinCoverage.toString()}`;
         }
-        return "...";
+        return "";
     }
 
     #render() {
