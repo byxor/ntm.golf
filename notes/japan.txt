@@ -1,3 +1,10 @@
+// ---------------------------------------------- //
+//                 _                              //
+//      /_   _    / )    _  _ _   /| ) _/_  _     //
+//   (_/(//)(//) (__()(// _) (-  / |/()/(-_)      //
+//       /                                        //
+// ---------------------------------------------- //
+
 # Hole 3
 
 ## Back right on flat: 209 Y
@@ -11,7 +18,6 @@
 - 5w(E), jap3_209e, rightmost, 2x hook, 180Y, max%, NSv, backspin, 5th bounce, unverified consistency
 
 - 5w(SE+1), jap3_209d, leftmost, 2x slice, 200Y, max%, N^, backspin, 4th bounce, unverified consistency
-
 
 ## Middle back on top: 207 Y
 
@@ -38,10 +44,8 @@
 
 - 1w(NW), jap3_207d, leftmost, 1x hook, 180Y, max%, NSv, 4th bounce, unverified consistency
 
-
 - 2w(S), jap3_207e, leftmost, 190Y, max-1%^, NS+1v, 1x cartpath, 4th bounce, unverified consistency
 - 2w(S), jap3_207e, leftmost, 190Y, max%, NT^, backspin, 3rd bounce, unverified consistency
-
 
 - 4w(N+1), jap3_207f, rightmost, 2x slice, 180Y, max%, NSv, backspin, 2nd bounce, unverified consistency
 
@@ -50,11 +54,9 @@
 
 - 4w(E+1), jap3_207h, leftmost, 1x hook, 190Y, max%, NT^, backspin, 3rd bounce, unverified consistency
 
-
 - 5w(NE), jap3_207i, leftmost, 2x hook, 180Y, max%, H-2v, backspin, 4th bounce, unverified consistency
 
 - 5w(W), jap3_207j, rightmost, 1x slice, 180Y, max%, NB^, 4th bounce, unverified consistency
-
 
 ## Middle left on top: 205 Y
 
@@ -66,14 +68,11 @@
 
 - 4w(SW+1), jap3_205a, rightmost, 190Y, max%, NSv, backspin, 3rd bounce, unverified consistency
 
-
 ## Front left on flat: 196 Y
 
 - 0w, flag, leftmost, 180Y, max%, NT^, backspin, 4th bounce, unverified consistency
 
-
 - 1w(SW+1), jap3_196a, leftmost, 2x slice, 180Y, max%, NT^, backspin, 3rd bounce, unverified consistency
-
 
 - 2w(N+1), jap3_196b, leftmost, 1x hook, 170Y, max%, H-3v, backspin, 1x cartpath, 2nd bounce, unverified consistency
 
@@ -81,11 +80,9 @@
 
 - 2w(SE+1), jap3_196d, 180Y, max%, H-2v, backspin, 1x cartpath, 2nd bounce, very rarely goes in
 
-
 - 3w(NE+1), jap3_196e, leftmost, 2x slice, 180Y, max%, NB^, backspin, 3rd bounce, unverified consistency
 
 - 3w(W+1), jap3_196f, leftmost, 3x slice, 170Y, max%, H-3^, backspin, 2nd bounce, unverified consistency
-
 
 - 4w(E+1), jap3_196g, rightmost, 3x hook, 180Y, max%, H-2v, backspin, 3rd bounce, unverified consistency
 
@@ -96,7 +93,6 @@
 - 5w(E+1), jap3_196j, 1x slice, 180Y, max%, N+2^, backspin, 1x cartpath, 2nd bounce, unverified consistency
 
 - 5w(W+1), jap3_196k, rightmost, 1x slice, 170Y, max%, H-3v, 5th bounce, unverified consistency
-
 
 ## Front right on flat: 191 Y
 
@@ -109,9 +105,10 @@
 
 - 5w(SW), jap3_191c, rightmost, 2x slice, 180Y, max%, N-2v, 4th bounce, unverified consistency
 
-
 ## Middle front on flat: 188 Y
 
 - 0w, jap3_188a, rightmost, 2x hook, 190Y, max%, N+2^, backspin, 1st bounce
 
 - 5w(S), jap3_188b, rightmost, 180Y, max%, NSv, backspin, 1x cartpath, 2nd bounce, unverified consistency
+
+// TODO: Copy existing notes from word doc
