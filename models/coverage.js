@@ -23,7 +23,7 @@ class PinCoverage {
 
         const numberOfDirections = 16;
 
-        const numberOfWindCombinationsPerStroke = (numberOfDirections * (this.hole.maxWind - 1)) + 1;
+        const numberOfWindCombinationsPerStroke = (numberOfDirections * this.hole.maxWind) + 1;
 
         const numberOfStrokes = (() => {
             // Guess the optimal number of strokes by choosing the highest stroke number from the setups.

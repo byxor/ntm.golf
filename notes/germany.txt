@@ -245,6 +245,39 @@
 
 - 3w(N+1), ger3_137ac, rightmost, 1x hook, 120Y, max%, L^, 4th bounce
 
+- 3w(NE), ger3_137ad, rightmost, 1x hook, 120Y, max%, N+2^, 4th bounce
+
+- 3w(NE+1), ger3_137ae, rightmost, 2x hook, 140Y, max%, H-2v, backspin, 1st bounce, Somewhat consistent, but not perfect., Rough if miss?
+
+- 3w(E), ger3_137af, rightmost, 2x slice, 140Y, max%, N^, backspin, 1st bounce, Rough if miss.
+
+- 3w(E+1), ger3_137ag, rightmost, 160Y, 98%^, NT-1^, backspin, 4th bounce, consistent
+- 3w(E+1), ger3_137ag, rightmost, 160Y, 99%^, NT-1^, backspin, 4th bounce, consistent
+
+- 3w(SE), ger3_137ah, leftmost, 160Y, 98%^, NB^, backspin, 4th bounce
+- 3w(SE), ger3_137ah, leftmost, 160Y, 99%^, NB^, backspin, 4th bounce
+
+- 3w(SE+1), ger3_137ai, rightmost, 140Y, max%, NS+1v, rolls in, Not ideal.
+- 3w(SE+1), ger3_137ai, rightmost, 140Y, max%, NS^, backspin, 5th bounce
+
+- 3w(S), ger3_137aj, leftmost, 140Y, max-1%^, N+2^, rolls in, Not ideal.
+- 3w(S), ger3_137aj, leftmost, 140Y, max%, H-3v, backspin, 3rd bounce 
+
+- 3w(S+1), ger3_137ak, rightmost, 140Y, max%, NS+1^, backspin, 5th bounce, Very rare for some reason.
+
+- 3w(SW), ger3_137al, leftmost, 3x hook, 140Y, max%, NT^, backspin, 2nd bounce
+
+- 3w(SW+1), ger3_137am, leftmost, 1x slice, 160Y, 98%^, NBv, backspin, 2nd bounce
+- 3w(SW+1), ger3_137am, leftmost, 1x slice, 160Y, 99%^, NBv, backspin, 2nd bounce
+
+- 3w(W), ger3_137an, rightmost, 3x hook, 140Y, max%, N^, backspin, 1st bounce, Rough if miss
+
+- 3w(W+1), ger3_137ao, rightmost, 1x slice, 120Y, max%, N+2^, 4th bounce
+
+- 3w(NW), ger3_137ap, rightmost, 120Y, max%, N-2^, 3rd bounce
+
+- 3w(NW+1), ger3_137aq, leftmost, 120Y, max%, L^, 3rd bounce
+
 - 4w(NW), ger3_137k, 1x hook, 120Y, max%, L+3^, 3rd bounce, consistent
 
 - 5w(SW+1), ger3_137j, 3x hook, 140Y, max%, N+2^, 3rd bounce
