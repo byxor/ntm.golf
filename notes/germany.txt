@@ -312,7 +312,38 @@
 
 - 4w(NW+1), ger3_137bg, leftmost, 2x slice, 120Y, max%, N^, backspin, 3rd bounce
 
+- 5w(N), ger3_137bh, rightmost, 2x hook, 120Y, max%, H^, backspin, 5th bounce, Safe to spam A.
+
+- 5w(N+1), ger3_137bj, rightmost, 120Y, max%, H^, backspin, 2nd bounce, Safe to spam A., Sometimes 3rd or 4th bounce.
+
+- 5w(NE), ger3_137bi, leftmost, 120Y, max%, N+2^, 2nd bounce
+
+- 5w(NE+1), ger3_137bk, rightmost, 1x slice, 120Y, max%, NT-1^, topspin, 3rd bounce, consistent
+
+- 5w(E), ger3_137bl, leftmost, 160Y, 98%^, H-2v, backspin, 2nd bounce
+- 5w(E), ger3_137bl, leftmost, 160Y, 99%^, H-3v, backspin, 2nd bounce
+
+- 5w(E+1), ger3_137bm, rightmost, 1x hook, 140Y, max%, H^, backspin, 3rd bounce, Safe to spam A., Sometimes 2nd bounce.
+
+- 5w(SE), ger3_137bn, leftmost, 1x hook, 140Y, max%, N-2^, backspin, 3rd bounce
+
+- 5w(SE+1), ger3_137bo, leftmost, 1x slice, 140Y, max^, L+1^, backspin, 3rd bounce
+
+- 5w(S), ger3_137bp, leftmost, 140Y, max^, L+1^, backspin, 3rd bounce
+
+- 5w(S+1), ger3_137bq, leftmost, 1x slice, 140Y, max%, NT^, backspin, 3rd bounce
+
+- 5w(SW), ger3_137br, rightmost, 1x hook, 140Y, max%, N-2v, backspin, 2nd bounce
+
 - 5w(SW+1), ger3_137j, 3x hook, 140Y, max%, N+2^, 3rd bounce
+
+- 5w(W), ger3_137bs, rightmost, 140Y, max%, H^, backspin, 1st bounce, Safe to spam A., Rough if miss.
+
+- 5w(W+1), ger3_137bt, rightmost, 120Y, max%, L+3^, 4th bounce 
+
+- 5w(NW), ger3_137bu, leftmost, 2x slice, 120Y, max%, H^, backspin, 2nd bounce, Safe to spam A.,
+
+- 5w(NW+1), ger3_137bv, rightmost, 120Y, max%, H^, backspin, 5th bounce, Safe to spam A.
 
 ## Back right on flat: 137 Y
 
