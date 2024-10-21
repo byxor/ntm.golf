@@ -72,7 +72,8 @@ class NavigationController {
 					"usa": this.#courses.usa,
 				}[courseParam] || "germany";
 			})();
-			this.setCourse(course);
+
+			this.setCourse(course, !windParam);
 		} else {
 			this.setCourse(this.#courses.germany);
 		}
@@ -135,20 +136,29 @@ class NavigationController {
 		console.log(`Url updated: ${window.location}`);
 	}
 
-	setCourse(course) {
+	setCourse(course, shouldUpdateHole=true) {
 		console.log(`NavigationController: setCourse(${course.name})`);
 
 		this.#course = course;
 		this.#onCourseChangedListeners.forEach(listener => listener(course));
 
-		if (this.#hole !== undefined) {
-			const holeWithSameNumber = (() =>
-				this.#course.holes.find(hole =>
-					hole?.number === this.#hole.number
-			))();
+		if (shouldUpdateHole) {
+			if (this.#hole !== undefined) {
+				const holeWithSameNumber = (() =>
+					this.#course.holes.find(hole =>
+						hole?.number === this.#hole.number
+				))();
 
-			if (holeWithSameNumber) {
-				this.setHole(holeWithSameNumber);
+				if (holeWithSameNumber) {
+					this.setHole(holeWithSameNumber);
+				} else {
+					const firstDefinedHole = this.#course.holes.find(hole => hole !== undefined);
+					if (firstDefinedHole) {
+						this.setHole(firstDefinedHole);
+					} else {
+						this.setHole(undefined);
+					}
+				}
 			} else {
 				const firstDefinedHole = this.#course.holes.find(hole => hole !== undefined);
 				if (firstDefinedHole) {
@@ -156,13 +166,6 @@ class NavigationController {
 				} else {
 					this.setHole(undefined);
 				}
-			}
-		} else {
-			const firstDefinedHole = this.#course.holes.find(hole => hole !== undefined);
-			if (firstDefinedHole) {
-				this.setHole(firstDefinedHole);
-			} else {
-				this.setHole(undefined);
 			}
 		}
 

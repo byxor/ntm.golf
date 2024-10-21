@@ -278,7 +278,39 @@
 
 - 3w(NW+1), ger3_137aq, leftmost, 120Y, max%, L^, 3rd bounce
 
-- 4w(NW), ger3_137k, 1x hook, 120Y, max%, L+3^, 3rd bounce, consistent
+- 4w(N), ger3_137ar, leftmost, 1x slice, 120Y, max%, NBv, backspin, 4th bounce
+
+- 4w(N+1), ger3_137as, rightmost, 2x hook, 120Y, max%, L+2^, 3rd bounce, consistent
+
+- 4w(NE), ger3_137at, rightmost, 2x hook, 120Y, max%, H^, 3rd bounce, Safe to spam A.
+
+- 4w(NE+1), ger3_137au, leftmost, 1x hook, 120Y, max%, N^, topspin, 3rd bounce, Maybe rough if miss & north grain.
+
+- 4w(E), ger3_137av, rightmost, 3x hook, 160Y, 98%^, N+2^, backspin, 4th bounce
+- 4w(E), ger3_137av, rightmost, 3x hook, 160Y, 99%^, N+2^, backspin, 4th bounce
+
+- 4w(E+1), ger3_137aw, 1x hook, 160Y, 98%^, N+2^, backspin, 4th bounce
+- 4w(E+1), ger3_137aw, 1x hook, 160Y, 99%^, N+2^, backspin, 4th bounce
+
+- 4w(SE), ger3_137ax, rightmost, 140Y, max%, NS+1^, backspin, 3rd bounce
+
+- 4w(SE+1), ger3_137ay, rightmost, 1x hook, 140Y, max%, N-2^, backspin, 3rd bounce
+
+- 4w(S), ger3_137az, 140Y, max%, L+2^, backspin, 2nd bounce
+
+- 4w(S+1), ger3_137ba, leftmost, 140Y, max^, N+2^, backspin, 2nd bounce
+
+- 4w(SW), ger3_137bb, 140Y, max%, H^, backspin, 2nd bounce, Safe to spam A., Sometimes goes in on 3rd bounce.
+
+- 4w(SW+1), ger3_137bc, leftmost, 3x hook, 140Y, max%, NS^, backspin, 3rd bounce, Very rare tbh.
+
+- 4w(W), ger3_137bd, rightmost, 140Y, max%, H^, 1st bounce, backspin, consistent, Safe to spam A., H-1^ also works
+
+- 4w(W+1), ger3_137be, leftmost, 120Y, max%, N^, 4th bounce
+
+- 4w(NW), ger3_137bf, 1x hook, 120Y, max%, L+2^, 3rd bounce, consistent, ...Mostly
+
+- 4w(NW+1), ger3_137bg, leftmost, 2x slice, 120Y, max%, N^, backspin, 3rd bounce
 
 - 5w(SW+1), ger3_137j, 3x hook, 140Y, max%, N+2^, 3rd bounce
 
