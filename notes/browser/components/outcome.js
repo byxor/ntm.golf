@@ -3,6 +3,8 @@ class OutcomeComponent extends HTMLElement {
 	#navigationController;
 	#outcome;
 
+	#course;
+
 	#topText;
 	#bottomText;
 	#image;
@@ -13,14 +15,23 @@ class OutcomeComponent extends HTMLElement {
 		this.#navigationController = navigationController;
 		this.#outcome = outcome;
 
+		this.#navigationController.onCourseChanged(course => {
+			this.#onCourseChanged(course);
+		});
+
+		this.#onCourseChanged(this.#navigationController.getCourse());
+	}
+
+	#onCourseChanged(course) {
+		this.#course = course;
 		this.#setTopAndBottomText();
+		this.#render();
 	}
 
 	#setTopAndBottomText() {
 		// TODO: add cartpath bounces to outcome component
-		// TODO: update trees for other courses e.g. 🌴🌲🌳
 		if (this.#outcome instanceof SuccessfulShot) {
-			this.#topText = this.#outcome.trees > 0 ? `${this.#outcome.trees} x&#127794;` : ``;
+			this.#topText = this.#outcome.trees > 0 ? `${this.#outcome.trees} x${this.#getTreeEmoji()}` : ``;
 			this.#bottomText = (() => {
 				switch(this.#outcome.bounce) {
 					case 1: return "1st bounce";
@@ -40,6 +51,20 @@ class OutcomeComponent extends HTMLElement {
 			this.#image = "";
 			// this.#highlightable = true;
 			this.#textMargin = 55;
+		}
+	}
+
+	#getTreeEmoji() {
+		console.log(this.#course)
+		switch(this.#course?.name) {
+			case "USA":
+				return "&#127796;"; // 🌴
+			case "Australia":
+				return "&#127795;"; // 🌳
+			case "Germany":
+			case "Japan":
+			default:
+				return "&#127794;"; // 🌲
 		}
 	}
 

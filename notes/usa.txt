@@ -5,3 +5,29 @@
 // ---------------------------------------------- //
 
 // TODO: Copy existing notes from word doc
+
+# Hole 3
+
+## Middle on slope: 143 Y
+
+- 0w, usa3_143b, leftmost, 140Y, 104%^, NS+1v, 4th bounce, consistent, ...Mostly
+- 0w, usa3_143b, leftmost, 140Y, 105%^, N-1^, 3rd bounce, consistent, ...Mostly
+- 0w, usa3_143b, leftmost, 140Y, max-3%^, L^, 1x tree, 4th bounce, consistent, ...Mostly
+- 0w, usa3_143b, leftmost, 140Y, max-2%^, N-1^, topspin, 2nd bounce, Not ideal., Rolls quite far when it misses.
+- 0w, usa3_143b, leftmost, 140Y, max-1%^, L+3^, backspin, 3rd bounce
+
+- 1w(N), usa3_143c, rightmost, 140Y, max%, NT^, backspin, 1st bounce, consistent
+
+- 1w(N+1), usa3_143d, 140Y, max%, NT-1^, backspin, 1st bounce, consistent, ...Mostly
+
+- 1w(NE), usa3_143e, leftmost, 2x slice, 140Y, max%, NT-1^, backspin, 1st bounce, ~30% chance of going in., Probably need a better approach.
+
+- 1w(NE+1), usa3_143f, leftmost, 140Y, 102%^, NS^, 4th bounce, consistent, Sometimes 5th bounce/rolls in.
+- 1w(NE+1), usa3_143f, leftmost, 140Y, 103%^, NS+1^, 5th bounce, Sometimes rolls in.
+- 1w(NE+1), usa3_143f, leftmost, 140Y, 104%^, N+1v, 3rd bounce, consistent
+- 1w(NE+1), usa3_143f, leftmost, 140Y, 105%^, NT-1^, 3rd bounce, ~10% chance of going in., Probably need a better approach.
+
+// - 1w(E)
+
+
+- 2w(NW), usa3_143a, leftmost, 1x hook, 140Y, max%, NSv, backspin, 1st bounce

@@ -222,6 +222,10 @@ class NavigationController {
 		}
 	}
 
+	getCourse() {
+		return this.#course;
+	}
+
 	onCourseChanged(listener) {
 		this.#onCourseChangedListeners.push(listener);
 	}
