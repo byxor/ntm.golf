@@ -27,7 +27,35 @@
 - 1w(NE+1), usa3_143f, leftmost, 140Y, 104%^, N+1v, 3rd bounce, consistent
 - 1w(NE+1), usa3_143f, leftmost, 140Y, 105%^, NT-1^, 3rd bounce, ~10% chance of going in., Probably need a better approach.
 
-// - 1w(E)
+- 1w(E), usa3_143g, rightmost, 140Y, 103%^, NB^, 5th bounce
+- 1w(E), usa3_143g, rightmost, 140Y, 104%^, NS+1v, 4th bounce
+- 1w(E), usa3_143g, rightmost, 140Y, 105%^, NSv, 3rd bounce
 
+- 1w(E+1), usa3_143h, rightmost, 3x hook, 140Y, max%, H^, backspin, 4th bounce, Safe to spam A., ~40% success rate
+
+- 1w(SE), usa3_143i, leftmost, 3x hook, 140Y, max%, NSv, backspin, 2nd bounce
+
+- 1w(SE+1), usa3_143h, rightmost, 3x hook, 140Y, max%, N+1v, backspin, 2nd bounce
+
+- 1w(S), usa3_143j, leftmost, 3x hook, 140Y, max%, N-1^, backspin, 2nd bounce, consistent, ~80% consistent.
+
+- 1w(S+1), usa3_143k, 2x hook, 140Y, max%, H-2v, backspin, 2nd bounce
+
+- 1w(SW), usa3_143l, 3x hook, 140Y, max%, NS+1^, backspin, 5th bounce
+
+- 1w(SW+1), usa3_143m, leftmost, 3x hook, 140Y, max-1%^, N^, 5th bounce, More consistent than max%
+- 1w(SW+1), usa3_143m, leftmost, 3x hook, 140Y, max%, H^, 5th bounce, Safe to spam A., Very rarely goes in.
+
+- 1w(W), usa3_143n, leftmost, 3x hook, 140Y, max%, H-2^, backspin, 2nd bounce
+
+- 1w(W+1), usa3_143o, leftmost, 120Y, max%, N-2^, topspin, 5th bounce
+
+- 1w(NW), usa3_143p, 120Y, max%, NS-1^, topspin, 5th bounce
+
+- 1w(NW+1), usa3_143q, rightmost, 120Y, max%, H-3v, topspin, 5th bounce, consistent, ~80% consistent.
+
+- 2w(N), usa3_143r, leftmost, 2x hook, 120Y, max%, H^, topspin, 4th bounce, Safe to spam A.
+
+- 2w(N+1), usa3_143s, 2x hook, 120Y, max%, H^, topspin, 5th bounce, Safe to spam A.
 
 - 2w(NW), usa3_143a, leftmost, 1x hook, 140Y, max%, NSv, backspin, 1st bounce
