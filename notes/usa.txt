@@ -58,4 +58,30 @@
 
 - 2w(N+1), usa3_143s, 2x hook, 120Y, max%, H^, topspin, 5th bounce, Safe to spam A.
 
+- 2w(NE), usa3_143t, rightmost, 1x slice, 120Y, max%, N^, topspin, 4th bounce
+
+- 2w(NE+1), usa3_143u, rightmost, 140Y, max%, H^, backspin, rolls in, Safe to spam A., Works on no grain., Very rare but safe., Probably better off winging a non-max non-backspin shot.
+
+- 2w(E), usa3_143v, rightmost, 1x hook, 140Y, 105%^, N+1^, 4th bounce, Somewhat consistent
+
+- 2w(E+1), usa3_143w, rightmost, 3x hook, 140Y, max%, NS^, backspin, 2nd bounce, consistent, ...Mostly
+
+- 2w(SE), usa3_143x, rightmost, 2x hook, 140Y, max%, NSv, backspin, 2nd bounce, Tricky putt if miss
+
+- 2w(SE+1), usa3_143y, leftmost, 140Y, max%, NS+1v, backspin, 2nd bounce, consistent, ...Mostly
+
+- 2w(S), usa3_143z, leftmost, 140Y, max%, NB^, backspin, 2nd bounce, consistent, ...Mostly, Sometimes 5th bounce.
+
+- 2w(S+1), usa3_143aa, rightmost, 140Y, max%, H-2v, backspin, 3rd bounce, ~20% chance of going in
+
+- 2w(SW), usa3_143ab, 140Y, max%, H^, backspin, 2nd bounce, Safe to spam A., Sometimes 4th bounce
+
+- 2w(SW+1), usa3_143ac, rightmost, 2x hook, 140Y, max%, H^, backspin, 2nd bounce, Safe to spam A.
+
+- 2w(W), usa3_143ad, leftmost, 3x hook, 140Y, max%, H^, backspin, 2nd bounce, Safe to spam A., ~30% consistency
+
+- 2w(W+1), usa3_143ae, leftmost, 1x slice, 120Y, max%, H^, topspin, 5th bounce, ~30% consistency
+
 - 2w(NW), usa3_143a, leftmost, 1x hook, 140Y, max%, NSv, backspin, 1st bounce
+
+- 2w(NW+1), usa3_143af, 1x hook, 120Y, max%, NT^, topspin, 3rd bounce, consistent, ...Mostly

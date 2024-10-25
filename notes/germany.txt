@@ -508,6 +508,8 @@ ger7_green_approach
 
 - 0w, ger8_163a, rightmost, 220Y, max%, N-2v, 2x tree, 2nd bounce, max-1 NB = safe miss 
 
+## Middle left on slope: 158 Y
+
 ## Front right on flat: 152 Y
 
 - 0w, ger8_152a, rightmost, 190Y, max-1%^, L+2^, 1x tree, rolls in, MISSES BUT SAFE
