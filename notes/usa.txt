@@ -85,3 +85,39 @@
 - 2w(NW), usa3_143a, leftmost, 1x hook, 140Y, max%, NSv, backspin, 1st bounce
 
 - 2w(NW+1), usa3_143af, 1x hook, 120Y, max%, NT^, topspin, 3rd bounce, consistent, ...Mostly
+
+- 3w(N), usa3_143ag, rightmost, 120Y, max%, NT^, 3rd bounce, ~50% consistent...
+
+- 3w(N+1), usa3_143ah, leftmost, 1x hook, 120Y, max%, NT-1^, 4th bounce, consistent
+
+- 3w(NE), usa3_143ai, rightmost, 1x hook, 120Y, max%, L+1^, topspin, 4th bounce
+
+- 3w(NE+1), usa3_143aj, rightmost, 2x hook, 160Y, 98%^, NS+1v, backspin, 2nd bounce
+- 3w(NE+1), usa3_143aj, rightmost, 2x hook, 160Y, 99%^, NBv, backspin, 2nd bounce
+
+- 3w(E), usa3_143ak, rightmost, 160Y, 98%^, N+2^, backspin, 2nd bounce
+- 3w(E), usa3_143ak, rightmost, 160Y, 99%^, NB^, backspin, 2nd bounce
+
+- 3w(E+1), usa3_143al, leftmost, 140Y, max%, H^, backspin, 2nd bounce, consistent, ...Mostly, Safe to spam A.
+
+- 3w(SE), usa3_143am, leftmost, 1x hook, 140Y, max%, N+1v, backspin, 3rd bounce, consistent, Sometimes 4th bounce
+
+- 3w(SE+1), usa3_143an, leftmost, 1x slice, 140Y, max%, N-1^, backspin, 3rd bounce, consistent, ...Mostly, Sometimes 4th bounce
+
+- 3w(S), usa3_143ao, rightmost, 1x hook, 140Y, max%, L+3^, backspin, 2nd bounce
+
+- 3w(S+1), usa3_143ap, leftmost, 140Y, max%, N^, backspin, 2nd bounce, consistent
+
+- 3w(SW), usa3_143aq, leftmost, 2x hook, 140Y, max%, NS+1v, 2nd bounce
+
+- 3w(SW+1), usa3_143ar, leftmost, 2x hook, 140Y, max%^, NS+1v, backspin, 2nd bounce, ~50% consistent
+
+// - 3w(W), usa3_143ar, leftmost, 2x hook, 140Y, max%, NSv, backspin, 2nd bounce, consistent, ...Mostly
+- 3w(W), usa3_143as, leftmost, 2x slice, 140Y, max%, N-2^, backspin, 1st bounce, consistent, ...Mostly
+
+- 3w(W+1), usa3_143at, leftmost, 140Y, max-1%^, N+1v, backspin, 2nd bounce
+- 3w(W+1), usa3_143at, leftmost, 140Y, max%, H-2v, backspin, 1st bounce, consistent, ...Mostly
+
+- 3w(NW), usa3_143au, leftmost, 2x hook, 140Y, max%, NT^, backspin, 1st bounce, consistent, ...Mostly, Sometimes tricky putt if bounce far back
+
+- 3w(NW+1), usa3_143av, 1x hook, 120Y, max%, NS+1v, 4th bounce
