@@ -6,7 +6,86 @@
 
 // TODO: Copy existing notes from word doc
 
+# Hole 1
+
+## Back right: 476 Y
+
+- 0w, no-aim, 1x slice, 280Y, max%, N^, rest 152 y
+  - 0w, flag, leftmost, 140Y, max-1%^, N+1v, topspin, 5th bounce
+  - 0w, flag, leftmost, 140Y, max%, NT-1^, backspin, 3rd bounce
+
+## Middle right: 466 Y
+
+- 0w, no-aim, 1x slice, 280Y, max%, N^, rest 142 y
+  - 0w, usa1_142a, 2x slice, 140Y, max%, L+3^, backspin, 1st bounce
+
+## Front left: 462 Y
+
+- 0w, no-aim, 1x slice, 260Y, max-1%^, N^, rest 184 y
+  - 0w, flag, leftmost, 170Y, max%, Nv, 3rd bounce, consistent
+
+- 0w, no-aim, 1x slice, 260Y, max%, N^, rest 167 y
+
+  - 0w, usa1_167a, leftmost, 2x hook, 160Y, max%, Nv, backspin, 2nd bounce, ~40% consistent
+
+  - 1w(E+1), usa1_167b, rightmost, 1x hook, 160Y, max%, N+2^, backspin, 2nd bounce
+
+## Front right: 460 Y
+
+- 0w, no-aim, 1x slice, 260Y, max%, N^, rest 163 y
+  - 0w, flag, 180Y, 98%^, N^, backspin, 3rd bounce
+  - 0w, flag, 180Y, 99%^, N^, backspin, 3rd bounce
+
+
+# Hole 2
+
+## Back middle on flat: 464 Y
+
+- 0w, no-aim, 280Y, max%, N^, rest 141 y
+  - 0w, usa2_141a, rightmost, 1x slice, 140Y, max%, N^, backspin, 1st bounce, Fairway if miss
+
+## Back left on flat: 461 Y
+
+- 0w, no-aim, 280Y, max%, N^, rest 139 y
+  - 0w, usa2_139a, rightmost, 1x hook, 140Y, max%, NBv, backspin, 1st bounce, consistent, ...Mostly, Fairway if miss
+
+## Middle on top: 454 Y
+
+- 0w, no-aim, 280Y, max-1%^, N^, rest 150 y
+  - 0w, usa2_150a, 3x hook, 140Y, max%, H-3v, 4th bounce
+
+- 0w, no-aim, 280Y, max%, N^, rest 131 y
+  - 0w, flag+1, rightmost, 120Y, max-1%^, NS+1v, topspin, 5th bounce
+  - 0w, flag+1, rightmost, 120Y, max%, L^, 2nd bounce, consistent
+
+## Middle left: 450 Y
+
+- 0w, no-aim, 280Y, max%, N^, rest 127 y
+  - 0w, flag, leftmost, 120Y, max%, N^, backspin, 2nd bounce
+
+## Front left on flat: 443 Y
+
+- 0w, no-aim, 280Y, max%, N^, rest 121 y
+  - 0w, usa2_121a, leftmost, 1x hook, 140Y, max%, N+2^, backspin, 1st bounce, consistent, ...Mostly
+
 # Hole 3
+
+## Back right on slope: 151 Y
+
+- 0w, usa3_151a, 1x hook, 140Y, max%, L+1^, backspin, 3rd bounce, consistent, ...Mostly, CHECK YOUR CLUB
+
+// - 0w, flag+1, rightmost, 140Y, max%, NT^, backspin, 3rd bounce
+
+## Middle on top: 149 Y
+
+- 0w, usa3_149a, rightmost, 1x hook, 140Y, max%, N-2v, backspin, 2nd bounce, consistent
+
+## Middle left on flat: 144 Y
+
+- 0w, flag, leftmost, 140Y, 103%^, H-2v, topspin, 3rd bounce
+- 0w, flag, leftmost, 140Y, 104%^, NSv, 4th bounce
+- 0w, flag, leftmost, 140Y, 105%^, N+2v, 4th bounce
+- 0w, flag, leftmost, 140Y, max-3%^, H^, 4th bounce
 
 ## Middle on slope: 143 Y
 
@@ -121,3 +200,16 @@
 - 3w(NW), usa3_143au, leftmost, 2x hook, 140Y, max%, NT^, backspin, 1st bounce, consistent, ...Mostly, Sometimes tricky putt if bounce far back
 
 - 3w(NW+1), usa3_143av, 1x hook, 120Y, max%, NS+1v, 4th bounce
+- 3w(NW+1), usa3_143av, 1x hook, 120Y, max%, NS+1v, 4th bounce
+
+## Front on top: 132 Y
+
+- 0w, flag, 140Y, 98%^, NBv, 4th bounce
+- 0w, flag, 140Y, 99%^, H-3v, 3rd bounce, consistent
+- 0w, flag, 140Y, 101%^, L^, backspin, 2nd bounce
+- 0w, flag, 140Y, 102%^, L^, backspin, 2nd bounce
+
+## Front right on slope: 129 Y
+
+- 0w, ?, rightmost, 2x slice, 120Y, max-1%^, N^, topspin, 4th bounce
+- 0w, ?, rightmost, 2x slice, 120Y, max%, H-3v, 2nd bounce, consistent
