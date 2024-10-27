@@ -211,5 +211,107 @@
 
 ## Front right on slope: 129 Y
 
-- 0w, ?, rightmost, 2x slice, 120Y, max-1%^, N^, topspin, 4th bounce
-- 0w, ?, rightmost, 2x slice, 120Y, max%, H-3v, 2nd bounce, consistent
+// TODO
+- 0w, usa3_129a, rightmost, 2x slice, 120Y, max-1%^, N^, topspin, 4th bounce
+- 0w, usa3_129a, rightmost, 2x slice, 120Y, max%, H-3v, 2nd bounce, consistent
+
+# Hole 5
+
+usa5_greenapproach
+
+# Hole 8
+
+usa8_greenapproach
+
+# Hole 9
+
+usa9_roughpattern
+
+## Back right on flat: 277 Y
+
+- 0w, usa9_277a, 3x slice, 250Y, max%, NS+1^, Safe to spam A., Risky: sometimes fairway; sometimes safe bounce off flag
+
+## Middle on flat: 271 Y
+
+## Back left on flat: 269 Y
+
+## Middle on slope: 265 Y
+
+// - 0w, flag, rightmost, 250Y, max%, N^, 2nd bounce, Very risky, Sometimes lands on fairway
+- 0w, usa9_265a, rightmost, 240Y, max%, NS+1^, 4th bounce, consistent, Safe to spam A
+
+## Middle right on slope: 264 Y
+
+- 0w, usa9_264a, 3x slice, 250Y, max-1%^, NSv, 4th bounce, consistent, (Thanks Wymek), Rough if max
+
+## Middle left on top: 260 Y
+
+- 0w, usa9_260a, 3x slice, 240Y, max%, N^, 2nd bounce, consistent, (Thanks Wymek)
+
+## Front middle in cove: 253 Y
+
+- 0w, flag, 260Y, max-3%^, NS+1v, 3rd bounce, consistent
+- 0w, flag, 260Y, max-2%^, NT^, 2nd bounce, consistent
+
+
+# Hole 10
+
+usa10_oninoneref
+
+- To land on green: 0w, reference, rightmost, 280Y, max%, NT-1^
+
+# Hole 11
+
+- Decent tee shot: 0w, no-aim, 1x hook, 280Y, max%, N^
+
+# Hole 12
+
+## Back left on top: 220 Y
+
+- 0w, flag+1, rightmost, 200Y, max%, NSv, rolls in, consistent, ...Not fully, but surprisingly
+
+## Back right on top: 216 Y
+
+- 0w, usa12_216a, 220Y, max%, NS+1v, 1st bounce, Lands in heavy rough ~75% of time, DON'T BACKSPIN (goes OOB)
+
+## Front left on top: 209 Y
+
+- 0w, usa12_209a, 2x slice, 200Y, max%, NSv, backspin, 2nd bounce, consistent, ...Not fully, but ~60%
+
+## Front middle on flat: 208 Y
+
+- 0w, usa12_208a, 2x hook, 200Y, max%, N^, backspin, 3rd bounce, consistent, ...~95%
+
+## Front middle on flat: 204 Y
+
+- 0w, usa15_204a, 2x hook, 200Y, max%, N+1^, backspin, 2nd bounce, ~55% consistent
+
+# Hole 15
+
+usa15_greenhill
+
+## Middle in valley: 217 Y
+
+- 0w, usa15_217a, leftmost, 210Y, max%, N+2v, backspin, 2nd bounce, consistent
+
+## Back right on bubble: 225 Y
+
+- 0w, usa15_225a, 2x slice, 210Y, max%, N+1v, backspin, 4th bounce
+
+## Front right on bubble: 215 Y
+
+- 0w, usa15_215a, 1x hook, 220Y, max%, NBv, 3rd bounce
+
+## Front left on flat: 211 Y
+
+- 0w, flag, rightmost, 220Y, max%, N-2v, backspin, 1st bounce, Sometimes sticks to flag, Risky if miss
+
+## Front middle: 210 Y
+
+- 0w, usa15_210a, 2x slice, 200Y, max%, N^, backspin, 4th bounce, consistent, ...~70%
+
+# Hole 18
+
+usa18_approach
+
+- 0w, reference, 280Y, max%, N^, lands on back left of green
