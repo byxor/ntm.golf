@@ -258,7 +258,8 @@ usa9_roughpattern
 
 usa10_oninoneref
 
-- To land on green: 0w, reference, rightmost, 280Y, max%, NT-1^
+- To land on green: 0w, reference, rightmost, 2x slice, 280Y, max%, NT-1^
+- (Thanks Wymek)
 
 # Hole 11
 
