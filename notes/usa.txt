@@ -238,7 +238,7 @@ usa9_roughpattern
 ## Middle on slope: 265 Y
 
 // - 0w, flag, rightmost, 250Y, max%, N^, 2nd bounce, Very risky, Sometimes lands on fairway
-- 0w, usa9_265a, rightmost, 240Y, max%, NS+1^, 4th bounce, consistent, Safe to spam A
+- 0w, usa9_265a, rightmost, 1x slice, 240Y, max%, NS+1^, 4th bounce, consistent, Safe to spam A
 
 ## Middle right on slope: 264 Y
 
@@ -273,7 +273,7 @@ usa10_oninoneref
 
 ## Back right on top: 216 Y
 
-- 0w, usa12_216a, 220Y, max%, NS+1v, 1st bounce, Lands in heavy rough ~75% of time, DON'T BACKSPIN (goes OOB)
+- 0w, usa12_216a, 2x slice, 220Y, max%, NS+1v, 1st bounce, Lands in heavy rough ~75% of time, DON'T BACKSPIN (goes OOB)
 
 ## Front left on top: 209 Y
 
@@ -281,11 +281,11 @@ usa10_oninoneref
 
 ## Front middle on flat: 208 Y
 
-- 0w, usa12_208a, 2x hook, 200Y, max%, N^, backspin, 3rd bounce, consistent, ...~95%
+- 0w, usa12_208a, 2x hook, 200Y, max%, N^, backspin, 3rd bounce, consistent, ...~95% consistent
 
 ## Front middle on flat: 204 Y
 
-- 0w, usa15_204a, 2x hook, 200Y, max%, N+1^, backspin, 2nd bounce, ~55% consistent
+- 0w, usa12_204a, 2x hook, 200Y, max%, N+1^, backspin, 2nd bounce, ~55% consistent
 
 # Hole 15
 
