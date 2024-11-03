@@ -181,7 +181,7 @@ class NavigationController {
 		}
 
 		// choose first pin if it exists
-		const eligiblePins = this.#hole?.pins?.filter(pin => pin.setups.length > 0);
+		const eligiblePins = this.#hole?.pins?.filter(pin => pin.setups.length > 0) || [];
 		if (eligiblePins.length > 0) {
 			this.setPin(eligiblePins[0]);
 		} else {

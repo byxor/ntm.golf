@@ -6,6 +6,13 @@
 
 # Hole 3
 
+## Back right on flat: 152 Y
+
+// - 0w, flag, rightmost, 140Y, max%, L^, 4th bounce
+
+- 0w, aus3_152a, leftmost, 2x hook, 160Y, max-1%^, L+1^, backspin, 4th bounce
+- 0w, aus3_152a, leftmost, 2x hook, 160Y, max%, N+1^, backspin, 1st bounce, consistent
+
 ## Middle left on flat in cove: 150 Y
 
 - 0w, flag, leftmost, 160Y, 101%^, NT-1^, backspin, rolls in
@@ -15,6 +22,8 @@
 - 0w, flag, leftmost, 160Y, 105%^, L+2^, backspin, 3rd bounce
 
 ## Front left on top: 143 Y
+
+- 0w, aus3_143a, leftmost, 3x hook, 140Y, max%, L^, backspin, 3rd bounce, consistent, ~70% consistent., Sometimes 4th bounce., max-1 = N+1 topspin.
 
 ## Front right on top: 143 Y
 
@@ -33,3 +42,76 @@
 - 0w, flag, rightmost, 140Y, max-3%^, NS+1v, topspin, 2nd bounce
 - 0w, flag, rightmost, 140Y, max-2%^, N-1^, backspin, 3rd bounce
 - 0w, flag, rightmost, 140Y, max-1%^, NS+1v, backspin, 2nd bounce
+
+
+# Hole 6
+
+## Front left on flat: 320 Y
+
+- 0w, aus6_320a, rightmost, 2x slice, 280Y, max%, NT-1^, 4th bounce, consistent, ...~75% consistent.
+
+
+# Hole 8
+
+## Back right on flat: 194 Y
+
+// can do 1st bounce with 200Y club but it's unnecessarily risky (chance of OOB/heavy rough)
+
+- 0w, aus8_194a, 1x hook, 180Y, max%, NS+1v, backspin, 3rd bounce, ...~50% consistent.
+
+## Back left on slope: 192 Y
+
+- 0w, aus8_192a, rightmost, 2x hook, 180Y, max%, NSv, backspin, 4th bounce, ...~50% consistent.
+
+## Middle left on slope: 180 Y
+
+- 0w, aus8_180a, 3x slice, 180Y, max%, L+1^, backspin, 1st bounce, consistent, ...~95% consistent., Sometimes bounces into rough though.
+
+## Middle in cove: 178 Y
+
+- 0w, aus8_178a, rightmost, 1x slice, 180Y, max%, H-1^, backspin, 1st bounce, consistent, Safe to spam A., ...~70% consistent
+
+
+# Hole 10
+
+## Front on top: 306 Y
+
+- 0w, aus10_306a, rightmost, 1x slice, 280Y, max%, N^, 3rd bounce, ~30% consistent., Should land on green otherwise.
+
+
+# Hole 12
+
+## Back middle on slope: 209 Y
+
+- 0w, flag, rightmost, 190Y, max%, N^, backspin, 4th bounce, consistent, ...Mostly
+
+## Middle on top: 202 Y
+
+- 0w, aus12_202a, rightmost, 180Y, max%, NT^, topspin, 5th bounce, consistent, max-1 = bunker or fairway
+
+## Front middle on slope: 186 Y
+
+- 0w, flag, rightmost, 190Y, max-1%^, NS^, backspin, 2nd bounce, Rarer than max but also safer than max.
+- 0w, flag, rightmost, 190Y, max%, NB^, backspin, 1st bounce, Sometimes bounces back onto fairway.
+
+# Hole 14
+
+## Back right on slope: 313 Y
+
+- 0w, aus14_313a, rightmost, 1x slice, 280Y, max%, NSv, 3rd bounce, Sometimes tinks flag and lands on green., Sometimes rolls into rough., Quite rare.
+
+## Middle left on slope: 305 Y
+
+- 0w, aus14_305a, 1x slice, 280Y, max%, NSv, 2nd bounce, Sometimes tinks flag and lands on green., Sometimes rolls into rough., Quite rare.
+
+# Hole 16
+
+## Middle on slope: 218 Y
+
+- 0w, aus16_218a, 220Y, max%, N^, backspin, 1st bounce, Sometimes lands in rough.
+
+## Middle right on flat: 215 Y
+
+- 0w, aus16_215a, leftmost, 220Y, max%, NB^, backspin, 1st bounce, Usually lands in rough.
+
+## Front middle in cove: 208 Y
