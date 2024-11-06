@@ -341,7 +341,7 @@
 
 - 5w(W+1), ger3_137bt, rightmost, 120Y, max%, L+3^, 4th bounce 
 
-- 5w(NW), ger3_137bu, leftmost, 2x slice, 120Y, max%, H^, backspin, 2nd bounce, Safe to spam A.,
+- 5w(NW), ger3_137bu, leftmost, 2x slice, 120Y, max%, H^, backspin, 2nd bounce, Safe to spam A.
 
 - 5w(NW+1), ger3_137bv, rightmost, 120Y, max%, H^, backspin, 5th bounce, Safe to spam A.
 
@@ -351,6 +351,11 @@
 - 0w, ger3_137h, 140Y, max-2%^, NSv, backspin, 3rd bounce, consistent
 - 0w, ger3_137h, 140Y, max-1%^, N^, backspin, 2nd bounce, consistent
 - 0w, ger3_137h, 140Y, max%, L^, backspin, 1st bounce, rough if miss
+
+- 1w(NE+1), ger3_137bw, 2x hook, 140Y, max-1%^, L+1^, backspin, 4th bounce, ...~50% consistent., But safer than max.
+- 1w(NE+1), ger3_137bw, 2x hook, 140Y, max%, H-3v, backspin, 1st bounce, consistent, Rough if miss.
+
+- 1w(E), ger3_137bx, leftmost, 120Y, max%, NSv, topspin, 4th bounce, consistent, ...Mostly consistent
 
 ## Middle right on flat: 131 Y
 // - 120 max H?
@@ -365,11 +370,60 @@
 // - 0w, flag, rightmost, 120Y, max-1%^, H-2v, 4th bounce
 // - 0w, flag, rightmost, 120Y, max%, Nv, backspin, 5th bounce
 
+- 1w(NE), ger3_124t, 120Y, max%, NS+1v, backspin, 5th bounce, consistent
+
 - 1w(NE+1), ger3_124b, rightmost, 3x hook, 120Y, max%, L+3^, backspin, 2nd bounce
+
+- 1w(NW), ger3_124w, rightmost, 120Y, max%, H^, backspin, 4th bounce, Safe to spam A., Sometimes tinks flag., Sometimes sticks to flag.
+
+- 1w(SW), ger3_124y, rightmost, 120Y, max%, N-1^, backspin, 2nd bounce, ...~50% consistent
+
+- 2w(N), ger3_124x, leftmost, 120Y, max%, NS+1v, backspin, 1st bounce, consistent, Sometimes does 2 flag bounces before being blown in.
 
 - 2w(S+1), ger3_124a, leftmost, 3x slice, 120Y, max%, NS^, 3rd bounce, consistent
 
-- 3w(S), ger3_120b, rightmost, 120Y, max%, NSv, 2nd bounce
+- 2w(SE), ger3_124u, rightmost, 120Y, max%, NBv, 2nd bounce, ...~50% consistent.
+
+- 3w(SW+1), ger3_124v, rightmost, 120Y, max%, NT^, backspin, 2nd bounce, consistent, ...~70% consistent.
+
+- 4w(SW), ger3_124s, leftmost, 120Y, max%, NSv, 4th bounce, ~20% consistent
+
+- 4w(SW+1), no-aim, 120Y, max%, L+2^, backspin, 5th bounce, ~40% consistent; but nice not having to aim.
+
+- 5w(N), ger3_124c, rightmost, 120Y, 103%^, NBv, backspin, 2nd bounce, consistent, ...~75% consistent
+- 5w(N), ger3_124c, rightmost, 120Y, 104%^, N^, backspin, 2nd bounce, ...~50% consistent.
+- 5w(N), ger3_124c, rightmost, 120Y, 105%^, NT^, backspin, 2nd bounce, ...~38% consistent.
+
+- 5w(N+1), ger3_124d, rightmost, 3x hook, 120Y, max%, L^, backspin, 1st bounce, ...~55% consistent., Sometimes sticks to flag.
+
+- 5w(NE), ger3_124e, rightmost, 3x hook, 120Y, max%, N-1^, backspin, 1st bounce, ...~60% consistent., Sometimes sticks to flag.
+
+- 5w(NE+1), ger3_124f, leftmost, 3x hook, 120Y, max%, NS+1v, backspin, 5th bounce, consistent, ...Mostly consistent., Crazy curvature., Sometimes sticks to flag.
+
+- 5w(E), ger3_124g, rightmost, 120Y, max%, NT^, backspin, 2nd bounce, consistent
+
+- 5w(E+1), ger3_124h, leftmost, 2x hook, 120Y, max%, NT^, 3rd bounce, ...~40% consistent.
+
+- 5w(SE), ger3_124i, rightmost, 120Y, max%, N^, topspin, 4th bounce, consistent, ...~70% consistent.
+
+- 5w(SE+1), ger3_124j, 2x slice, 160Y, 98%^, N+2^, consistent, ...Mostly consistent
+- 5w(SE+1), ger3_124j, 2x slice, 160Y, 99%^, N+2^, consistent, ...Mostly consistent
+
+- 5w(S), ger3_124k, leftmost, 3x hook, 120Y, max%, H-3^, backspin, 1st bounce, ...~50% consistent., Sometimes sticks to flag
+
+- 5w(S+1), ger3_124l, leftmost, 120Y, max%, N^, topspin, 5th bounce, consistent, ...Mostly consistent
+
+- 5w(SW), ger3_124m, leftmost, 1x slice, 120Y, max^, N-1^, 4th bounce, consistent, ...~60% consistent
+
+- 5w(SW+1), ger3_124n, leftmost, 2x slice, 120Y, max%, NT-1^, backspin, 2nd bounce
+
+- 5w(W), ger3_124o, leftmost, 2x hook, 120Y, max%, N^, backspin, 4th bounce, ...~25% consistent, Funky curvature.
+
+- 5w(W+1), ger3_124p, leftmost, 120Y, max%, L+1^, backspin, 1st bounce, Sometimes bounces back off flag.
+
+- 5w(NW), ger3_124q, rightmost, 3x hook, 120Y, max%, NSv, backspin, 1st bounce, ...~50% consistency, NS+1^/v sometimes does flag bounce and wind blows it in
+
+- 5w(NW+1), ger3_124r, rightmost, 120Y, 99%^, H-3^, 4th bounce
 
 ## Middle right on top: 121 Y
 
@@ -380,11 +434,32 @@
 - 0w, flag, 120Y, max-1%^, L^, 3rd bounce
 - 0w, flag, 120Y, max%, H-2^, backspin, 5th bounce
 
-- 1w(S+1), ger3_lost_the_pic, rightmost, 120Y, max-2%^, L+3^, 4th bounce, consistent
-- 1w(S+1), ger3_lost_the_pic, rightmost, 120Y, max-1%^, NT-1^, 4th bounce, consistent
-- 1w(S+1), ger3_lost_the_pic, rightmost, 120Y, max%, H-2v, backspin, 2nd bounce, sometimes 3rd bounce
+- 1w(SE), ger3_121h, 1x hook, 120Y, max%, NSv, backspin, 4th bounce, consistent
+
+- 1w(SE+1), ger3_121c, leftmost, 120Y, max-1%^, H-2v, 3rd bounce, ...~60% consistent
+- 1w(SE+1), ger3_121c, leftmost, 120Y, max%, H^, 2nd bounce, consistent, ...~70% consistent, Easy putt if tinks flag.
+
+- 1w(S+1), ger3_121d, leftmost, 120Y, max-2%^, L+3^, 4th bounce, consistent
+- 1w(S+1), ger3_121d, leftmost, 120Y, max-1%^, NT-1^, 4th bounce, consistent
+- 1w(S+1), ger3_121d, leftmost, 120Y, max%, H-2v, backspin, 2nd bounce, sometimes 3rd bounce
+
+- 2w(W), ger3_121i, rightmost, 3x slice, 120Y, max%, NT-1^, backspin, 1st bounce, consistent, ...~70% consistent., Sometimes tinks flag and bounces back for tricky putt.
+
+- 3w(E+1), ger3_121k, rightmost, 120Y, max%, NSv, backspin, 2nd bounce, ...~50% consistent.
+
+- 3w(SE), ger3_121g, leftmost, 2x hook, 120Y, max%, NT^, backspin, 4th bounce, ...~50% consistent., Funky curvature.
+
+- 3w(SW), ger3_121l, 120Y, max%, NT-1^, backspin, 2nd bounce, consistent, ...~80% consistent.
+
+- 3w(W), ger3_121e, rightmost, 3x slice, 120Y, max%, N-2^, backspin, 1st bounce, consistent, ...~70% consistent
+
+- 4w(SW), ger3_121f, rightmost, 120Y, max%, N^, 2nd bounce, consistent, ...Mostly consistent
+
+- 5w(NE+1), ger3_121b, rightmost, 3x hook, 120Y, max%, L+1^, backspin, 1st bounce, consistent, Mostly consistent..., L+2^ also works
 
 - 5w(SE), ger3_121a, leftmost, 120Y, max%, L+1^, 2nd bounce
+
+- 5w(W+1), ger3_121j, rightmost, 2x hook, 120Y, max%, N+2^, backspin, 1st bounce, consistent, ...Mostly consistent, Sometimes sticks to flag.
 
 ## Front left on top: 120 Y
 
@@ -392,11 +467,64 @@
 - 0w, ger3_120a, rightmost, 1x slice, 120Y, max-1%^, L+3^, 2nd bounce, consistent
 - 0w, ger3_120a, rightmost, 1x slice, 120Y, max%, Nv, backspin, 1st bounce, consistent
 
+- 3w(S), ger3_120b, rightmost, 120Y, max%, NSv, 2nd bounce
+
 ## Middle on top: 117 Y
 
 - 0w, flag, rightmost, 120Y, max-3%^, NT-2^, 2nd bounce
 - 0w, flag, rightmost, 120Y, max-2%^, Nv, backspin, 2nd bounce
 - 0w, flag, rightmost, 120Y, max-1%^, N-1v, backspin, 2nd bounce
+
+- 1w(E+1), ger3_117a, leftmost, 1x hook, 120Y, max%, H^, 1st bounce, consistent, DON'T BACKSPIN., ...Mostly consistent, Sometimes sticks to flag., Safe to spam A.
+
+- 1w(S+1), ger3_117c, 1x hook, 120Y, max%, N-1^, backspin, 1st bounce, ...~40% consistent.
+
+- 2w(SW+1), ger3_117b, 120Y, max%, H^, 1st bounce, consistent, DON'T BACKSPIN., ...Mostly consistent, Sometimes sticks to flag., Safe to spam A.
+
+- 4w(N), ger3_117t, rightmost, 1x slice, 260Y, 51%^, NT-1^, 1x hill bounce, 4th bounce, consistent
+- 4w(N), ger3_117t, rightmost, 1x slice, 260Y, 52%^, NT-1^, 1x hill bounce, 4th bounce, consistent
+
+
+
+- 5w(N), ger3_117e, leftmost, 260Y, 51%^, NT-2^, 5th bounce, consistent, 1x hill bounce.
+- 5w(N), ger3_117e, leftmost, 260Y, 52%^, NT-2^, 5th bounce, 1x hill bounce.
+
+- 5w(N+1), ger3_117f, rightmost, 260Y, 51%^, NT-2^, 5th bounce, 1x hill bounce., ...~50% consistent.
+- 5w(N+1), ger3_117f, rightmost, 260Y, 52%^, NT-2^, 5th bounce, 1x hill bounce., consistent, ...Mostly consistent.
+
+- 5w(NE), ger3_117g, leftmost, 260Y, 51%^, NT-1^, 5th bounce, 1x hill bounce.
+- 5w(NE), ger3_117g, leftmost, 260Y, 52%^, NT-1^, 5th bounce, 1x hill bounce., consistent
+
+- 5w(NE+1), ger3_117h, leftmost, 1x slice, 260Y, 51%^, NT^, 5th bounce, 1x hill bounce., consistent, ...Mostly consistent.
+- 5w(NE+1), ger3_117h, leftmost, 1x slice, 260Y, 52%^, NT-1^, 5th bounce, 1x hill bounce., consistent, ...~70% consistent.
+
+- 5w(E), ger3_117i, 3x hook, 120Y, max%, NSv, backspin, 1st bounce, consistent, ...~69% consistent.
+
+- 5w(E+1), ger3_117j, leftmost, 1x hook, 120Y, max%, NS+1v, backspin, 2nd bounce, consistent, ...Mostly consistent.
+
+- 5w(SE), ger3_117k, leftmost, 120Y, max%, L+2^, backspin, 2nd bounce, consistent
+
+- 5w(SE+1), ger3_117d, rightmost, 1x hook, 120Y, max%, NT-1^, 2nd bounce, consistent, ...Mostly consistent.
+
+- 5w(S), ger3_117l, rightmost, 1x slice, 120Y, max%, N^, 3rd bounce, consistent
+
+- 5w(S+1), ger3_117m, leftmost, 1x hook, 120Y, max%, N+1v, 5th bounce, consistent, ...~80% consistent.
+
+- 5w(SW), ger3_117n, 120Y, max%, N-2^, backspin, 2nd bounce
+
+- 5w(SW+1), ger3_117o, 2x slice, 120Y, max%, N-1^, backspin, 1st bounce, consistent
+
+- 5w(W), ger3_117p, rightmost, 2x slice, 260Y, 51%^, NT^, 1x hill bounce, 5th bounce, consistent
+- 5w(W), ger3_117p, rightmost, 2x slice, 260Y, 52%^, NT^, 1x hill bounce, 5th bounce, consistent
+
+- 5w(W+1), ger3_117q, rightmost, 1x slice, 260Y, 51%^, NT-2^, 1x hill bounce, 5th bounce, consistent
+- 5w(W+1), ger3_117q, rightmost, 1x slice, 260Y, 52%^, NT-2^, 1x hill bounce, 5th bounce, consistent
+
+- 5w(NW), ger3_117r, leftmost, 1x slice, 120Y, 101%^, L+3^, backspin, 2nd bounce, ...~50% consistent
+- 5w(NW), ger3_117r, leftmost, 1x slice, 120Y, 102%^, L+2^, backspin, 2nd bounce, ...~30% consistent
+
+- 5w(NW+1), ger3_117s, rightmost, 1x slice, 260Y, 51%^, N+1v, 1x hill bounce, 4th bounce, consistent, ...Mostly consistent.
+- 5w(NW+1), ger3_117s, rightmost, 1x slice, 260Y, 52%^, N+1v, 1x hill bounce, 4th bounce, consistent, ...Mostly consistent.
 
 // ------------------------------------------------------
 
