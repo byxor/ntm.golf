@@ -21,6 +21,17 @@
 - 0w, flag, leftmost, 160Y, 104%^, HT^, backspin, 2nd bounce
 - 0w, flag, leftmost, 160Y, 105%^, L+2^, backspin, 3rd bounce
 
+- 2w(W), aus3_150a, leftmost, 2x slice, 140Y, max%, L+2^, backspin, 4th bounce, consistent
+
+- 5w(N), aus3_150b, rightmost, 1x hook, 160Y, 98%^, N+2^, backspin, rolls in
+- 5w(N), aus3_150b, rightmost, 1x hook, 160Y, 99%^, N+2^, backspin, rolls in
+
+- 5w(E), aus3_150d, 3x hook, 140Y, max%, NT^, topspin, 3rd bounce, consistent
+
+- 5w(S), aus3_150c, rightmost, 3x hook, 160Y, max%, NSv, backspin, 2nd bounce, ...~50% consistent.
+
+- 5w(W), aus3_150e, leftmost, 2x slice, 140Y, max%, NBv, backspin, 3rd bounce, ...~50% consistent.
+
 ## Front left on top: 143 Y
 
 - 0w, aus3_143a, leftmost, 3x hook, 140Y, max%, L^, backspin, 3rd bounce, consistent, ~70% consistent., Sometimes 4th bounce., max-1 = N+1 topspin.

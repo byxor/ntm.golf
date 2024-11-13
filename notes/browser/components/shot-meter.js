@@ -1,5 +1,5 @@
 class ShotMeterComponent extends HTMLElement {
-	init(surface, club, power, height, spin, numberOfNotes, consistent) {
+	init(surface, club, power, height, spin, numberOfNotes, outcome) {
 		this.surface = surface;
 		this.club = club;
 		this.power = power;
@@ -55,11 +55,22 @@ class ShotMeterComponent extends HTMLElement {
 			}
 		})();
 
-		this.consistent = consistent;
+		this.outcome = outcome;
+		this.consistent = outcome.consistent;
 	}
 
 	connectedCallback() {
 		// TODO: use original grey/black gradient for "unverified" consistency
+
+		const containerClass = (() => {
+			if (this.outcome instanceof SuccessfulShot) {
+				return this.consistent ? "consistent" : "inconsistent";
+			} else {
+				return "not-finished-yet";
+			}
+		})();
+		
+
 		createTemplate(this, `
 			<style>
 				.container {
@@ -67,6 +78,10 @@ class ShotMeterComponent extends HTMLElement {
 					height: 343px;
 					border: 1px solid black;
 					border-radius: 4px;
+				}
+
+				.not-finished-yet {
+				    background-image: linear-gradient(to bottom right, black, grey);
 				}
 
 				.inconsistent {
@@ -261,7 +276,7 @@ class ShotMeterComponent extends HTMLElement {
 					top: ${106 + this.spinYOffset}px;
 				}
 			</style>
-			<div class="container ${this.consistent ? "consistent" : "inconsistent"}">
+			<div class="container ${containerClass}">
 				<div class="background-container"></div>
 				<div class="parts-container">
 					<div class="surface"></div>

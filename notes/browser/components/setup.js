@@ -149,7 +149,7 @@ class SetupComponent extends HTMLElement {
 			this.#setup.height,
 			this.#setup.spin,
 			this.#setup.outcome.notes.length,
-			this.#setup.outcome.consistent
+			this.#setup.outcome
 		);
 		shotMeterContainer.appendChild(shotMeterComponent);
 

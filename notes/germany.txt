@@ -28,7 +28,7 @@
   - 0w, flag, leftmost, 140Y, max%, N-2^, 4th bounce
 
 - 0w, no-aim, 280Y, max%, N^, rest 138Y
-  - 0w, ger1_138a, leftmost, 140Y, max%, NS+1v, backspin, 1st bounce
+  - 0w, ger1_138a, leftmost, 2x hook, 140Y, max%, NS+1v, backspin, 1st bounce
   //- 0w, flag, rightmost, 140Y, 104%^, NT^, backspin, 3rd bounce
   //- 0w, flag, rightmost, 140Y, 105%^, NS+1v, backspin, 3rd bounce
 
@@ -69,6 +69,9 @@
 
 
 ## Front middle: 440 Y
+
+- 0w, no-aim, 260Y, max%, N^, rest 145 Y
+  - 0w, flag, leftmost, 140Y, max%, NSv, backspin, rolls in, consistent
 
 // ------------------------------------------------------
 
@@ -130,6 +133,11 @@
   - 0w, flag, rightmost, 140Y, 102%^, N^, topspin, 5th bounce
   - 0w, flag, rightmost, 140Y, 103%^, N-1^, 5th bounce
   - 0w, flag, rightmost, 140Y, 104%^, H^, 5th bounce
+
+## Front right on slope: 416 Y
+
+- 0w, no-aim, 1x slice, 240Y, max-1%^, N^, rest 135Y
+  - 0w, ger2_135a, rightmost, 3x slice, 120Y, max%, N+2^, topspin, 4th bounce, consistent, ~70% consistent., Sometimes sticks to flag., Sometimes rolls gently down hill.
 
 // ------------------------------------------------------
 
@@ -302,7 +310,8 @@
 
 - 4w(SW), ger3_137bb, 140Y, max%, H^, backspin, 2nd bounce, Safe to spam A., Sometimes goes in on 3rd bounce.
 
-- 4w(SW+1), ger3_137bc, leftmost, 3x hook, 140Y, max%, NS^, backspin, 3rd bounce, Very rare tbh.
+// - 4w(SW+1), ger3_137bc, leftmost, 3x hook, 140Y, max%, NS^, backspin, 3rd bounce, Very rare tbh.
+- 4w(SW+1), ger3_137by, rightmost, 3x slice, 140Y, max%, N-2^, backspin, 1st bounce, consistent, Rough if miss
 
 - 4w(W), ger3_137bd, rightmost, 140Y, max%, H^, 1st bounce, backspin, consistent, Safe to spam A., H-1^ also works
 
@@ -357,6 +366,8 @@
 
 - 1w(E), ger3_137bx, leftmost, 120Y, max%, NSv, topspin, 4th bounce, consistent, ...Mostly consistent
 
+- 4w(SW+1), ger3_137bz, leftmost, 2x slice, 140Y, max%, L+3^, 1st bounce, backspin, consistent, Rough if miss.
+
 ## Middle right on flat: 131 Y
 // - 120 max H?
 // - 120 max-1 H-3 topspin?
@@ -374,15 +385,19 @@
 
 - 1w(NE+1), ger3_124b, rightmost, 3x hook, 120Y, max%, L+3^, backspin, 2nd bounce
 
+- 1w(SW), ger3_124y, rightmost, 120Y, max%, N-1^, backspin, 2nd bounce, ...~50% consistent
+
 - 1w(NW), ger3_124w, rightmost, 120Y, max%, H^, backspin, 4th bounce, Safe to spam A., Sometimes tinks flag., Sometimes sticks to flag.
 
-- 1w(SW), ger3_124y, rightmost, 120Y, max%, N-1^, backspin, 2nd bounce, ...~50% consistent
+- 1w(NW+1), ger3_124aa, rightmost, 120Y, max%, H-2v, backspin, 5th bounce, consistent, ~80% consistent.
 
 - 2w(N), ger3_124x, leftmost, 120Y, max%, NS+1v, backspin, 1st bounce, consistent, Sometimes does 2 flag bounces before being blown in.
 
 - 2w(S+1), ger3_124a, leftmost, 3x slice, 120Y, max%, NS^, 3rd bounce, consistent
 
 - 2w(SE), ger3_124u, rightmost, 120Y, max%, NBv, 2nd bounce, ...~50% consistent.
+
+- 3w(S), ger3_124z, rightmost, 120Y, max%, N-1^, 5th bounce, consistent, ~80% consistent.
 
 - 3w(SW+1), ger3_124v, rightmost, 120Y, max%, NT^, backspin, 2nd bounce, consistent, ...~70% consistent.
 
@@ -409,7 +424,7 @@
 - 5w(SE+1), ger3_124j, 2x slice, 160Y, 98%^, N+2^, consistent, ...Mostly consistent
 - 5w(SE+1), ger3_124j, 2x slice, 160Y, 99%^, N+2^, consistent, ...Mostly consistent
 
-- 5w(S), ger3_124k, leftmost, 3x hook, 120Y, max%, H-3^, backspin, 1st bounce, ...~50% consistent., Sometimes sticks to flag
+- 5w(S), ger3_124k, leftmost, 3x hook, 120Y, max%, H-3^, backspin, 1st bounce, ...~50% consistent., Sometimes sticks to flag., DOESNT WORK. WTF? 140Y? Or topspin?
 
 - 5w(S+1), ger3_124l, leftmost, 120Y, max%, N^, topspin, 5th bounce, consistent, ...Mostly consistent
 
@@ -443,7 +458,11 @@
 - 1w(S+1), ger3_121d, leftmost, 120Y, max-1%^, NT-1^, 4th bounce, consistent
 - 1w(S+1), ger3_121d, leftmost, 120Y, max%, H-2v, backspin, 2nd bounce, sometimes 3rd bounce
 
+- 2w(NE), ger3_121r, leftmost, 2x hook, 120Y, max%, H^, backspin, 1st bounce, consistent, ~90% consistent.
+
 - 2w(W), ger3_121i, rightmost, 3x slice, 120Y, max%, NT-1^, backspin, 1st bounce, consistent, ...~70% consistent., Sometimes tinks flag and bounces back for tricky putt.
+
+- 2w(NW+1), ger3_121p, 2x hook, 120Y, max%, H^, backspin, 2nd bounce, Safe to spam A., Usually goes in by bouncing up flag and landing on 2nd bounce., ~20% consistent.
 
 - 3w(E+1), ger3_121k, rightmost, 120Y, max%, NSv, backspin, 2nd bounce, ...~50% consistent.
 
@@ -451,11 +470,22 @@
 
 - 3w(SW), ger3_121l, 120Y, max%, NT-1^, backspin, 2nd bounce, consistent, ...~80% consistent.
 
+- 3w(SW+1), ger3_121n, leftmost, 2x hook, 120Y, max%, L+1^, backspin, 3rd bounce, consistent
+
 - 3w(W), ger3_121e, rightmost, 3x slice, 120Y, max%, N-2^, backspin, 1st bounce, consistent, ...~70% consistent
+
+- 3w(NW+1), ger3_121o, leftmost, 1x slice, 280Y, 48%^, N^, rolls in, ~50% consistent., 1x hill bounce
+- 3w(NW+1), ger3_121o, leftmost, 1x slice, 280Y, 49%^, N^, 5th bounce, consistent, ~90% consistent., 1x hill bounce
 
 - 4w(SW), ger3_121f, rightmost, 120Y, max%, N^, 2nd bounce, consistent, ...Mostly consistent
 
+- 5w(N+1), ger3_121m, rightmost, 140Y, 98%^, NBv, backspin, 1st bounce, consistent, ~80% consistent
+- 5w(N+1), ger3_121m, rightmost, 140Y, 99%^, NBv, backspin, 1st bounce, consistent
+
 - 5w(NE+1), ger3_121b, rightmost, 3x hook, 120Y, max%, L+1^, backspin, 1st bounce, consistent, Mostly consistent..., L+2^ also works
+
+- 5w(E), ger3_121q, rightmost, 3x hook, 140Y, 98%^, N^, backspin, 3rd bounce, ~50% consistent.
+- 5w(E), ger3_121q, rightmost, 3x hook, 140Y, 99%^, N^, backspin, 3rd bounce, ~50% consistent.
 
 - 5w(SE), ger3_121a, leftmost, 120Y, max%, L+1^, 2nd bounce
 
@@ -468,6 +498,11 @@
 - 0w, ger3_120a, rightmost, 1x slice, 120Y, max%, Nv, backspin, 1st bounce, consistent
 
 - 3w(S), ger3_120b, rightmost, 120Y, max%, NSv, 2nd bounce
+
+- 5w(NW), ger3_120d, leftmost, 3x hook, 120Y, 101%^, NT-1^, ~50% consistent.
+- 5w(NW), ger3_120d, leftmost, 3x hook, 120Y, 102%^, NT^, consistent, ~65% consistent
+
+- 5w(SW), ger3_120c, leftmost, 1x slice, 120Y, max%, L+1^, backspin, 3rd bounce, consistent, ~95% consistent.
 
 ## Middle on top: 117 Y
 
@@ -484,7 +519,7 @@
 - 4w(N), ger3_117t, rightmost, 1x slice, 260Y, 51%^, NT-1^, 1x hill bounce, 4th bounce, consistent
 - 4w(N), ger3_117t, rightmost, 1x slice, 260Y, 52%^, NT-1^, 1x hill bounce, 4th bounce, consistent
 
-
+- 4w(S), ger3_117u, 1x slice, 120Y, max%, H-3v, 3rd bounce, consistent
 
 - 5w(N), ger3_117e, leftmost, 260Y, 51%^, NT-2^, 5th bounce, consistent, 1x hill bounce.
 - 5w(N), ger3_117e, leftmost, 260Y, 52%^, NT-2^, 5th bounce, 1x hill bounce.
@@ -532,6 +567,12 @@
 
 ger4_green
 
+## Middle back on slope: 540 Y
+
+- 0w, no-aim, 1x slice, 280Y, max%, N^, rest 217 Y
+  - 0w, ger4_217a, leftmost, 1x slice, 200Y, max%, H-2^, backspin, 4th bounce, ~50% consistent., Safe to spam A., Easy putt if miss.,
+
+
 ## Back right on top: 536 Y
 
 - 0w, no-aim, 1x slice, 280Y, max%, N^, rest 212 Y
@@ -539,11 +580,29 @@ ger4_green
 
 ## Middle right in cove: 529 Y
 
+- 0w, no-aim, 1x slice, 280Y, max%, N^, rest 205 Y
+  - 0w, ger4_205a, rightmost, 2x slice, 210Y, max%, H-2^, backspin, 1st bounce, consistent, ~90% consistent., Safe to spam A.
+
 - 4w(NE+1), no-aim, 280Y, max%, N^, rest 203Y
   - 1w(NW+1), ger4_203a, 2x hook, 210Y, max%, N+1^, backspin, 1st bounce, Kinda ridiculous., OOB if miss.
 
 - 8w(NW+1), no-aim, 1x slice, 280Y, max%, N^, rest 339y
   - 7w(NW+1), ger4_190a, rightmost, 1x slice, 160Y, max%, L+2^, backspin, 4th bounce
+
+## Middle left on slope: 526 Y
+
+- 0w, no-aim, 1x slice, 280Y, max%, N^, rest 204 Y
+  - 0w, ger4_204a, leftmost, 3x slice, 190Y, max%, L+3^, backspin, 2nd bounce, consistent, ~80% consistent., Sometimes sticks to flag.
+
+## Front right on slope: 524 Y
+
+- 0w, no-aim, 1x slice, 280Y, max%, N^, rest 200 Y
+  - 0w, ger4_210a, leftmost, 2x hook, 210Y, max%, H-2^, backspin, 1st bounce, consistent, 95% consistent., Sometimes sticks to flag.
+
+## Front middle on top: 522 Y
+
+- 0w, no-aim, 1x slice, 280Y, max%, N^, rest 199 Y
+  - 0w, ger4_199a, rightmost, 2x hook, 190Y, max%, NBv, backspin, 5th bounce, consistent, ~65% consistent.
 
 // ------------------------------------------------------
 
@@ -559,20 +618,42 @@ ger5_green
 
 ## Back left on slope: 465 Y
 
+- 0w(N), no-aim, 1x slice, 280Y, max%, N^, rest 144Y, Clears river.
+  - 0w, ger5_144a, rightmost, 3x hook, 140Y, max%, H^, backspin, 5th bounce, consistent, ~60% consistent., Funky curvature.
+
+
 - 13w(N), no-aim, 1x slice, 280Y, max%, N^, rest 119Y
   - 13w(E), ger5_119a, leftmost, 3x hook, 120Y, max%, N+2v, backspin, 4th bounce, Wacky curvature.
 
 ## Middle left on top: 459 Y
 
 - 0w, no-aim, 1x slice, 280Y, max%, N^, rest 138Y, Clears river.
+  - 0w, ger5_138b, leftmost, 2x hook, 140Y, max%, NSv, backspin, 1st bounce, consistent
   - 2w(NE), ger5_138a, leftmost, 3x slice, 120Y, max%, N-1^, topspin, 5th bounce
 
 - 7w(SW+1), no-aim, 1x slice, 280Y, max%, N-2^, rest 140 Y, Quite risky.
   - 7w(S+1), ger5_140a, 1x slice, 140Y, max%, NT^, 5th bounce
 
+## Middle right on slope: 457 Y
+
+- 0w, no-aim, 1x slice, 280Y, max%, N^, rest 133Y, Clears river.,
+  - 0w, no-aim, 1x slice, 120Y, max%, H-3v, 4th bounce, ~55% consistent.
+
+## Middle in cove: 456 Y
+
+- 0w, no-aim, 1x slice, 280Y, max%, N^, rest 134dY, Clears river.
+  - 0w, flag, leftmost, 120Y, max-1%^, NT-1^, topspin, rolls in, Probably grain-dependent (recorded on S grain).
+  - 0w, flag, leftmost, 120Y, max%, N-1^, 3rd bounce, consistent
+
 ## Front left on top: 451 Y
 
 - 0w, no-aim, 1x slice, 280Y, max%, N^, rest 129Y, Clears river.
+  - 0w, ger5_129a, rightmost, 2x slice, 120Y, max%, NT-1^, backspin, 4th bounce, consistent, Funky curvature.
+
+## Front left on flat: 451 Y
+
+- 0w, no-aim, 1x slice, 280Y, max%, N^, rest 131Y, Clears river.
+  - 0w, ger5_131a, leftmost, 3x hook, 120Y, max%, NT-1^, 4th bounce, ~50% consistent
 
 // ------------------------------------------------------
 
@@ -605,12 +686,39 @@ ger7_green_approach
 
 - For cartpath bounce (tee shot): 0w, 4 quick taps left, 280W, max%, L
 
+## Back left on slope: 543 Y
+
+- 0w, no-aim, 280Y, max%, N^, rest 228 Y
+  - 0w, ger7_228a, rightmost, 210Y, max%, NT^, backspin, 4th bounce
+
 ## Back right on slope: 541 Y
+
+- 0w, no-aim, 280Y, max%, N^, rest 225 Y
+  - 0w, ger7_225b, 2x hook, 210Y, max%, N-2^, backspin, 4th bounce, ~55% consistent.
 
 // - 12w(SW), no-aim, 1x slice, 280Y, max%, N^, rest 240 y
   // - 12w(SW),
 
+## Back left on top: 538 Y
+
+- 0w, no-aim, 280Y, max%, N^, rest 222 Y
+  - 0w, ger7_222a, 2x hook, 210Y, max%, N+2v, backspin, 3rd bounce, consistent, ~60% consistent.
+
+## Middle right on top: 536 Y
+
+- 0w, no-aim, 280Y, max%, N^, rest 221 Y
+  - 0w, ger7_221a, leftmost, 2x slice, 200Y, max%, L+3^, 3rd bounce, ~50% consistent, Sometimes sticks to flag., Sometimes tinks flag onto top of hill.
+
+## Middle on top: 534 Y
+
+- 0w, no-aim, 280Y, max%, N^, rest 218 Y
+  - 0w, ger7_218a, leftmost, 3x slice, 220Y, max%, NSv, backspin, 1st bounce, ~55% consistent, Sometimes sticks to flag.
+
 ## Front middle on top: 529 Y
+
+- 0w, no-aim, 280Y, max%, N^, rest 213 Y
+//   - 0w, ?, ?, 3x hook, 210Y, max%, NSv, backspin, 2nd bounce, consistent, (60%? don't remember)a
+  - 0w, ger7_213a, rightmost, 1x hook, 220Y, max%, NBv, backspin, 1st bounce, consistent
 
 - 5w(N+1), no-aim, 280Y, max%, N^, rest 206Y
   - 3w(N), ger7_206a, leftmost, 2x hook, 190Y, max%, NB^, backspin, 5th bounce

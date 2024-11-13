@@ -42,7 +42,7 @@ class PinCoverage {
             return strokes;
         })();
 
-        this.numberOfWindCombinationsForPin = numberOfWindCombinationsPerStroke * numberOfStrokes;
+        this.numberOfWindCombinationsForPin = Math.pow(numberOfWindCombinationsPerStroke, numberOfStrokes);
 
         this.knownSetups = new Set();
         const process = setup => {
@@ -97,7 +97,9 @@ class HoleCoverage {
         this.knownSetups = 1337;
         this.percentageCovered = 0.0; // 0 - 100
 
-        this.#calculate();
+        if (eligiblePins.length > 0) {
+            this.#calculate();
+        }
     }
 
     toString() {

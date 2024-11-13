@@ -5,6 +5,104 @@
 //       /                                        //
 // ---------------------------------------------- //
 
+# Hole 1
+
+## Back middle: 437 Y
+
+- 0w, no-aim, 260Y, max%, N^, rest 141 Y
+  - 0w, jap1_141a, leftmost, 1x slice, 140Y, max%, N+2^, backspin, 1st bounce, consistent, ~70% consistent., Sometimes sticks to flag.
+
+## Back left: 436 Y
+
+- 0w, no-aim, 260Y, max%, N^, rest 140 Y
+  - 0w, flag, 140Y, max%, NS+1v, backspin, 1st bounce, consistent
+  - 1w(N), jap1_140a, 2x hook, 140Y, max%, H-2v, backspin, 1st bounce, consistent, Miss = fairway.
+  - 1w(N+1), jap1_140b, rightmost, 2x hook, 120Y, max%, NS+1v, topspin, 5th bounce, consistent
+  - 1w(NE), jap1_140c, leftmost, 2x hook, 120Y, max%, N^, topspin, 5th bounce, ~55% consistent.
+  - 1w(NE+1), jap1_140d, rightmost, 1x hook, 120Y, max%, N+2^, topspin, 4th bounce, consistent, ~90% consistent.
+  - 1w(E), jap1_140e, 1x hook, 140Y, max%, NT^, backspin, 1st bounce, consistent, Miss = fairway.
+  - 1w(E+1), jap1_140f, rightmost, 1x slice, 140Y, max%, N+2^, backspin, 1st bounce, consistent
+  - 1w(SE), jap1_140g, rightmost, 1x slice, 140Y, max%, N-2^, backspin, 1st bounce, consistent, ~90% consistent.
+  - 1w(SE+1), jap1_140h, leftmost, 1x slice, 140Y, max%, NT-1^, backspin, 1st bounce, consistent
+  - 1w(S), jap1_140i, 2x slice, 140Y, max%, L^, backspin, 1st bounce, consistent, ~90% consistent
+  - 1w(S+1), jap1_140j, leftmost, 1x slice, 140Y, max%, L^, backspin, 1st bounce, consistent
+  - 1w(SW), jap1_140k, rightmost, 140Y, max%, N-2^, backspin, 1st bounce, consistent, ~90% consistent, Sometimes tinks flag and bounces to fairway.
+  - 1w(SW+1), jap1_140l, 3x slice, 120Y, max%, L^, topspin, rolls in, consistent
+  - 1w(W), jap1_140m, leftmost, 1x slice, 140Y, max%, H^, backspin, 1st bounce, consistent, Safe to spam A.
+  - 1w(W+1), jap1_140n, rightmost, 1x hook, 140Y, max%, H-2v, backspin, 1st bounce, consistent
+  - 1w(NW), jap1_140k, rightmost, 140Y, max%, NT-1^, 3rd bounce, consistent, ~90% consistent.
+  - 1w(NW+1), jap1_140o, leftmost, 2x hook, 120Y, max%, N-2^, topspin, 4th bounce, consistent, ~60% consistent.
+  - 2w(N), jap1_140p, leftmost, 1x hook, 120Y, max%, H^, 4th bounce, Safe to spam A., ~40% consistent
+  - 2w(N+1), jap1_140q, rightmost, 1x hook, 120Y, max%, NBv, 4th bounce, ~45% consistent
+  - 2w(NE), jap1_140r, 3x hook, 140Y, max%, H-3v, backspin, 1st bounce, consistent, Miss = fairway.
+  - 2w(NE+1), jap1_140s, 2x slice, 120Y, max%, NT-1^, topspin, 4th bounce, ~50% consistent.
+  - 2w(E), jap1_140t, rightmost, 1x hook, 140Y, max%, NT-1^, backspin, 1st bounce, ~70% consistent., Sometimes sticks to flag., Miss = fairway.
+  - 2w(E+1), jap1_140u, rightmost, 2x slice, 140Y, max%, L+1^, backspin, 1st bounce, consistent, Miss = fairway.
+  - 2w(SE), jap1_140v, leftmost, 3x hook, 140Y, max%, H-2v, backspin, 3rd bounce, ~40% consistent.
+  - 2w(SE+1), jap1_140w, leftmost, 140Y, max%, H-1v, backspin, 4th bounce, consistent, ~70% consistent.
+  - 2w(S), jap1_140x, rightmost, 3x hook, 140Y, max%, N+1v, backspin, 2nd bounce, consistent, ~70% consistent.
+  - 2w(S+1), jap1_140y, rightmost, 3x slice, 140Y, max%, H-2v, backspin, 5th bounce, consistent, Funky curvature.
+  - 2w(SW), jap1_140z, leftmost, 3x hook, 140Y, max%, H^, backspin, 4th bounce, consistent, ~55% consistent., Funky curvature., Safe to spam A.
+  - 2w(SW+1), jap1_140aa, rightmost, 2x slice, 120Y, max%, N-2^, topspin, rolls in, consistent
+  - 2w(W), jap1_140ab, rightmost, 1x hook, 120Y, max%, N^, topspin, 5th bounce, ~40% consistent
+  - 2w(W+1), jap1_140ac, rightmost, 2x hook, 140Y, max%, H-3v, backspin, 1st bounce, consistent, ~80% consistent., Sometimes sticks to flag.
+  - 2w(NW), jap1_140ad, leftmost, 120Y, max%, NT^, 4th bounce, ~50% consistent.
+  - 2w(NW+1), jap1_140ae, leftmost, 1x hook, 120Y, max%, NS+1v, 4th bounce, ~50% consistent
+  - 3w(N), jap1_140af, rightmost, 120Y, max%, N^, 2nd bounce, consistent, ~70% consistent.
+  - 3w(N+1), jap1_140ag, 2x hook, 120Y, max%, L+2^, 3rd bounce, consistent
+  - 3w(NE), jap1_140ah, leftmost, 1x hook, 120Y, max%, NT^, 3rd bounce, consistent, ~60% consistent.
+  - 3w(NE+1), jap1_140ai, rightmost, 2x hook, 140Y, max%, H-2v, backspin, 1st bounce, consistent, ~90% consistent., Sometimes sticks to flag., Miss = fairway.
+  - 3w(E), jap1_140aj, 140Y, max%, NT^, backspin, 1st bounce, consistent, ~70% consistent.
+  - 3w(E+1), jap1_140ak, rightmost, 3x hook, 140Y, max%, H^, backspin, 2nd bounce, consistent, ~60% consistent., Safe to spam A.
+  - 3w(SE), jap1_140al, leftmost, 3x hook, 140Y, max%, H^, backspin, 2nd bounce, ~55% consistent.
+  - 3w(SE+1), jap1_140am, leftmost, 3x hook, 140Y, max%, L+2^, backspin, 2nd bounce, ~55% consistent.
+  - 3w(S), jap1_140an, leftmost, 1x hook, 140Y, max%, NBv, backspin, 4th bounce, consistent
+  - 3w(S+1), jap1_140ao, leftmost, 3x hook, 140Y, max%, L+1^, backspin, 2nd bounce, ~15% consistent., Very rare.
+  - 3w(SW), jap1_140ap, leftmost, 3x hook, 140Y, max%, N+2^, backspin, 5th bounce
+  - 3w(SW+1), jap1_140aq, 1x slice, 140Y, max%, N^, backspin, 1st bounce, consistent, ~65% consistent.
+  - 3w(W), jap1_140ar, 140Y, max%, H^, backspin, 1st bounce, consistent, ~70% consistent., Safe to spam A.
+  - 3w(W+1), jap1_140as, 1x slice, 120Y, max%, L+1^, rolls in, consistent, Is the clapping sound doubled? lol.
+  - 3w(NW), jap1_140at, leftmost, 2x hook, 120Y, max%, N-2^, 4th bounce, consistent
+  - 3w(NW+1), jap1_140au, leftmost, 2x hook, 120Y, max%, L+2^, 3rd bounce, consistent
+
+## Middle middle: 429 Y
+
+- 0w, no-aim, 260Y, max%, N^, rest 133 Y
+  - 0w, jap1_133b, rightmost, 2x hook, 120Y, max%, N^, 5th bounce, ~50% consistent.
+
+## Front left: 419 Y
+
+- 0w, no-aim, 200Y, max%, N^, rest 195 Y
+  - 0w, jap1_195a, rightmost, 1x hook, 200Y, max%, N+1v, backspin, 1st bounce, consistent, ~80% consistent, Aim for Nv and it'll slip by the 1 frame window., Miss = fairway.
+
+## Front middle: 417 Y
+
+- 0w, no-aim, 260Y, max%, N^, rest 121 Y
+  - 0w, jap1_121a, leftmost, 1x hook, 120Y, max%, NBv, backspin, 1st bounce, consistent, ~90% consistent.
+
+## Front right: 416 Y
+
+- 0w, no-aim, 260Y, max%, N^, rest 119 Y
+  - 0w, jap1_119a, rightmost, 1x hook, 120Y, max%, NS+1v, consistent, ~90% consistent.
+
+// -------------------------------------------------
+
+# Hole 2
+
+## Back right on flat: 457 Y
+
+## Back left on flat: 456 Y
+
+## Middle back on top: 455 Y
+
+## Back right on flat: 453 Y
+
+## Middle on top: 447 Y
+
+## Middle on front: 437 Y
+
+// -------------------------------------------------
+
 # Hole 3
 
 ## Back right on flat: 209 Y
@@ -70,7 +168,7 @@
 
 ## Front left on flat: 196 Y
 
-- 0w, flag, leftmost, 180Y, max%, NT^, backspin, 4th bounce, unverified consistency
+- 0w, flag, leftmost, 180Y, max%, N-2^, backspin, 4th bounce, consistent, ~60% consistent.
 
 - 1w(SW+1), jap3_196a, leftmost, 2x slice, 180Y, max%, NT^, backspin, 3rd bounce, unverified consistency
 
@@ -82,15 +180,22 @@
 
 - 3w(NE+1), jap3_196e, leftmost, 2x slice, 180Y, max%, NB^, backspin, 3rd bounce, unverified consistency
 
-- 3w(W+1), jap3_196f, leftmost, 3x slice, 170Y, max%, H-3^, backspin, 2nd bounce, unverified consistency
-
+- 3w(W+1), jap3_196f, leftmost, 3x slice, 170Y, max%, H-3v, backspin, 2nd bounce, ...~10% consistent.
 - 4w(E+1), jap3_196g, rightmost, 3x hook, 180Y, max%, H-2v, backspin, 3rd bounce, unverified consistency
 
-- 5w(N+1), jap3_196h, leftmost, 170Y, max%, N^, backspin, 4th bounce, unverified consistency
+- 5w(N), jap3_196l, 1x hook, 170Y, max%, N-2^, backspin, 3rd bounce, consistent, ...~70% consistent
+
+- 5w(N+1), jap3_196h, leftmost, 1x hook, 170Y, max%, Nv, backspin, 4th bounce, unverified consistency
+
+- 5w(NE), jap3_196m, rightmost, 2x hook, 170Y, max%, N+2v, topspin, 4th bounce, consistent, ...~55% consistent
 
 - 5w(NE+1), jap3_196i, rightmost, 3x hook, 180Y, max%, N+2^, backspin, 2nd bounce, unverified consistency
 
-- 5w(E+1), jap3_196j, 1x slice, 180Y, max%, N+2^, backspin, 1x cartpath, 2nd bounce, unverified consistency
+- 5w(E), jap3_196n, rightmost, 2x hook, 180Y, max%, NT^, topspin, 4th bounce, consistent, ...Mostly consistent.
+
+- 5w(E+1), jap3_196j, 1x slice, 180Y, max%, N+2^, backspin, 1x cartpath, 2nd bounce, unverified consistency., Sometimes tinks flag to rough.
+
+- 5w(SE), jap3_196o, leftmost, 1x hook, 180Y, max%, NBv, backspin, 4th bounce, consistent, 1x cartpath, ...~70% consistent
 
 - 5w(W+1), jap3_196k, rightmost, 1x slice, 170Y, max%, H-3v, 5th bounce, unverified consistency
 
@@ -111,4 +216,117 @@
 
 - 5w(S), jap3_188b, rightmost, 180Y, max%, NSv, backspin, 1x cartpath, 2nd bounce, unverified consistency
 
-// TODO: Copy existing notes from word doc
+// -------------------------------------------------
+
+# Hole 5
+
+jap5_approach
+
+## Back left on flat: 526 Y
+
+- 0w, no-aim, 2x hook, 280Y, max%, N^, rest 219 Y
+  - 0w, flag, rightmost, 200Y, max%, NSv, topspin, Probably rare; grain-dependent.
+
+## Middle left on top: 517 Y
+
+## Middle front on flat: 512 Y
+
+- 0w, no-aim, 2x hook, 280Y, max%, N^, rest 208 Y
+  - 0w, jap5_208a, leftmost, 1x hook, 220Y, max%, NS+1v, backspin, 1st bounce, ~50% consistent., Sometimes sticks to flag., Sometimes bounces back to heavy rough.
+
+
+// -------------------------------------------------
+
+# Hole 6
+
+## Back left on flat: 309 Y
+
+- 0w, jap6_309a, leftmost, 2x hook, 280Y, max%, NS+1^, rolls in, Safe to spam A., Might go in with good grain., Close; but never hit it before., Missed green? WTF. Is it 3x hook?
+
+## Middle on top: 297 Y
+
+- 0w, jap6_297b, rightmost, 3x hook, 280Y, max%, NS+1^, rolls in, Safe to spam A., Might go in with good grain., Close; but never hit it before.
+
+- 5w(N), jap6_297a, leftmost, 280Y, max%, N-2^, 1x tree, 2nd bounce, ...~40% consistent., Sometimes rough/OOB.
+
+## Front left on flat: 288 Y
+
+- 0w, jap6_288a, leftmost, 3x slice, 260Y, max%, NT-2^, rolls in, Might go in with good grain., Close; but never hit it before.
+
+## Front on top: 287 Y
+
+- 0w, jap6_287b, 2x hook, 280Y, max%, N+2^, 3rd bounce, consistent, ~90% consistent., Otherwise sticks to flag.,
+
+- 2w(NE), jap6_287a, rightmost, 3x slice, 280Y, max%, N+2^, 1st bounce, consistent, ~90% consistent., Otherwise sticks to flag., miss = rough / OOB.
+
+## Front right on slope: 286 Y
+
+- 0w, jap6_286a, leftmost, 3x hook, 280Y, max%, N-1^, 3rd bounce, ...~15% consistent., Mostly lands on back left of green., Sometimes tinks flag into rough.
+
+// -------------------------------------------------
+
+# Hole 7
+
+jap7_approach
+
+## Front on top: 395 Y
+
+- 0w, no-aim, 2x hook, 260Y, max%, N^, rest 118 Y
+  - 0w, flag, 120Y, 102%^, H-2^, 2nd bounce, Unverified consistency.
+  - 0w, flag, 120Y, 103%^, NT-2^, 2nd bounce, Unverified consistency.
+  - 0w, flag, 120Y, 104%^, L+3^, backspin, 3rd bounce, Unverified consistency.
+  - 0w, flag, 120Y, 105%^, L^, backspin, 3rd bounce, Unverified consistency.
+  - 0w, flag, 120Y, max-3%^, NS+1^/v, backspin, 2nd bounce, Unverified consistency.
+
+
+// -------------------------------------------------
+
+# Hole 8
+
+jap8_approach
+
+// -------------------------------------------------
+
+# Hole 9
+
+## Back middle top on slope: 117 Y
+- 0w, flag, 120Y, 99%^, NS+1v, 3rd bounce, Unverified consistency.
+- 0w, flag, 120Y, 101%^, N-1v, backspin, 2nd bounce, Unverified consistency.
+
+## Back middle right on slope: 115 Y
+- 0w, flag, 120Y, 98%^, NT^, topspin, 2nd bounce, Unverified consistency.
+- 0w, flag, 120Y, 99%^, H-2^/HT^, 4th bounce, Unverified consistency.
+- 0w, flag, 120Y, 101%^, N+1^, backspin, 5th bounce, Unverified consistency.
+- 0w, flag, 120Y, 102%^, NBv, backspin, 4th bounce, Unverified consistency.
+
+## Middle left on top: 108 Y
+- 0w, flag, leftmost, 120Y, 97%^, N-1^, backspin, 5th bounce
+- 0w, flag, leftmost, 120Y, 98%^, H^, backspin, 5th bounce
+- 0w, flag, leftmost, 120Y, 99%^, H-1v, backspin, 4th bounce
+
+## Middle left on slope: 102 Y
+- 0w, flag, rightmost, 200Y, 53%v, NT-2^, backspin, 3rd bounce, Unverified consistency.
+- 0w, flag, rightmost, 200Y, 52%v, N+2v, backspin, 3rd bounce, Unverified consistency.
+- 0w, flag, rightmost, 200Y, 51%v, N-2v, backspin, 3rd bounce, Unverified consistency.
+- 0w, flag, rightmost, 200Y, 50%v, NSv, backspin, 3rd bounce, Unverified consistency.
+
+## Front middle on top: 97 Y
+- 0w, flag, rightmost, 200Y, 52%v, N-2^, backspin, 2nd bounce, Unverified consistency.
+- 0w, flag, rightmost, 200Y, 51%v, NT-1v, backspin, 2nd bounce, Unverified consistency.
+- 0w, flag, rightmost, 200Y, 50%v, H-2v, backspin, 2nd bounce, Unverified consistency.
+
+## Front middle on slope: 95 Y
+- 0w, flag, leftmost, 120Y, ~-1.6v, NT-2^, backspin, 3rd bounce, NEEDS WORK., Power: ~-1.6v., Chance of bouncing in.
+
+// -------------------------------------------------
+
+# Hole 11
+
+jap11_approach
+
+// -------------------------------------------------
+
+# Hole 14
+
+
+
