@@ -10,7 +10,7 @@ class ShotMeterComponent extends HTMLElement {
 		this.backgroundMask = (() => {
 			let suffix = "";
 			if (numberOfNotes >= 3) {
-				suffix = "-hide50";
+				suffix = "-hide50percent";
 			}
 			return `/assets/meter/mask-background${suffix}.png`
 		})();
