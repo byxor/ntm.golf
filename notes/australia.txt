@@ -4,6 +4,72 @@
 //   (  |(/_) // (/(/(/ (__()(// _) (-  / |/()/(-_)      //
 // ----------------------------------------------------- //
 
+# Hole 1
+
+## Back middle: 416 Y
+
+- 0w, no-aim, 1x hook, 240Y, max%, N^, rest 146 Y, Lands on fairway; trust.
+  - 0w, aus1_146a, rightmost, 2x hook, 140Y, max%, NS+1v, backspin, 2nd bounce, consistent
+
+## Back right: 409 Y
+
+- 0w, no-aim, 1x hook, 240Y, max%, N^, rest 140 Y, Lands on fairway; trust.
+  - 0w, aus1_140a, leftmost, 1x slice, 140Y, max%, H-3v, 1st bounce, consistent
+
+## Middle right: 402 Y
+
+- 0w, no-aim, 1x hook, 240Y, max%, N^, rest 133 Y, Lands on fairway; trust.
+  - 0w, aus1_133a, 2x slice, 120Y, max%, N+2^, 3rd bounce, consistent
+
+## Front middle: 398 Y
+
+- 0w, no-aim, 1x hook, 240Y, max%, N^, rest 128 Y, Lands on fairway; trust.
+  - 0w, aus1_128a, leftmost, 1x slice, 120Y, max%, N-1^, backspin, 2nd bounce, consistent
+
+## Front right: 394 Y
+
+- 0w, no-aim, 1x hook, 240Y, max%, N^, rest 125 Y, Lands on fairway; trust.
+  - 0w, aus1_125a, leftmost, 3x hook, 120Y, max%, N-1^, backspin, 5th bounce, consistent, ~66% consistent., Funky curvature; backspin goes NW.
+
+// 1 pin missing for level 8. Must be rare off a reset.
+
+// ----------------------------------------------------------------
+
+# Hole 2
+
+## Back middle: 429 Y
+
+- 0w, no-aim, 2x slice, 260Y, max%, N^, rest 141 Y
+  - 0w, flag, leftmost, 140Y, max%, N^, backspin, 1st bounce, consistent, 90% consistent.
+
+## Middle right on flat: 420 Y
+
+- 0w, no-aim, 2x slice, 250Y, max%, N^, rest 139 Y
+  - 0w, aus2_139a, 1x hook, 140Y, max%, N+2^, backspin, 1st bounce, consistent, ~60% consistent., Sometimes sticks to flag., Sometimes bounces back.
+
+## Middle left on flat: 416 Y
+
+- 0w, no-aim, 2x slice, 260Y, max%, N^, rest 132 Y
+  - 0w, aus2_132a, leftmost, 2x hook, 120Y, max%, N-1^, 4th bounce, consistent, ~70% consistent.
+
+## Middle left on top: 412 Y
+
+- 0w, no-aim, 2x slice, 240Y, max%, N^, rest 140 Y,
+  - 0w, flag, rightmost, 140Y, max%, NBv, backspin, 1st bounce, ~60% consistent., Sometimes bounces off flag.
+
+## Front right: 406 Y
+
+- 0w, no-aim, 2x slice, 240Y, max%, N^, rest 137 Y
+  - 0w, aus2_137a, rightmost, 2x hook, 140Y, max%, H-2v, backspin, 1st bounce, consistent
+
+## Front left: 404 Y
+
+- 0w, no-aim, 2x slice, 240Y, max%, N^, rest 141 Y
+  - 0w, aus2_141a, leftmost, 3x hook, 160Y, 98%^, NT-2^, backspin, 4th bounce, consistent
+  - 0w, aus2_141a, leftmost, 3x hook, 160Y, 99%^, NT-2^, backspin, 4th bounce, consistent
+
+// ----------------------------------------------------------------
+
 # Hole 3
 
 ## Back right on flat: 152 Y
@@ -38,8 +104,10 @@
 
 ## Front right on top: 143 Y
 
-- 0w, flag-1, leftmost, 170Y, 103%^, L+3^, backspin, 1st bounce
-- 0w, flag-1, leftmost, 170Y, 104%^, L+2^, backspin, 1st bounce
+- 0w, aus3_143b, 2x hook, 140Y, max%, L^, backspin, 2nd bounce, consistent, ~80% consistent.
+
+// - 0w, flag-1, leftmost, 170Y, 103%^, L+3^, backspin, 1st bounce
+// - 0w, flag-1, leftmost, 170Y, 104%^, L+2^, backspin, 1st bounce
 
 ## Front left on flat: 137 Y
 
@@ -54,6 +122,48 @@
 - 0w, flag, rightmost, 140Y, max-2%^, N-1^, backspin, 3rd bounce
 - 0w, flag, rightmost, 140Y, max-1%^, NS+1v, backspin, 2nd bounce
 
+// ----------------------------------------------------------------
+
+# Hole 4
+
+## Back middle on slope: 581 Y
+
+- 0w, no-aim, 2x slice, 280Y, max%, N^, rest 263 Y
+  - 0w, aus4_263a, rightmost, 1x hook, 240Y, max%, N-2^, 3rd bounce, Miss height = land in rough., Safe approach is 220 max N topspin to top of hill.
+
+## Back left on slope: 578 Y
+
+- 0w, no-aim, 2x slice, 280Y, max%, N^, rest 261 Y
+  - 0w, aus4_261a, leftmost, 2x hook, 260Y, 101%^, N+1^, rolls in, Recorded against N grain.
+  - 0w, aus4_261a, leftmost, 2x hook, 260Y, 102%^, N+2^, rolls in, Recorded against N grain.
+
+## Middle right on slope: 574 Y
+
+- 0w, no-aim, 2x slice, 280Y, max%, N^, rest 254 Y
+  - 0w, aus4_254a, leftmost, 1x slice, 260Y, 98%^, NT-1^, rolls in, Recorded against NE grain.
+  - 0w, aus4_254a, leftmost, 1x slice, 260Y, 98%^, NT-1^, rolls in, Recorded against NE grain.
+
+## Front middle on top: 564 Y
+
+- 0w, no-aim, 2x slice, 280Y, max%, N^, rest 245 Y
+  - 0w, aus4_245a, rightmost, 220Y, max%, NT^, 5th bounce, consistent, ~70% consistent., Sometimes lands on top.
+
+## Front right on slope: 562 Y
+
+- 0w, no-aim, 2x slice, 280Y, max%, N^, rest 242 Y
+  - 0w, aus4_242a, rightmost, 1x slice, 220Y, max%, N-1^, backspin, 4th bounce, consistent, ~80% consistent., Sometimes bounces off flag for easy putt.
+
+## Front left on flat: 558 Y
+
+- 0w, no-aim, 2x slice, 280Y, max%, N^, rest 242 Y
+  - 0w, aus4_242b, rightmost, 1x slice, 220Y, max%, N-1^, backspin, 5th bounce
+
+# Hole 5
+
+## Middle right on top: 406 Y
+
+- 0w, no-aim, 2x hook, 250Y, max%, N^, rest 139 Y, Miss power = water
+  - 0w, aus5_139a, 3x slice, 140Y, max%, H-2v, 1st bounce, consistent, ~90% consistent, Sometimes sticks to flag., H = rolls onto fairway
 
 # Hole 6
 
@@ -82,6 +192,15 @@
 
 - 0w, aus8_178a, rightmost, 1x slice, 180Y, max%, H-1^, backspin, 1st bounce, consistent, Safe to spam A., ...~70% consistent
 
+## Front right on slope: 176 Y
+
+- 0w, aus8_176a, rightmost, 1x hook, 180Y, max%, L+2^, backspin, 1st bounce, consistent
+
+## Front on top: 174 Y
+
+- 0w, aus8_174a, leftmost, 2x hook, 180Y, max%, L+2^, backspin, 1st bounce, consistent, ~80% consistent., Sometimes sticks to flag.
+
+// ----------------------------------------------------------------
 
 # Hole 10
 
@@ -89,10 +208,15 @@
 
 - 0w, aus10_306a, rightmost, 1x slice, 280Y, max%, N^, 3rd bounce, ~30% consistent., Should land on green otherwise.
 
+// ----------------------------------------------------------------
 
 # Hole 12
 
-## Back middle on slope: 209 Y
+## Back left on top: 210 Y
+
+- 0w, aus12_210a, leftmost, 3x hook, 200Y, max%, NS+1v, backspin, 4th bounce, consistent, ~80% consistent.
+
+## Back right on slope: 209 Y
 
 - 0w, flag, rightmost, 190Y, max%, N^, backspin, 4th bounce, consistent, ...Mostly
 
@@ -100,10 +224,20 @@
 
 - 0w, aus12_202a, rightmost, 180Y, max%, NT^, topspin, 5th bounce, consistent, max-1 = bunker or fairway
 
+## Front right on slope: 198 Y
+
+- 0w, aus12_198a, leftmost, 1x slice, 180Y, max%, NT-2^, backspin, 5th bounce, ~50% consistent., Very safe.
+
+## Front right on top: 195 Y
+
+- 0w, aus12_195a, rightmost, 1x slice, 180Y, max%, NBv, backspin, 4th bounce, consistent, ~60% consistent., Miss power = bunker.
+
 ## Front middle on slope: 186 Y
 
 - 0w, flag, rightmost, 190Y, max-1%^, NS^, backspin, 2nd bounce, Rarer than max but also safer than max.
 - 0w, flag, rightmost, 190Y, max%, NB^, backspin, 1st bounce, Sometimes bounces back onto fairway.
+
+// ----------------------------------------------------------------
 
 # Hole 14
 
@@ -115,7 +249,13 @@
 
 - 0w, aus14_305a, 1x slice, 280Y, max%, NSv, 2nd bounce, Sometimes tinks flag and lands on green., Sometimes rolls into rough., Quite rare.
 
+// ----------------------------------------------------------------
+
 # Hole 16
+
+## Front left on top: 218 Y
+
+- 0w, aus16_218b, leftmost, 1x slice, 220Y, max%, N-1^, backspin, 1st bounce, consistent, ~90% consistent., Sometimes sticks to flag.
 
 ## Middle on slope: 218 Y
 
@@ -125,4 +265,15 @@
 
 - 0w, aus16_215a, leftmost, 220Y, max%, NB^, backspin, 1st bounce, Usually lands in rough.
 
+## Front on cove slope: 214 Y
+
+- 0w, aus16_214a, leftmost, 1x slice, 200Y, max%, L+3^, backspin, 4th bounce, ~50% consistent., Satisfying snap into hole.
+
+## Front right on top: 210 Y
+
+- 0w, aus16_210a, 200Y, max%, N^, topspin, 2nd bounce, consistent, ~60% consistent, Sometimes sticks to flag., Sometimes bounces back safely., max-1 still reaches green.
+
 ## Front middle in cove: 208 Y
+
+- 0w, aus16_208a, 1x hook, 200Y, 104%^, H-3v, backspin, rolls in, Recorded against SW grain.
+- 0w, aus16_208a, 1x hook, 200Y, 105%^, H-3v, backspin, 3rd bounce, ~50% consistent., Sometimes sticks to flag., Sometimes bounces safely back.
