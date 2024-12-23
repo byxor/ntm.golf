@@ -14,7 +14,7 @@
 ## Back right: 409 Y
 
 - 0w, no-aim, 1x hook, 240Y, max%, N^, rest 140 Y, Lands on fairway; trust.
-  - 0w, aus1_140a, leftmost, 1x slice, 140Y, max%, H-3v, 1st bounce, consistent
+  - 0w, aus1_140a, leftmost, 1x slice, 140Y, max%, H-3v, backspin, 1st bounce, consistent
 
 ## Middle right: 402 Y
 
@@ -158,12 +158,21 @@
 - 0w, no-aim, 2x slice, 280Y, max%, N^, rest 242 Y
   - 0w, aus4_242b, rightmost, 1x slice, 220Y, max%, N-1^, backspin, 5th bounce
 
+// ----------------------------------------------------------------
+
 # Hole 5
 
 ## Middle right on top: 406 Y
 
 - 0w, no-aim, 2x hook, 250Y, max%, N^, rest 139 Y, Miss power = water
   - 0w, aus5_139a, 3x slice, 140Y, max%, H-2v, 1st bounce, consistent, ~90% consistent, Sometimes sticks to flag., H = rolls onto fairway
+
+## Front middle on top: 400 Y
+
+- 0w, no-aim, 1x slice, 180Y, max%, Nv, backspin, rest 204 Y
+  - 0w, aus5_204a, 1x hook, 190Y, max%, NSv, backspin, 3rd bounce, consistent
+
+// ----------------------------------------------------------------
 
 # Hole 6
 
@@ -259,7 +268,7 @@
 
 ## Middle on slope: 218 Y
 
-- 0w, aus16_218a, 220Y, max%, N^, backspin, 1st bounce, Sometimes lands in rough.
+- 0w, aus16_218a, 1x slice, 220Y, max%, N^, backspin, 1st bounce, Sometimes lands in rough.
 
 ## Middle right on flat: 215 Y
 

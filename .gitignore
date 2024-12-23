@@ -1,4 +1,7 @@
 .vscode/
+bounce-distances
 guides/disabling-music-in-fbneo
 guides/almeida-putting-tips
 guides/tips-for-hitting-the-meter-with-almeida
+notes/mistakes.txt
+models/bounces.js

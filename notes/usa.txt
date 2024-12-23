@@ -25,10 +25,26 @@
   - 0w, flag, leftmost, 170Y, max%, Nv, 3rd bounce, consistent
 
 - 0w, no-aim, 1x slice, 260Y, max%, N^, rest 167 y
-
   - 0w, usa1_167a, leftmost, 2x hook, 160Y, max%, Nv, backspin, 2nd bounce, ~40% consistent
-
   - 1w(E+1), usa1_167b, rightmost, 1x hook, 160Y, max%, N+2^, backspin, 2nd bounce
+
+- 3w(N), no-aim, 1x slice, 280Y, max%, N^, rest 136 y
+  - 0w, usa1_136a, 3x hook, 140Y, max%, NS+1v, backspin, 1st bounce, consistent, ~70% consistent., Sometimes tinks flag.
+
+- 3w(N+1), no-aim, 1x slice, 280Y, max%, N^, rest 137 y
+  - 0w, usa1_137a, rightmost, 3x hook, 140Y, max%, N-2^, backspin, 1st bounce, consistent, ~70% consistent., Sometimes sticks to flag.
+
+- 3w(NE), no-aim, 1x slice, 280Y, max%, N^, rest 139 y
+  - 0w, usa1_139a, leftmost, 1x hook, 140Y, max%, NSv, backspin, 1st bounce, consistent
+
+- 3w(NE+1), no-aim, 1x slice, 280Y, max%, N^, rest 142 y
+  - 0w, usa1_142b, 3x slice, 140Y, max%, NT-1^, 1st bounce, consistent, ~65% consistent., Sometimes sticks to flag.
+
+- 3w(E), no-aim, 1x slice, 280Y, max%, N^, rest 144 y
+  - 0w, usa1_144a, 3x hook, 140Y, max%, H-2v, backspin, 5th bounce, consistent, ~55% consistent., Funky curvature.
+
+//- 3w(E+1), no-aim, 1x slice, 280Y, max%, N^, rest 146 y
+//  - 0w, 
 
 ## Front right: 460 Y
 
@@ -36,6 +52,7 @@
   - 0w, flag, 180Y, 98%^, N^, backspin, 3rd bounce
   - 0w, flag, 180Y, 99%^, N^, backspin, 3rd bounce
 
+// --------------------------------------------------
 
 # Hole 2
 
@@ -66,7 +83,13 @@
 ## Front left on flat: 443 Y
 
 - 0w, no-aim, 280Y, max%, N^, rest 121 y
-  - 0w, usa2_121a, leftmost, 1x hook, 140Y, max%, N+2^, backspin, 1st bounce, consistent, ...Mostly
+  - 0w, usa2_121a, leftmost, 1x hook, 120Y, max%, N+2^, backspin, 1st bounce, consistent, ...Mostly
+
+## Front middle on flat: 438 Y
+
+- 0w, no-aim, 1x hook, 250Y, max%, N^, rest 159 Y
+
+// --------------------------------------------------
 
 # Hole 3
 
@@ -78,7 +101,7 @@
 
 ## Middle on top: 149 Y
 
-- 0w, usa3_149a, rightmost, 1x hook, 140Y, max%, N-2v, backspin, 2nd bounce, consistent
+- 0w, usa3_149a, rightmost, 1x hook, 140Y, max%, N-2v, backspin, 2nd bounce, consistent, Warning: image missing
 
 ## Middle left on flat: 144 Y
 
@@ -204,10 +227,28 @@
 
 ## Front on top: 132 Y
 
-- 0w, flag, 140Y, 98%^, NBv, 4th bounce
-- 0w, flag, 140Y, 99%^, H-3v, 3rd bounce, consistent
-- 0w, flag, 140Y, 101%^, L^, backspin, 2nd bounce
-- 0w, flag, 140Y, 102%^, L^, backspin, 2nd bounce
+- 0w, usa3_132a, 2x slice, 120Y, max%, NBv, 4th bounce, consistent, ~90% consistent.
+
+// - 0w, flag, 140Y, 98%^, NBv, 4th bounce
+// - 0w, flag, 140Y, 99%^, H-3v, 3rd bounce, consistent
+// - 0w, flag, 140Y, 101%^, L^, backspin, 2nd bounce
+// - 0w, flag, 140Y, 102%^, L^, backspin, 2nd bounce
+
+
+
+
+
+- 5w(N), usa3_132b, leftmost, 1x hook, 120Y, max-1%^, H-3v, backspin, 2nd bounce, consistent, RECOMMENDED., Grass should be 2 pixels thick beside Almeida's fringe., Sometimes 5th bounce.
+- 5w(N), usa3_132b, leftmost, 1x hook, 120Y, max%, H-2v, backspin, 1st bounce, consistent, ~70% consistent., Grass should be 2 pixels thick beside Almeida's fringe.
+
+- 5w(E), usa3_132e, leftmost, 2x slice, 160Y, 98%^, N-1^, backspin, 1st bounce, consistent, ~70% consistent., Sometimes sticks to flag.
+- 5w(E), usa3_132e, leftmost, 2x slice, 160Y, 99%^, N-1^, backspin, 1st bounce, consistent, ~70% consistent., Sometimes sticks to flag.
+
+- 5w(S), usa3_132c, rightmost, 2x hook, 140Y, max%, H-3v, backspin, 4th bounce, consistent, ~60% consistent., Funky curvature.
+
+
+// - 5w(W), ?, ?, 2x hook, 120Y, max%, N^, 3rd bounce, 1x tree, consistent, ~50% consistent
+- 5w(W), usa3_132d, rightmost, 3x slice, 120Y, max%, L^, backspin, 3rd bounce, consistent, ~80% consistent.
 
 ## Front right on slope: 129 Y
 
@@ -215,21 +256,31 @@
 - 0w, usa3_129a, rightmost, 2x slice, 120Y, max-1%^, N^, topspin, 4th bounce
 - 0w, usa3_129a, rightmost, 2x slice, 120Y, max%, H-3v, 2nd bounce, consistent
 
+// --------------------------------------------------
+
 # Hole 5
 
 usa5_greenapproach
+
+// --------------------------------------------------
 
 # Hole 8
 
 usa8_greenapproach
 
+// --------------------------------------------------
+
 # Hole 9
 
 usa9_roughpattern
 
+## Back on bubble: 277 Y
+
+- 0w, usa9_277b, rightmost, 3x slice, 250Y, max%, NS+1^, 4th bounce, consistent, ~95% consistent., Safe to spam A., Sometimes sticks to flag., Miss power = bunker.
+
 ## Back right on flat: 277 Y
 
-- 0w, usa9_277a, 3x slice, 250Y, max%, NS+1^, Safe to spam A., Risky: sometimes fairway; sometimes safe bounce off flag
+- 0w, usa9_277a, 3x slice, 250Y, max%, NS+1^, 4th bounce, Safe to spam A., Risky: sometimes fairway; sometimes safe bounce off flag
 
 ## Middle on flat: 271 Y
 
@@ -253,6 +304,7 @@ usa9_roughpattern
 - 0w, flag, 260Y, max-3%^, NS+1v, 3rd bounce, consistent
 - 0w, flag, 260Y, max-2%^, NT^, 2nd bounce, consistent
 
+// --------------------------------------------------
 
 # Hole 10
 
@@ -261,9 +313,13 @@ usa10_oninoneref
 - To land on green: 0w, reference, rightmost, 2x slice, 280Y, max%, NT-1^
 - (Thanks Wymek)
 
+// --------------------------------------------------
+
 # Hole 11
 
 - Decent tee shot: 0w, no-aim, 1x hook, 280Y, max%, N^
+
+// --------------------------------------------------
 
 # Hole 12
 
@@ -283,17 +339,23 @@ usa10_oninoneref
 
 - 0w, usa12_208a, 2x hook, 200Y, max%, N^, backspin, 3rd bounce, consistent, ...~95% consistent
 
+## Front right on top: 206 Y
+
+- 0w, usa12_206a, rightmost, 1x hook, 200Y, max%, NT^, backspin, 2nd bounce, consistent, ~70% consistent., Sometimes sticks to flag., Subtle subpixel; check grass near upper leg.
+
 ## Front middle on flat: 204 Y
 
 - 0w, usa12_204a, 2x hook, 200Y, max%, N+1^, backspin, 2nd bounce, ~55% consistent
+
+// --------------------------------------------------
 
 # Hole 15
 
 usa15_greenhill
 
-## Middle in valley: 217 Y
+## Back left on top: 229 Y
 
-- 0w, usa15_217a, leftmost, 210Y, max%, N+2v, backspin, 2nd bounce, consistent
+- 0w, usa15_229a, rightmost, 3x slice, 210Y, max%, NT-2^, ~50% consistent., Very safe.
 
 ## Back right on bubble: 225 Y
 
@@ -303,13 +365,26 @@ usa15_greenhill
 
 - 0w, usa15_215a, 1x hook, 220Y, max%, NBv, 3rd bounce
 
+## Middle in valley: 217 Y
+
+- 0w, usa15_217a, leftmost, 210Y, max%, N+2v, backspin, 2nd bounce, consistent
+
 ## Front left on flat: 211 Y
 
-- 0w, flag, rightmost, 220Y, max%, N-2v, backspin, 1st bounce, Sometimes sticks to flag, Risky if miss
+- 0w, usa15_211a, rightmost, 3x slice, 200Y, max%, N-2^, 4th bounce, consistent, Grass should be jagged above Almeida's head.
+
+- 0w, usa15_211a, rightmost, 3x slice, 200Y, max-1%^, L+3^, rest 38 y, BACKUP OPTION, Lands in rough beside hill.
+  - 0w, no-aim, 3x slice, 260Y, 49%^, N-2^, 1x hill bounce, 3rd bounce, ~30% consistent.
+
+
+
+// - 0w, flag, rightmost, 220Y, max%, N-2v, backspin, 1st bounce, Sometimes sticks to flag, Risky if miss
 
 ## Front middle: 210 Y
 
-- 0w, usa15_210a, 2x slice, 200Y, max%, N^, backspin, 4th bounce, consistent, ...~70%
+- 0w, usa15_210a, 2x slice, 200Y, max%, N^, backspin, 4th bounce, consistent, ~70% consistent
+
+// --------------------------------------------------
 
 # Hole 18
 

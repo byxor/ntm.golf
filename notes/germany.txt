@@ -191,13 +191,13 @@
 - 1w(S), flag-1, leftmost, 140Y, 105%^, H-3v, 4th bounce, consistent
 - 1w(S), flag-1, leftmost, 140Y, max-3%^, NT-1v, 3rd bounce
 
-- 1w(S+1), ger3_137a, leftmost, 1x hook, 140Y, 103%^, N^, 4th bounce
-- 1w(S+1), ger3_137a, leftmost, 1x hook, 140Y, 104%^, N+2v, 4th bounce, consistent
-- 1w(S+1), ger3_137a, leftmost, 1x hook, 140Y, 105%^, NB^, 3rd bounce
+- 1w(S+1), ger3_137a, leftmost, 1x slice, 140Y, 103%^, N^, 4th bounce
+- 1w(S+1), ger3_137a, leftmost, 1x slice, 140Y, 104%^, N+2v, 4th bounce, consistent
+- 1w(S+1), ger3_137a, leftmost, 1x slice, 140Y, 105%^, NB^, 3rd bounce
 
-- 1w(SW), ger3_137b, rightmost, 1x slice, 140Y, max%, N^, 1st bounce, consistent, rough if miss
+- 1w(SW), ger3_137b, rightmost, 1x slice, 140Y, max%, N^, 1st bounce, backspin, consistent, rough if miss
 
-- 1w(SW+1), ger3_137c, leftmost, 1x hook, 140Y, max%, NB^, 1st bounce, consistent, rough if miss
+- 1w(SW+1), ger3_137c, leftmost, 1x slice, 140Y, max%, NB^, backspin, 1st bounce, consistent, rough if miss
 
 - 1w(W), ger3_137d, rightmost, 1x slice, 140Y, 102%^, N+2^, 4th bounce
 - 1w(W), ger3_137d, rightmost, 1x slice, 140Y, 103%^, NS+1v, 3rd bounce
@@ -248,7 +248,7 @@
 
 - 2w(W+1), ger3_137y, rightmost, 2x hook, 140Y, max%, N^, backspin, 1st bounce, Rough if miss.
 
-- 2w(NW), ger3_137z, rightmost, 1x hook, 120Y, max%, NS^, 3rd bounce
+- 2w(NW), ger3_137z, rightmost, 120Y, max%, N+2^, 3rd bounce, Subtle subpixel; check grass near golfer., ~50% consistent.
 
 - 2w(NW+1), ger3_137aa, leftmost, 1x slice, 120Y, max%, N-1^, 3rd bounce
 
@@ -833,6 +833,26 @@ ger7_green_approach
 // - 0w, ger8_152a, rightmost, 190Y, max%, NT-2^, 1x tree, 2nd bounce, ~40% consistent.
 
 - 1w(NE), ger8_152b, leftmost, 140Y, max%, NS+1^, backspin, 3rd bounce, Sometimes 4th bounce., Somewhat consistent.
+
+
+
+
+
+
+
+- 15w(N), ger8_152d, leftmost, 2x hook, 120Y, max%, N-1^, backspin, 1st bounce, consistent, ~60% consistent., Sometimes sticks to flag., Miss height = chance of tinking into rough.
+
+- 15w(N+1), ger8_152e, 3x hook, 120Y, max%, NS+1v, backspin, 1st bounce, ~50% consistent., Often lands on back of green.
+
+- 15w(NE), ger8_152f, rightmost, 1x slice, 120Y, max%, L^, backspin, 2nd bounce, Sometimes tinks or passes by flag; but always lands safely.
+
+
+
+
+
+
+
+
 
 ## Front left on flat: 151 Y
 

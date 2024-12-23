@@ -14,3 +14,7 @@ const BUNKER_2_SURFACE = new Surface("bunker-2");
 const BUNKER_3_SURFACE = new Surface("bunker-3");
 const BUNKER_4_SURFACE = new Surface("bunker-4");
 const WATER_SURFACE = new Surface("water");
+
+const GREEN_SURFACE = new Surface("green");
+const GREEN_FRINGE_SURFACE = new Surface("green-fringe");
+const CARTPATH_SURFACE = new Surface("cartpath");

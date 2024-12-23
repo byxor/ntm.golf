@@ -87,19 +87,19 @@
 
 // -------------------------------------------------
 
-# Hole 2
+// # Hole 2
 
-## Back right on flat: 457 Y
+// ## Back right on flat: 457 Y
 
-## Back left on flat: 456 Y
+// ## Back left on flat: 456 Y
 
-## Middle back on top: 455 Y
+// ## Middle back on top: 455 Y
 
-## Back right on flat: 453 Y
+// ## Back right on flat: 453 Y
 
-## Middle on top: 447 Y
+// ## Middle on top: 447 Y
 
-## Middle on front: 437 Y
+// ## Middle on front: 437 Y
 
 // -------------------------------------------------
 
@@ -140,7 +140,23 @@
 
 - 1w(SE), jap3_207c, leftmost, 1x hook, 210Y, 102%^, H-3v, backspin, 4th bounce, unverified consistency
 
+- 1w(SE+1), jap3_207n, rightmost, 2x hook, 190Y, max%, NT^, backspin, 4th bounce, ~40% consistent., Mostly tinks flag.
+
+- 1w(S), jap3_207l, 2x hook, 190Y, max%, NT^, backspin, 5th bounce, consistent, ~90% consistent., Sometimes does a funny backspin above the hole before dropping in.
+
+- 1w(S+1), jap3_207l, 2x hook, 190Y, max%, NT-1^, backspin, 4th bounce, consistent, ~80% consistent
+
+- 1w(SW), jap3_207k, leftmost, 1x hook, 190Y, max%, N+2^, backspin, 3rd bounce, consistent, ~90% consistent, Sometimes tinks flag.
+
+- 1w(SW+1), jap3_207o, rightmost, 2x hook, 210Y, max%, N^, backspin, 1st bounce, consistent, OOB if miss., ~90% consistent; sometimes sticks to flag., max-1 = H backspin for green.
+
+- 1w(W), jap3_207p, rightmost, 2x hook, 190Y, max%, NSv, backspin, 4th bounce, consistent, ~60% consistent., Sometimes tinks flag.
+
+- 1w(W+1), jap3_207q, 2x hook, 190Y, max%, NSv, backspin, 3rd bounce, consistent
+
 - 1w(NW), jap3_207d, leftmost, 1x hook, 180Y, max%, NSv, 4th bounce, unverified consistency
+
+- 1w(NW+1), jap3_207r, leftmost, 3x hook, 190Y, max%, NBv, backspin, 4th bounce, consistent, ~80% consistent.
 
 - 2w(S), jap3_207e, leftmost, 190Y, max-1%^, NS+1v, 1x cartpath, 4th bounce, unverified consistency
 - 2w(S), jap3_207e, leftmost, 190Y, max%, NT^, backspin, 3rd bounce, unverified consistency
@@ -152,9 +168,26 @@
 
 - 4w(E+1), jap3_207h, leftmost, 1x hook, 190Y, max%, NT^, backspin, 3rd bounce, unverified consistency
 
+- 5w(N), jap3_207s, leftmost, 2x hook, 200Y, max%, L+2v, backspin, 1st bounce, consistent, Pretty risky; OOB or rough if miss., ~95% consistent., Sometimes tinks flag and bounces back onto green.
+
+- 5w(N+1), jap3_207t, leftmost, 1x hook, 180Y, max%, L+1^, backspin, 2nd bounce, consistent, ~90% consistent, Sometimes sticks to flag.
+
 - 5w(NE), jap3_207i, leftmost, 2x hook, 180Y, max%, H-2v, backspin, 4th bounce, unverified consistency
 
+- 5w(NE+1), jap3_207x, rightmost, 3x hook, 210Y, max%, NS+1v, backspin, 1st bounce, consistent, ~70% consistent., Sometimes sticks to flag., Sometimes tinks flag but lands on green. Miss = rough.
+
+- 5w(E), jap3_207y, leftmost, 3x hook, 190Y, max%, N^, backspin, 4th bounce, ~50% consistent; but safe.
+
+- 5w(S), jap3_207z, rightmost, 2x hook, 200Y, max%, N-2^, backspin, 5th bounce, ~40% consistent., Safe.
+
 - 5w(W), jap3_207j, rightmost, 1x slice, 180Y, max%, NB^, 4th bounce, unverified consistency
+
+- 5w(W+1), jap3_207w, leftmost, 1x hook, 180Y, max%, NT^, backspin, 4th bounce, consistent, ~70% consistent., Sometimes tinks flag.
+
+- 5w(NW), jap3_207v, leftmost, 1x hook, 200Y, max%, NT^, backspin, consistent, 1st bounce, OOB if miss.
+
+- 5w(NW+1), jap3_207u, leftmost, 3x hook, 180Y, max%, N-1^, backspin, 3rd bounce, consistent, ~60% consistent., Aim for N^ and it'll auto-snap to N-1^ very quickly., Sometimes tinks/sticks to flag.
+
 
 ## Middle left on top: 205 Y
 
@@ -327,6 +360,14 @@ jap11_approach
 // -------------------------------------------------
 
 # Hole 14
+
+## Back right on top: 176 Y
+
+- 0w, jap14_176a, rightmost, 1x hook, 180Y, max%, H-3v, backspin, 1st bounce, consistent, ~70% consistent., Sometimes tinks flag for somewhat tricky putt.
+
+## Middle left on slope: 171 Y
+
+- 0w, jap14_171a, rightmost, 2x hook, 160Y, max%, N+2^, backspin, 4th bounce, consistent
 
 
 
