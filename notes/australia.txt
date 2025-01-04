@@ -6,7 +6,7 @@
 
 # Hole 1
 
-## Back middle: 416 Y
+## Back middle-right: 416 Y
 
 - 0w, no-aim, 1x hook, 240Y, max%, N^, rest 146 Y, Lands on fairway; trust.
   - 0w, aus1_146a, rightmost, 2x hook, 140Y, max%, NS+1v, backspin, 2nd bounce, consistent
@@ -179,6 +179,24 @@
 ## Front left on flat: 320 Y
 
 - 0w, aus6_320a, rightmost, 2x slice, 280Y, max%, NT-1^, 4th bounce, consistent, ...~75% consistent.
+
+
+// ----------------------------------------------------------------
+
+
+# Hole 7
+
+## Back right on flat: 575 Y
+
+- 0w, no-aim, 1x hook, 280Y, max%, N^, rest 260 Y, Lands tucked in at bottom/middle/left of bunker
+  - 0w, aus7_260a, rightmost, 2x hook, 240Y, max%, N+2v, consistent, 4th bounce, ~70% consistent., Lands safely on green if miss.
+
+## Middle right on top: 564 Y
+
+- 0w, no-aim, 1x hook, 280Y, max%, N^, rest 249 Y, Lands tucked in at bottom/middle/left of bunker
+  - 0w, aus7_249a, leftmost, 3x slice, 220Y, max%, N+1^, topspin, rolls in, ~30% consistent., Recorded on N grain.
+
+// ----------------------------------------------------------------
 
 
 # Hole 8

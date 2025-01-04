@@ -27,7 +27,8 @@ class SetupComponent extends HTMLElement {
 					position: relative;
 					border-radius: 4px;
 					overflow: hidden;
-				}
+					width: 604px;
+                    box-shadow: 0px 7px #121242;
 
 				.container * {
 					user-select: none;
@@ -103,6 +104,9 @@ class SetupComponent extends HTMLElement {
 
 				.shot-meter {
 					position: relative;
+					width: 600px;
+                    box-shadow: 22px 22px;
+
 				}
 			</style>
 			<div class="container">

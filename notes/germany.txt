@@ -735,7 +735,7 @@ ger5_green
 ## Middle right on slope: 428 Y
 
 - 0w, no-aim, 1x slice, 250Y, max%, N^, rest 143 y
-  - 0w, ger6_143b, rightmost, 160Y, 98%^, NSv, backspin, 3rd bounce, consistent
+  - 0w, ger6_143b, rightmost, 3x hook, 160Y, 98%^, NSv, backspin, 3rd bounce, consistent
   - 0w, ger6_143b, rightmost, 160Y, 99%^, NSv, backspin, 3rd bounce, consistent
   - 2w(W+1), ger6_143a, rightmost, 1x slice, 140Y, max%, NB^, backspin, 1st bounce
 
@@ -900,7 +900,7 @@ ger9_landingpad
 ## Middle on top: 458 Y
 
 - 0w, no-aim, 260Y, max%, N^, rest 161 Y
-  - 0w, flag+1, rightmost, 140Y, max%, L+3^, 4th bounce, Subtle subpixel; check grass near feet., ~40% consistent.
+  - 0w, flag+1, rightmost, 140Y, max%, L+3^, topspin, 4th bounce, Subtle subpixel; check grass near feet., ~40% consistent.
 
 - 3w(S+1), no-aim, 1x slice, 280Y, max%, N^, rest 140Y
   - 0w, flag, 140Y, max%, N-1^, backspin, 1st bounce, sometimes sticks to flag
@@ -970,6 +970,10 @@ ger12_teeshot
 - aim at reference, white arrow rightmost, 3x slice, 280Y, max%, NB
 - 1 or 2 cartpath bounces.
 - Lands on green.
+
+## Middle on top: 338 Y
+
+- 0w, ger12_338a, leftmost, 3x slice, 280Y, max%, NS+1^, 5th bounce, Spam A., 2x cartpath., <10% consistent (very rare).
 
 // ------------------------------------------------------
 

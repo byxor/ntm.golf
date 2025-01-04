@@ -199,7 +199,7 @@
 
 - 4w(SW+1), jap3_205a, rightmost, 190Y, max%, NSv, backspin, 3rd bounce, unverified consistency
 
-## Front left on flat: 196 Y
+## Middle left on flat: 196 Y
 
 - 0w, flag, leftmost, 180Y, max%, N-2^, backspin, 4th bounce, consistent, ~60% consistent.
 
@@ -274,7 +274,7 @@ jap5_approach
 
 ## Back left on flat: 309 Y
 
-- 0w, jap6_309a, leftmost, 2x hook, 280Y, max%, NS+1^, rolls in, Safe to spam A., Might go in with good grain., Close; but never hit it before., Missed green? WTF. Is it 3x hook?
+- 0w, jap6_309a, leftmost, 2x hook, 280Y, max%, NS+1^, rolls in, Safe to spam A., Might go in with good grain., Close; but never hit it before.
 
 ## Middle on top: 297 Y
 
@@ -369,5 +369,10 @@ jap11_approach
 
 - 0w, jap14_171a, rightmost, 2x hook, 160Y, max%, N+2^, backspin, 4th bounce, consistent
 
+// ----------------------------
 
+# Hole 17
 
+## Back right on flat: 213 Y
+
+- 0w, flag, leftmost, 200Y, max%, L+3^, backspin, 4th bounce, Subtle supixel; check grass near hands., consistent, ~65% consistent., NS also works sometimes for 5th bounce.

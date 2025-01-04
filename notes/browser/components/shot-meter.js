@@ -109,7 +109,6 @@ class ShotMeterComponent extends HTMLElement {
 					mask-repeat: no-repeat;
 					mask-position: center;
 
-
 					z-index: 0;
 				}
 

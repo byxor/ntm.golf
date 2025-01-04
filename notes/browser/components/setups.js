@@ -86,14 +86,15 @@ class SetupsComponent extends HTMLElement {
                     ${setups.length === 0 ? "display: none;" : ""}
                 }
                 .reference {
-                    width: 600px;
+                    width: 601px;
                     border-radius: 4px;
                     border: 1px solid black;
+                    box-shadow: 0px 5px;
                 }
                 .details {
                     user-select: none;
                     padding-top: 10px;
-                    padding-bottom: 20px;
+                    padding-bottom: 5px;
                 }
                 .summary {
                     cursor: pointer;

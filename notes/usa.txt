@@ -17,6 +17,7 @@
 ## Middle right: 466 Y
 
 - 0w, no-aim, 1x slice, 280Y, max%, N^, rest 142 y
+  - 0w, usa1_142a, 2x slice, 140Y, max-1%^, L^, backspin, rolls in
   - 0w, usa1_142a, 2x slice, 140Y, max%, L+3^, backspin, 1st bounce
 
 ## Front left: 462 Y
@@ -101,7 +102,9 @@
 
 ## Middle on top: 149 Y
 
-- 0w, usa3_149a, rightmost, 1x hook, 140Y, max%, N-2v, backspin, 2nd bounce, consistent, Warning: image missing
+// - 0w, usa3_149a, rightmost, 1x hook, 140Y, max%, N-2v, backspin, 2nd bounce, consistent, Warning: image missing
+
+- 0w, usa3_149b, rightmost, 2x hook, 140Y, max%, NBv, 2nd bounce, consistent, ~70% consistent.
 
 ## Middle left on flat: 144 Y
 
@@ -225,6 +228,83 @@
 - 3w(NW+1), usa3_143av, 1x hook, 120Y, max%, NS+1v, 4th bounce
 - 3w(NW+1), usa3_143av, 1x hook, 120Y, max%, NS+1v, 4th bounce
 
+- 4w(N), usa3_143aw, rightmost, 140Y, 98%^, H-1v, 3rd bounce, 1x tree, consistent, ~70% consistent
+- 4w(N), usa3_143aw, rightmost, 140Y, 99%^, H-1v, 3rd bounce, 1x tree, consistent, ~70% consistent
+- 4w(N), usa3_143aw, rightmost, 140Y, 101%^, NT^, backspin, 4th bounce, ~50% consistent
+
+- 4w(N+1), usa3_143ax, 2x hook, 120Y, max%, L^, 4th bounce, CHECK CLUB, ~40% consistent
+
+- 4w(NE), usa3_143ay, rightmost, 1x slice, 120Y, max%, N-2^, 4th bounce, consistent, ~90% consistent
+
+- 4w(NE+1), usa3_143az, rightmost, 2x slice, 140Y, max%, N-2^, backspin, 1st bounce, consistent, ~80% consistent
+
+- 4w(E), usa3_143ba, 3x slice, 140Y, max-1%^, N+1v, 5th bounce, ~30% consistent
+- 4w(E), usa3_143ba, 3x slice, 140Y, max%, H-3v, backspin, 2nd bounce, consistent, ~80% consistent
+
+- 4w(E+1), usa3_143bb, rightmost, 140Y, max%, NSv, backspin, 2nd bounce, Sometimes 4th bounce, ~40% consistent
+
+- 4w(SE), usa3_143bc, 140Y, max%, NT^, backspin, 3rd bounce, consistent, ~70% consistent
+
+- 4w(SE+1), usa3_143bd, rightmost, 140Y, max%, L+3^, backspin, 3rd bounce, ~30% consistent, Subtle subpixel; only the grass moves.
+
+
+- 4w(S), usa3_143be, leftmost, 140Y, max-1%^, N^, topspin, rolls in, consistent, ~95% consistent, Recorded on No Grain., Subtle subpixel; check grass near feet.
+- 4w(S), usa3_143be, leftmost, 140Y, max%, NS+1v, 3rd bounce, ~60% consistent, Subtle subpixel; check grass near feet.
+
+- 4w(S+1), usa3_143bf, leftmost, 1x hook, 160Y, 97%^, NS+1^, consistent, rolls in, Recorded against no grain, Use as a backup option
+- 4w(S+1), usa3_143bf, leftmost, 1x hook, 160Y, 98%^, H-3^, 3rd bounce, consistent, ~70% consistent
+- 4w(S+1), usa3_143bf, leftmost, 1x hook, 160Y, 99%^, H-3^, 3rd bounce, consistent, ~70% consistent
+- 4w(S+1), usa3_143bf, leftmost, 1x hook, 160Y, 101%^, H-1v, backspin, 2nd bounce, consistent
+
+- 4w(SW), usa3_143bg, leftmost, 1x hook, 140Y, max-1%^, NBv, topspin, 4th bounce, consistent, ~50% consistent
+- 4w(SW), usa3_143bg, leftmost, 1x hook, 140Y, max%, H-3v, 3rd bounce, consistent, ~60% consistent
+
+- 4w(SW+1), usa3_143bh, leftmost, 1x hook, 140Y, max%, H-2v, backspin, 2nd bounce, consistent, ~80% consistent
+
+- 4w(W), usa3_143bj, rightmost, 160Y, 98%^, N-2v, backspin, 2nd bounce, 1x tree, consistent, CHECK CLUB, ~90% consistent, Risk of rolling off green with northernly grain (if miss height)
+- 4w(W), usa3_143bj, rightmost, 160Y, 99%^, N-2v, backspin, 2nd bounce, 1x tree, consistent, CHECK CLUB, ~90% consistent, Risk of rolling off green with northernly grain (if miss height)
+
+- 4w(W+1), usa3_143bi, 1x hook, 140Y, max%, NS+1v, backspin, 1st bounce, consistent, ~65% consistent
+
+- 4w(NW), usa3_143bk, rightmost, 1x slice, 120Y, max%, L^, 3rd bounce, consistent, ~70% consistent
+
+- 4w(NW+1), usa3_143bl, leftmost, 120Y, max%, H-2v, 2nd bounce, consistent, ~90% consistent
+
+- 5w(N), usa3_143bm, leftmost, 120Y, max%, NS+1v, backspin, 2nd bounce, consistent, ~80% consistent
+
+- 5w(N+1), usa3_143bn, leftmost, 2x hook, 120Y, max%, N+2^, consistent, ~80% consistent
+
+- 5w(NE), usa3_143bo, rightmost, 120Y, max%, NT^, 3rd bounce, ~40% consistent
+
+- 5w(NE+1), usa3_143bp, rightmost, 3x slice, 140Y, max%, L+1^, backspin, 1st bounce, consistent, ~60% consistent
+
+- 5w(E), usa3_143bq, rightmost, 160Y, 98%^, N^, backspin, 2nd bounce, consistent, ~80% consistent
+- 5w(E), usa3_143bq, rightmost, 160Y, 99%^, N^, backspin, 2nd bounce, consistent, ~80% consistent
+
+- 5w(E+1), usa3_143br, leftmost, 1x slice, 140Y, max%, N-1^, backspin, 3rd bounce, consistent, ~80% consistent
+
+- 5w(SE), usa3_143bs, rightmost, 1x slice, 140Y, max-1%^, N+1v, topspin, rolls in, ~30% consistent, Recorded on no grain
+- 5w(SE), usa3_143bs, rightmost, 1x slice, 140Y, max%, N+2^, 3rd bounce, ~50% consistent
+
+- 5w(SE+1), usa3_143bt, leftmost, 1x slice, 140Y, max%, N-2^, 4th bounce, consistent, ~70% consistent
+
+- 5w(S), usa3_143bu, rightmost, 140Y, max%, N^, 4th bounce, ~29% consistent, Subtle subpixel; check grass near feet
+
+- 5w(S+1), usa3_143bv, 3x slice, 140Y, max%, NS+1v, topspin, 4th bounce, consistent, ~60% consistent
+
+- 5w(SW), usa3_143bw, rightmost, 3x slice, 140Y, max%, N-1^, backspin, 4th bounce, ~30% consistent, Funky curvature
+
+- 5w(SW+1), usa3_143bx, leftmost, 2x hook, 140Y, max%, N-2^, backspin, 2nd bounce, consistent, ~60% consistent
+
+- 5w(W), usa3_143by, rightmost, 2x slice, 140Y, max%, NSv, backspin, 1st bounce, consistent, ~80% consistent
+
+- 5w(W+1), usa3_143bz, rightmost, 2x hook, 140Y, max%, N^, backspin, 1st bounce, consistent, ~93% consistent
+
+- 5w(NW), usa3_143ca, leftmost, 120Y, max%, H-1v, 2nd bounce, consistent, ~70% consistent
+
+- 5w(NW+1), usa3_143cb, leftmost, 1x hook, 120Y, max%, N^, backspin, 3rd bounce, ~50% consistent
+
+
 ## Front on top: 132 Y
 
 - 0w, usa3_132a, 2x slice, 120Y, max%, NBv, 4th bounce, consistent, ~90% consistent.
@@ -233,10 +313,6 @@
 // - 0w, flag, 140Y, 99%^, H-3v, 3rd bounce, consistent
 // - 0w, flag, 140Y, 101%^, L^, backspin, 2nd bounce
 // - 0w, flag, 140Y, 102%^, L^, backspin, 2nd bounce
-
-
-
-
 
 - 5w(N), usa3_132b, leftmost, 1x hook, 120Y, max-1%^, H-3v, backspin, 2nd bounce, consistent, RECOMMENDED., Grass should be 2 pixels thick beside Almeida's fringe., Sometimes 5th bounce.
 - 5w(N), usa3_132b, leftmost, 1x hook, 120Y, max%, H-2v, backspin, 1st bounce, consistent, ~70% consistent., Grass should be 2 pixels thick beside Almeida's fringe.
@@ -388,6 +464,58 @@ usa15_greenhill
 
 # Hole 18
 
-usa18_approach
+## JUST LAND ON GREEN: 0w
 
-- 0w, reference, 280Y, max%, N^, lands on back left of green
+- 1w(NW+1), usa18_green1wNW+1, rightmost, 280Y, max%, N-1^, Lands on back left of green, N^/N+2^ also works
+- 2w(NW+1), usa18_green2wNW+1, leftmost, 280Y, max%, N+2v, Lands on back left of green, N+1v/NBv also works
+- 3w(NW+1), usa18_green3wNW+1, rightmost, 3x slice, 280Y, max%, N^, Lands on middle left on flat, N+1^/N-1^ also works
+- 4w(NW+1), usa18_green4wNW+1, rightmost, 3x slice, 280Y, max%, N^, Lands on middle left on flat, N+1^/N-1^ also works
+- 5w(NW+1), usa18_green5wNW+1, rightmost, 3x slice, 280Y, max%, NBv, Lands on middle left on flat, N+1v/N+2v/NSv/NS+1v also works
+- 6w(NW+1), usa18_green6wNW+1, rightmost, 3x slice, 280Y, max%, NSv, Lands on middle left on flat, NBv/NS+1v also works
+- 7w(NW+1), usa18_green7wNW+1, leftmost, 3x slice, 280Y, max%, NBv, Lands on middle left on flat, N+2v/NSv/NS+1v also works, Little water bounce
+- 8w(NW+1), usa18_green8wNW+1, 3x slice, 280Y, max%, NBv, Lands on back left of green, N+1v/N+2v/NSv also works
+- 9w(NW+1), usa18_green9wNW+1, 3x slice, 280Y, max%, NBv, Lands on back left of green, N+2v/NSv also works
+- 10w(NW+1), usa18_green10wNW+1, 3x slice, 280Y, max%, NSv, Lands on back left of green, NBv/NS+1v also works
+- 11w(NW+1), usa18_green11wNW+1, 3x slice, 280Y, max%, NBv, Lands on back left of green, NBv/NS+1v also works
+- 12w(NW+1), usa18_green12wNW+1, rightmost, 2x slice, 260Y, max%, N-1^, WARNING: CLUB DOWN, Lands on back right of green, N-2^ also works
+- 13w(NW+1), usa18_green13wNW+1, rightmost, 3x slice, 280Y, max%, NBv, Lands on back left of green
+- 14w(NW+1), usa18_green14wNW+1, leftmost, 1x slice, 260Y, max%, N-1^, WARNING: CLUB DOWN, Lands on back middle of green, N-2^ also works
+- 15w(NW+1), usa18_green15wNW+1, leftmost, 1x slice, 260Y, max%, NT^, WARNING: CLUB DOWN, Lands on back middle of green, NT-1^ also works
+
+- 0w, usa18_green0w, 280Y, max%, N^, Lands on back left of green
+
+- 1w(N), usa18_green1wN, 280Y, max%, N^, Lands on back left of green
+- 2w(N), usa18_green2wN, 280Y, max%, NT-2^, Lands on back left of green
+- 3w(N), usa18_green3wN, 280Y, max%, N-2^, Lands on back left of green
+- 4w(N), usa18_green4wN, 280Y, max%, NS+1^, Lands on back left of green, Spam A
+- 5w(N), usa18_green5wN, 280Y, max%, N+1^, Lands on back left of green, Might roll into rough with N grain
+- 6w(N), usa18_green6wN, leftmost, 2x slice, 280Y, max%, N+2^, Gaps across with rough bounces, Lands on middle-right edge of hill (with W grain at least)
+- 7w(N), usa18_green7wN, rightmost, 2x slice, 280Y, max%, NSv, Gaps across with rough bounces, Lands on middle-right edge of hill (with W grain at least)
+- 8w(N), usa18_green8wN, rightmost, 2x slice, 280Y, max%, NBv, Gaps across with rough bounce, Rolls down hill to back-middle/right of green
+- 9w(N), usa18_green9wN, rightmost, 2x slice, 280Y, max%, NBv, Gaps across with rough bounce, Rolls down hill to back-middle/right of green
+- 10w(N), usa18_green10wN, 2x slice, 260Y, max%, N^, WARNING: CLUB DOWN, Lands on back right of green, N+1^ also works
+- 11w(N), usa18_green11wN, 2x slice, 260Y, max%, N-2^, WARNING: CLUB DOWN, Lands on back right of green
+- 12w(N), usa18_green12wN, rightmost, 1x slice, 260Y, max%, N^, WARNING: CLUB DOWN, Lands on back-middle of green, HIO Setup for 327Y pin
+- 13w(N), usa18_green13wN, rightmost, 1x slice, 260Y, max%, N+1v,  WARNING: CLUB DOWN, Lands on back-middle of green
+- 14w(N), usa18_green14wN, leftmost, 260Y, max%, NS+1^, WARNING: CLUB DOWN, Lands on back left of green, NS^ also works
+- 15w(N), usa18_green15wN, leftmost, 3x slice, 250Y, max%, NT-1^, WARNING: CLUB DOWN x2, Lands on back right of green
+
+- 1w(N+1), usa18_green1wN+1, rightmost, 280Y, max%, N^, Lands on back left of green
+- 2w(N+1), usa18_green2wN+1, leftmost, 280Y, max%, NBv, Lands on back left of green, N+2v/NSv also works
+- 3w(N+1), usa18_green3wN+1, rightmost, 3x slice, 280Y, max%, N-1^, Uses bridge bounce, Lands on middle left of green on flat, N^/N-2^ also works
+- 4w(N+1), usa18_green4wN+1, rightmost, 3x slice, 280Y, max%, N-1^, Uses bridge bounce, Lands on middle left of green on flat, N^/N-2^ also works
+- 5w(N+1), usa18_green5wN+1, rightmost, 3x slice, 280Y, max%, N-2^, Uses bridge bounce, Lands on back left of green on flat, N-1^/NT-1^ also works
+- 6w(N+1), usa18_green6wN+1, rightmost, 3x slice, 280Y, max%, N-2^, Uses bridge bounce, Lands on back left of green on flat, N-1^/NT-1^ also works
+- 7w(N+1), usa18_green7wN+1, rightmost, 3x slice, 280Y, max%, NT-1^, Uses bridge bounce, Lands on back left of green on flat
+- 8w(N+1), usa18_green8wN+1, rightmost, 3x slice, 280Y, max%, NT-1^, Uses bridge bounce, Lands on back left of green on flat
+- 9w(N+1), usa18_green9wN+1, 3x slice, 280Y, max%, N-2^, Lands on middle/back-left of green on flat, N-1^/NT-1^ also works
+- 10w(N+1), usa18_green10wN+1, 3x slice, 280Y, max%, N-1^, Lands on middle/back-left of green on flat, N-2^ also works
+- 11w(N+1), usa18_green11wN+1, 3x slice, 280Y, max%, NT-2^, Lands on back left of green on flat
+- 12w(N+1), usa18_green12wN+1, leftmost, 2x slice, 260Y, max%, NBv, WARNING: CLUB DOWN, Lands on back right of green
+- 13w(N+1), usa18_green13wN+1, rightmost, 3x slice, 280Y, max%, NSv, Lands on back left of green, NS+1v also works
+- 14w(N+1), usa18_green14wN+1, rightmost, 3x slice, 280Y, max%, NSv, Lands on back left of green, Might roll into rough with northernly grain, NS+1v also works
+- 15w(N+1), usa18_green15wN+1, rightmost, 260Y, max%, NBv, Lands on back-middle/right of green, N+1v/N+2v/NSv
+
+
+## Front left on top: 327Y
+- 12w(N), usa18_green12wN, rightmost, 1x slice, 260Y, max%, N^, 4th bounce, WARNING: CLUB DOWN, 1x cartpath, ~30% consistent?
