@@ -8,11 +8,13 @@
 # Hole 1
 
 ## Back middle: 437 Y
+.coords: 327, 90
 
 - 0w, no-aim, 260Y, max%, N^, rest 141 Y
   - 0w, jap1_141a, leftmost, 1x slice, 140Y, max%, N+2^, backspin, 1st bounce, consistent, ~70% consistent., Sometimes sticks to flag.
 
 ## Back left: 436 Y
+.coords: 202, 118
 
 - 0w, no-aim, 260Y, max%, N^, rest 140 Y
   - 0w, flag, 140Y, max%, NS+1v, backspin, 1st bounce, consistent
@@ -65,47 +67,113 @@
   - 3w(NW), jap1_140at, leftmost, 2x hook, 120Y, max%, N-2^, 4th bounce, consistent
   - 3w(NW+1), jap1_140au, leftmost, 2x hook, 120Y, max%, L+2^, 3rd bounce, consistent
 
+## Back right: 430 Y
+.coords: 448, 181
+
 ## Middle middle: 429 Y
+.coords: 276, 195
 
 - 0w, no-aim, 260Y, max%, N^, rest 133 Y
   - 0w, jap1_133b, rightmost, 2x hook, 120Y, max%, N^, 5th bounce, ~50% consistent.
 
+## Middle right: 424 Y
+.coords: 424, 252
+
 ## Front left: 419 Y
+.coords: 176, 315
 
 - 0w, no-aim, 200Y, max%, N^, rest 195 Y
   - 0w, jap1_195a, rightmost, 1x hook, 200Y, max%, N+1v, backspin, 1st bounce, consistent, ~80% consistent, Aim for Nv and it'll slip by the 1 frame window., Miss = fairway.
 
 ## Front middle: 417 Y
+.coords: 257, 341
 
 - 0w, no-aim, 260Y, max%, N^, rest 121 Y
   - 0w, jap1_121a, leftmost, 1x hook, 120Y, max%, NBv, backspin, 1st bounce, consistent, ~90% consistent.
 
 ## Front right: 416 Y
+.coords: 423, 351
 
 - 0w, no-aim, 260Y, max%, N^, rest 119 Y
   - 0w, jap1_119a, rightmost, 1x hook, 120Y, max%, NS+1v, consistent, ~90% consistent.
 
 // -------------------------------------------------
 
-// # Hole 2
+# Hole 2
 
-// ## Back right on flat: 457 Y
+## Back right on flat: 457 Y
+.coords: 426, 110
 
-// ## Back left on flat: 456 Y
+- 0w, no-aim, 280Y, max-1%^, N^, rest 154 Y
+  - 0w, flag, rightmost, 160Y, 99%^, H-3v, backspin, 5th bounce
+  - 0w, flag, rightmost, 160Y, 101%^, H-1v, backspin, 3rd bounce
 
-// ## Middle back on top: 455 Y
+- 0w, no-aim, 280Y, max%, N^, rest 135 Y
+  - 0w, flag+1, rightmost, 120Y, max-1%^, L+3^, rolls in
+  - 0w, flag+1, rightmost, 120Y, max%, N-1^, 3rd bounce
 
-// ## Back right on flat: 453 Y
 
-// ## Middle on top: 447 Y
+## Back left on flat: 456 Y
+.coords: 236, 134
 
-// ## Middle on front: 437 Y
+- 0w, no-aim, 280Y, max-1%^, N^, rest 153 Y
+  - 0w, flag, rightmost, 160Y, 99%^, H-3v, 4th bounce
+
+- 0w, no-aim, 280Y, max%, N^, rest 134 Y
+  - 0w, flag, leftmost, 120Y, max-1%^, H-2v, topspin, rolls in, Might miss due to grain
+  - 0w, flag, leftmost, 120Y, max%, L+1^, 3rd bounce
+
+
+## Back on top: 455 Y
+.coords: 332, 146
+
+
+## Back right on flat: 453 Y
+.coords: 472, 159
+
+- 0w, no-aim, 280Y, max-1%^, N^, rest 150 Y
+  - 0w, flag, leftmost, 140Y, max-2%^, N+1v, topspin, 5th bounce
+  - 0w, flag, leftmost, 140Y, max-1%^, NT-1^, topspin, 3rd bounce
+  - 0w, flag, leftmost, 140Y, max%, NS+1v, backspin, 3rd bounce
+
+- 0w, no-aim, 280Y, max%, N^, rest 131 Y
+  - 0w, flag, rightmost, 120Y, max-2%^, N+2^, topspin, 5th bounce
+  - 0w, flag, rightmost, 120Y, max-1%^, NS+1v, topspin, 5th bounce
+  - 0w, flag, rightmost, 120Y, max%, L^, 2nd bounce
+
+
+## Middle on top: 447 Y
+.coords: 353, 231
+
+- 0w, no-aim, 280Y, max-1%^, N^, rest 144 Y
+  - 0w, flag, rightmost, 120Y, max%, L^, topspin, 3rd bounce
+  - 0w, flag, rightmost, 120Y, max-1%^, L^, topspin, 3rd bounce
+
+- 0w, no-aim, 280Y, max%, N^, rest 125 Y
+  - 0w, flag, 120Y, 105%^, L^, topspin, 4th bounce
+  - 0w, flag, 120Y, max-3%^, N+2^, 4th bounce
+  - 0w, flag, 120Y, max-2%^, L^, 3rd bounce, L+1^/L+2^/L+3^ also works
+  - 0w, flag, 120Y, max%, NBv, backspin, 4th bounce
+
+
+## Front left on flat: 441 Y
+.coords: 212, 326
+
+
+## Front middle on flat: 437 Y
+.coords: 308, 357
+
+
+## Front right on flat: 435 Y
+.coords: 451, 375
 
 // -------------------------------------------------
 
 # Hole 3
 
+
 ## Back right on flat: 209 Y
+.coords: 403, 134
 
 - 0w, jap3_209a, leftmost, 2x hook, 190Y, max%, N+2v, backspin, 4th bounce, unverified consistency
 
@@ -117,7 +185,9 @@
 
 - 5w(SE+1), jap3_209d, leftmost, 2x slice, 200Y, max%, N^, backspin, 4th bounce, unverified consistency
 
+
 ## Middle back on top: 207 Y
+.coords: 283, 156
 
 - 0w, flag, 190Y, max-1%^, N-1^, topspin, rolls in, might miss due to grain, unverified consistency
 - 0w, flag, 190Y, max%, N^, backspin, 2nd bounce, unverified consistency
@@ -189,7 +259,8 @@
 - 5w(NW+1), jap3_207u, leftmost, 3x hook, 180Y, max%, N-1^, backspin, 3rd bounce, consistent, ~60% consistent., Aim for N^ and it'll auto-snap to N-1^ very quickly., Sometimes tinks/sticks to flag.
 
 
-## Middle left on top: 205 Y
+## Back left on top: 205 Y
+.coords: 213, 181
 
 - 0w, flag, leftmost, 200Y, 104%^, N-2^, backspin, 3rd bounce, unverified consistency
 - 0w, flag, leftmost, 200Y, 105%^, NT^, backspin, 3rd bounce, unverified consistency
@@ -199,7 +270,13 @@
 
 - 4w(SW+1), jap3_205a, rightmost, 190Y, max%, NSv, backspin, 3rd bounce, unverified consistency
 
+
+## Middle on top: 201 Y
+.coords: 307, 229
+
+
 ## Middle left on flat: 196 Y
+.coords: 190, 295
 
 - 0w, flag, leftmost, 180Y, max%, N-2^, backspin, 4th bounce, consistent, ~60% consistent.
 
@@ -230,9 +307,15 @@
 
 - 5w(SE), jap3_196o, leftmost, 1x hook, 180Y, max%, NBv, backspin, 4th bounce, consistent, 1x cartpath, ...~70% consistent
 
-- 5w(W+1), jap3_196k, rightmost, 1x slice, 170Y, max%, H-3v, 5th bounce, unverified consistency
+- 5w(W+1), jap3_196k, rightmost, 1x slice, 170Y, max%, H-3v, 4th bounce, unverified consistency
+
+
+## Front on top: 195Y
+.coords: 354, 301
+
 
 ## Front right on flat: 191 Y
+.coords: 472, 345
 
 - 0w, flag, leftmost, 190Y, max-1%^, NTv, topspin, 2nd bounce, unverified consistency
 - 0w, flag, leftmost, 190Y, max%, N+2v, backspin, 1st bounce, unverified consistency
@@ -243,7 +326,9 @@
 
 - 5w(SW), jap3_191c, rightmost, 2x slice, 180Y, max%, N-2v, 4th bounce, unverified consistency
 
+
 ## Middle front on flat: 188 Y
+.coords: 283, 387
 
 - 0w, jap3_188a, rightmost, 2x hook, 190Y, max%, N+2^, backspin, 1st bounce
 
@@ -251,18 +336,80 @@
 
 // -------------------------------------------------
 
+# Hole 4
+
+
+## Back middle on top: 382 Y
+.coords: 291, 125
+
+
+## Back right on flat: 379 Y
+.coords: 420, 160
+
+
+## Back left on slope: 378 Y
+.coords: 260, 182
+
+
+## Back left on flat: 375 Y
+.coords: 196, 228
+
+
+## Front right on slope: 366 Y
+.coords: 401, 327
+
+
+## Front left on bubble: 365 Y
+.coords: 196, 351
+
+
+## Front right on flat: 362 Y
+.coords: 432, 374
+
+
+## Front middle on flat: 360Y
+.coords: 305, 394
+
+// -------------------------------------------------
+
 # Hole 5
 
 jap5_approach
 
+
+## Back middle on slope: 532 Y
+.coords: 337, 137
+
+
+## Back on top: 527 Y
+.coords: 350, 206
+
+
+## Middle right on slope: 522 Y
+.coords: 496, 297
+
+
 ## Back left on flat: 526 Y
+.coords: 212, 180
 
 - 0w, no-aim, 2x hook, 280Y, max%, N^, rest 219 Y
   - 0w, flag, rightmost, 200Y, max%, NSv, topspin, Probably rare; grain-dependent.
 
+
+## Middle right on top: 521 Y
+.coords: 420, 290
+
+
+## Middle left on slope: 517 Y
+.coords: 236, 301
+
+
 ## Middle left on top: 517 Y
+.coords: 316, 313
+
 
 ## Middle front on flat: 512 Y
+.coords: 363, 394
 
 - 0w, no-aim, 2x hook, 280Y, max%, N^, rest 208 Y
   - 0w, jap5_208a, leftmost, 1x hook, 220Y, max%, NS+1v, backspin, 1st bounce, ~50% consistent., Sometimes sticks to flag., Sometimes bounces back to heavy rough.
@@ -272,27 +419,50 @@ jap5_approach
 
 # Hole 6
 
+jap6_approach
+
 ## Back left on flat: 309 Y
+.coords: 252, 119
 
 - 0w, jap6_309a, leftmost, 2x hook, 280Y, max%, NS+1^, rolls in, Safe to spam A., Might go in with good grain., Close; but never hit it before.
 
+
+## Back left on top: 300 Y
+.coords: 237, 229
+
+
+## Back right on flat: 300Y
+.coords: 450, 205
+
+
 ## Middle on top: 297 Y
+.coords: 334, 253
 
 - 0w, jap6_297b, rightmost, 3x hook, 280Y, max%, NS+1^, rolls in, Safe to spam A., Might go in with good grain., Close; but never hit it before.
 
 - 5w(N), jap6_297a, leftmost, 280Y, max%, N-2^, 1x tree, 2nd bounce, ...~40% consistent., Sometimes rough/OOB.
 
+
+## Middle right on flat: 293 Y
+.coords: 481, 288
+
+
 ## Front left on flat: 288 Y
+.coords: 210, 379
 
 - 0w, jap6_288a, leftmost, 3x slice, 260Y, max%, NT-2^, rolls in, Might go in with good grain., Close; but never hit it before.
 
+
 ## Front on top: 287 Y
+.coords: 357, 374
 
 - 0w, jap6_287b, 2x hook, 280Y, max%, N+2^, 3rd bounce, consistent, ~90% consistent., Otherwise sticks to flag.,
 
 - 2w(NE), jap6_287a, rightmost, 3x slice, 280Y, max%, N+2^, 1st bounce, consistent, ~90% consistent., Otherwise sticks to flag., miss = rough / OOB.
 
+
 ## Front right on slope: 286 Y
+.coords: 400, 383
 
 - 0w, jap6_286a, leftmost, 3x hook, 280Y, max%, N-1^, 3rd bounce, ...~15% consistent., Mostly lands on back left of green., Sometimes tinks flag into rough.
 
@@ -302,7 +472,33 @@ jap5_approach
 
 jap7_approach
 
+
+## Back middle on top: 415 Y
+.coords: 343, 121
+
+
+## Back left on flat: 409 Y
+.coords: 211, 205
+
+
+## Middle in cove: 406 Y
+.coords: 379, 230
+
+
+## Middle right on flat: 406 Y
+.coords: 490, 229
+
+
+## Front right on slope: 398 Y
+.coords: 488, 327
+
+
+## Front left on flat: 395 Y
+.coords: 259, 375
+
+
 ## Front on top: 395 Y
+.coords: 415, 366
 
 - 0w, no-aim, 2x hook, 260Y, max%, N^, rest 118 Y
   - 0w, flag, 120Y, 102%^, H-2^, 2nd bounce, Unverified consistency.
@@ -312,67 +508,419 @@ jap7_approach
   - 0w, flag, 120Y, max-3%^, NS+1^/v, backspin, 2nd bounce, Unverified consistency.
 
 
+## Front middle on slope: 390 Y
+.coords: 384, 422
+
+
 // -------------------------------------------------
 
 # Hole 8
 
 jap8_approach
 
+
+## Back left on slope: 584 Y
+.coords: 361, 152
+
+
+## Back right on slope: 582 Y
+.coords: 453, 179
+
+
+## Back middle on bubble: 579 Y
+.coords: 237, 209
+
+
+## Middle left on bubble: 574 Y
+.coords: 189, 278
+
+
+## Front right on bubble: 572 Y
+.coords: 286, 298
+
+
+## Front right on flat: 570 Y
+.coords: 400, 330
+
+
+## Front left on flat: 563 Y
+.coords: 272, 406
+
+
 // -------------------------------------------------
 
 # Hole 9
 
 ## Back middle top on slope: 117 Y
+.coords: 284, 109
+
 - 0w, flag, 120Y, 99%^, NS+1v, 3rd bounce, Unverified consistency.
 - 0w, flag, 120Y, 101%^, N-1v, backspin, 2nd bounce, Unverified consistency.
 
+
 ## Back middle right on slope: 115 Y
+.coords: 382, 154
+
 - 0w, flag, 120Y, 98%^, NT^, topspin, 2nd bounce, Unverified consistency.
-- 0w, flag, 120Y, 99%^, H-2^/HT^, 4th bounce, Unverified consistency.
+- 0w, flag, 120Y, 99%^, H-2v, 4th bounce, Unverified consistency., H-3v also works
 - 0w, flag, 120Y, 101%^, N+1^, backspin, 5th bounce, Unverified consistency.
 - 0w, flag, 120Y, 102%^, NBv, backspin, 4th bounce, Unverified consistency.
 
+
 ## Middle left on top: 108 Y
+.coords: 224, 210
+
 - 0w, flag, leftmost, 120Y, 97%^, N-1^, backspin, 5th bounce
 - 0w, flag, leftmost, 120Y, 98%^, H^, backspin, 5th bounce
 - 0w, flag, leftmost, 120Y, 99%^, H-1v, backspin, 4th bounce
 
+
+## Middle right on flat: 107 Y
+.coords: 377, 253
+
+
 ## Middle left on slope: 102 Y
+.coords: 185, 276
+
 - 0w, flag, rightmost, 200Y, 53%v, NT-2^, backspin, 3rd bounce, Unverified consistency.
 - 0w, flag, rightmost, 200Y, 52%v, N+2v, backspin, 3rd bounce, Unverified consistency.
 - 0w, flag, rightmost, 200Y, 51%v, N-2v, backspin, 3rd bounce, Unverified consistency.
 - 0w, flag, rightmost, 200Y, 50%v, NSv, backspin, 3rd bounce, Unverified consistency.
 
+
+## Middle left on flat: 100 Y
+.coords: 237, 301
+
+
 ## Front middle on top: 97 Y
+.coords: 354, 376
+
 - 0w, flag, rightmost, 200Y, 52%v, N-2^, backspin, 2nd bounce, Unverified consistency.
 - 0w, flag, rightmost, 200Y, 51%v, NT-1v, backspin, 2nd bounce, Unverified consistency.
 - 0w, flag, rightmost, 200Y, 50%v, H-2v, backspin, 2nd bounce, Unverified consistency.
 
+
 ## Front middle on slope: 95 Y
-- 0w, flag, leftmost, 120Y, ~-1.6v, NT-2^, backspin, 3rd bounce, NEEDS WORK., Power: ~-1.6v., Chance of bouncing in.
+.coords: 379, 414
+
+- 0w, flag, leftmost, 120Y, ~-1.6v, NT-2^, backspin, 3rd bounce, NEEDS WORK., Power: ~-1.6v. (No image), Chance of bouncing in.
+
+
+// -------------------------------------------------
+
+# Hole 10
+
+
+## Middle back on top: 427 Y
+.coords: 353, 134
+
+
+## Back left on top: 426 Y
+.coords: 237, 159
+
+
+## Back right on slope: 424 Y
+.coords: 481, 158
+
+
+## Back right on flat: 419 Y
+.coords: 448, 230
+
+
+## Middle on flat: 416 Y
+.coords: 326, 275
+
+
+## Front right on bubble: 411 Y
+.coords: 426, 326
+
+
+## Front left on top: 408 Y
+.coords: 237, 373
+
+
+## Front middle on flat: 407 Y
+.coords: 355, 373
+
 
 // -------------------------------------------------
 
 # Hole 11
 
 jap11_approach
+jap11_bridge-skip
+- 0w, reference, rightmost, 3x slice, 280Y, max%, N^, 1x cartpath
+
+## Back middle on flat: 556 Y
+.coords: 379, 110
+
+
+## Back left on top: 550 Y
+.coords: 260, 182
+
+
+## Middle right on top: 547 Y
+.coords: 450, 229
+
+
+## Middle left on top: 545 Y
+.coords: 214, 229
+
+
+## Middle on flat: 542 Y
+.coords: 379, 278
+
+
+## Front right on flat: 537 Y
+.coords: 472, 350
+
+
+## Front left on flat: 535 Y
+.coords: 236, 349
+
+
+## Front on top: 534 Y
+.coords: 356, 374
+
+
+// -------------------------------------------------
+
+# Hole 12
+
+jap12_approach
+
+## Back left on flat: 484 Y
+.coords: 209, 138
+
+## Back on top: 482 Y
+.coords: 353, 184
+
+## Back right on flat: 480 Y
+.coords: 462, 232
+
+## Middle on top: 476 Y
+.coords: 306, 254
+
+## Middle left on slope: 472 Y
+.coords: 213, 280
+
+## Front middle on top: 469 Y
+.coords: 304, 327
+
+## Front right on flat: 467 Y
+.coords: 421, 375
+
+## Front on top: 464 Y
+.coords: 327, 394
+
+
+// -------------------------------------------------
+
+# Hole 13
+
+## Back right on flat: 321 Y
+.coords: 346, 110
+
+## Back right on flat: 316 Y
+.coords: 472, 207
+
+## Back on top: 313 Y
+.coords: 285, 205
+
+## Middle right on slope: 312 Y
+.coords: 379, 230
+
+## Front right on slope: 308 Y
+.coords: 472, 301
+
+## Middle left on flat: 306 Y
+.coords: 214, 279
+
+## Front on top: 303 Y
+.coords: 385, 345
+
+## Front middle on flat: 297 Y
+.coords: 307, 396
+
 
 // -------------------------------------------------
 
 # Hole 14
 
+
+## Back left on slope: 183 Y
+.coords: 184, 154
+
+- 0w, jap14_183a, rightmost, 170Y, max%, N+2^, backspin, 3rd bounce
+
+
+## Middle back on top: 183 Y
+.coords: 261, 133
+
+
 ## Back right on top: 176 Y
+.coords: 449, 183
 
 - 0w, jap14_176a, rightmost, 1x hook, 180Y, max%, H-3v, backspin, 1st bounce, consistent, ~70% consistent., Sometimes tinks flag for somewhat tricky putt.
 
+
+## Middle left on top: 175 Y
+.coords: 210, 254
+
+- 0w, jap14_175a, rightmost, 180Y, 101%^, NT-1^, backspin, 4th bounce
+- 0w, jap14_175a, rightmost, 180Y, 102%^, NT^, backspin, 3rd bounce
+- 0w, jap14_175a, rightmost, 180Y, 103%^, N-1^, backspin, 3rd bounce
+
+
 ## Middle left on slope: 171 Y
+.coords: 193, 310
 
 - 0w, jap14_171a, rightmost, 2x hook, 160Y, max%, N+2^, backspin, 4th bounce, consistent
 
-// ----------------------------
+
+## Middle on flat: 171 Y
+.coords: 307, 277
+
+
+## Middle right on flat: 165Y
+.coords: 402, 325
+
+
+## Front on top: 163 Y
+.coords: 306, 373
+
+- 0w, jap14_163a, leftmost, 170Y, 101%^, H-3v, topspin, 3rd bounce
+- 0w, jap14_163a, leftmost, 170Y, 102%^, NSv, 3rd bounce
+- 0w, jap14_163a, leftmost, 170Y, 103%^, H-3v, 3rd bounce
+- 0w, jap14_163a, leftmost, 170Y, 104%^, NSv, backspin, 4th bounce
+- 0w, jap14_163a, leftmost, 170Y, 105%^, NS+1v, topspin, 2nd bounce, H-3v also works
+
+
+// -------------------------------------------------
+
+# Hole 15
+
+## Back middle on slope: 434 Y
+.coords: 343, 95
+
+## Back right on flat: 431 Y
+.coords: 401, 131
+
+## Back left on slope: 426 Y
+.coords: 223, 198
+
+## Middle on top: 423 Y
+.coords: 281, 230
+
+## Middle right on slope: 420 Y
+.coords: 331, 272
+
+## Middle right on flat: 418 Y
+.coords: 472, 284
+
+## Front left on flat: 414 Y
+.coords: 199, 356
+
+## Front on slope: 407 Y
+.coords: 351, 417
+
+
+// -------------------------------------------------
+
+# Hole 16
+
+## Back right on top: 601 Y
+.coords: 427, 133
+
+## Back left on top: 599 Y
+.coords: 285, 133
+
+## Back right on slope: 597 Y
+.coords: 487, 182
+
+## Middle in valley: 594 Y
+.coords: 382, 211
+
+## Middle right on flat: 591 Y
+.coords: 476, 264
+
+## Middle left on flat: 590 Y
+.coords: 235, 230
+
+## Front left on top: 584 Y
+.coords: 236, 301
+
+## Front right on top: 582 Y
+.coords: 379, 347
+
+// -------------------------------------------------
 
 # Hole 17
 
+## Back on bubble: 217 Y
+.coords: 284, 112
+
+- 0w, jap17_217a, leftmost, 2x slice, 210Y, max%, NS+1v, backspin, 2nd bounce, Rough if miss., max-1%=backspin
+
+
 ## Back right on flat: 213 Y
+.coords: 378, 158
 
 - 0w, flag, leftmost, 200Y, max%, L+3^, backspin, 4th bounce, Subtle supixel; check grass near hands., consistent, ~65% consistent., NS also works sometimes for 5th bounce.
+
+
+## Back on slope: 209 Y
+.coords: 236, 205
+
+
+## Back right on bubble: 209 Y
+.coords: 455, 197
+
+
+## Back right on slope: 207 Y
+.coords: 307, 223
+
+
+## Middle left on top: 204 Y
+.coords: 198, 278
+
+
+## Middle right on flat: 203 Y
+.coords: 449, 279
+
+
+## Middle on top: 201 Y
+.coords: 284, 302
+
+
+// -------------------------------------------------
+
+# Hole 18
+
+jap18_hill-reference
+- 0w, reference, 1x hook, 250Y, max%, N^
+- (should work all the way down to 104% if miss power)
+
+## Back right on flat: 370 Y
+.coords: 378, 126
+
+## Back on top: 365 Y
+.coords: 260, 182
+
+## Middle right on slope: 361 Y
+.coords: 367, 231
+
+## Middle right on flat: 359 Y
+.coords: 495, 254
+
+## Middle left on slope: 358 Y
+.coords: 210, 276
+
+## Middle on top: 357 Y
+.coords: 305, 282
+
+## Middle left on flat: 354 Y
+.coords: 236, 326
+
+## Front on top: 351 Y
+.coords: 354, 343

@@ -1,9 +1,10 @@
 class Pin {
-	constructor(label, distance, image, setups) {
+	constructor(label, distance, image, setups, coords) {
 		this.label = this.#validateLabel(label);
 		this.distance = this.#validateDistance(distance);
 		this.image = this.#validateImage(image);
 		this.setups = this.#validateSetups(setups);
+		this.coords = this.#validateCoords(coords);
 	}
 
 	equals(other) {
@@ -51,5 +52,10 @@ class Pin {
 			}
 		}
 		return setups;
+	}
+	
+	#validateCoords(coords) {
+		// TODO
+		return coords;
 	}
 }

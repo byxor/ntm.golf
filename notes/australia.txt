@@ -7,29 +7,51 @@
 # Hole 1
 
 ## Back middle-right: 416 Y
+.coords: 381, 111
 
 - 0w, no-aim, 1x hook, 240Y, max%, N^, rest 146 Y, Lands on fairway; trust.
   - 0w, aus1_146a, rightmost, 2x hook, 140Y, max%, NS+1v, backspin, 2nd bounce, consistent
 
+
+## Back left on flat: 412 Y
+.coords: 214, 159
+
+
 ## Back right: 409 Y
+.coords: 434, 191 
 
 - 0w, no-aim, 1x hook, 240Y, max%, N^, rest 140 Y, Lands on fairway; trust.
   - 0w, aus1_140a, leftmost, 1x slice, 140Y, max%, H-3v, backspin, 1st bounce, consistent
 
+
+## Middle backish: 408 Y
+.coords: 308, 206
+
+
+## Middle left: 402 Y
+.coords: 213, 278
+
+
 ## Middle right: 402 Y
+.coords: 426, 276
 
 - 0w, no-aim, 1x hook, 240Y, max%, N^, rest 133 Y, Lands on fairway; trust.
   - 0w, aus1_133a, 2x slice, 120Y, max%, N+2^, 3rd bounce, consistent
 
+
 ## Front middle: 398 Y
+.coords: 354, 327
 
 - 0w, no-aim, 1x hook, 240Y, max%, N^, rest 128 Y, Lands on fairway; trust.
   - 0w, aus1_128a, leftmost, 1x slice, 120Y, max%, N-1^, backspin, 2nd bounce, consistent
 
+
 ## Front right: 394 Y
+.coords: 408, 374
 
 - 0w, no-aim, 1x hook, 240Y, max%, N^, rest 125 Y, Lands on fairway; trust.
   - 0w, aus1_125a, leftmost, 3x hook, 120Y, max%, N-1^, backspin, 5th bounce, consistent, ~66% consistent., Funky curvature; backspin goes NW.
+
 
 // 1 pin missing for level 8. Must be rare off a reset.
 
@@ -38,53 +60,81 @@
 # Hole 2
 
 ## Back middle: 429 Y
+.coords: 285, 95
 
 - 0w, no-aim, 2x slice, 260Y, max%, N^, rest 141 Y
   - 0w, flag, leftmost, 140Y, max%, N^, backspin, 1st bounce, consistent, 90% consistent.
 
+
+## Back on top: 422 Y
+.coords: 308, 181
+
+
 ## Middle right on flat: 420 Y
+.coords: 448, 206
+
 
 - 0w, no-aim, 2x slice, 250Y, max%, N^, rest 139 Y
   - 0w, aus2_139a, 1x hook, 140Y, max%, N+2^, backspin, 1st bounce, consistent, ~60% consistent., Sometimes sticks to flag., Sometimes bounces back.
 
+
 ## Middle left on flat: 416 Y
+.coords: 166, 251
 
 - 0w, no-aim, 2x slice, 260Y, max%, N^, rest 132 Y
   - 0w, aus2_132a, leftmost, 2x hook, 120Y, max%, N-1^, 4th bounce, consistent, ~70% consistent.
 
-## Middle left on top: 412 Y
+
+## Middle right on top: 414 Y
+.coords: 308, 277
+
+
+## Front left on top: 412 Y
+.coords: 259, 301
 
 - 0w, no-aim, 2x slice, 240Y, max%, N^, rest 140 Y,
   - 0w, flag, rightmost, 140Y, max%, NBv, backspin, 1st bounce, ~60% consistent., Sometimes bounces off flag.
 
+
 ## Front right: 406 Y
+.coords: 401, 374
 
 - 0w, no-aim, 2x slice, 240Y, max%, N^, rest 137 Y
   - 0w, aus2_137a, rightmost, 2x hook, 140Y, max%, H-2v, backspin, 1st bounce, consistent
 
+
 ## Front left: 404 Y
+.coords: 190, 399
 
 - 0w, no-aim, 2x slice, 240Y, max%, N^, rest 141 Y
   - 0w, aus2_141a, leftmost, 3x hook, 160Y, 98%^, NT-2^, backspin, 4th bounce, consistent
   - 0w, aus2_141a, leftmost, 3x hook, 160Y, 99%^, NT-2^, backspin, 4th bounce, consistent
 
+
 // ----------------------------------------------------------------
 
 # Hole 3
 
+## Back on top: 157 Y
+.coords: 283, 158
+
+
 ## Back right on flat: 152 Y
+.coords: 449, 210
 
 // - 0w, flag, rightmost, 140Y, max%, L^, 4th bounce
 
 - 0w, aus3_152a, leftmost, 2x hook, 160Y, max-1%^, L+1^, backspin, 4th bounce
 - 0w, aus3_152a, leftmost, 2x hook, 160Y, max%, N+1^, backspin, 1st bounce, consistent
 
-## Middle left on flat in cove: 150 Y
+
+## Middle left in cove: 150 Y
+.coords: 210, 251
 
 - 0w, flag, leftmost, 160Y, 101%^, NT-1^, backspin, rolls in
 - 0w, flag, leftmost, 160Y, 102%^, N+2v, backspin, 4th bounce
 - 0w, flag, leftmost, 160Y, 103%^, NTv, backspin, 3rd bounce
-- 0w, flag, leftmost, 160Y, 104%^, HT^, backspin, 2nd bounce
+- 0w, flag, leftmost, 160Y, 104%^, H-3^, backspin, 2nd bounce
 - 0w, flag, leftmost, 160Y, 105%^, L+2^, backspin, 3rd bounce
 
 - 2w(W), aus3_150a, leftmost, 2x slice, 140Y, max%, L+2^, backspin, 4th bounce, consistent
@@ -92,93 +142,178 @@
 - 5w(N), aus3_150b, rightmost, 1x hook, 160Y, 98%^, N+2^, backspin, rolls in
 - 5w(N), aus3_150b, rightmost, 1x hook, 160Y, 99%^, N+2^, backspin, rolls in
 
-- 5w(E), aus3_150d, 3x hook, 140Y, max%, NT^, topspin, 3rd bounce, consistent
+- 5w(E), aus3_150d, 3x hook, 140Y, max%, NT^, topspin, 3rd bounce, consistent, Is the reference wrong? should it be 140 club in reference? (mistake)
 
 - 5w(S), aus3_150c, rightmost, 3x hook, 160Y, max%, NSv, backspin, 2nd bounce, ...~50% consistent.
 
 - 5w(W), aus3_150e, leftmost, 2x slice, 140Y, max%, NBv, backspin, 3rd bounce, ...~50% consistent.
 
+
+## Middle on top: 148 Y
+.coords: 302, 266
+
+
 ## Front left on top: 143 Y
+.coords: 260, 325
 
 - 0w, aus3_143a, leftmost, 3x hook, 140Y, max%, L^, backspin, 3rd bounce, consistent, ~70% consistent., Sometimes 4th bounce., max-1 = N+1 topspin.
 
+
 ## Front right on top: 143 Y
+.coords: 402, 327
 
 - 0w, aus3_143b, 2x hook, 140Y, max%, L^, backspin, 2nd bounce, consistent, ~80% consistent.
 
 // - 0w, flag-1, leftmost, 170Y, 103%^, L+3^, backspin, 1st bounce
 // - 0w, flag-1, leftmost, 170Y, 104%^, L+2^, backspin, 1st bounce
 
+
 ## Front left on flat: 137 Y
+.coords: 247, 407
 
 - 0w, flag+1, rightmost, 140Y, max-3%^, H-2^, 4th bounce
 - 0w, flag+1, rightmost, 140Y, max-2%^, NT-2v, 3rd bounce
 - 0w, flag+1, rightmost, 140Y, max-1%^, L+2^, 3rd bounce
 - 0w, flag+1, rightmost, 140Y, max%, Lv, backspin, 1st bounce, Difficult.
 
+
 ## Front right on flat: 135 Y
+.coords: 376, 422
 
 - 0w, flag, rightmost, 140Y, max-3%^, NS+1v, topspin, 2nd bounce
 - 0w, flag, rightmost, 140Y, max-2%^, N-1^, backspin, 3rd bounce
 - 0w, flag, rightmost, 140Y, max-1%^, NS+1v, backspin, 2nd bounce
+
 
 // ----------------------------------------------------------------
 
 # Hole 4
 
 ## Back middle on slope: 581 Y
+.coords: 331, 119
 
 - 0w, no-aim, 2x slice, 280Y, max%, N^, rest 263 Y
   - 0w, aus4_263a, rightmost, 1x hook, 240Y, max%, N-2^, 3rd bounce, Miss height = land in rough., Safe approach is 220 max N topspin to top of hill.
 
+
 ## Back left on slope: 578 Y
+.coords: 235, 154
 
 - 0w, no-aim, 2x slice, 280Y, max%, N^, rest 261 Y
   - 0w, aus4_261a, leftmost, 2x hook, 260Y, 101%^, N+1^, rolls in, Recorded against N grain.
   - 0w, aus4_261a, leftmost, 2x hook, 260Y, 102%^, N+2^, rolls in, Recorded against N grain.
 
+
 ## Middle right on slope: 574 Y
+.coords: 450, 221
 
 - 0w, no-aim, 2x slice, 280Y, max%, N^, rest 254 Y
   - 0w, aus4_254a, leftmost, 1x slice, 260Y, 98%^, NT-1^, rolls in, Recorded against NE grain.
   - 0w, aus4_254a, leftmost, 1x slice, 260Y, 98%^, NT-1^, rolls in, Recorded against NE grain.
 
-## Front middle on top: 564 Y
+
+## Back on top: 572 Y
+.coords: 261, 230
+
+
+## Front left on top: 564 Y
+.coords: 271, 320
 
 - 0w, no-aim, 2x slice, 280Y, max%, N^, rest 245 Y
   - 0w, aus4_245a, rightmost, 220Y, max%, NT^, 5th bounce, consistent, ~70% consistent., Sometimes lands on top.
 
+
+## Front right on top: 564 Y
+.coords: 361, 331
+
+
 ## Front right on slope: 562 Y
+.coords: 425, 367
 
 - 0w, no-aim, 2x slice, 280Y, max%, N^, rest 242 Y
   - 0w, aus4_242a, rightmost, 1x slice, 220Y, max%, N-1^, backspin, 4th bounce, consistent, ~80% consistent., Sometimes bounces off flag for easy putt.
 
+
 ## Front left on flat: 558 Y
+.coords: 200, 388
 
 - 0w, no-aim, 2x slice, 280Y, max%, N^, rest 242 Y
   - 0w, aus4_242b, rightmost, 1x slice, 220Y, max%, N-1^, backspin, 5th bounce
+
 
 // ----------------------------------------------------------------
 
 # Hole 5
 
+## Back right on flat: 419 Y
+.coords: 377, 111
+
+## Back left on slope: 416 Y
+.coords: 236, 157
+
+## Back left on top: 410 Y
+.coords: 237, 230
+
+## Middle on flat: 410 Y
+.coords: 354, 231
+
 ## Middle right on top: 406 Y
+.coords: 424, 278
 
 - 0w, no-aim, 2x hook, 250Y, max%, N^, rest 139 Y, Miss power = water
   - 0w, aus5_139a, 3x slice, 140Y, max%, H-2v, 1st bounce, consistent, ~90% consistent, Sometimes sticks to flag., H = rolls onto fairway
 
+## Middle right on slope: 404 Y
+.coords: 472, 302
+
+## Front left on flat: 401 Y
+.coords: 195, 338
+
 ## Front middle on top: 400 Y
+.coords: 318, 350
 
 - 0w, no-aim, 1x slice, 180Y, max%, Nv, backspin, rest 204 Y
   - 0w, aus5_204a, 1x hook, 190Y, max%, NSv, backspin, 3rd bounce, consistent
+
 
 // ----------------------------------------------------------------
 
 # Hole 6
 
+## Back on top: 338 Y
+.coords: 266, 133
+
+## Back right on top: 334 Y
+.coords: 301, 182
+
+- 0w, aus6_334a, rightmost, 2x slice, 280Y, max%, NT-1^, rolls in, Never hit it before; but might roll in with good grain.
+
+
+## Back right on flat: 334 Y
+.coords: 450, 155
+
+## Middle left on top: 333 Y
+.coords: 209, 205
+
+- 0w, aus6_333a, leftmost, 2x slice, 280Y, max%, NT-1^, rolls in, Recorded against SW grain
+
+## Middle on top: 329 Y
+.coords: 276, 242
+
+- 0w, aus6_329a, rightmost, 3x slice, 280Y, max%, N-1^, rolls in, Recorded against NW grain, N-2 = bunker on 1st bounce
+
+## Front middle on flat: 323 Y
+.coords: 334, 305
+
+- 0w, aus6_323a, leftmost, 3x slice, 280Y, max%, NBv, rolls in, Recorded against S grain
+
 ## Front left on flat: 320 Y
+.coords: 226, 362
 
 - 0w, aus6_320a, rightmost, 2x slice, 280Y, max%, NT-1^, 4th bounce, consistent, ...~75% consistent.
+
+## Front right on flat: 318 Y
+.coords: 437, 359
 
 
 // ----------------------------------------------------------------
@@ -186,15 +321,33 @@
 
 # Hole 7
 
+## Back middle on slope: 578 Y
+.coords: 355, 135
+
 ## Back right on flat: 575 Y
+.coords: 454, 174
 
 - 0w, no-aim, 1x hook, 280Y, max%, N^, rest 260 Y, Lands tucked in at bottom/middle/left of bunker
   - 0w, aus7_260a, rightmost, 2x hook, 240Y, max%, N+2v, consistent, 4th bounce, ~70% consistent., Lands safely on green if miss.
 
+## Back left on flat: 574 Y
+.coords: 214, 182
+
+## Back left on slope: 572 Y
+.coords: 259, 205
+
+## Back middle on top: 568 Y
+.coords: 379, 257
+
 ## Middle right on top: 564 Y
+.coords: 427, 301
 
 - 0w, no-aim, 1x hook, 280Y, max%, N^, rest 249 Y, Lands tucked in at bottom/middle/left of bunker
   - 0w, aus7_249a, leftmost, 3x slice, 220Y, max%, N+1^, topspin, rolls in, ~30% consistent., Recorded on N grain.
+
+## Front left on top: 562 Y
+.coords: 308, 326
+
 
 // ----------------------------------------------------------------
 
@@ -202,105 +355,359 @@
 # Hole 8
 
 ## Back right on flat: 194 Y
+.coords: 431, 134
 
 // can do 1st bounce with 200Y club but it's unnecessarily risky (chance of OOB/heavy rough)
 
 - 0w, aus8_194a, 1x hook, 180Y, max%, NS+1v, backspin, 3rd bounce, ...~50% consistent.
 
 ## Back left on slope: 192 Y
+.coords: 213, 157
 
 - 0w, aus8_192a, rightmost, 2x hook, 180Y, max%, NSv, backspin, 4th bounce, ...~50% consistent.
 
+## Middle on top: 186 Y
+.coords: 307, 231
+
+## Middle right on flat: 186 Y
+.coords:  450, 228
+
 ## Middle left on slope: 180 Y
+.coords: 236, 302
 
 - 0w, aus8_180a, 3x slice, 180Y, max%, L+1^, backspin, 1st bounce, consistent, ...~95% consistent., Sometimes bounces into rough though.
 
 ## Middle in cove: 178 Y
+.coords: 298, 329
 
 - 0w, aus8_178a, rightmost, 1x slice, 180Y, max%, H-1^, backspin, 1st bounce, consistent, Safe to spam A., ...~70% consistent
 
 ## Front right on slope: 176 Y
+.coords: 472, 348
 
 - 0w, aus8_176a, rightmost, 1x hook, 180Y, max%, L+2^, backspin, 1st bounce, consistent
 
 ## Front on top: 174 Y
+.coords: 401, 375
 
 - 0w, aus8_174a, leftmost, 2x hook, 180Y, max%, L+2^, backspin, 1st bounce, consistent, ~80% consistent., Sometimes sticks to flag.
 
 // ----------------------------------------------------------------
 
+# Hole 9
+
+## Back left on slope: 427 Y
+.coords: 238, 134
+
+## Back right on flat: 426 Y
+.coords: 380, 109
+
+## Back left on top: 422 Y
+.coords: 212, 206
+
+## Middle left inside slope: 419 Y
+.coords: 260, 230
+
+## Middle on flat: 419 Y
+.coords: 353, 207
+
+## Middle left outside slope: 415 Y
+.coords: 190, 302
+
+## Middle right outside slope: 414 Y
+.coords: 473, 245
+
+## Front on top: 409 Y
+.coords: 355, 326
+
+
+// ----------------------------------------------------------------
+
 # Hole 10
 
+## Back left on flat: 323 Y
+.coords: 254, 146
+
+## Back right on top: 321 Y
+.coords: 455, 159
+
+## Back left on flat: 318 Y
+.coords: 213, 184
+
+## Middle right on flat: 315 Y
+.coords: 495, 246
+
+## Middle on top: 313 Y
+.coords: 320, 250
+
+## Middle in cove: 313 Y
+.coords: 383, 251
+
 ## Front on top: 306 Y
+.coords: 344, 339
 
 - 0w, aus10_306a, rightmost, 1x slice, 280Y, max%, N^, 3rd bounce, ~30% consistent., Should land on green otherwise.
+
+## Front left on flat: 304 Y
+.coords: 201, 353
+
+// ----------------------------------------------------------------
+
+# Hole 11
+
+## Back left on flat: 470 Y
+.coords: 237, 85
+
+## Back right on flat: 469 Y
+.coords: 440, 139
+
+## Back left on top: 463 Y
+.coords: 261, 183
+
+## Middle on top: 456 Y
+.coords: 355, 280
+
+## Middle left on flat: 454 Y
+.coords: 179, 277
+
+## Front right on slope: 454 Y
+.coords: 475, 326
+
+## Front on top: 452 Y
+.coords: 411, 337
+
+## Front on flat: 445 Y
+.coords: 319, 408
 
 // ----------------------------------------------------------------
 
 # Hole 12
 
 ## Back left on top: 210 Y
+.coords: 257, 130
 
 - 0w, aus12_210a, leftmost, 3x hook, 200Y, max%, NS+1v, backspin, 4th bounce, consistent, ~80% consistent.
 
 ## Back right on slope: 209 Y
+.coords: 359, 149
 
 - 0w, flag, rightmost, 190Y, max%, N^, backspin, 4th bounce, consistent, ...Mostly
 
+## Back right on flat: 206 Y
+.coords: 458, 196
+
 ## Middle on top: 202 Y
+.coords: 301, 223
 
 - 0w, aus12_202a, rightmost, 180Y, max%, NT^, topspin, 5th bounce, consistent, max-1 = bunker or fairway
 
-## Front right on slope: 198 Y
+## Middle right on slope: 198 Y
+.coords: 474, 298
 
 - 0w, aus12_198a, leftmost, 1x slice, 180Y, max%, NT-2^, backspin, 5th bounce, ~50% consistent., Very safe.
 
 ## Front right on top: 195 Y
+.coords: 448, 328
 
 - 0w, aus12_195a, rightmost, 1x slice, 180Y, max%, NBv, backspin, 4th bounce, consistent, ~60% consistent., Miss power = bunker.
 
+## Front left on flat: 190 Y
+.coords: 284, 375
+
 ## Front middle on slope: 186 Y
+.coords: 332, 418
 
 - 0w, flag, rightmost, 190Y, max-1%^, NS^, backspin, 2nd bounce, Rarer than max but also safer than max.
 - 0w, flag, rightmost, 190Y, max%, NB^, backspin, 1st bounce, Sometimes bounces back onto fairway.
 
 // ----------------------------------------------------------------
 
+# Hole 13
+
+## Back middle on flat: 484 Y
+.coords: 331, 111
+
+## Back left on flat: 483 Y
+.coords: 192, 112
+
+## Back right on flat: 482 Y
+.coords: 449, 139
+
+## Middle right on top: 474 Y
+.coords: 457, 235
+
+## Middle left on flat: 474 Y
+.coords: 190, 229
+
+## Middle left on top: 469 Y
+.coords: 284, 289
+
+## Middle right on flat: 466 Y
+.coords: 473, 325
+
+## Front middle on flat: 460 Y
+.coords: 378, 397
+
+// ----------------------------------------------------------------
+
 # Hole 14
 
+// TODO: ## JUST LAND ON GREEN: 0y
+
+## Back middle on slope: 319 Y
+.coords: 286, 107
+
+- 0w, aus14_319a, rightmost, 3x slice, 280Y, max%, NBv, 4th bounce, ~20% consistent, Mostly rolls into rough.
+
+
+## Back left on top: 313 Y
+.coords: 261, 182
+
 ## Back right on slope: 313 Y
+.coords: 401, 182
 
 - 0w, aus14_313a, rightmost, 1x slice, 280Y, max%, NSv, 3rd bounce, Sometimes tinks flag and lands on green., Sometimes rolls into rough., Quite rare.
 
+## Middle on top: 311 Y
+.coords: 308, 206
+
+## Middle right on slope: 307 Y
+.coords: 449, 253
+
 ## Middle left on slope: 305 Y
+.coords: 214, 278
 
 - 0w, aus14_305a, 1x slice, 280Y, max%, NSv, 2nd bounce, Sometimes tinks flag and lands on green., Sometimes rolls into rough., Quite rare.
+
+## Front on top: 301 Y
+.coords: 401, 327
+
+## Front left on slope: 299 Y
+.coords: 307, 349
+
+- 0w, aus14_299a, leftmost, 250Y, max%, N-2^, 4th bounce, Relies on rock bounce RNG, ~20% consistent
+
+// ----------------------------------------------------------------
+
+# Hole 15
+
+## Back left on flat: 632 Y
+.coords: 213, 115
+
+## Back middle on slope: 628 Y
+.coords: 354, 156
+
+## Back left on slope: 626 Y
+.coords: 261, 182
+
+## Back right on flat: 626 Y
+.coords: 449, 182
+
+## Back middle on top: 620 Y
+.coords: 285, 254
+
+## Middle right on slope: 618 Y
+.coords: 473, 269
+
+## Middle left on top: 614 Y
+.coords: 214, 324
+
+## Middle right on top: 614 Y
+.coords: 425, 326
 
 // ----------------------------------------------------------------
 
 # Hole 16
 
+## Back middle on top: 227 Y
+.coords: 378, 135
+
+## Middle left on flat: 224 Y
+.coords: 213, 231
+
 ## Front left on top: 218 Y
+.coords: 230, 298
 
 - 0w, aus16_218b, leftmost, 1x slice, 220Y, max%, N-1^, backspin, 1st bounce, consistent, ~90% consistent., Sometimes sticks to flag.
 
 ## Middle on slope: 218 Y
+.coords: 355, 251
 
 - 0w, aus16_218a, 1x slice, 220Y, max%, N^, backspin, 1st bounce, Sometimes lands in rough.
 
 ## Middle right on flat: 215 Y
+.coords: 473, 254
 
 - 0w, aus16_215a, leftmost, 220Y, max%, NB^, backspin, 1st bounce, Usually lands in rough.
 
 ## Front on cove slope: 214 Y
+.coords: 283, 323
 
 - 0w, aus16_214a, leftmost, 1x slice, 200Y, max%, L+3^, backspin, 4th bounce, ~50% consistent., Satisfying snap into hole.
 
 ## Front right on top: 210 Y
+.coords: 377, 344
 
 - 0w, aus16_210a, 200Y, max%, N^, topspin, 2nd bounce, consistent, ~60% consistent, Sometimes sticks to flag., Sometimes bounces back safely., max-1 still reaches green.
 
 ## Front middle in cove: 208 Y
+.coords: 269, 407
 
 - 0w, aus16_208a, 1x hook, 200Y, 104%^, H-3v, backspin, rolls in, Recorded against SW grain.
 - 0w, aus16_208a, 1x hook, 200Y, 105%^, H-3v, backspin, 3rd bounce, ~50% consistent., Sometimes sticks to flag., Sometimes bounces safely back.
+
+// ----------------------------------------------------
+
+# Hole 17
+
+## Back right on slope: 450 Y
+.coords: 425, 135
+
+## Back left on top: 449 Y
+.coords: 301, 131
+
+## Back left on slope: 447 Y
+.coords: 237, 148
+
+## Middle right on flat: 442 Y
+.coords: 462, 235
+
+## Middle on flat: 441 Y
+.coords: 349, 230
+
+## Middle left on flat: 436 Y
+.coords: 213, 278
+
+## Front on top: 432 Y
+.coords: 380, 342
+
+## Front right on slope: 432 Y
+.coords: 425, 360
+
+// ------------------------------------------------------
+
+# Hole 18
+
+## Back middle on flat: 559 Y
+.coords: 322, 107
+
+## Back on top: 553 Y
+.coords: 284, 183
+
+## Back right on slope: 552 Y
+.coords: 425, 182
+
+## Middle left on flat: 546 Y
+.coords: 195, 270
+
+## Middle right on flat: 544 Y
+.coords: 476, 273
+
+## Middle right on slope: 540 Y
+.coords: 402, 325
+
+## Front right on top: 538 Y
+.coords: 331, 350
+
+## Front right on slope: 535 Y
+.coords: 372, 386

@@ -7,6 +7,7 @@ class NotesBrowserComponent extends HTMLElement {
 	#holeSelectComponent = document.createElement('hole-select');
 	#windSelectComponent = document.createElement('wind-select');
 	#pinSelectComponent = document.createElement('pin-select');
+	#graphicalPinSelectComponent = document.createElement('graphical-pin-select');
 	#breadcrumbsComponent = document.createElement('breadcrumbs-');
 	#holeNotesComponent = document.createElement('hole-notes');
 	#setupsComponent = document.createElement('setups-');
@@ -24,6 +25,7 @@ class NotesBrowserComponent extends HTMLElement {
 			wind => navigationController.setWind(wind),
 		);
 		this.#pinSelectComponent.init(navigationController);
+		this.#graphicalPinSelectComponent.init(navigationController);
 		this.#breadcrumbsComponent.init(navigationController);
 		this.#holeNotesComponent.init(navigationController);
 		this.#setupsComponent.init(navigationController);
@@ -63,7 +65,9 @@ class NotesBrowserComponent extends HTMLElement {
 				}
 
 				.pin-select {
-
+					padding: 2px;
+					padding-top: 4px;
+					padding-bottom: 10px;
 				}
 
 				.wind-select {
@@ -92,6 +96,7 @@ class NotesBrowserComponent extends HTMLElement {
 					<div class="hole-select"></div>
 					<div class="wind-select"></div>
 					<div class="breadcrumbs"></div>
+					<div class="graphical-pin-select"></div>
 					<div class="pin-select"></div>
 					<div class="progress"></div>
 					<div class="hole-notes"></div>
@@ -115,6 +120,10 @@ class NotesBrowserComponent extends HTMLElement {
 		this.shadowRoot
 			.querySelector(".pin-select")
 			.appendChild(this.#pinSelectComponent);
+
+		this.shadowRoot
+			.querySelector(".graphical-pin-select")
+			.appendChild(this.#graphicalPinSelectComponent);
 
 		this.shadowRoot
 			.querySelector(".progress")

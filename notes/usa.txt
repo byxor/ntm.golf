@@ -4,23 +4,33 @@
 //   (__/__)(  | (__()(// _) (-  / |/()/(-_)      //
 // ---------------------------------------------- //
 
-// TODO: Copy existing notes from word doc
-
 # Hole 1
 
+## Back middle: 480 Y
+.coords: 314, 106
+
 ## Back right: 476 Y
+.coords: 425, 157
 
 - 0w, no-aim, 1x slice, 280Y, max%, N^, rest 152 y
   - 0w, flag, leftmost, 140Y, max-1%^, N+1v, topspin, 5th bounce
   - 0w, flag, leftmost, 140Y, max%, NT-1^, backspin, 3rd bounce
 
+## Back left on flat: 474 Y
+.coords: 189, 182
+
+## Middle slightly back: 472 Y
+.coords: 307, 203
+
 ## Middle right: 466 Y
+.coords: 449, 277
 
 - 0w, no-aim, 1x slice, 280Y, max%, N^, rest 142 y
   - 0w, usa1_142a, 2x slice, 140Y, max-1%^, L^, backspin, rolls in
   - 0w, usa1_142a, 2x slice, 140Y, max%, L+3^, backspin, 1st bounce
 
 ## Front left: 462 Y
+.coords: 215, 326
 
 - 0w, no-aim, 1x slice, 260Y, max-1%^, N^, rest 184 y
   - 0w, flag, leftmost, 170Y, max%, Nv, 3rd bounce, consistent
@@ -48,26 +58,36 @@
 //  - 0w, 
 
 ## Front right: 460 Y
+.coords: 479, 340
 
 - 0w, no-aim, 1x slice, 260Y, max%, N^, rest 163 y
   - 0w, flag, 180Y, 98%^, N^, backspin, 3rd bounce
   - 0w, flag, 180Y, 99%^, N^, backspin, 3rd bounce
+
+## Front middle: 458 Y
+.coords: 307, 374
 
 // --------------------------------------------------
 
 # Hole 2
 
 ## Back middle on flat: 464 Y
+.coords: 316, 111
 
 - 0w, no-aim, 280Y, max%, N^, rest 141 y
   - 0w, usa2_141a, rightmost, 1x slice, 140Y, max%, N^, backspin, 1st bounce, Fairway if miss
 
 ## Back left on flat: 461 Y
+.coords: 206, 137
 
 - 0w, no-aim, 280Y, max%, N^, rest 139 y
   - 0w, usa2_139a, rightmost, 1x hook, 140Y, max%, NBv, backspin, 1st bounce, consistent, ...Mostly, Fairway if miss
 
+## Back right on flat: 458 Y
+.coords: 448, 182
+
 ## Middle on top: 454 Y
+.coords: 354, 230
 
 - 0w, no-aim, 280Y, max-1%^, N^, rest 150 y
   - 0w, usa2_150a, 3x hook, 140Y, max%, H-3v, 4th bounce
@@ -76,17 +96,23 @@
   - 0w, flag+1, rightmost, 120Y, max-1%^, NS+1v, topspin, 5th bounce
   - 0w, flag+1, rightmost, 120Y, max%, L^, 2nd bounce, consistent
 
-## Middle left: 450 Y
+## Middle left on flat: 450 Y
+.coords: 190, 275
 
 - 0w, no-aim, 280Y, max%, N^, rest 127 y
   - 0w, flag, leftmost, 120Y, max%, N^, backspin, 2nd bounce
 
+## Front right on flat: 444 Y
+.coords: 471, 349
+
 ## Front left on flat: 443 Y
+.coords: 212, 356
 
 - 0w, no-aim, 280Y, max%, N^, rest 121 y
   - 0w, usa2_121a, leftmost, 1x hook, 120Y, max%, N+2^, backspin, 1st bounce, consistent, ...Mostly
 
 ## Front middle on flat: 438 Y
+.coords: 309, 422
 
 - 0w, no-aim, 1x hook, 250Y, max%, N^, rest 159 Y
 
@@ -95,18 +121,21 @@
 # Hole 3
 
 ## Back right on slope: 151 Y
+.coords: 380, 119
 
 - 0w, usa3_151a, 1x hook, 140Y, max%, L+1^, backspin, 3rd bounce, consistent, ...Mostly, CHECK YOUR CLUB
 
 // - 0w, flag+1, rightmost, 140Y, max%, NT^, backspin, 3rd bounce
 
-## Middle on top: 149 Y
+## Back on top: 149 Y
+.coords: 284, 155
 
 // - 0w, usa3_149a, rightmost, 1x hook, 140Y, max%, N-2v, backspin, 2nd bounce, consistent, Warning: image missing
 
 - 0w, usa3_149b, rightmost, 2x hook, 140Y, max%, NBv, 2nd bounce, consistent, ~70% consistent.
 
 ## Middle left on flat: 144 Y
+.coords: 212, 228
 
 - 0w, flag, leftmost, 140Y, 103%^, H-2v, topspin, 3rd bounce
 - 0w, flag, leftmost, 140Y, 104%^, NSv, 4th bounce
@@ -114,6 +143,7 @@
 - 0w, flag, leftmost, 140Y, max-3%^, H^, 4th bounce
 
 ## Middle on slope: 143 Y
+.coords: 309, 229
 
 - 0w, usa3_143b, leftmost, 140Y, 104%^, NS+1v, 4th bounce, consistent, ...Mostly
 - 0w, usa3_143b, leftmost, 140Y, 105%^, N-1^, 3rd bounce, consistent, ...Mostly
@@ -304,8 +334,14 @@
 
 - 5w(NW+1), usa3_143cb, leftmost, 1x hook, 120Y, max%, N^, backspin, 3rd bounce, ~50% consistent
 
+## Middle right on flat: 142 Y
+.coords: 449, 231
+
+## Front right on flat: 134 Y
+.coords: 470, 325
 
 ## Front on top: 132 Y
+.coords: 251, 368
 
 - 0w, usa3_132a, 2x slice, 120Y, max%, NBv, 4th bounce, consistent, ~90% consistent.
 
@@ -327,6 +363,7 @@
 - 5w(W), usa3_132d, rightmost, 3x slice, 120Y, max%, L^, backspin, 3rd bounce, consistent, ~80% consistent.
 
 ## Front right on slope: 129 Y
+.coords: 338, 391
 
 // TODO
 - 0w, usa3_129a, rightmost, 2x slice, 120Y, max-1%^, N^, topspin, 4th bounce
@@ -334,15 +371,149 @@
 
 // --------------------------------------------------
 
+# Hole 4
+
+## Back right on flat: 696 Y
+.coords: 378, 110
+
+## Back left on slope: 692 Y
+.coords: 237, 157
+
+## Back middle on slope: 690 Y
+.coords: 284, 180
+
+## Back right on slope: 686 Y
+.coords: 401, 227
+
+## Back left on top:683 Y
+.coords: 247, 264
+
+## Middle on top: 680 Y
+.coords: 340, 303
+
+## Middle right on top: 680 Y
+.coords: 426, 300
+
+## Front right on flat: 674 Y
+.coords: 426, 368
+
+// --------------------------------------------------
+
 # Hole 5
 
 usa5_greenapproach
+
+## Back middle on slope: 401 Y
+.coords: 284, 89
+
+## Back right on flat: 396 Y
+.coords: 419, 115
+
+## Back middle on top: 394 Y
+.coords: 287, 176
+
+## Middle right on top: 387 Y
+.coords: 402, 229
+
+## Front left on top: 386 Y
+.coords: 251, 285
+
+## Front right on slope: 382 Y
+.coords: 418, 293
+
+## Front left on slope: 381 Y
+.coords: 237, 350
+
+## Front middle on flat: 377 Y
+.coords: 306, 374
+
+// --------------------------------------------------
+
+# Hole 6
+
+## Back left on flat: 483 Y
+.coords: 261, 111
+
+## Back left on slope: 475 Y
+.coords: 196, 196
+
+## Back right on flat: 474 Y
+.coords: 402, 229
+
+## Back right on slope: 473 Y
+.coords: 473, 253
+
+## Back left on top: 470 Y
+.coords: 213, 253
+
+## Middle right on top:467 Y
+.coords: 425, 320
+
+## Front right on flat: 462 Y
+.coords: 458, 385
+
+## Front on top: 461 Y
+.coords: 331, 375
+
+
+// --------------------------------------------------
+
+# Hole 7
+
+## Back middle on flat: 394 Y
+.coords: 261, 135
+
+## Back right on bubble: 394 Y
+.coords: 403, 134
+
+## Back left on bubble: 388 Y
+.coords: 235, 205
+
+## Middle left on slope: 385 Y
+.coords: 170, 254
+
+## Middle on flat: 382 Y
+.coords: 355, 278
+
+## Front right on bubble: 380 Y
+.coords: 449, 300
+
+## Front left on bubble: 378 Y
+.coords: 262, 326
+
+## Front middle on flat: 374 Y
+.coords: 355, 374
 
 // --------------------------------------------------
 
 # Hole 8
 
 usa8_greenapproach
+
+## Back middle on flat: 615 Y
+.coords: 306, 91
+
+## Middle left on slope: 610 Y
+.coords: 237, 161
+
+## Back right on flat: 610 Y
+.coords: 419, 144
+
+## Back right on slope: 604 Y
+.coords: 473, 203
+
+## Middle left on top: 603 Y
+.coords: 247, 241
+
+## Middle right on top: 600 Y
+.coords: 417, 262
+
+## Front left on top: 595 Y
+.coords: 279, 329
+
+## Front middle in cove: 592 Y
+.coords: 352, 366
+
 
 // --------------------------------------------------
 
@@ -351,31 +522,39 @@ usa8_greenapproach
 usa9_roughpattern
 
 ## Back on bubble: 277 Y
+.coords: 288, 96
 
 - 0w, usa9_277b, rightmost, 3x slice, 250Y, max%, NS+1^, 4th bounce, consistent, ~95% consistent., Safe to spam A., Sometimes sticks to flag., Miss power = bunker.
 
 ## Back right on flat: 277 Y
+.coords: 393, 109
 
 - 0w, usa9_277a, 3x slice, 250Y, max%, NS+1^, 4th bounce, Safe to spam A., Risky: sometimes fairway; sometimes safe bounce off flag
 
 ## Middle on flat: 271 Y
+.coords: 367, 181
 
 ## Back left on flat: 269 Y
+.coords: 184, 191
 
 ## Middle on slope: 265 Y
+.coords: 379, 251
 
 // - 0w, flag, rightmost, 250Y, max%, N^, 2nd bounce, Very risky, Sometimes lands on fairway
 - 0w, usa9_265a, rightmost, 1x slice, 240Y, max%, NS+1^, 4th bounce, consistent, Safe to spam A
 
 ## Middle right on slope: 264 Y
+.coords: 458, 281
 
 - 0w, usa9_264a, 3x slice, 250Y, max-1%^, NSv, 4th bounce, consistent, (Thanks Wymek), Rough if max
 
 ## Middle left on top: 260 Y
+.coords: 283, 300
 
 - 0w, usa9_260a, 3x slice, 240Y, max%, N^, 2nd bounce, consistent, (Thanks Wymek)
 
 ## Front middle in cove: 253 Y
+.coords: 324, 397
 
 - 0w, flag, 260Y, max-3%^, NS+1v, 3rd bounce, consistent
 - 0w, flag, 260Y, max-2%^, NT^, 2nd bounce, consistent
@@ -384,44 +563,160 @@ usa9_roughpattern
 
 # Hole 10
 
-usa10_oninoneref
+## Back right on slope: 362 Y
+.coords: 378, 110
 
-- To land on green: 0w, reference, rightmost, 2x slice, 280Y, max%, NT-1^
-- (Thanks Wymek)
+## Back middle on slope: 360 Y
+.coords: 287, 122
+
+## Back right on slope: 356 Y
+.coords: 424, 180
+
+## Back on top: 355 Y
+.coords: 284, 183
+
+## Middle right on flat: 348 Y
+.coords: 403, 278
+
+## Middle left on flat: 347 Y
+.coords: 178, 268
+
+## Middle on slope: 347 Y
+.coords: 284, 279
+
+## Front right on top: 340 Y
+.coords: 349, 379
+
+## JUST LAND ON GREEN: 0y
+
+- 0w, usa10_oninoneref, rightmost, 2x slice, 280Y, max%, NT-1^, (Thanks Wymek)
 
 // --------------------------------------------------
 
 # Hole 11
 
-- Decent tee shot: 0w, no-aim, 1x hook, 280Y, max%, N^
+- Decent tee shot: 0w, ~2-3 quick taps right, no-aim, 1x hook, 280Y, max%, N^
+
+## Back middle on slope: 625 Y
+.coords: 354, 106
+
+## Back right on top: 622 Y
+.coords: 425, 156
+
+## Back left on flat: 615 Y
+.coords: 189, 204
+
+## Middle right on flat: 614 Y
+.coords: 428, 254
+
+## Middle left on slope: 610 Y
+.coords: 260, 279
+
+## Front right on slope: 610 Y
+.coords: 472, 303
+
+## Front on top: 607 Y
+.coords: 377, 327
+
+## Front left on flat: 600 Y
+.coords: 211, 396
 
 // --------------------------------------------------
 
 # Hole 12
 
+## Back left on flat: 230 Y
+.coords: 259, 86
+
+## Back right on flat: 226 Y
+.coords: 426, 132
+
 ## Back left on top: 220 Y
+.coords: 190, 204
 
 - 0w, flag+1, rightmost, 200Y, max%, NSv, rolls in, consistent, ...Not fully, but surprisingly
 
 ## Back right on top: 216 Y
+.coords: 461, 254
 
 - 0w, usa12_216a, 2x slice, 220Y, max%, NS+1v, 1st bounce, Lands in heavy rough ~75% of time, DON'T BACKSPIN (goes OOB)
 
 ## Front left on top: 209 Y
+.coords: 209, 330
 
 - 0w, usa12_209a, 2x slice, 200Y, max%, NSv, backspin, 2nd bounce, consistent, ...Not fully, but ~60%
 
 ## Front middle on flat: 208 Y
+.coords: 332, 342
 
 - 0w, usa12_208a, 2x hook, 200Y, max%, N^, backspin, 3rd bounce, consistent, ...~95% consistent
 
 ## Front right on top: 206 Y
+.coords: 402, 372
 
 - 0w, usa12_206a, rightmost, 1x hook, 200Y, max%, NT^, backspin, 2nd bounce, consistent, ~70% consistent., Sometimes sticks to flag., Subtle subpixel; check grass near upper leg.
 
 ## Front middle on flat: 204 Y
+.coords: 286, 396
 
 - 0w, usa12_204a, 2x hook, 200Y, max%, N+1^, backspin, 2nd bounce, ~55% consistent
+
+// --------------------------------------------------
+
+# Hole 13
+
+## Back middle on flat: 475 Y
+.coords: 372, 88
+
+## Back left on flat: 471 Y
+.coords: 237, 112
+
+## Middle right on flat: 465 Y
+.coords: 476, 240
+
+## Middle on top: 464 Y
+.coords: 377, 231
+
+## Middle left on slope: 460 Y
+.coords: 258, 250
+
+## Front right on flat: 454 Y
+.coords: 427, 352
+
+## Front left on flat: 453 Y
+.coords: 197, 325
+
+## Front middle on flat: 448 Y
+.coords: 282, 395
+
+
+// --------------------------------------------------
+
+# Hole 14
+
+## Back left on slope: 410 Y
+.coords: 258, 132
+
+## Back middle on slope: 409 Y
+.coords: 331, 132
+
+## Back middle on top: 404 Y
+.coords: 334, 198
+
+## Back right on slope: 403 Y
+.coords: 471, 205
+
+## Middle left on top: 400 Y
+.coords: 234, 255
+
+## Middle right on top: 397 Y
+.coords: 425, 278
+
+## Front right on slope: 391 Y
+.coords: 448, 347
+
+## Front middle on flat: 390 Y
+.coords: 285, 376
 
 // --------------------------------------------------
 
@@ -429,23 +724,41 @@ usa10_oninoneref
 
 usa15_greenhill
 
+
 ## Back left on top: 229 Y
+.coords: 268, 134
 
 - 0w, usa15_229a, rightmost, 3x slice, 210Y, max%, NT-2^, ~50% consistent., Very safe.
 
+
+## Back middle on flat: 227 Y
+.coords: 341, 165
+
+
 ## Back right on bubble: 225 Y
+.coords: 448, 206
 
 - 0w, usa15_225a, 2x slice, 210Y, max%, N+1v, backspin, 4th bounce
 
+
+## Middle left on top: 220 Y
+.coords: 237, 229
+
+
 ## Front right on bubble: 215 Y
+.coords: 451, 323
 
 - 0w, usa15_215a, 1x hook, 220Y, max%, NBv, 3rd bounce
 
+
 ## Middle in valley: 217 Y
+.coords: 320, 287
 
 - 0w, usa15_217a, leftmost, 210Y, max%, N+2v, backspin, 2nd bounce, consistent
 
+
 ## Front left on flat: 211 Y
+.coords: 205, 340
 
 - 0w, usa15_211a, rightmost, 3x slice, 200Y, max%, N-2^, 4th bounce, consistent, Grass should be jagged above Almeida's head.
 
@@ -453,16 +766,75 @@ usa15_greenhill
   - 0w, no-aim, 3x slice, 260Y, 49%^, N-2^, 1x hill bounce, 3rd bounce, ~30% consistent.
 
 
-
 // - 0w, flag, rightmost, 220Y, max%, N-2v, backspin, 1st bounce, Sometimes sticks to flag, Risky if miss
 
 ## Front middle: 210 Y
+.coords: 353, 379
 
 - 0w, usa15_210a, 2x slice, 200Y, max%, N^, backspin, 4th bounce, consistent, ~70% consistent
 
 // --------------------------------------------------
 
+# Hole 16
+
+## Back left on slope: 449 Y
+.coords: 332, 182
+
+## Back right on top: 448 Y
+.coords: 386, 184
+
+## Middle right on slope: 445 Y
+.coords: 450, 231
+
+## Back left on slope: 443 Y
+.coords: 197, 253
+
+## Middle on slope: 439 Y
+.coords: 316, 300
+
+## Middle on top: 439 Y
+.coords: 388, 301
+
+## Front left on slope: 434 Y
+.coords: 251, 367
+
+## Front right on slope: 432 Y
+.coords: 392, 379
+
+
+// --------------------------------------------------
+
+# Hole 17
+
+## Back middle on flat: 679 Y
+.coords: 330, 95
+
+## Back left on slope: 674 Y
+.coords: 188, 175
+
+## Middle on top: 667 Y
+.coords: 237, 253
+
+## Middle right on top: 664 Y
+.coords: 318, 277
+
+## Middle right on flat: 664 Y
+.coords: 494, 253
+
+## Front on top: 660 Y
+.coords: 238, 333
+
+## Front on slope: 657 Y
+.coords: 239, 379
+
+## Front middle on flat: 655 Y
+.coords: 359, 378
+
+
+// --------------------------------------------------
+
 # Hole 18
+
 
 ## JUST LAND ON GREEN: 0w
 
@@ -516,6 +888,28 @@ usa15_greenhill
 - 14w(N+1), usa18_green14wN+1, rightmost, 3x slice, 280Y, max%, NSv, Lands on back left of green, Might roll into rough with northernly grain, NS+1v also works
 - 15w(N+1), usa18_green15wN+1, rightmost, 260Y, max%, NBv, Lands on back-middle/right of green, N+1v/N+2v/NSv
 
+## Back left on flat: 344 Y
+.coords: 233, 103
 
-## Front left on top: 327Y
+## Back right on flat: 342 Y
+.coords: 446, 130
+
+## Back middle on slope: 338 Y
+.coords: 261, 178
+
+## Back left on top: 332 Y
+.coords: 236, 253
+
+## Middle right on flat: 330 Y
+.coords: 493, 280
+
+## Middle right on slope: 328 Y
+.coords: 403, 301
+
+## Middle left on top: 327 Y
+.coords: 228, 306
+
 - 12w(N), usa18_green12wN, rightmost, 1x slice, 260Y, max%, N^, 4th bounce, WARNING: CLUB DOWN, 1x cartpath, ~30% consistent?
+
+## Middle on top: 326 Y
+.coords: 307, 325

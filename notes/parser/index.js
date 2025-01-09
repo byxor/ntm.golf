@@ -106,6 +106,17 @@ function parseNotes(notes, courseName) {
 			return [label, distance];
 		})();
 
+		line = lines[lineNumber];
+
+		let coords = undefined;
+		if (line.startsWith(".coords:")) {
+			const segments = line.split(":")[1].split(",");
+			const x = parseInt(segments[0]);
+			const y = parseInt(segments[1]);
+			coords = {x, y};
+			lineNumber++;
+		}
+
 		const stroke = 1;
 		const shotOptions = [];
 		while (lineNumber < lines.length) {
@@ -125,7 +136,7 @@ function parseNotes(notes, courseName) {
 		}
 
 		const image = "";
-		const pin = new Pin(label, distance, image, shotOptions);
+		const pin = new Pin(label, distance, image, shotOptions, coords);
 		return [pin, lineNumber]
 	}
 

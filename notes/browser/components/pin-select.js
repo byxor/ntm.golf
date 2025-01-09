@@ -26,8 +26,6 @@ class PinSelectComponent extends HTMLElement {
 		createTemplate(this, `
 			<style>
 				.container {
-					padding: 2px;
-					padding-top: 10px;
 					display: flex;
 					flex-direction: row;
 					flex-wrap: wrap;
