@@ -142,11 +142,19 @@
 - 5w(N), aus3_150b, rightmost, 1x hook, 160Y, 98%^, N+2^, backspin, rolls in
 - 5w(N), aus3_150b, rightmost, 1x hook, 160Y, 99%^, N+2^, backspin, rolls in
 
+- 5w(N+1), aus3_150f, rightmost, 120Y, max%, N+1v, topspin, rolls in, Recorded against no grain., consistent, consistent?
+
+- 5w(NE), aus3_150h, 3x hook, 140Y, max%, NT^, backspin, 2nd bounce, consistent, ~70% consistent
+
+- 5w(NE+1), aus3_150i, leftmost, 1x slice, 140Y, max%, NBv, backspin, 3rd bounce, consistent, ~70% consistent
+
 - 5w(E), aus3_150d, 3x hook, 140Y, max%, NT^, topspin, 3rd bounce, consistent, Is the reference wrong? should it be 140 club in reference? (mistake)
 
 - 5w(S), aus3_150c, rightmost, 3x hook, 160Y, max%, NSv, backspin, 2nd bounce, ...~50% consistent.
 
 - 5w(W), aus3_150e, leftmost, 2x slice, 140Y, max%, NBv, backspin, 3rd bounce, ...~50% consistent.
+
+- 5w(W+1), aus3_150g, 2x hook, 140Y, max%, N-2^, backspin, 3rd bounce, consistent, ~100% consistent? (12/12)
 
 
 ## Middle on top: 148 Y
@@ -209,7 +217,7 @@
 
 - 0w, no-aim, 2x slice, 280Y, max%, N^, rest 254 Y
   - 0w, aus4_254a, leftmost, 1x slice, 260Y, 98%^, NT-1^, rolls in, Recorded against NE grain.
-  - 0w, aus4_254a, leftmost, 1x slice, 260Y, 98%^, NT-1^, rolls in, Recorded against NE grain.
+  - 0w, aus4_254a, leftmost, 1x slice, 260Y, 99%^, NT-1^, rolls in, Recorded against NE grain.
 
 
 ## Back on top: 572 Y
@@ -375,7 +383,9 @@
 ## Middle left on slope: 180 Y
 .coords: 236, 302
 
-- 0w, aus8_180a, 3x slice, 180Y, max%, L+1^, backspin, 1st bounce, consistent, ...~95% consistent., Sometimes bounces into rough though.
+// - 0w, aus8_180a, 3x slice, 180Y, max%, L+1^, backspin, 1st bounce, consistent, ...~95% consistent., Sometimes bounces into rough though.
+
+- 0w, flag, rightmost, 200Y, 99%^, H-3v, backspin, 4th bounce, consistent, Haven't counted consistency but it feels good., Includes rough bounce.
 
 ## Middle in cove: 178 Y
 .coords: 298, 329
@@ -428,8 +438,18 @@
 ## Back left on flat: 323 Y
 .coords: 254, 146
 
+- 0w, aus10_323a, rightmost, 2x hook, 280Y, 106%v, NT-2^, 2x water bounce., rolls in, ~20% consistent (2/10)., My first 106%v setup.
+
 ## Back right on top: 321 Y
 .coords: 455, 159
+
+- 0w, aus10_321a, leftmost, 2x slice, 280Y, max%, NT-1^, 4th bounce, ~35% consistent (7/20), NT-2^ works sometimes too., Sometimes tinks flag to center-ish of C., Often rolls onto fairway.
+
+- 0w, aus10_321a, 120Y, 2.4v, L+3v, backspin, 1st bounce, consistent, RECOVERY:, From fairway: Rest 15 Y.
+- 0w, aus10_321a, 120Y, 2.3v, Nv, backspin, 1st bounce, consistent, RECOVERY:, From fairway: Rest 15 Y.
+- 0w, aus10_321a, 120Y, 2.1v, NBv, backspin, 1st bounce, consistent, RECOVERY:, From fairway: Rest 15 Y.
+- 0w, aus10_321a, 120Y, 2.0v, NBv, backspin, 2nd bounce, consistent, RECOVERY:, From fairway: Rest 15 Y.
+
 
 ## Back left on flat: 318 Y
 .coords: 213, 184
@@ -437,11 +457,17 @@
 ## Middle right on flat: 315 Y
 .coords: 495, 246
 
+- 0w, aus10_315a, leftmost, 280Y, max%, NSv, rolls in, Recorded against E grain., ~30% consistent (6/20).
+
 ## Middle on top: 313 Y
 .coords: 320, 250
 
+- 0w, aus10_313a, rightmost, 1x hook, 280Y, 102%^, NT-2^, 2x water bounce., rolls in, Never actually hit it before; might go in with good grain., Safe up to 104%^ power (inclusive).
+
 ## Middle in cove: 313 Y
 .coords: 383, 251
+
+- 0w, aus10_313b, leftmost, 1x hook, 280Y, 101%^, NT-2^, 2x water bounce., rolls in, Never actually hit it before; might go in with good grain., Safe up to 104%^ power (inclusive).
 
 ## Front on top: 306 Y
 .coords: 344, 339
@@ -638,7 +664,9 @@
 ## Middle right on flat: 215 Y
 .coords: 473, 254
 
-- 0w, aus16_215a, leftmost, 220Y, max%, NB^, backspin, 1st bounce, Usually lands in rough.
+// - 0w, aus16_215a, leftmost, 220Y, max%, NB^, backspin, 1st bounce, Usually lands in rough.
+
+- 0w, aus16_215b, rightmost, 2x hook, 210Y, max-3%^, H-2v, backspin, 3rd bounce, 1x cartpath (corner; rightish), consistent, ~90% consistent., 105% = NS+1v backspin (close but misses)., max-2% = H-2v or water.
 
 ## Front on cove slope: 214 Y
 .coords: 283, 323

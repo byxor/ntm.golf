@@ -23,7 +23,7 @@ class NotesComponent extends HTMLElement {
 				}
 
 				.item:not(:first-child) {
-					margin-top: 12px;
+					margin-top: ${this.notes.length >= 5 ? 10 : 12}px;
 				}
 			</style>
 			<div class="container">

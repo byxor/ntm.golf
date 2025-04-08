@@ -3,7 +3,7 @@
 
 class WindSelectComponent extends HTMLElement {
 	
-	init(navigationController, onWindSelected, onWindUpdated=wind=>{}) {
+	init(navigationController, onWindSelected, onWindUpdated=wind=>{}, initialWind=newWind(0, "N")) {
 		this.navigationController = navigationController;
 
 		this.onWindSelected = onWindSelected;
@@ -22,7 +22,10 @@ class WindSelectComponent extends HTMLElement {
 		this.isDraggingDirection = false;
 
 		this.maxWind = 15;
-		this.setWind(newWind(0, "N"));
+		if (!initialWind) {
+			initialWind = newWind(0, "N");
+		}
+		this.setWind(initialWind);
 
 		this.emitSelectedWind();
 

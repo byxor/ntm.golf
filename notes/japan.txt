@@ -10,6 +10,8 @@
 ## Back middle: 437 Y
 .coords: 327, 90
 
+- 0w, no-aim, 260Y, max-1%^, N^, rest 160 Y
+  - 0w, flag, 140Y, max%, N+2^, topspin, 4th bounce
 - 0w, no-aim, 260Y, max%, N^, rest 141 Y
   - 0w, jap1_141a, leftmost, 1x slice, 140Y, max%, N+2^, backspin, 1st bounce, consistent, ~70% consistent., Sometimes sticks to flag.
 
@@ -110,7 +112,7 @@
 
 - 0w, no-aim, 280Y, max%, N^, rest 135 Y
   - 0w, flag+1, rightmost, 120Y, max-1%^, L+3^, rolls in
-  - 0w, flag+1, rightmost, 120Y, max%, N-1^, 3rd bounce
+  - 0w, flag+1, rightmost, 120Y, max%, N-1^, 4th bounce
 
 
 ## Back left on flat: 456 Y
@@ -181,6 +183,8 @@
 
 - 3w(W), jap3_209b, rightmost, 1x slice, 180Y, max%, Nv, 5th bounce, unverified consistency
 
+- 4w(S+1), jap3_209f, rightmost, 1x hook, 200Y, max%, NBv, backspin, 4th bounce, ~50% consistent (probably less)
+
 - 5w(E), jap3_209e, rightmost, 2x hook, 180Y, max%, NSv, backspin, 5th bounce, unverified consistency
 
 - 5w(SE+1), jap3_209d, leftmost, 2x slice, 200Y, max%, N^, backspin, 4th bounce, unverified consistency
@@ -228,15 +232,115 @@
 
 - 1w(NW+1), jap3_207r, leftmost, 3x hook, 190Y, max%, NBv, backspin, 4th bounce, consistent, ~80% consistent.
 
+- 2w(N), jap3_207aa, leftmost, 1x slice, 180Y, max-1%^, NS+1v, backspin, 4th bounce, 1x cartpath
+- 2w(N), jap3_207aa, leftmost, 1x slice, 180Y, max%, H-3v, backspin, 4th bounce, consistent, ~90% consistent
+
+- 2w(N+1), jap3_207ab, rightmost, 1x slice, 180Y, max%-1^, N-2^, backspin, 5th bounce, 1x cartpath, consistent, ~70% consistent
+- 2w(N+1), jap3_207ab, rightmost, 1x slice, 180Y, max%, N+1^, backspin, 4th bounce, ~50% consistent, Hard to hit height.
+
+- 2w(NE), jap3_207ac, leftmost, 1x slice, 170Y, max%, H-2v, 4th bounce, 1x cartpath, max-1% = topspin to land at front of green.
+
+- 2w(NE+1), jap3_207ad, rightmost, 1x slice, 180Y, max-1%^, N+2^, 4th bounce, topspin, 1x cartpath, <10% consistent
+- 2w(NE+1), jap3_207ad, rightmost, 1x slice, 180Y, max%, NSv, 4th bounce, consistent, ~99.9% consistent
+
+- 2w(E), jap3_207ae, leftmost, 2x hook, 190Y, max%, H-3v, backspin, 4th bounce, <50% consistent
+
+- 2w(E+1), jap3_207af, leftmost, 190Y, max%, NS+1v, backspin, 4th bounce, ~50% consistent
+
+- 2w(SE), jap3_207ah, rightmost, 190Y, max%, NBv, backspin, 4th bounce, consistent, ~70% consistent
+
+- 2w(SE+1), jap3_207ag, rightmost, 190Y, max%, N+2^, backspin, 4th bounce, ~50% consistent
+
 - 2w(S), jap3_207e, leftmost, 190Y, max-1%^, NS+1v, 1x cartpath, 4th bounce, unverified consistency
 - 2w(S), jap3_207e, leftmost, 190Y, max%, NT^, backspin, 3rd bounce, unverified consistency
 
+- 2w(S+1), jap3_207ai, leftmost, 190Y, max%, N-1v, backspin, 3rd bounce, consistent, ~80% consistent, Subtle subpixel; check grass near elbow/torso.
+
+- 2w(SW), jap3_207aj, leftmost, 190Y, max%, NSv, backspin, 4th bounce, ~40% consistent, Subtle subpixel; check grass near elbow/torso.
+
+- 2w(SW+1), jap3_207ak, leftmost, 190Y, max%, NS+1v, backspin, 3rd bounce, consistent, ~60% consistent, Subtle subpixel; check grass near hands.
+
+- 2w(W), jap3_207al, rightmost, 2x hook, 190Y, max%, NBv, backspin, 4th bounce, ~40% consistent.
+
+- 2w(W+1), jap3_207am, leftmost, 3x hook, 190Y, max%, N^, backspin, 4th bounce, consistent, ~70% consistent.
+
+- 2w(NW), jap3_207an, leftmost, 1x slice, 180Y, max%, N+2^, backspin, 4th bounce, ~50% consistent; probably less.
+
+- 2w(NW+1), jap3_207ao, leftmost, 180Y, max-1%^, H-1^, backspin, 4th bounce, consistent, VERY subtle subpixel; check grass near elbow/horizon of hill., More frequent than max; but risk of missing swing., ~70% consistent., 1x cartpath.
+- 2w(NW+1), jap3_207ao, leftmost, 180Y, max%, NSv, backspin, 4th bounce, ~50% consistent., VERY subtle subpixel; check grass near elbow/horizon of hill.
+
+- 3w(N), flag+1, rightmost, 200Y, 97%^, N-2^, backspin, 5th bounce, 1x cartpath., ~70% consistent., 99% is better.
+- 3w(N), flag+1, rightmost, 200Y, 99%^, N^, backspin, 3rd bounce, 1x cartpath., consistent, ~90% consistent.
+
+- 3w(N+1), jap3_207ap, leftmost, 200Y, 97%^, H-3v, backspin, rolls in, 1x cartpath., ~10% consistent?
+- 3w(N+1), jap3_207ap, leftmost, 200Y, 99%^, NBv, backspin, 3rd bounce, 1x cartpath., consistent, ~70% consistent.
+
+- 3w(NE), jap3_207aq, rightmost, 1x hook, 200Y, 99%^, NS+1v, backspin, 4th bounce, 1x cartpath., ~20% consistent.
+
+// t, n-2^, backspin 190 2 hook
+- 3w(NE+1), jap3_207ar, leftmost, 1x hook, 200Y, 99%^, N+2v, backspin, 5th bounce, 1x cartpath., consistent, ~60% consistent., NBv has chance of rolling in.
+
+- 3w(E), jap3_207as, leftmost, 1x slice, 190Y, max%, N^, backspin, 2nd bounce, consistent, ~70% consistent.
+
+- 3w(E+1), jap3_207at, leftmost, 1x hook, 190Y, max%, N^, backspin, 3rd bounce, ~50% consistent (likely less).
+
+- 3w(SE), jap3_207au, rightmost, 190Y, max%, N-1v, backspin, 5th bounce, consistent, ~60% consistent.
+
+- 3w(SE+1), jap3_207av, leftmost, 190Y, max%, NT-2^, backspin, 4th bounce, NT-1^ often works too., consistent, ~60% consistent?
+
+- 3w(S), jap3_207aw, leftmost, 190Y, max%, NT-2^, backspin, 4th bounce, consistent, ~60% consistent.
+
+- 3w(S+1), jap3_207ax, leftmost, 190Y, max%, NT-1^, backspin, 5th bounce, consistent, ~70% consistent., Subtle subpixel; check grass beneath back foot
+
+- 3w(SW), jap3_207ay, rightmost, 1x hook, 190Y, max%, NT^, backspin, 4th bounce, consistent, ~70% consistent.
+
+- 3w(SW+1), jap3_207az, 190Y, max%, NSv, backspin, 3rd bounce, consistent, ~70% consistent
+
+- 3w(W), jap3_207ba, leftmost, 1x hook, 220Y, 99%^, NS+1v, backspin, 3rd bounce, consistent, ~70% consistent.
+
+- 3w(W+1), jap3_207bb, rightmost, 1x slice, 180Y, max%, Nv, backspin, 4th bounce, consistent, ~70% consistent.
+
+- 3w(NW), jap3_207bc, leftmost, 1x hook, 180Y, max%, N+1^, backspin, 5th bounce, ~40% consistent.
+
+- 3w(NW+1), jap3_207bd, rightmost, 1x hook, 180Y, max%, NT-2^, backspin, 3rd bounce, ~50% consistent?
+
+- 4w(N), flag+1, rightmost, 190Y, 99%^, N+2^, 4th bounce, 1x cartpath., consistent, ~70% consistent., topspin if 97% (misses cartpath)
+- 4w(N), flag+1, rightmost, 190Y, 101%^, NT-1^, topspin, rolls in, Unverified consistency.
+- 4w(N), flag+1, rightmost, 190Y, 102%^, L+3^, topspin, rolls in, Unverified consistency.
+
 - 4w(N+1), jap3_207f, rightmost, 2x slice, 180Y, max%, NSv, backspin, 2nd bounce, unverified consistency
+
+- 4w(NE), jap3_207be, rightmost, 2x hook, 180Y, max%, NT^, backspin, rolls in, consistent, ~70% consistent.
 
 - 4w(NE+1), jap3_207g, leftmost, 1x hook, 180Y, max-1%^, H-3v, 1x cartpath, 4th bounce, unverified consistency
 - 4w(NE+1), jap3_207g, leftmost, 1x hook, 180Y, max%, N-2^, 3rd bounce, unverified consistency
 
+- 4w(E), jap3_207bf, leftmost, 3x hook, 190Y, max%, N^, backspin, 4th bounce, consistent, ~60% consistent.
+
 - 4w(E+1), jap3_207h, leftmost, 1x hook, 190Y, max%, NT^, backspin, 3rd bounce, unverified consistency
+
+- 4w(SE), jap3_207bg, leftmost, 1x slice, 200Y, max%, H-3v, backspin, 2nd bounce, consistent, ~90% consistent.
+
+- 4w(SE+1), jap3_207bh, rightmost, 190Y, max%, N^, 5th bounce, ~40% consistent (or less).
+
+// - 4w(S), ?, ?, 200Y, max%, NS+1v, backspin, 3rd bounce,
+
+- 4w(S), jap3_207bi, leftmost, 1x hook, 200Y, max%, NSv, backspin, 3rd bounce, consistent, ~70% consistent
+
+- 4w(S+1), jap3_207bj, rightmost, 2x hook, 200Y, max%, N+2^, backspin, 3rd bounce, consistent, ~80% consistent.
+
+- 4w(SW), jap3_207bk, leftmost, 3x slice, 190Y, max%, NT-2^, backspin, 4th bounce, consistent, ~70% consistent.
+
+- 4w(SW+1), jap3_207bl, rightmost, 190Y, max%, NSv, backspin, 4th bounce, consistent, ~60% consistent
+
+- 4w(W), jap3_207bm, rightmost, 2x slice, 180Y, max%, NT^, 3rd bounce, consistent, ~80% consistent, NT-1^ works too sometimes.
+
+- 4w(W+1), jap3_207bn, rightmost, 180Y, max-1%^, NT^, backspin, 5th bounce, 1x cartpath, consistent, ~70% consistent.
+- 4w(W+1), jap3_207bn, rightmost, 180Y, max%, N-2^, backspin, 4th bounce, N-1^/NT^ works too sometimes., consistent, ~60% consistent.
+
+- 4w(NW), jap3_207bo, 1x hook, 180Y, max%, N+1^, backspin, 3rd bounce, ~30% consistent.
+
+- 4w(NW+1), jap3_207bp, leftmost, 2x hook, 180Y, max%, NS+1v, backspin, 3rd bounce, ~30% consistent? Maybe more.
 
 - 5w(N), jap3_207s, leftmost, 2x hook, 200Y, max%, L+2v, backspin, 1st bounce, consistent, Pretty risky; OOB or rough if miss., ~95% consistent., Sometimes tinks flag and bounces back onto green.
 
@@ -247,6 +351,12 @@
 - 5w(NE+1), jap3_207x, rightmost, 3x hook, 210Y, max%, NS+1v, backspin, 1st bounce, consistent, ~70% consistent., Sometimes sticks to flag., Sometimes tinks flag but lands on green. Miss = rough.
 
 - 5w(E), jap3_207y, leftmost, 3x hook, 190Y, max%, N^, backspin, 4th bounce, ~50% consistent; but safe.
+
+- 5w(E+1), jap3_207bq, rightmost, 1x slice, 190Y, max%, NT^, backspin, 4th bounce, ~40% consistent.
+
+- 5w(SE), jap3_207br, rightmost, 200Y, max%, N+2^, backspin, 2nd bounce, consistent, ~90% consistent.
+
+- 5w(SE+1), jap3_207bs, rightmost, 1x hook, 200Y, max%, N+2^, backspin, 4th bounce, consistent, ~55% consistent?
 
 - 5w(S), jap3_207z, rightmost, 2x hook, 200Y, max%, N-2^, backspin, 5th bounce, ~40% consistent., Safe.
 
@@ -284,6 +394,8 @@
 
 - 2w(N+1), jap3_196b, leftmost, 1x hook, 170Y, max%, H-3v, backspin, 1x cartpath, 2nd bounce, unverified consistency
 
+- 2w(E+1), jap3_196p, 2x slice, 180Y, max%, N+2^, 4th bounce, ~40% consistent?, max-1 = N+2v/NBv/NSv topspin
+
 - 2w(SE), jap3_196c, leftmost, 3x hook, 180Y, max%, NS+1v, backspin, 3rd bounce, unverified consistency
 
 - 2w(SE+1), jap3_196d, 180Y, max%, H-2v, backspin, 1x cartpath, 2nd bounce, very rarely goes in
@@ -291,7 +403,10 @@
 - 3w(NE+1), jap3_196e, leftmost, 2x slice, 180Y, max%, NB^, backspin, 3rd bounce, unverified consistency
 
 - 3w(W+1), jap3_196f, leftmost, 3x slice, 170Y, max%, H-3v, backspin, 2nd bounce, ...~10% consistent.
+
 - 4w(E+1), jap3_196g, rightmost, 3x hook, 180Y, max%, H-2v, backspin, 3rd bounce, unverified consistency
+
+- 4w(SW), jap3_196q, leftmost, 200Y, max%, N^, backspin, 1st bounce, Sometimes sticks to flag., consistent, ~80% consistent.
 
 - 5w(N), jap3_196l, 1x hook, 170Y, max%, N-2^, backspin, 3rd bounce, consistent, ...~70% consistent
 
@@ -342,25 +457,44 @@
 ## Back middle on top: 382 Y
 .coords: 291, 125
 
+- 0w, jap4_382a, leftmost, 1x slice, 280Y, 98%^, N^, rest 155y, 99%^ also works.
+  - 0w, flag, leftmost, 140Y, max%, H^, 3rd bounce, Safe to spam A.
+
 
 ## Back right on flat: 379 Y
 .coords: 420, 160
+
+- 0w, jap4_379a, leftmost, 1x slice, 280Y, 98%^, N^, rest 151y, 99%^ also works.
+  - 0w, flag, leftmost, 140Y, max-1%^, N+1v, topspin, 4th bounce
+  - 0w, flag, leftmost, 140Y, max%, H-2v, 2nd bounce
 
 
 ## Back left on slope: 378 Y
 .coords: 260, 182
 
+- 0w, jap4_378a, leftmost, 1x slice, 280Y, 98%^, N^, rest 151y, 99%^ also works.
+  - 0w, jap4_151a, rightmost, 3x slice, 140Y, max%, N^, backspin, rolls in, Recorded against E grain.
+
 
 ## Back left on flat: 375 Y
 .coords: 196, 228
+
+- 0w, jap4_375a, leftmost, 1x slice, 280Y, 98%^, N^, rest 148y, 99%^ also works.
+  - 0w, jap4_148a, rightmost, 2x slice, 140Y, max%, NSv, backspin, rolls in, Recorded against NW grain.
 
 
 ## Front right on slope: 366 Y
 .coords: 401, 327
 
+- 0w, jap4_366a, leftmost, 1x slice, 280Y, 98%^, N^, rest 137y, 99%^ also works.
+  - 0w, jap4_137a, leftmost, 1x slice, 120Y, max%, N^, topspin, 4th bounce, consistent, ~70% consistent?
+
 
 ## Front left on bubble: 365 Y
 .coords: 196, 351
+
+- 0w, jap4_365a, leftmost, 1x slice, 280Y, 98%^, N^, rest 138y, 99%^ also works.
+  - 0w, jap4_138a, rightmost, 1x hook, 140Y, max%, H-2v, backspin, 1st bounce, consistent, ~95% consistent
 
 
 ## Front right on flat: 362 Y
@@ -375,6 +509,8 @@
 # Hole 5
 
 jap5_approach
+jap5_tee-shot
+- 0w, 1x hook, 280Y, max%, NT-1^/NT-2^
 
 
 ## Back middle on slope: 532 Y
@@ -411,8 +547,11 @@ jap5_approach
 ## Middle front on flat: 512 Y
 .coords: 363, 394
 
-- 0w, no-aim, 2x hook, 280Y, max%, N^, rest 208 Y
-  - 0w, jap5_208a, leftmost, 1x hook, 220Y, max%, NS+1v, backspin, 1st bounce, ~50% consistent., Sometimes sticks to flag., Sometimes bounces back to heavy rough.
+// - 0w, no-aim, 2x hook, 280Y, max%, N^, rest 208 Y
+//   - 0w, jap5_208a, leftmost, 1x hook, 220Y, max%, NS+1v, backspin, 1st bounce, ~50% consistent., Sometimes sticks to flag., Sometimes bounces back to heavy rough.
+
+- 0w, jap5_tee-shot, 1x hook, 280Y, max%, NT-1^, rest 202Y
+  - 0w, flag+3, rightmost, 240Y, 99%^, NT-2^, rolls in, 1x hill bounce, ~10% consistent...
 
 
 // -------------------------------------------------
@@ -442,6 +581,19 @@ jap6_approach
 
 - 5w(N), jap6_297a, leftmost, 280Y, max%, N-2^, 1x tree, 2nd bounce, ...~40% consistent., Sometimes rough/OOB.
 
+- 15w(N), jap6_297c, 3x hook, 280Y, max%, NT^, rolls in, 1x tree, Heavy rough kills speed into smooth roll., Recorded against NW grain., ~30% consistent (or less)., Quite safe...
+
+- 14w(N), jap6_297d, rightmost, 3x hook, 280Y, max%, N^, 1x tree, 2nd bounce, consistent, ~90% consistent.
+
+- 13w(N), jap6_297e, leftmost, 3x slice, 240Y, max%, NS+1^, rolls in, Recorded against NW grain., ~30% consistent.
+
+- 12w(N), jap6_297f, rightmost, 3x slice, 260Y, max%, N^, 1x tree, 3rd bounce, Sometimes tinks flag to RHS., Sometimes rolls to back of green., ~30-40% consistent?, Quite safe.
+
+- 11w(N), jap6_297g, 3x hook, 280Y, max%, NBv, Heavy rough kills speed into smooth roll., Recorded against NW grain., <10% consistent.
+
+- 10w(N), jap6_297h, 3x hook, 280Y, max%, N+2v, Heavy rough kills speed into smooth roll., Recorded against NW grain., ~30% consistent.
+
+- 9w(N), jap6_297i, 3x hook, 280Y, max%, N^, rolls in, Close but never seen it; might go in with N grain.
 
 ## Middle right on flat: 293 Y
 .coords: 481, 288
@@ -488,6 +640,8 @@ jap7_approach
 ## Middle right on flat: 406 Y
 .coords: 490, 229
 
+- 0w, no-aim, 2x hook, 260Y, max%, N^, rest 130 Y
+  - 0w, jap7_130a, rightmost, 2x hook, 120Y, max%, H-2v, 3rd bounce, ~50% consistent
 
 ## Front right on slope: 398 Y
 .coords: 488, 327
@@ -508,7 +662,7 @@ jap7_approach
   - 0w, flag, 120Y, max-3%^, NS+1^/v, backspin, 2nd bounce, Unverified consistency.
 
 
-## Front middle on slope: 390 Y
+## Front on slope: 390 Y
 .coords: 384, 422
 
 
@@ -648,8 +802,20 @@ jap8_approach
 # Hole 11
 
 jap11_approach
-jap11_bridge-skip
-- 0w, reference, rightmost, 3x slice, 280Y, max%, N^, 1x cartpath
+// - ------------------- Bridge Skip (Thanks Wymek) -------------------
+// jap11_bridge-skip
+// - 0w, reference, rightmost, 3x slice, 280Y, max%, N^, 1x cartpath
+- ------------------- Tips for approaching green -------------------
+- (From the usual spot in front of the river)
+- |
+- 260Y, 3x slice, max-2%^ - max-1%^, Hv
+- (lands on front of green, or near front right)
+- |
+- 260Y, max-1%^, N^
+- (cuts through heavy rough onto front of green, or a little bit further)
+- |
+- 260, ~102%-105%, N/H
+- (can bridge bounce to the green)
 
 ## Back middle on flat: 556 Y
 .coords: 379, 110
@@ -678,6 +844,10 @@ jap11_bridge-skip
 ## Front left on flat: 535 Y
 .coords: 236, 349
 
+- 0w, jap11_535a, leftmost, 3x hook, 280Y, 99%^, N^, rest 273 Y
+  - 0w, jap11_273a, rightmost, 1x slice, 250Y, max%, N+1v, rolls in, Often tinks and stops at flag.
+
+
 
 ## Front on top: 534 Y
 .coords: 356, 374
@@ -688,6 +858,7 @@ jap11_bridge-skip
 # Hole 12
 
 jap12_approach
+jap12_leftofbunker
 
 ## Back left on flat: 484 Y
 .coords: 209, 138
@@ -718,10 +889,17 @@ jap12_approach
 
 # Hole 13
 
-## Back right on flat: 321 Y
+## JUST LAND ON GREEN: 0 Y
+
+- 0w, jap13_green0w, leftmost, 3x slice, 280Y, max%, NS+1^, Spam A., max-1 = water shot., Lands on Middle right of green.
+
+- 1w(N), jap13_green1wN, leftmost, 3x slice, 280Y, max%, NS+1^, Spam A., max-1 = water shot., Lands on Middle right of green.
+
+
+## Back right on slope: 321 Y
 .coords: 346, 110
 
-## Back right on flat: 316 Y
+## Middle right on flat: 316 Y
 .coords: 472, 207
 
 ## Back on top: 313 Y
@@ -829,6 +1007,8 @@ jap12_approach
 
 # Hole 16
 
+jap16_teeshot
+
 ## Back right on top: 601 Y
 .coords: 427, 133
 
@@ -857,6 +1037,14 @@ jap12_approach
 
 # Hole 17
 
+- The green/hill is slightly left of the tee.
+- This means you're more likely to get a rough bounce when shooting further left.
+- For mid/frontal pins, generally hitting with ~5-6% extra power at N height and letting it roll feels good. (Typically rough bounce)
+- Warning: The above relies on quite a straight ball path. Easily ruined by wind.
+- 1x hook can reduce risk when the pin is furthest left.
+- 1x slice can reduce risk the pin is furthest right.
+- Typically all green bounces when shooting near the back pins.
+
 ## Back on bubble: 217 Y
 .coords: 284, 112
 
@@ -872,18 +1060,24 @@ jap12_approach
 ## Back on slope: 209 Y
 .coords: 236, 205
 
+- 0w, flag, rightmost, 200Y, max%, NT-2^, backspin, 3rd bounce, consistent, ~80% consistent
+
 
 ## Back right on bubble: 209 Y
 .coords: 455, 197
 
+- 0w, jap17_209a, leftmost, 1x hook, 200Y, max%, N^, backspin, 3rd bounce, consistent, ~60% consistent, 3rd bounce
 
 ## Back right on slope: 207 Y
 .coords: 307, 223
+
+- 0w, jap17_207a, rightmost, 2x hook, 200Y, max%, NS+1v, backspin, 5th bounce, consistent, ~80% consistent
 
 
 ## Middle left on top: 204 Y
 .coords: 198, 278
 
+- 0w, jap17_204a, rightmost, 1x hook, 200Y, max%, NS+1v, backspin, 2nd bounce, ~30% consistent?, Subtle subpixel; check grass near hands.
 
 ## Middle right on flat: 203 Y
 .coords: 449, 279

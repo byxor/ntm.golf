@@ -15,11 +15,11 @@ class OutcomeComponent extends HTMLElement {
 		this.#navigationController = navigationController;
 		this.#outcome = outcome;
 
-		this.#navigationController.onCourseChanged(course => {
+		this.#navigationController?.onCourseChanged(course => {
 			this.#onCourseChanged(course);
 		});
 
-		this.#onCourseChanged(this.#navigationController.getCourse());
+		this.#onCourseChanged(this.#navigationController?.getCourse());
 	}
 
 	#onCourseChanged(course) {
@@ -55,7 +55,6 @@ class OutcomeComponent extends HTMLElement {
 	}
 
 	#getTreeEmoji() {
-		console.log(this.#course)
 		switch(this.#course?.name) {
 			case "USA":
 				return "&#127796;"; // 🌴
@@ -63,6 +62,7 @@ class OutcomeComponent extends HTMLElement {
 				return "&#127795;"; // 🌳
 			case "Germany":
 			case "Japan":
+			case "Scotland":
 			default:
 				return "&#127794;"; // 🌲
 		}

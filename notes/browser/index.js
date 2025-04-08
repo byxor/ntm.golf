@@ -70,6 +70,7 @@ class NavigationController {
 					"japan": this.#courses.japan,
 					"australia": this.#courses.australia,
 					"usa": this.#courses.usa,
+					"scotland": this.#courses.scotland,
 				}[courseParam] || "germany";
 			})();
 

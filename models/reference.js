@@ -17,18 +17,20 @@ class VisualReference extends Reference {
 	}
 }
 
-// class FlagReference extends Reference {
-// 	constructor(mvflag) {
-// 		this.mvflag = this.validateMvflag(mvflag);
-// 	}
+class FlagReference extends Reference {
+	constructor(mvflag) {
+		super();
+		this.mvflag = this.validateMvflag(mvflag);
+	}
 
-// 	validateMvflag(mvflag) {
-// 		if (typeof mvflag !== "number") {
-// 			throw `mvflag '${mvflag}' is not a number`;
-// 		}
-// 		if (Math.abs(mvflag) > 7) {
-// 			throw `mvflag '${mvflag}' is too large, make a visual reference`;
-// 		}
-// 		return mvflag;
-// 	}
-// }
+	validateMvflag(mvflag) {
+		if (typeof mvflag !== "number") {
+			throw `mvflag '${mvflag}' is not a number`;
+		}
+		return mvflag;
+	}
+
+	logicallyEquals(other) {
+		return this.mvflag === other.mvflag;
+	}
+}

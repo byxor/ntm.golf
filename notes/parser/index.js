@@ -256,6 +256,7 @@ function parseNotes(notes, courseName) {
 	}
 
 	function parseClub(club) {
+		console.log("parsing club:", club.name)
 		return {
 			[CLUB_280Y.name]: CLUB_280Y,
 			[CLUB_260Y.name]: CLUB_260Y,

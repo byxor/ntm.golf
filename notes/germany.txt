@@ -290,7 +290,7 @@
 - 3w(SE), ger3_137ah, leftmost, 160Y, 98%^, NB^, backspin, 4th bounce
 - 3w(SE), ger3_137ah, leftmost, 160Y, 99%^, NB^, backspin, 4th bounce
 
-- 3w(SE+1), ger3_137ai, rightmost, 140Y, max%, NS+1v, rolls in, Not ideal.
+- 3w(SE+1), ger3_137ai, rightmost, 140Y, max-1%^, NS+1v, rolls in, Not ideal.
 - 3w(SE+1), ger3_137ai, rightmost, 140Y, max%, NS^, backspin, 5th bounce
 
 - 3w(S), ger3_137aj, leftmost, 140Y, max-1%^, N+2^, rolls in, Not ideal.

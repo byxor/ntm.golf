@@ -45,6 +45,9 @@ class Height {
 const HEIGHT_CACHE = {};
 
 function newHeight(value, direction, club) {
+	if (club === undefined) {
+		debugger;
+	}
 	const key = value + direction + club.name;
 	const cachedHeight = HEIGHT_CACHE[key];
 	if (cachedHeight) {

@@ -7,7 +7,7 @@ class BreadcrumbsComponent extends HTMLElement {
 	#pin;
 	#setup;
 
-	#wind = newWind(0, "");
+	#wind = newWind(0, "N");
 
 	init(navigationController) {
 		this.#navigationController = navigationController;

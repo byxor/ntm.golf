@@ -21,7 +21,7 @@ class ShotMeterComponent extends HTMLElement {
 		this.powerImage = `/assets/meter/powers/${this.power.value.replace("%", "")}.png`;
 		this.powerMask = `/assets/meter/powers/mask.png`;
 
-		this.heightRangeImage = `/assets/meter/heights/range-${this.club.heightRange}.png`;
+		this.heightRangeImage = `/assets/meter/heights/range-${this.club.heightRanges[this.surface.name]}.png`;
 		this.heightRangeMask = `/assets/meter/heights/mask-range.png`;
 		this.heightMask = `/assets/meter/heights/mask-${this.height.value}.png`;
 
@@ -70,7 +70,6 @@ class ShotMeterComponent extends HTMLElement {
 			}
 		})();
 		
-
 		createTemplate(this, `
 			<style>
 				.container {
@@ -217,7 +216,6 @@ class ShotMeterComponent extends HTMLElement {
 					mask-repeat: no-repeat;
 					mask-position: center;
 
-
 					z-index: 1;
 				}
 
@@ -286,7 +284,7 @@ class ShotMeterComponent extends HTMLElement {
 				</div>
 				<div class="indicators-container">
 					${
-						this.power.value !== "max%" ?
+						this.power.value !== "max%" && this.power.value !== "max" ?
 						`<div class="direction-indicator power-direction-indicator"></div>`
 						: ""	
 					}

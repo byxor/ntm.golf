@@ -3,7 +3,7 @@ class SetupsComponent extends HTMLElement {
     #navigationController;
     #pin;
     #setup;
-    #wind = newWind(0, "");
+    #wind = newWind(0, "N");
     #setups = [];
 
     init(navigationController) {

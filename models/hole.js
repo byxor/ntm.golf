@@ -85,6 +85,7 @@ class Hole {
 			"Japan",
 			"Australia",
 			"USA",
+			"Scotland",
 		]
 		if (!VALID_COURSE_NAMES.includes(courseName)) {
 			throw `'${courseName}' is not a valid course name`;

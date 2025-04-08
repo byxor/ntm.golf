@@ -6,4 +6,115 @@
 
 # Hole 1
 
+- Teeshot option: (Straight shot probably better tbh)
 - 0w, no-aim, 1x slice, 280Y, max%, N^, NS, Lands behind bunkers.
+
+## Middle left on flat: 222 y
+
+
+# Hole 2
+
+## foo: 0y
+
+
+# Hole 3
+
+## foo: 0y
+
+
+
+
+
+# Hole 4
+
+## Back middle: 230 y
+.coords: 354, 136
+
+- 0w, scot4_230a, rightmost, 3x slice, 280Y, 103%^, N-1^, 2x tree, 4th bounce, consistent, ~60% consistent (12/20)., Very safe., Subtle subpixel; check grass behind water.
+
+
+## Back left: 229 y
+.coords: 187, 149
+
+- 0w, scot4_229a, rightmost, 240Y, max%, N+1v, 1x tree, 3rd bounce, A.K.A flag rightmost., ~20% consistent (2/10)., Usually rolls into rough., Sometimes tinks flag to green fringe., Not a great idea tbh.
+
+
+## Middle right on flat: 222 y
+.coords: 473, 232
+
+- 0w, scot4_222a, leftmost, 240Y, max%, N^, rolls in, A.K.A flag leftmost., ~50% consistent (5/10)., Recorded against SW grain., max-1%^ = N^; rolls close., 2x tree, Safe.
+
+
+## Front middle in cluster: 212 y
+.coords: 330, 351
+
+- 0w, scot4_212a, rightmost, 3x slice, 280Y, 99%^, NBv, 4th bounce, 2x tree, ~20% consistent (2/10)., Very safe.
+
+
+## Front right: 211 y
+.coords: 476, 354
+
+- 0w, scot4_211a, leftmost, 2x hook, 240Y, max%, NBv, rolls in, 2x tree, Recorded against N grain., ~25% consistent (5/20)., N+2v also works.
+
+
+## Front middle: 204 y
+.coords: 330, 440
+
+- 0w, scot4_204a, leftmost, 3x slice, 280Y, 99%^, NT-2^, rolls in, 2x tree, ~10% consistent (2/20)., Recorded against SW grain., Subtle subpixel; check grass behind water., NT-1^ probably better., Safe shot but risky height.
+
+# Hole 5
+
+## foo: 0y
+
+# Hole 6
+
+## foo: 0y
+
+# Hole 7
+
+## foo: 0y
+
+# Hole 8
+
+## foo: 0y
+
+
+# Hole 9
+
+## foo: 0y
+
+# Hole 10
+
+## foo: 0y
+
+# Hole 11
+
+## foo: 0y
+
+# Hole 12
+
+## foo: 0y
+
+# Hole 13
+
+## foo: 0y
+
+# Hole 14
+
+## foo: 0y
+
+# Hole 15
+
+## foo: 0y
+
+# Hole 16
+
+## foo: 0y
+
+# Hole 17
+
+## foo: 0y
+
+# Hole 18
+
+## foo: 0y

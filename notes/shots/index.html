@@ -1,0 +1,95 @@
+<head>
+	<meta charset="UTF-8">
+	<title>Neo Turf Masters - Shot Notes</title>
+	<link rel="icon" type="image/png" href="/assets/flags/flag-circle.png"/>
+	<style>
+		body {
+ 			font-family: Tahoma, sans-serif;
+		}
+		html, body {
+			margin: 0;
+			height: 100%;
+		}
+		#app * {
+		    -webkit-touch-callout: none;
+		      -webkit-user-select: none;
+		       -khtml-user-select: none;
+		         -moz-user-select: none;
+		          -ms-user-select: none;
+		              user-select: none;
+		}
+	</style>
+</head>
+
+<body>
+	<style>
+		.invisible {
+			display: none;
+		}
+	</style>
+	<img class="pixel-offsets invisible" src="/assets/pixel-offsets/pixel-offsets.png"></img>
+
+	<script src="/models/wind.js"></script>
+	<script src="/models/reference.js"></script>
+	<script src="/models/subpixel.js"></script>
+	<script src="/models/stance.js"></script>
+	<script src="/models/surface.js"></script>
+	<script src="/models/club.js"></script>
+	<script src="/models/power.js"></script>
+	<script src="/models/height.js"></script>
+	<script src="/models/spin.js"></script>
+	<script src="/models/outcome.js"></script>
+	<script src="/models/setup.js"></script>
+	<script src="/models/pin.js"></script>
+	<script src="/models/hole.js"></script>
+	<script src="/models/coverage.js"></script>
+	<script src="/models/hole-note.js"></script>
+	<script src="/models/course.js"></script>
+	<script src="/models/bounces.js"></script>
+	<script src="/models/target.js"></script>
+
+	<script src="/notes/shots/index.js"></script>
+	<script src="/notes/shots/shot-data.js"></script>
+	<script src="/notes/shots/components/pixel-reference.js"></script>
+	<script src="/notes/shots/components/shot-select.js"></script>
+	<script src="/notes/shots/components/shot-options.js"></script>
+	<script src="/notes/shots/components/surface-select.js"></script>
+	<script src="/notes/shots/components/shot-browser.js"></script>
+
+	<script src="/components/index.js"></script>
+	<script src="/components/html-header.js"></script>
+	<script src="/notes/browser/components/breadcrumb.js"></script>
+	<script src="/notes/browser/components/breadcrumbs.js"></script>
+	<script src="/notes/browser/components/club.js"></script>
+	<script src="/notes/browser/components/course-select.js"></script>
+	<script src="/notes/browser/components/course.js"></script>
+	<script src="/notes/browser/components/graphical-pin-select.js"></script>
+	<script src="/notes/browser/components/hole-select.js"></script>
+	<script src="/notes/browser/components/hole-notes.js"></script>
+	<script src="/notes/browser/components/hole.js"></script>
+	<script src="/notes/browser/components/notes-browser.js"></script>
+	<script src="/notes/browser/components/notes.js"></script>
+	<script src="/notes/browser/components/outcome.js"></script>
+	<script src="/notes/browser/components/pin-select.js"></script>
+	<script src="/notes/browser/components/progress.js"></script>
+	<script src="/notes/browser/components/setup.js"></script>
+	<script src="/notes/browser/components/setups.js"></script>
+	<script src="/notes/browser/components/shot-meter.js"></script>
+	<script src="/notes/browser/components/stance.js"></script>
+	<script src="/notes/browser/components/wind-select.js"></script>
+
+	<div id="app">
+		<div id="shot-browser"></div>
+	</div>
+
+	<script async>
+		async function setup() {
+			const shotBrowser = await ShotBrowser.create("shot-browser");
+		}
+
+		setup().catch(error => {
+			console.error('Error initializing shot browser:', error);
+		});
+	</script>
+
+</body>

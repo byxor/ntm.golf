@@ -24,6 +24,50 @@ class Wind {
 		return this.equals(other);
 	}
 
+	opposite() {
+		const oppositeDirection = {
+			"S": "N",
+			"S+1": "N+1",
+			"SW": "NE",
+			"SW+1": "NE+1",
+			"W": "E",
+			"W+1": "E+1",
+			"NW": "SE",
+			"NW+1": "SE+1",
+			"N": "S",
+			"N+1": "S+1",
+			"NE": "SW",
+			"NE+1": "SW+1",
+			"E": "W",
+			"E+1": "W+1",
+			"SE": "NW",
+			"SE+1": "NW+1",
+		}[this.direction];
+		return newWind(this.strength, oppositeDirection);
+	}
+
+	horizontallyFlipped() {
+		const flippedDirection = {
+			"S": "S",
+			"S+1": "SE+1",
+			"SW": "SE",
+			"SW+1": "E+1",
+			"W": "E",
+			"W+1": "NE+1",
+			"NW": "NE",
+			"NW+1": "N+1",
+			"N": "N",
+			"N+1": "NW+1",
+			"NE": "NW",
+			"NE+1": "W+1",
+			"E": "W",
+			"E+1": "SW+1",
+			"SE": "SW",
+			"SE+1": "S+1",
+		}[this.direction];
+		return newWind(this.strength, flippedDirection);
+	}
+
 	toString() {
 		if (this.strength === 0) {
 			return "0w";
