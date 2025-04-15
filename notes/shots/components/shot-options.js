@@ -20,11 +20,11 @@ class ShotOptionComponent extends HTMLElement {
  * A group of shot option components that share a reference.
  */
 class ShotOptionGroupComponent extends HTMLElement {
-    #offset;
+    #offsetOrOffsets;
     #shotOptions;
     
-    init(offset, shotOptions) {
-        this.#offset = parseInt(offset);
+    init(offsetOrOffsets, shotOptions) {
+        this.#offsetOrOffsets = offsetOrOffsets;
         this.#shotOptions = shotOptions;
     }
 
@@ -44,7 +44,7 @@ class ShotOptionGroupComponent extends HTMLElement {
 
         const pixelReferenceContainer = this.shadowRoot.querySelector('.pixel-reference');
         const pixelReferenceComponent = document.createElement('pixel-reference');
-        pixelReferenceComponent.init(this.#offset, distance);
+        pixelReferenceComponent.init(this.#offsetOrOffsets, distance);
         pixelReferenceContainer.appendChild(pixelReferenceComponent);
 
         const shotOptionsContainer = this.shadowRoot.querySelector('.shot-options');
@@ -107,7 +107,13 @@ class ShotOptionGroupsComponent extends HTMLElement {
         );
 
         // group them by shared reference
-        const shotOptionsGrouped = Object.groupBy(matchingShotOptions, shotOption => (shotOption.setup.reference.mvflag));
+        const shotOptionsGrouped = Object.groupBy(matchingShotOptions, shotOption => {
+            if (shotOption.setup.reference instanceof FlagReference) {
+                return shotOption.setup.reference.mvflag;
+            } else {
+                return shotOption.setup.reference.offsets.join(",");
+            }
+        });
 
         this.#shotOptionGroups = shotOptionsGrouped;
 

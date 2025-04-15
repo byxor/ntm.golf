@@ -547,8 +547,8 @@ jap5_tee-shot
 ## Middle front on flat: 512 Y
 .coords: 363, 394
 
-// - 0w, no-aim, 2x hook, 280Y, max%, N^, rest 208 Y
-//   - 0w, jap5_208a, leftmost, 1x hook, 220Y, max%, NS+1v, backspin, 1st bounce, ~50% consistent., Sometimes sticks to flag., Sometimes bounces back to heavy rough.
+//- 0w, no-aim, 2x hook, 280Y, max%, N^, rest 208 Y
+//  - 0w, jap5_208a, leftmost, 1x hook, 220Y, max%, NS+1v, backspin, 1st bounce, ~50% consistent., Sometimes sticks to flag., Sometimes bounces back to heavy rough.
 
 - 0w, jap5_tee-shot, 1x hook, 280Y, max%, NT-1^, rest 202Y
   - 0w, flag+3, rightmost, 240Y, 99%^, NT-2^, rolls in, 1x hill bounce, ~10% consistent...

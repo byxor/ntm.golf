@@ -1,3 +1,7 @@
+// 2025 LATEST NOTE: This file is pretty much useless.
+
+// ------------------------------------------------------
+
 // Note for readers:
 //
 // This is an attempt to understand why "identical"

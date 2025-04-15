@@ -1,8 +1,10 @@
 .vscode/
 bounce-distances
-guides/disabling-music-in-fbneo
-guides/almeida-putting-tips
-guides/tips-for-hitting-the-meter-with-almeida
-guides/almeida-tips
+
+guides/
+!guides/setting-wind-with-cheat-engine
+
+notes/shots/
+
 notes/mistakes.txt
 models/bounces.js

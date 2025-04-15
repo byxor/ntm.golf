@@ -103,7 +103,6 @@ class SurfaceSelectComponent extends HTMLElement {
         const initButton = (button, surface) => {
             button.addEventListener('click', event => {
                 this.#shotBrowserController.setTarget(this.#shotBrowserController.getTarget().withSurface(surface));
-                setFavicon(surface);
             });
             button.className += this.#target.surface === surface ? " selected" : " deselected";
         };

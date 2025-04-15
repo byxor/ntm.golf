@@ -34,3 +34,23 @@ class FlagReference extends Reference {
 		return this.mvflag === other.mvflag;
 	}
 }
+
+class MultiFlagReference extends Reference {
+	constructor(offsets) {
+		super();
+		this.offsets = this.validateOffsets(offsets);
+	}
+
+	validateOffsets(offsets) {
+		if (!Array.isArray(offsets)) {
+			throw `offsets '${offsets}' is not an array`;
+		}
+		for (let i = 0; i < offsets.length; i++) {
+			const offset = offsets[i];
+			if (typeof offset !== "number") {
+				throw `offset '${offset}' is not a number`;
+			}
+		}
+		return offsets;
+	}
+}

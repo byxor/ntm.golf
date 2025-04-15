@@ -29,7 +29,7 @@ class ShotMeterComponent extends HTMLElement {
 		this.powerDirectionIndicatorMask = this.power.direction !== "" ?
 			`/assets/meter/indicators/mask-power-${this.power.direction}.png` : "";
 
-		this.heightDirectionIndicatorMask = `/assets/meter/indicators/mask-height-${this.height.direction}.png`;
+		this.heightDirectionIndicatorMask = this.height.value !== "multi" ? `/assets/meter/indicators/mask-height-${this.height.direction}.png` : "";
 
 		this.spinXOffset = (() => {
 			if (this.spin === BACKSPIN) {

@@ -97,7 +97,9 @@ class ShotSelectComponent extends HTMLElement {
         const resetDistanceButton = this.shadowRoot.querySelector('.reset-distance');
         resetDistanceButton.addEventListener('click', event => {
             let newValue = 140;
-            if (this.#target.surface === ROUGH_SURFACE) {
+            if (this.#target.distance > 1000) {
+                newValue = 9120
+            } else if (this.#target.surface === ROUGH_SURFACE) {
                 newValue = 18;
             }
             distanceSelectComponent.value = newValue;

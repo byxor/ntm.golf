@@ -128,8 +128,8 @@ class ShotBrowserController {
 			return;
 		}
 		console.log("Controller: setting target", target.distance, target.surface.name, target.wind);
-		this.#setFavicon(target.surface);
 		this.#target = target;
+		this.#updateFavicon();
 		this.#onTargetChangedListeners.forEach(listener => listener(target));
 	}
 
@@ -145,8 +145,14 @@ class ShotBrowserController {
 		return this.#target;
 	}
 
-	#setFavicon(surface) {
-		const image = `/assets/meter/surfaces/${surface.name}-circle${surface === FAIRWAY_SURFACE ? "-lighter" : surface === BUNKER_4_SURFACE ? "-darker" : ""}.png`;
+	#updateFavicon() {
+		const image = (() => {
+			if (this.#target.distance > 9000) {
+				return `/assets/stances/default.png`;
+			}
+			return `/assets/meter/surfaces/${this.#target.surface.name}-circle${this.#target.surface === FAIRWAY_SURFACE ? "-lighter" : this.#target.surface === BUNKER_4_SURFACE ? "-darker" : ""}.png`;
+		})();
+
 		let link = document.querySelector("link[rel~='icon']");
 		if (!link) {
 			link = document.createElement('link');
