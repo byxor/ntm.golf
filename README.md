@@ -12,7 +12,13 @@ https://ntm.golf
 
 Course notes for Fernando Almeida (Power Golfer). More golfers may come later if I decide to learn them.
 
-Notes get parsed from the `notes/` folder.
+Notes get parsed from the `notes/` folder:
+- [notes/germany.txt](/notes/germany.txt)
+- [notes/japan.txt](/notes/japan.txt)
+- [notes/australia.txt](/notes/australia.txt)
+- [notes/usa.txt](/notes/usa.txt)
+- [notes/scotland.txt](/notes/scotland.txt)
+- [Reference images](/assets/references/)
 
 Built with HTML/CSS/JS/WebComponents, no external dependencies.
 
