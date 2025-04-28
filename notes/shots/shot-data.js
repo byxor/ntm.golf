@@ -310,6 +310,11 @@ const SHOT_OPTIONS_BY_DISTANCE = (() => {
         const shotOption = new ShotOption(target, setup);
         shotOptions.push(shotOption);
 
+        // TODO: consider a small adjustment when flipping the setup:
+        // - if it's a negative offset, flip it and add 1?
+        // - if it's a positive offset, flip it and subtract 1? not sure
+        // Haven't quite worked out if this is the right approach.
+
         // Flip the shot horizontally and add it if possible
         if ((wind.strength !== 0) && (wind.direction !== "N") && (wind.direction !== "S") && stance === DEFAULT_STANCE) {
             const target = new Target(distance, surface, wind.horizontallyFlipped());
@@ -356,7 +361,16 @@ const SHOT_OPTIONS_BY_DISTANCE = (() => {
     const C_120 = CLUB_120Y;
     const C_140 = CLUB_140Y;
     const C_160 = CLUB_160Y;
+    const C_170 = CLUB_170Y;
+    const C_180 = CLUB_180Y;
+    const C_190 = CLUB_190Y;
+    const C_200 = CLUB_200Y;
+    const C_210 = CLUB_210Y;
+    const C_220 = CLUB_220Y;
+    const C_240 = CLUB_240Y;
+    const C_250 = CLUB_250Y;
     const C_260 = CLUB_260Y;
+    const C_280 = CLUB_280Y;
 
     // ----------------------------------------------------------------------------------
 
@@ -435,7 +449,15 @@ const SHOT_OPTIONS_BY_DISTANCE = (() => {
     // _(21, ROUGH, ZERO_WIND, DS, 0, C_120, "3.4v N+1v", NS, ["2nd bounce", "Rolls ?y past flag if miss.", "ideal"]);
     // _(21, ROUGH, ZERO_WIND, DS, 0, C_120, "3.3v N+2^", NS, ["2nd bounce", "Rolls ?y past flag if miss."]);
 
+    _(21, ROUGH, ZERO_WIND, DS, 0, C_120, "4.2v NT^", NS, ["1st bounce", "Rolls ?y past flag if miss."]);
+    _(21, ROUGH, ZERO_WIND, DS, 0, C_120, "4.1v N+2^", NS, ["1st bounce", "ideal", "Rolls ?y past flag if miss."]);
+    _(21, ROUGH, ZERO_WIND, DS, 0, C_120, "3.4v N+2^", NS, ["2nd bounce", "ideal", "Rolls ?y past flag if miss."]);
 
+    // Think I accidentally recorded some of these at 21y...
+    //_(22, ROUGH, ZERO_WIND, DS, 0, C_120, "4.1v N+2^", NS, ["1st bounce", "ideal", "Rolls ?y past flag if miss."]);
+    //_(22, ROUGH, ZERO_WIND, DS, 0, C_120, "3.4v N+2^", NS, ["2nd bounce", "ideal", "Rolls ?y past flag if miss."]);
+    //_(22, ROUGH, ZERO_WIND, DS, 0, C_120, "3.3v NSv", NS, ["2nd bounce", "ideal", "Rolls ?y past flag if miss."]);
+ 
 
     // ----------------------------------------------------------------------------------
 
@@ -457,10 +479,11 @@ const SHOT_OPTIONS_BY_DISTANCE = (() => {
     // short game fairway chips
 
     _(22, FAIRWAY, ZERO_WIND, DS, 0, C_120, "3.2v N^", BS, ["1st bounce", "Rolls 11y past flag if miss."]);
+    _(22, FAIRWAY, ZERO_WIND, DS, 0, C_120, "3.1v NS+1v", BS, ["1st bounce", "Rolls ?y past flag if miss."]);
     _(22, FAIRWAY, ZERO_WIND, DS, 0, C_120, "3.0v NBv", BS, ["2nd bounce", "Rolls 7y past flag if miss."]);
     _(22, FAIRWAY, ZERO_WIND, DS, 0, C_120, "2.4v H-2v", BS, ["2nd bounce", "Rolls 9y past flag if miss.", "Can't hit it from the savestate but looks close."]);
 
-    _(22, FAIRWAY, ZERO_WIND, DS, 0, C_120, "1.5v H-1v", BS, ["rolls in"]);
+    _(22, FAIRWAY, ZERO_WIND, DS, 0, C_120, "2.0v H-1v", BS, ["rolls in"]);
     _(22, FAIRWAY, ZERO_WIND, DS, 0, C_120, "1.2v Hv", TS, ["rolls in"]);
     _(22, FAIRWAY, ZERO_WIND, DS, 0, C_120, "1.1v Hv", TS, ["rolls in"]);
     
@@ -495,6 +518,9 @@ const SHOT_OPTIONS_BY_DISTANCE = (() => {
 
     // ----------------------------------------------------------------------------------
 
+    //_(119, FAIRWAY, wind(8, "S"), DS, 0, C_160, "-1v N+1v", ["4th bounce", "ideal", "Power: -1v."]);
+
+    // ----------------------------------------------------------------------------------
 
     _(120, FAIRWAY, ZERO_WIND, DS, 0, C_120, "101%^ H-1v", NS, ["3rd bounce", "ideal"]);
     _(120, FAIRWAY, ZERO_WIND, DS, 0, C_120, "99%^ NSv", TS, ["4th bounce", "Carries 103y"]);
@@ -571,6 +597,66 @@ const SHOT_OPTIONS_BY_DISTANCE = (() => {
     _(120, FAIRWAY, wind(3, "S"), DS, 0, C_120, "max% H-1v", NS, ["2nd bounce", "ideal"]);
 
 
+
+    _(120, FAIRWAY, wind(5, "W"), DS, -27, C_120, "99%^ NS+1v", TS, ["rolls in"]);
+    _(120, FAIRWAY, wind(5, "W"), DS, -27, C_120, "101%^ NS+1v", NS, ["3rd bounce", "ideal", "Lands 1y past flag if miss."]);
+    _(120, FAIRWAY, wind(5, "W"), DS, -27, C_120, "102%^ NS+1v", NS, ["3rd bounce", "ideal", "Lands 1y past flag if miss."]);
+
+
+    _(120, FAIRWAY, wind(5, "W+1"), DS, -24, C_120, "99%^ H-2v", NS, ["4th bounce", "ideal"]);
+
+   
+    _(120, FAIRWAY, wind(5, "NW"), H1, -28, C_120, "99%^ L+1^", NS, ["4th bounce", "Rolls 3y past flag if miss.", "ideal"]);
+    _(120, FAIRWAY, wind(5, "NW"), H1, -28, C_120, "101%^ L+3^", BS, ["2nd bounce", "Goes 1y past flag if miss, then rolls back to flag.", "NT-2^ sometimes rolls in.", "ideal"]);
+    _(120, FAIRWAY, wind(5, "NW"), H1, -28, C_120, "102%^ NT^", BS, ["rolls in", "Goes 2y past flag then rolls back in."]);
+
+    _(120, FAIRWAY, wind(5, "NE"), H1, -2, C_120, "99%^ NT-2^", NS, ["4th bounce", "ideal", "Rolls 3y past flag if miss."]); 
+
+
+    _(120, FAIRWAY, wind(5, "NW+1"), DS, -8, C_120, "99%^ N^", BS, ["3rd bounce", "ideal", "Rolls back 4y if miss."]);
+    _(120, FAIRWAY, wind(5, "NW+1"), DS, -8, C_120, "101%^ NS+1v", BS, ["rolls in", "Goes 7y past flag, then rolls back in."]);
+    _(120, FAIRWAY, wind(5, "NW+1"), DS, -8, C_120, "102%^ NS+1v", BS, ["rolls in", "Goes 7y past flag, then rolls back in."]);
+
+    _(120, FAIRWAY, wind(5, "N"), DS, 0, C_120, "99%^ N-1^", BS, ["3rd bounce", "ideal", "Rolls back 3y if miss.", "N-2^ sometimes goes in on 4th bounce."]); 
+    _(120, FAIRWAY, wind(5, "N"), DS, 0, C_120, "101%^ H-1v", BS, ["rolls in", "Goes 7y past flag (on 2nd bounce), then bounces back and rolls in."]);
+
+
+    _(120, FAIRWAY, wind(5, "SW+1"), DS, -23, C_120, "max-3%^ N^", NS, ["5th bounce", "ideal", "Basically lands on top."]);
+    _(120, FAIRWAY, wind(5, "SW+1"), DS, -23, C_120, "max-2%^ N-1^", NS, ["4th bounce", "ideal", "Basically lands on top."]);
+    _(120, FAIRWAY, wind(5, "SW+1"), DS, -23, C_120, "max% N+1^", BS, ["4th bounce", "Goes 1y past flag (on 2nd bounce), then bounces back.", "Rolls 9y back from flag if miss."]);
+
+    _(120, FAIRWAY, wind(5, "SW"), DS, -22, C_120, "max-1%^ H-3v", TS, ["rolls in", "Basically lands on top."]);
+    _(120, FAIRWAY, wind(5, "SW"), DS, -22, C_120, "max% H-3v", NS, ["3rd bounce", "ideal", "Basically lands on top, but still rolls a bit."]);
+
+    _(120, FAIRWAY, wind(5, "S+1"), DS, -10, C_120, "max-1%^ N^", TS, ["rolls in"]);
+    _(120, FAIRWAY, wind(5, "S+1"), DS, -10, C_120, "max% N-1^", NS, ["4th bounce", "ideal", "Basically lands on top."]);
+
+    _(120, FAIRWAY, wind(5, "S"), DS, 0, C_120, "max-1% NT^", TS, ["rolls in"]);
+    _(120, FAIRWAY, wind(5, "S"), DS, 0, C_120, "max% NT^", NS, ["4th bounce", "ideal"]);
+    _(120, FAIRWAY, wind(5, "S"), DS, 0, C_120, "max% H-3v", TS, ["4th bounce", "ideal", "Alt. max shot.", "Basically lands on top.", "More likely to drift if angle not perfect."]);
+
+
+
+    _(120, FAIRWAY, wind(8, "N"), DS, 0, C_120, "96%^ N-1^", BS, ["3rd bounce"]);
+    _(120, FAIRWAY, wind(8, "N"), DS, 0, C_120, "97%^ L+1^", BS, ["4th bounce"]);
+
+    _(120, FAIRWAY, wind(8, "NW"), DS, -20, C_120, "99%^ L+3^", BS, ["3rd bounce", "Rolls back 4y if miss."]);
+
+    _(120, FAIRWAY, wind(8, "W"), DS, -47, C_120, "102%^ H-2v", NS, ["5th bounce", "ideal"]);
+    _(120, FAIRWAY, wind(8, "W"), DS, -47, C_120, "103%^ H-2v", NS, ["4th bounce", "ideal"]);
+    _(120, FAIRWAY, wind(8, "W"), DS, -47, C_120, "104%^ H-2v", NS, ["3rd bounce", "Rolls 1y past flag."]);
+
+    _(120, FAIRWAY, wind(8, "SW"), DS, -23, C_140, "99%^ H-1v", NS, ["4th bounce", "ideal"]);
+
+    _(120, FAIRWAY, wind(8, "S"), DS, 0, C_140, "103%^ H-2v", NS, ["3rd bounce", "ideal"]);
+    _(120, FAIRWAY, wind(8, "S"), DS, 0, C_140, "104%^ H-1v", NS, ["3rd bounce", "ideal"]);
+    _(120, FAIRWAY, wind(8, "S"), DS, 0, C_140, "105%^ NS+1v", NS, ["3rd bounce", "ideal", "Lands 3y past flag if miss."]);
+
+
+    _(120, FAIRWAY, wind(12, "W"), DS, -59, C_120, "104%^ N^", NS, ["4th bounce", "ideal"]);
+    _(120, FAIRWAY, wind(12, "W"), DS, -59, C_120, "105%^ N^", NS, ["3rd bounce", "ideal", "Lands 1y past flag if miss."]);
+
+
     // ----------------------------------------------------------------------------------
 
 
@@ -582,10 +668,12 @@ const SHOT_OPTIONS_BY_DISTANCE = (() => {
     _(130, FAIRWAY, wind(1, "NW+1"), DS, -2, C_120, "max% N^", BS, ["4th bounce", "ideal", "Goes 1y past flag and bounces in.", "Might roll back ~6y if miss."]);
 
     _(130, FAIRWAY, wind(1, "NW"), DS, -3, C_120, "max% L+1^", BS, ["2nd bounce", "ideal"]);
+    
+    _(130, FAIRWAY, wind(1, "W"), DS, -6, C_120, "max% H-3v", NS, ["2nd bounce", "ideal"]);
 
     _(130, FAIRWAY, wind(1, "W+1"), DS, -4, C_120, "max% L+1^", BS, ["3rd bounce", "ideal"]);
 
-    _(130, FAIRWAY, wind(1, "W"), DS, -6, C_120, "max% H-3v", NS, ["2nd bounce", "ideal"]);
+
 
     _(130, FAIRWAY, wind(1, "SW+1"), DS, -4, C_120, "max% N^", NS, ["2nd bounce", "Rolls 3y past flag if miss."]);
 
@@ -662,169 +750,217 @@ const SHOT_OPTIONS_BY_DISTANCE = (() => {
 
 
     // ----------------------------------------------------------------------------------
+    // ==================================================================================
 
+
+
+
+    // ===========================================
+
+    // -------------------------------------------
+    // 140 ZERO WIND
 
     _(140, FAIRWAY, ZERO_WIND, DS, 0, C_140, "max-2%^ H-2v", BS, ["3rd bounce", "ideal"]);
     _(140, FAIRWAY, ZERO_WIND, DS, 0, C_140, "max-1%^ H-2v", BS, ["2nd bounce", "ideal"]);
 
 
+
+    // -------------------------------------------
+    // 140 N
+
     _(140, FAIRWAY, wind(1, "N"), DS, 0, C_140, "104%^ NBv", BS, ["3rd bounce", "ideal"]);
     _(140, FAIRWAY, wind(1, "N"), DS, 0, C_140, "105%^ Hv", BS, ["3rd bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(1, "N+1"), DS, 2, C_140, "104%^ NBv", BS, ["3rd bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(1, "NE"), DS, 3, C_140, "105%^ H-1v", BS, ["4th bounce", "ideal"]);
-    _(140, FAIRWAY, wind(1, "NE"), DS, 3, C_140, "max-3%^ Hv", BS, ["4th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(1, "NE+1"), DS, 3, C_140, "105%^ NBv", BS, ["4th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(1, "E"), DS, 4, C_140, "max-2%^ H-1v", BS, ["4th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(1, "E+1"), DS, 4, C_140, "max-2%^ H-1v", BS, ["4th bounce", "ideal"]);
-    _(140, FAIRWAY, wind(1, "E+1"), DS, 3, C_140, "max-1%^ N-1^", BS, ["2nd bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(1, "SE"), DS, 3, C_140, "max-2%^ N-2v", BS, ["3rd bounce", "ideal"]);
-    _(140, FAIRWAY, wind(1, "SE"), DS, 3, C_140, "max-1%^ N-2v", BS, ["3rd bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(1, "SE+1"), DS, 2, C_140, "max-1%^ NT-2^", BS, ["3rd bounce", "ideal"]);
-    _(140, FAIRWAY, wind(1, "SE+1"), DS, 2, C_140, "max% H-2v", BS, ["rolls in", "Goes 5y past flag, then rolls back."]);
-
-    _(140, FAIRWAY, wind(1, "S"), DS, 0, C_140, "103%^ H-3v", NS, ["4th bounce", "ideal"]);
-    _(140, FAIRWAY, wind(1, "S"), DS, 0, C_140, "104%^ H-1v", NS, ["3rd bounce", "ideal"]);
-    _(140, FAIRWAY, wind(1, "S"), DS, 0, C_140, "105%^ Hv", NS, ["3rd bounce", "ideal"]);
-
-
 
     _(140, FAIRWAY, wind(2, "N"), DS, 0, C_140, "101%^ N+2^", BS, ["3rd bounce", "ideal"]);
     _(140, FAIRWAY, wind(2, "N"), DS, 0, C_140, "102%^ N-2v", BS, ["3rd bounce", "ideal"]);
 
+    _(140, FAIRWAY, wind(3, "N"), DS, 0, C_140, "99%^ Hv", NS, ["3rd bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(5, "N"), DS, 0, C_140, "99%^ NS+1v", BS, ["4th bounce", "ideal", "Rolls back 3y if miss."]);
+
+    _(140, FAIRWAY, wind(8, "N"), DS, 0, C_120, "max-1%^ L+3^", BS, ["3rd bounce", "ideal"]);
+    _(140, FAIRWAY, wind(8, "N"), DS, 0, C_120, "max% N^", BS, ["1st bounce", "Might go in on 2nd bounce (candle shot).", "Lands ~11y past flag if miss."]);
+  
+    // ---------------
+    // 140 NW+1/N+1
+
+    _(140, FAIRWAY, wind(1, "N+1"), DS, 2, C_140, "104%^ NBv", BS, ["3rd bounce", "ideal"]);
+
     _(140, FAIRWAY, wind(2, "N+1"), DS, 3, C_140, "max-3%^ H-2v", BS, ["rolls in", "Goes 5y past flag, then rolls back."]);
     _(140, FAIRWAY, wind(2, "N+1"), DS, 3, C_140, "max-2%^ H-2v", BS, ["rolls in", "Goes 5y past flag, then rolls back."]);
 
-    _(140, FAIRWAY, wind(2, "NE"), DS, 6, C_140, "105%^ H-1v", BS, ["2nd bounce", "ideal"]);    
-
-    _(140, FAIRWAY, wind(2, "NE+1"), DS, 8, C_140, "105%^ H-2v", BS, ["4th bounce", "ideal", "Sometimes 3rd bounce."]);
-
-    _(140, FAIRWAY, wind(2, "E"), DS, 8, C_140, "max-3%^ N-1^", BS, ["3rd bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(2, "E+1"), DS, 8, C_140, "102%^ NS+1v", NS, ["5th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(2, "SE"), DS, 7, C_140, "104%^ H-2v", NS, ["5th bounce", "ideal"]);
-    _(140, FAIRWAY, wind(2, "SE"), DS, 7, C_140, "105%^ H-2v", NS, ["4th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(2, "SE+1"), DS, 4, C_140, "max-2%^ H-2v", NS, ["3rd bounce", "ideal"]);
-    _(140, FAIRWAY, wind(2, "SE+1"), DS, 4, C_140, "max-2%^ Hv", NS, ["4th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(2, "S"), DS, 0, C_140, "max-2%^ H-2v", NS, ["3rd bounce", "ideal"]);
-
-
-
-    _(140, FAIRWAY, wind(3, "N"), DS, 0, C_140, "99%^ Hv", NS, ["3rd bounce", "ideal"]);
-
     _(140, FAIRWAY, wind(3, "N+1"), DS, 4, C_140, "99%^ N+2^", NS, ["4th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(3, "NE"), DS, 9, C_140, "99%^ Hv", NS, ["5th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(3, "NE+1"), DS, 12, C_140, "104%^ H-3v", BS, ["3rd bounce", "ideal"]); 
-
-    _(140, FAIRWAY, wind(3, "E"), DS, 12, C_140, "max-3%^ NBv", BS, ["3rd bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(3, "E+1"), DS, 10, C_140, "104%^ NT-1^", NS, ["4th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(3, "SE"), DS, 10, C_140, "max-3%^ NS+1v", NS, ["5th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(3, "SE+1"), DS, 5, C_140, "max% NS+1v", BS, ["4th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(3, "S"), DS, 0, C_140, "max% NSv", BS, ["4th bounce", "ideal"]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-    _(140, FAIRWAY, wind(5, "N"), DS, 0, C_140, "99%^ NS+1v", BS, ["4th bounce", "ideal", "Rolls back 3y if miss."]);
 
     _(140, FAIRWAY, wind(5, "NW+1"), S2, 27, C_140, "99%^ H-2v", BS, ["3rd bounce", "ideal", "Sometimes 5th bounce.", "Nice curvature, has multiple chances of going in.", "Rolls 3y past top-left of flag if miss."]);
     _(140, FAIRWAY, wind(5, "N+1"), S3, 63, C_140, "99%^ H-1v", BS, ["rolls in", "Meme shot.", "Backspins rolls forward a little bit."]);
 
+    _(140, FAIRWAY, wind(8, "NW+1"), H2, -41, C_140, "99%^ N-1^", BS, ["4th bounce", "ideal"]);
+    _(140, FAIRWAY, wind(8, "N+1"), H3, -36, C_140, "99%^ N-1^", BS, ["4th bounce", "ideal"]);
+
+    // ---------------
+    // 140 NW/NE
+
+    _(140, FAIRWAY, wind(1, "NE"), DS, 3, C_140, "105%^ H-1v", BS, ["4th bounce", "ideal"]);
+    _(140, FAIRWAY, wind(1, "NE"), DS, 3, C_140, "max-3%^ Hv", BS, ["4th bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(2, "NE"), DS, 6, C_140, "105%^ H-1v", BS, ["2nd bounce", "ideal"]);    
+
+    _(140, FAIRWAY, wind(3, "NE"), DS, 9, C_140, "99%^ Hv", NS, ["5th bounce", "ideal"]);
+
     _(140, FAIRWAY, wind(5, "NW"), H2, -52, C_140, "99%^ Hv", NS, ["5th bounce", "ideal", "Risky height.", "1 pixel narrower and H-1v probably works too.", "Rolls 1y past flag if miss."]);
     _(140, FAIRWAY, wind(5, "NE"), H3, -22, C_140, "99%^ Hv", NS, ["5th bounce", "ideal", "Risky height.", "1 pixel narrower and H-1v probably works too.", "Rolls 1y past flag if miss."]);
-
-    _(140, FAIRWAY, wind(5, "W+1"), DS, -31, C_120, "max-1%^ H-2v", TS, ["rolls in"]);
-    _(140, FAIRWAY, wind(5, "W+1"), DS, -31, C_120, "max% H-1v", NS, ["4th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(5, "W"), DS, -20, C_140, "max-3%^ N^", BS, ["3rd bounce", "ideal", "Might go in on 5th bounce.", "Rolls back 3y if miss."]);
-    _(140, FAIRWAY, wind(5, "W"), DS, -20, C_140, "max-2%^ N+1v", BS, ["3rd bounce", "ideal", "Rolls back 3y if miss."]);
-    _(140, FAIRWAY, wind(5, "W"), DS, -20, C_140, "max-1%^ N+2^", BS, ["2nd bounce", "Goes 1y past flag if miss, then rolls back 1y."]);
-
-    _(140, FAIRWAY, wind(5, "SW+1"), H2, -46, C_160, "99%^ H-2v", BS, ["3rd bounce", "ideal"]);
-    _(140, FAIRWAY, wind(5, "E+1"), H2, -18, C_140, "max-3%^ H-3v", NS, ["5th bounce", "ideal"]);
-    _(140, FAIRWAY, wind(5, "E+1"), H2, -18, C_140, "max-2%^ NS+1v", NS, ["5th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(5, "SW"), DS, -14, C_140, "max-2%^ N-2^", NS, ["rolls in"]);    
-    _(140, FAIRWAY, wind(5, "SW"), DS, -14, C_140, "max-1%^ N^", NS, ["5th bounce", "ideal"]);    
-    _(140, FAIRWAY, wind(5, "SW"), DS, -14, C_140, "max% N-1^", BS, ["2nd bounce", "ideal", "Sometimes goes in on 5th bounce.", "Goes 1y past flag, then rolls back 4y."]);    
-
-    _(140, FAIRWAY, wind(5, "S+1"), DS, -10, C_140, "max-1%^ H-2v", TS, ["rolls in"]);
-    _(140, FAIRWAY, wind(5, "S+1"), DS, -10, C_140, "max% H-2v", NS, ["4th bounce", "ideal"]);
-
-    _(140, FAIRWAY, wind(5, "S"), DS, 0, C_160, "99%^ NT-1^", BS, ["4th bounce", "ideal"]);
-
-
-
-
-
-
-    _(140, FAIRWAY, wind(8, "W+1"), H1, -42, C_140, "99%^ NT^", BS, ["rolls in", "Long, slow roll."]);
-    _(140, FAIRWAY, wind(8, "W+1"), H1, -42, C_140, "101%^ N+2^", BS, ["3rd bounce", "ideal"]);
-    _(140, FAIRWAY, wind(8, "W+1"), H1, -42, C_140, "102%^ N+2^", BS, ["3rd bounce", "ideal"]);
-    _(140, FAIRWAY, wind(8, "W+1"), H1, -42, C_140, "103%^ N-1^", BS, ["3rd bounce", "Not great from savestate, but might go in."]);
-    _(140, FAIRWAY, wind(8, "NE+1"), H3, -21, C_140, "101%^ H^", BS, ["5th bounce", "ideal", "Funky curvature, bounces in from top left.", "Risky height."]);
-    _(140, FAIRWAY, wind(8, "NE+1"), H3, -21, C_140, "102%^ NB^", BS, ["rolls in", "Funky curvature, rolls in from top left."]);
-    _(140, FAIRWAY, wind(8, "NE+1"), H3, -21, C_140, "103%^ H-1^", BS, ["2nd bounce", "ideal", "Goes 1y past flag, then rolls 5y to top right."]);   
 
     _(140, FAIRWAY, wind(8, "NW"), DS, -21, C_140, "96% NSv", NS, ["4th bounce", "Rolls 4y past flag if miss."]);
     _(140, FAIRWAY, wind(8, "NW"), DS, -21, C_140, "97% N+2^", NS, ["3rd bounce", "Rolls 5y past flag if miss."]);
     _(140, FAIRWAY, wind(8, "NW"), DS, -21, C_140, "99% NBv", BS, ["4th bounce", "ideal"]);
 
+    // ---------------
+    // 140 W+1/NE+1
 
-    _(140, FAIRWAY, wind(8, "NW+1"), H2, -41, C_140, "99%^ N-1^", BS, ["4th bounce", "ideal"]);
-    _(140, FAIRWAY, wind(8, "N+1"), H3, -36, C_140, "99%^ N-1^", BS, ["4th bounce", "ideal"]);
+    _(140, FAIRWAY, wind(1, "NE+1"), DS, 3, C_140, "105%^ NBv", BS, ["4th bounce", "ideal"]);
 
-    _(140, FAIRWAY, wind(8, "N"), DS, 0, C_120, "max-1%^ L+3^", BS, ["3rd bounce", "ideal"]);
-    _(140, FAIRWAY, wind(8, "N"), DS, 0, C_120, "max% N^", BS, ["1st bounce", "Might go in on 2nd bounce (candle shot).", "Lands ~11y past flag if miss."]);
+    _(140, FAIRWAY, wind(2, "NE+1"), DS, 8, C_140, "105%^ H-2v", BS, ["4th bounce", "ideal", "Sometimes 3rd bounce."]);
 
+    _(140, FAIRWAY, wind(3, "NE+1"), DS, 12, C_140, "104%^ H-3v", BS, ["3rd bounce", "ideal"]); 
 
+    _(140, FAIRWAY, wind(5, "W+1"), DS, -31, C_120, "max-1%^ H-2v", TS, ["rolls in"]);
+    _(140, FAIRWAY, wind(5, "W+1"), DS, -31, C_120, "max% H-1v", NS, ["4th bounce", "ideal"]);
 
+    _(140, FAIRWAY, wind(8, "W+1"), H1, -42, C_140, "99%^ NT^", BS, ["rolls in", "Long, slow roll."]);
+    _(140, FAIRWAY, wind(8, "W+1"), H1, -42, C_140, "101%^ N+2^", BS, ["3rd bounce", "ideal"]);
+    _(140, FAIRWAY, wind(8, "W+1"), H1, -42, C_140, "102%^ N+2^", BS, ["3rd bounce", "ideal"]);
+    _(140, FAIRWAY, wind(8, "W+1"), H1, -42, C_140, "103%^ N-1^", BS, ["3rd bounce", "Not great from savestate, but might go in."]);
+
+    _(140, FAIRWAY, wind(8, "NE+1"), H3, -21, C_140, "101%^ H^", BS, ["5th bounce", "ideal", "Funky curvature, bounces in from top left.", "Risky height."]);
+    _(140, FAIRWAY, wind(8, "NE+1"), H3, -21, C_140, "102%^ NB^", BS, ["rolls in", "Funky curvature, rolls in from top left."]);
+    _(140, FAIRWAY, wind(8, "NE+1"), H3, -21, C_140, "103%^ H-1^", BS, ["2nd bounce", "ideal", "Goes 1y past flag, then rolls 5y to top right."]);   
+
+    // ---------------
+    // 140 W/E
+
+    _(140, FAIRWAY, wind(1, "E"), DS, 4, C_140, "max-2%^ H-1v", BS, ["4th bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(2, "E"), DS, 8, C_140, "max-3%^ N-1^", BS, ["3rd bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(3, "E"), DS, 12, C_140, "max-3%^ NBv", BS, ["3rd bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(4, "W"), DS, -16, C_140, "max%, NS+1v", BS, ["1st bounce", "Goes 9y past flag, then rolls back to 3y past flag.", "Risky."]);
+
+    _(140, FAIRWAY, wind(5, "W"), DS, -20, C_140, "max-3%^ N^", BS, ["3rd bounce", "ideal", "Might go in on 5th bounce.", "Rolls back 3y if miss."]);
+    _(140, FAIRWAY, wind(5, "W"), DS, -20, C_140, "max-2%^ N+1v", BS, ["3rd bounce", "ideal", "Rolls back 3y if miss."]);
+    _(140, FAIRWAY, wind(5, "W"), DS, -20, C_140, "max-1%^ N+2^", BS, ["2nd bounce", "Goes 1y past flag if miss, then rolls back 1y."]);
+
+    _(140, FAIRWAY, wind(6, "W"), DS, -23, C_140, "max%, NBv", BS, ["1st bounce", "Goes 10y past flag, then rolls back to 6y past flag.", "Risky."]);
+
+    _(140, FAIRWAY, wind(7, "W"), DS, -26, C_140, "max%, N+1v", BS, ["1st bounce", "Goes 10y past flag, then rolls back to 5y past flag.", "Risky."]);
 
     _(140, FAIRWAY, wind(8, "W"), DS, -23, C_160, "97%v NS+1v", BS, ["2nd bounce", "Goes 3y past flag if miss, then rolls back to 2y past flag."]);
     _(140, FAIRWAY, wind(8, "W"), DS, -23, C_160, "96%v NS+1v", BS, ["4th bounce", "ideal"]);
     _(140, FAIRWAY, wind(8, "W"), DS, -23, C_160, "95%v NS+1v", BS, ["4th bounce", "ideal"]);
 
+    _(140, FAIRWAY, wind(9, "W"), H3, -96, C_140, "max% NBv", BS, ["5th bounce", "ideal", "Funky curvature. Bounces in from bottom left.", "Rolls ?y past flag if miss."]);
+    // NEED E
+
+    _(140, FAIRWAY, wind(10, "W"), H3, -102, C_140, "max% N+2^", BS, ["5th bounce", "ideal", "Funky curvature. Bounces in from bottom left.", "Rolls 3y past top of flag if miss."]);
+    // NEED E
+
+    _(140, FAIRWAY, wind(11, "W"), H3, -108, C_140, "max% H-3v", BS, ["rolls in", "ideal", "Funky curvature. Rolls in 2y from bottom left.", "Goes 1y past flag if miss."]);
+    // NEED E
+
+    _(140, FAIRWAY, wind(12, "W"), H3, -94, C_140, "max% L+2^", BS, ["2nd bounce", "ideal", "Goes 3y past flag if miss, then rolls back to 2y."]);
+    // NEED E
+
+    _(140, FAIRWAY, wind(13, "W"), H3, -105, C_140, "max% NT-2^", BS, ["3rd bounce", "ideal", "NT-1^ sometimes rolls in."]);
+    // NEED E
+
+    _(140, FAIRWAY, wind(14, "W"), H3, -106, C_140, "max% L+2^", BS, ["4th bounce", "ideal", "Very wide shot lol."]);
+    // NEED E
+
+    _(140, FAIRWAY, wind(15, "W"), H3, -116, C_140, "max% NT^", BS, ["rolls in", "Rolls in 1y from bottom left.", "Very wide shot lol."]);
+    // NEED E
+
+    // ---------------
+    // 140 SW+1/E+1
+
+    _(140, FAIRWAY, wind(1, "E+1"), DS, 4, C_140, "max-2%^ H-1v", BS, ["4th bounce", "ideal"]);
+    _(140, FAIRWAY, wind(1, "E+1"), DS, 3, C_140, "max-1%^ N-1^", BS, ["2nd bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(2, "E+1"), DS, 8, C_140, "102%^ NS+1v", NS, ["5th bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(3, "E+1"), DS, 10, C_140, "104%^ NT-1^", NS, ["4th bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(5, "SW+1"), H2, -46, C_160, "99%^ H-2v", BS, ["3rd bounce", "ideal"]);
+    _(140, FAIRWAY, wind(5, "E+1"), H2, -18, C_140, "max-3%^ H-3v", NS, ["5th bounce", "ideal"]);
+    _(140, FAIRWAY, wind(5, "E+1"), H2, -18, C_140, "max-2%^ NS+1v", NS, ["5th bounce", "ideal"]);
+
     _(140, FAIRWAY, wind(8, "SW+1"), DS, -22, C_160, "99%^ NS+1v", BS, ["3rd bounce", "ideal"]);
 
+    // ---------------
+    // 140 SW/SE
+
+    _(140, FAIRWAY, wind(1, "SE"), DS, 3, C_140, "max-2%^ N-2v", BS, ["3rd bounce", "ideal"]);
+    _(140, FAIRWAY, wind(1, "SE"), DS, 3, C_140, "max-1%^ N-2v", BS, ["3rd bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(2, "SE"), DS, 7, C_140, "104%^ H-2v", NS, ["5th bounce", "ideal"]);
+    _(140, FAIRWAY, wind(2, "SE"), DS, 7, C_140, "105%^ H-2v", NS, ["4th bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(3, "SE"), DS, 10, C_140, "max-3%^ NS+1v", NS, ["5th bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(5, "SW"), DS, -14, C_140, "max-2%^ N-2^", NS, ["rolls in"]);    
+    _(140, FAIRWAY, wind(5, "SW"), DS, -14, C_140, "max-1%^ N^", NS, ["5th bounce", "ideal"]);    
+    _(140, FAIRWAY, wind(5, "SW"), DS, -14, C_140, "max% N-1^", BS, ["2nd bounce", "ideal", "Sometimes goes in on 5th bounce.", "Goes 1y past flag, then rolls back 4y."]);    
 
     _(140, FAIRWAY, wind(8, "SW"), DS, -18, C_160, "99%^ NS+1v", NS, ["4th bounce", "ideal", "Rolls 2y past flag if miss."]);
     _(140, FAIRWAY, wind(8, "SW"), DS, -18, C_160, "101%^ H-3v", BS, ["2nd bounce", "Goes 1y past flag if miss, then chance of rolling back in."]);
     _(140, FAIRWAY, wind(8, "SW"), DS, -18, C_160, "102%^ H-2v", BS, ["2nd bounce", "Goes 1y past flag if miss, then chance of rolling back in."]);
 
+    // ---------------
+    // 140 S+1/SE+1
+
+    _(140, FAIRWAY, wind(1, "SE+1"), DS, 2, C_140, "max-1%^ NT-2^", BS, ["3rd bounce", "ideal"]);
+    _(140, FAIRWAY, wind(1, "SE+1"), DS, 2, C_140, "max% H-2v", BS, ["rolls in", "Goes 5y past flag, then rolls back."])
+
+    _(140, FAIRWAY, wind(2, "SE+1"), DS, 4, C_140, "max-2%^ H-2v", NS, ["3rd bounce", "ideal"]);
+    _(140, FAIRWAY, wind(2, "SE+1"), DS, 4, C_140, "max-2%^ Hv", NS, ["4th bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(3, "SE+1"), DS, 5, C_140, "max% NS+1v", BS, ["4th bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(5, "S+1"), DS, -10, C_140, "max-1%^ H-2v", TS, ["rolls in"]);
+    _(140, FAIRWAY, wind(5, "S+1"), DS, -10, C_140, "max% H-2v", NS, ["4th bounce", "ideal"]);
+
     _(140, FAIRWAY, wind(8, "S+1"), DS, -12, C_140, "max% L+1^", NS, ["rolls in", "Can't reach if miss max, L+1^ topspin falls ~0.5Y short."]);
     _(140, FAIRWAY, wind(8, "S+1"), DS, -10, C_160, "99%^ NBv", NS, ["rolls in"]);
+
+    // ---------------
+    // 140 S
+
+    _(140, FAIRWAY, wind(1, "S"), DS, 0, C_140, "103%^ H-3v", NS, ["4th bounce", "ideal"]);
+    _(140, FAIRWAY, wind(1, "S"), DS, 0, C_140, "104%^ H-1v", NS, ["3rd bounce", "ideal"]);
+    _(140, FAIRWAY, wind(1, "S"), DS, 0, C_140, "105%^ Hv", NS, ["3rd bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(2, "S"), DS, 0, C_140, "max-2%^ H-2v", NS, ["3rd bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(3, "S"), DS, 0, C_140, "max% NSv", BS, ["4th bounce", "ideal"]);
+
+    _(140, FAIRWAY, wind(5, "S"), DS, 0, C_160, "99%^ NT-1^", BS, ["4th bounce", "ideal"]);
 
     _(140, FAIRWAY, wind(8, "S"), DS, 0, C_160, "104%^ Nv", BS, ["2nd bounce", "Goes 2y past flag if miss, then rolls back to 1y past flag."]);
     _(140, FAIRWAY, wind(8, "S"), DS, 0, C_160, "105%^ Nv", BS, ["2nd bounce", "Goes 2y past flag if miss, then chance of rolling back in."]);
     _(140, FAIRWAY, wind(8, "S"), DS, 0, C_160, "max-3%^ NSv", BS, ["2nd bounce", "ideal", "Goes 1y past flag if miss, then rolls back 1y."]);
     _(140, FAIRWAY, wind(8, "S"), DS, 0, C_160, "max-2%^ H-1^", BS, ["3rd bounce", "ideal", "Risky height."]);
+    
 
+
+
+
+
+
+
+    // ----------------------------------------------------------------------------------
+    // ==================================================================================
 
     // ---------------------------------------
+    // ===========================================
 
     _(145, FAIRWAY, ZERO_WIND, DS, 0, C_140, "103%^ N^", NS, ["rolls in", "Not ideal."]);
     _(145, FAIRWAY, ZERO_WIND, DS, 0, C_140, "104%^ N^", TS, ["3rd bounce", "Seems quite consistent.", "Rolls 7y past flag if miss."]);
@@ -950,6 +1086,108 @@ const SHOT_OPTIONS_BY_DISTANCE = (() => {
 
     _(160, FAIRWAY, wind(3, "S"), DS, 0, C_160, "max-1%^ NT-2^", NS, ["4th bounce", "Rolls 3y past flag if miss."]);
     _(160, FAIRWAY, wind(3, "S"), DS, 0, C_160, "max-1%^ H-3v", NS, ["4th bounce", "Rolls 1y past flag if miss.", "H-2v rolls in."]);
+
+
+    // ----------------------------------------------------------------------------------
+    // ==================================================================================
+
+    _(170, FAIRWAY, ZERO_WIND, H3, -54, C_160, "max% NT-1^", BS, ["4th bounce", "ideal"]);
+
+
+
+    // ----------------------------------------------------------------------------------
+    // ==================================================================================
+
+    _(180, FAIRWAY, ZERO_WIND, H3, -54, C_170, "max% N-2^", BS, ["5th bounce", "ideal"]);
+
+
+
+    // ----------------------------------------------------------------------------------
+    // ==================================================================================
+
+    _(190, FAIRWAY, ZERO_WIND, H3, -54, C_180, "max% NT^", BS, ["4th bounce", "ideal", "N-2^ also works."]);
+
+
+
+    // ----------------------------------------------------------------------------------
+    // ==================================================================================
+    // ---------------------------------------------------------------------
+
+    _(200, FAIRWAY, ZERO_WIND, H3, -57, C_190, "max% NSv", BS, ["4th bounce", "ideal"]);
+
+    _(200, FAIRWAY, wind(1, "N"), DS, 0, C_180, "max% N-1^", BS, ["4th bounce", "ideal", "Recorded with first bounce on green fringe (may affect results)."]);
+
+    _(200, FAIRWAY, wind(1, "N+1"), DS, 2, C_180, "max% N-1^", BS, ["5th bounce", "ideal", "Recorded with first bounce on green fringe (may affect results)."]);
+
+    _(200, FAIRWAY, wind(1, "NW"), DS, -2, C_180, "max% N-2^", BS, ["4th bounce", "ideal"]);
+
+    _(200, FAIRWAY, wind(1, "W+1"), DS, -2, C_180, "max% NT-1^", BS, ["5th bounce", "ideal"]);
+
+
+    _(200, FAIRWAY, wind(1, "SW+1"), H3, -58, C_190, "max% N+1v", BS, ["4th bounce", "ideal"]);
+    // NEED E+1
+
+    _(200, FAIRWAY, wind(1, "SW"), H3, -55, C_190, "max% NT^", BS, ["5th bounce", "ideal", "Hard to hit from savestate. Probably closer to 199Y."]);
+    // NEED SE
+
+    _(200, FAIRWAY, wind(1, "S+1"), H2, -39, C_190, "max% NSv", BS, ["4th bounce", "ideal"]);
+    // NEED SW+1
+
+
+    _(200, FAIRWAY, wind(1, "W"), H3, -58, C_190, "max% N+2^", BS, ["4th bounce", "ideal"]);
+    // NEED E
+
+    _(200, FAIRWAY, wind(2, "W"), H3, -60, C_190, "max% N^", BS, ["5th bounce", "ideal"]);
+    // NEED E
+    
+    _(200, FAIRWAY, wind(3, "W"), H3, -63, C_190, "max% N-1^", BS, ["5th bounce", "ideal"]);
+    _(200, FAIRWAY, wind(3, "E"), H3, -48, C_190, "max% H-3^", BS, ["4th bounce", "ideal"]);
+
+    _(200, FAIRWAY, wind(4, "W"), H3, -66, C_190, "max% N-1v", BS, ["rolls in", "ideal", "Basically stops on top."]);
+    // NEED E
+
+    _(200, FAIRWAY, wind(5, "W"), H3, -68, C_190, "max% N-2^", BS, ["4th bounce", "ideal"]);
+    _(200, FAIRWAY, wind(5, "E"), H3, -34, C_190, "max% H-2^", BS, ["5th bounce", "ideal", "Risky height."]);
+
+    _(200, FAIRWAY, wind(6, "W"), H3, -71, C_190, "max% N-2^", BS, ["5th bounce", "ideal"]);
+    // NEED E
+
+    _(200, FAIRWAY, wind(7, "W"), H3, -71, C_190, "max% NT-2^", BS, ["rolls in", "ideal"]);
+    // NEED E
+
+    _(200, FAIRWAY, wind(8, "W"), H3, -76, C_190, "max% NT-1^", BS, []);
+    _(200, FAIRWAY, wind(8, "E"), H3, -32, C_190, "max% H-2^", BS, ["3rd bounce", "Rolls 1y past flag if miss.", "Risky height.", "Barely works from savestate."]);
+
+    _(200, FAIRWAY, wind(9, "W"), H3, -79, C_190, "max% NT-1^", BS, ["rolls in", "ideal"]);
+    // NEED E
+
+    _(200, FAIRWAY, wind(10, "W"), H2, -63, C_190, "max% N-1v", BS, ["5th bounce", "ideal"]);
+    // NEED E
+
+    _(200, FAIRWAY, wind(11, "W"), H2, -66, C_190, "max% N-2v", BS, ["4th bounce", "ideal"]);
+    // NEED E
+
+
+
+    _(200, FAIRWAY, wind(12, "W"), H1, -57, C_190, "max% NS+1v", BS, ["3rd bounce", "ideal", "Rolls 2y past top left of flag if miss."]);
+    _(200, FAIRWAY, wind(12, "E"), H2, -1, C_190, "max% N+2^", BS, ["2nd bounce", "Rolls 7y past flag if miss."]);
+
+
+    _(200, FAIRWAY, wind(13, "W"), H3, -76, C_190, "max% N^", BS, ["rolls in", "ideal", "Only rolls for last ~1.5y."]);
+    // NEED E
+
+    _(200, FAIRWAY, wind(14, "W"), H3, -102, C_200, "max% H-3v", BS, ["4th bounce", "ideal", "Widest setup yet... lol."]);
+    // NEED E
+
+    _(200, FAIRWAY, wind(15, "W"), H1, -65, C_190, "max% NBv", BS, ["rolls in", "ideal", "Basically lands on top."]);
+    _(200, FAIRWAY, wind(15, "E"), H2, 9, C_180, "max% NS+1v", NS, ["rolls in", "ideal", "Recorded with first bounce on fairway."]);
+
+
+
+    // ----------------------------------------------------------------------------------
+    // debug info
+    _(999, FAIRWAY, ZERO_WIND, DS, [-120, -110, -100, -90, -80, -70, -60, -50, -40, -30], C_120, "max% multi^", NS, []);
+    _(1000, FAIRWAY, ZERO_WIND, DS, [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0], C_120, "max% multi^", NS, []);
 
     // ---------------------------------------------------------------------
     // stance stuff                 [L,    N,   H]

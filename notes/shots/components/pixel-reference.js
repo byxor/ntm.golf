@@ -8,7 +8,6 @@ class PixelReferenceComponent extends HTMLElement {
     init(offsetOrOffsets, distance) {
         this.#offsets = offsetOrOffsets.split(",").map(x => parseInt(x));
         this.#offsets.sort((a, b) => a - b);
-        console.log(this.#offsets);
         this.#distance = distance;
 
         this.#largestOffset = 0;
@@ -81,7 +80,11 @@ class PixelReferenceComponent extends HTMLElement {
                 return [horizonRow-1, horizonRow+4];
             } else if (this.#distance >= 146) {
                 return [horizonRow-2, horizonRow+3];
+            } else if (this.#distance >= 200) {
+                return [horizonRow-1, horizonRow+3];
             }
+
+
         })();
         const flagHeight = flagBottom - flagTop;
 

@@ -185,7 +185,7 @@
 
 - 1w(W+1), usa3_143o, leftmost, 120Y, max%, N-2^, topspin, 5th bounce
 
-- 1w(NW), usa3_143p, 120Y, max%, NS-1^, topspin, 5th bounce
+- 1w(NW), usa3_143p, 120Y, max%, N-1^, topspin, 5th bounce
 
 - 1w(NW+1), usa3_143q, rightmost, 120Y, max%, H-3v, topspin, 5th bounce, consistent, ~80% consistent.
 

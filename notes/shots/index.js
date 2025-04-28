@@ -147,7 +147,9 @@ class ShotBrowserController {
 
 	#updateFavicon() {
 		const image = (() => {
-			if (this.#target.distance > 9000) {
+			if (this.#target.distance >= 999) {
+				return `/assets/pixel-offsets/pixel-offsets.png`;			
+			} else if (this.#target.distance > 9000) {
 				return `/assets/stances/default.png`;
 			}
 			return `/assets/meter/surfaces/${this.#target.surface.name}-circle${this.#target.surface === FAIRWAY_SURFACE ? "-lighter" : this.#target.surface === BUNKER_4_SURFACE ? "-darker" : ""}.png`;
