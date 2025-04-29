@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Arcade stick display for Neo Turf Masters, with OBS support.
-Note: work in progress - Xinput only." />
-    <meta property="og:image" content="/assets/input-display/input-display-seo.png" />
-    <meta property="og:title" content="Input Display for Neo Turf Masters" />
-    <meta property="og:description" content="Arcade stick display for Neo Turf Masters, with OBS support.
-Note: work in progress - Xinput only." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/assets/input-display/input-display-seo.png" />
-    <meta name="twitter:title" content="Input Display for Neo Turf Masters" />
-    <meta name="twitter:description" content="Arcade stick display for Neo Turf Masters, with OBS support.
-Note: work in progress - Xinput only." />
-        <title>Input Display - Neo Turf Masters</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Arcade stick display for Neo Turf Masters, with OBS support. Note: work in progress - Xinput only." />
+  <meta property="og:image" content="/assets/input-display/input-display-seo.png" />
+  <meta property="og:title" content="Input Display for Neo Turf Masters" />
+  <meta property="og:description" content="Arcade stick display for Neo Turf Masters, with OBS support. Note: work in progress - Xinput only." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/assets/input-display/input-display-seo.png" />
+  <meta name="twitter:title" content="Input Display for Neo Turf Masters" />
+  <meta name="twitter:description" content="Arcade stick display for Neo Turf Masters, with OBS support. Note: work in progress - Xinput only." />
+  <title>Input Display - Neo Turf Masters</title>
   <link rel="icon" href="/assets/input-display/stick-icon.png" type="image/png" />
   <style>
     body {
@@ -41,6 +38,8 @@ Note: work in progress - Xinput only." />
       font-size: 16px;
       cursor: pointer;
       margin: 10px 0 0 10px;
+      border: 4px solid black; /* Black border added here */
+      border-radius: 6px;
     }
 
     #configurePrompt {
@@ -116,207 +115,253 @@ Note: work in progress - Xinput only." />
       color: #aaa;
       font-style: italic;
     }
+
+    /* Coin and Start buttons styling */
+    #coinButton,
+    #startButton {
+      position: absolute;
+      top: 70px; /* 70px from the top */
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 0;
+      border: 4px solid black; /* Black border added here */
+      border-radius: 6px;
+    }
+
+    #coinButton {
+      right: 180px; /* Moved coin button left of the start button */
+      border: 4px solid black;
+    }
+
+    #startButton {
+      border: 4px solid black;
+      right: 40px; /* Start button remains in its original position */
+    }
   </style>
 </head>
 <body>
 
-  <canvas id="canvas" width="820" height="285"></canvas>
-  <button id="configureButton">Configure Buttons</button>
-  <div id="configurePrompt"></div>
+<canvas id="canvas" width="820" height="285"></canvas>
+<button id="configureButton">Configure Buttons</button>
+<div id="configurePrompt"></div>
 
-  <div id="shareContainer">
-    <button id="copyButton" title="Copy to clipboard">📋</button>
-    <input type="text" id="shareUrl" readonly />
-  </div>
+<div id="shareContainer">
+  <button id="copyButton" title="Copy to clipboard">📋</button>
+  <input type="text" id="shareUrl" readonly />
+</div>
 
-  <div id="instructions">
-    <h3>How to render in OBS Studio:</h3>
-    <ol>
-      <li>In OBS Studio, click the <strong>+</strong> button under <strong>Sources</strong> and select <strong>Browser</strong>.</li>
-      <li>Paste the above URL into the <strong>URL</strong> field of the new browser source.</li>
-      <li>Set the width to <strong>820</strong> and the height to <strong>285</strong>.</li>
-      <li>Click <strong>OK</strong>.</li>
-      <li>To remove the magenta background:
-        <ul>
-          <li>Right-click the browser source and choose <strong>Filters</strong>.</li>
-          <li>Click <strong>+</strong> and add a <strong>Color Key</strong> filter.</li>
-          <li>Set the key color to <strong>Magenta</strong> (or manually enter <code>#ff00ff</code>).</li>
-          <li>Adjust similarity and smoothness if needed.</li>
-        </ul>
-      </li>
-    </ol>
+<div id="instructions">
+  <h3>How to render in OBS Studio:</h3>
+  <ol>
+    <li>In OBS Studio, click the <strong>+</strong> button under <strong>Sources</strong> and select <strong>Browser</strong>.</li>
+    <li>Paste the above URL into the <strong>URL</strong> field of the new browser source.</li>
+    <li>Set the width to <strong>820</strong> and the height to <strong>285</strong>.</li>
+    <li>Click <strong>OK</strong>.</li>
+    <li>To remove the magenta background:
+      <ul>
+        <li>Right-click the browser source and choose <strong>Filters</strong>.</li>
+        <li>Click <strong>+</strong> and add a <strong>Color Key</strong> filter.</li>
+        <li>Set the key color to <strong>Magenta</strong> (or manually enter <code>#ff00ff</code>).</li>
+        <li>Adjust similarity and smoothness if needed.</li>
+      </ul>
+    </li>
+  </ol>
+  <br>
+  <p class="note">⚠️ Note: If you change your button mappings, you'll need to copy &amp; paste the URL into OBS again.</p>
+</div>
 
-    <br>
-    <p class="note">⚠️ Note: If you change your button mappings, you'll need to copy &amp; paste the URL into OBS again.</p>
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const configureButton = document.getElementById('configureButton');
+  const configurePrompt = document.getElementById('configurePrompt');
+  const shareUrl = document.getElementById('shareUrl');
+  const copyButton = document.getElementById('copyButton');
 
-  </div>
+  const displayNames = {
+    UP: 'UP',
+    DOWN: 'DOWN',
+    LEFT: 'LEFT',
+    RIGHT: 'RIGHT',
+    A: 'A',
+    B: 'B',
+    C: 'C',
+    START: 'START',
+    COIN: 'COIN'
+  };
 
-  <script>
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-    const configureButton = document.getElementById('configureButton');
-    const configurePrompt = document.getElementById('configurePrompt');
-    const shareUrl = document.getElementById('shareUrl');
-    const copyButton = document.getElementById('copyButton');
-  
-    const displayNames = {
-      dpadUp: 'UP',
-      dpadDown: 'DOWN',
-      dpadLeft: 'LEFT',
-      dpadRight: 'RIGHT',
-      A: 'A',
-      B: 'B',
-      C: 'C'
+  function getMappingsFromQuery() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const keys = ['UP', 'DOWN', 'LEFT', 'RIGHT', 'A', 'B', 'C', 'START', 'COIN'];
+    const result = {};
+    for (const key of keys) {
+      const val = urlParams.get(key);
+      if (val === null || isNaN(parseInt(val))) return null;
+      result[key] = parseInt(val);
+    }
+    return result;
+  }
+
+  let buttonMappings = getMappingsFromQuery()
+    || JSON.parse(localStorage.getItem('buttonMappings'))
+    || {
+      UP: 12,
+      DOWN: 13,
+      LEFT: 14,
+      RIGHT: 15,
+      A: 2,
+      B: 3,
+      C: 5,
+      COIN: 8,
+      START: 9
     };
-  
-    function getMappingsFromQuery() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const keys = ['dpadUp', 'dpadDown', 'dpadLeft', 'dpadRight', 'A', 'B', 'C'];
-      const result = {};
-      for (const key of keys) {
-        const val = urlParams.get(key);
-        if (val === null || isNaN(parseInt(val))) return null;
-        result[key] = parseInt(val);
-      }
-      return result;
+
+  function updateShareUrl() {
+    const baseUrl = `${window.location.origin}${window.location.pathname}`;
+    const params = new URLSearchParams();
+    for (const key in buttonMappings) {
+      params.set(key, buttonMappings[key]);
     }
-  
-    let buttonMappings = getMappingsFromQuery()
-      || JSON.parse(localStorage.getItem('buttonMappings'))
-      || {
-        dpadUp: 12,
-        dpadDown: 13,
-        dpadLeft: 14,
-        dpadRight: 15,
-        A: 2,
-        B: 3,
-        C: 5
-      };
-  
-    function updateShareUrl() {
-      const baseUrl = `${window.location.origin}${window.location.pathname}`;
-      const params = new URLSearchParams();
-      for (const key in buttonMappings) {
-        params.set(key, buttonMappings[key]);
-      }
-      shareUrl.value = `${baseUrl}?${params.toString()}`;
-    }
-  
-    copyButton.addEventListener('click', () => {
-      navigator.clipboard.writeText(shareUrl.value).then(() => {
-        copyButton.textContent = '✅';
-        setTimeout(() => copyButton.textContent = '📋', 1000);
-      });
+    shareUrl.value = `${baseUrl}?${params.toString()}`;
+  }
+
+  copyButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(shareUrl.value).then(() => {
+      copyButton.textContent = '✅';
+      setTimeout(() => copyButton.textContent = '📋', 1000);
     });
-  
-    updateShareUrl();
-  
-    let isConfiguring = false;
-    let configSteps = [];
-    let configIndex = 0;
-    let waitingForRelease = false;
-  
-    const baseImage = new Image();
-    baseImage.src = '/assets/input-display/neutral.png';
-  
-    const inputImages = {
-      dpadUp: '/assets/input-display/up.png',
-      dpadDown: '/assets/input-display/down.png',
-      dpadLeft: '/assets/input-display/left.png',
-      dpadRight: '/assets/input-display/right.png',
-      A: '/assets/input-display/A.png',
-      B: '/assets/input-display/B.png',
-      C: '/assets/input-display/C.png'
-    };
-  
-    const loadedImages = {};
-    for (const [key, path] of Object.entries(inputImages)) {
-      const img = new Image();
-      img.src = path;
-      loadedImages[key] = img;
-    }
-  
-    function getFirstActiveGamepad() {
-      return Array.from(navigator.getGamepads()).find(g => g && g.connected) || null;
-    }
-  
-    function update() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
-  
-      const gp = getFirstActiveGamepad();
-      if (gp) {
-        const buttons = gp.buttons;
-  
-        if (isConfiguring && configIndex < configSteps.length) {
-          if (!waitingForRelease) {
-            for (let i = 0; i < buttons.length; i++) {
-              if (buttons[i].pressed) {
-                const action = configSteps[configIndex];
-                buttonMappings[action] = i;
-                localStorage.setItem('buttonMappings', JSON.stringify(buttonMappings));
-                updateShareUrl();
-                waitingForRelease = true;
-                break;
-              }
+  });
+
+  updateShareUrl();
+
+  let isConfiguring = false;
+  let configSteps = [];
+  let configIndex = 0;
+  let waitingForRelease = false;
+
+  const baseImage = new Image();
+  baseImage.src = '/assets/input-display/neutral.png';
+
+  const inputImages = {
+    UP: '/assets/input-display/up.png',
+    DOWN: '/assets/input-display/down.png',
+    LEFT: '/assets/input-display/left.png',
+    RIGHT: '/assets/input-display/right.png',
+    A: '/assets/input-display/A.png',
+    B: '/assets/input-display/B.png',
+    C: '/assets/input-display/C.png'
+  };
+
+  const loadedImages = {};
+  for (const [key, path] of Object.entries(inputImages)) {
+    const img = new Image();
+    img.src = path;
+    loadedImages[key] = img;
+  }
+
+  function getFirstActiveGamepad() {
+    return Array.from(navigator.getGamepads()).find(g => g && g.connected) || null;
+  }
+
+  function update() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
+
+    const gp = getFirstActiveGamepad();
+    if (gp) {
+      const buttons = gp.buttons;
+
+      if (isConfiguring && configIndex < configSteps.length) {
+        if (!waitingForRelease) {
+          for (let i = 0; i < buttons.length; i++) {
+            if (buttons[i].pressed) {
+              const action = configSteps[configIndex];
+              buttonMappings[action] = i;
+              localStorage.setItem('buttonMappings', JSON.stringify(buttonMappings));
+              updateShareUrl();
+              waitingForRelease = true;
+              break;
             }
-          } else if (buttons.every(b => !b.pressed)) {
-            configIndex++;
-            if (configIndex < configSteps.length) {
-              updatePrompt(`Press the button for: ${displayNames[configSteps[configIndex]]}`);
-            } else {
-              updatePrompt('Configuration complete!');
-              setTimeout(() => configurePrompt.textContent = '', 1500);
-              isConfiguring = false;
-            }
-            waitingForRelease = false;
           }
-        }
-  
-        if (buttons[buttonMappings.dpadLeft]?.pressed) {
-          ctx.drawImage(loadedImages.dpadLeft, 0, 0, canvas.width, canvas.height);
-        } else if (buttons[buttonMappings.dpadRight]?.pressed) {
-          ctx.drawImage(loadedImages.dpadRight, 0, 0, canvas.width, canvas.height);
-        } else if (buttons[buttonMappings.dpadUp]?.pressed) {
-          ctx.drawImage(loadedImages.dpadUp, 0, 0, canvas.width, canvas.height);
-        } else if (buttons[buttonMappings.dpadDown]?.pressed) {
-          ctx.drawImage(loadedImages.dpadDown, 0, 0, canvas.width, canvas.height);
-        }
-  
-        ['A', 'B', 'C'].forEach(key => {
-          if (buttons[buttonMappings[key]]?.pressed) {
-            ctx.drawImage(loadedImages[key], 0, 0, canvas.width, canvas.height);
+        } else if (buttons.every(b => !b.pressed)) {
+          configIndex++;
+          if (configIndex < configSteps.length) {
+            updatePrompt(`Press the button for: ${displayNames[configSteps[configIndex]]}`);
+          } else {
+            updatePrompt('Configuration complete!');
+            setTimeout(() => configurePrompt.textContent = '', 1500);
+            isConfiguring = false;
           }
-        });
-      } else {
-        ctx.fillStyle = '#FFF';
-        ctx.font = '20px Arial';
-        ctx.textAlign = 'center';
-        ctx.fillText('Press Any Button on Controller', canvas.width / 2, canvas.height / 3.2);
+          waitingForRelease = false;
+        }
       }
-  
-      requestAnimationFrame(update);
+
+      if (buttons[buttonMappings.LEFT]?.pressed) {
+        ctx.drawImage(loadedImages.LEFT, 0, 0, canvas.width, canvas.height);
+      } else if (buttons[buttonMappings.RIGHT]?.pressed) {
+        ctx.drawImage(loadedImages.RIGHT, 0, 0, canvas.width, canvas.height);
+      } else if (buttons[buttonMappings.UP]?.pressed) {
+        ctx.drawImage(loadedImages.UP, 0, 0, canvas.width, canvas.height);
+      } else if (buttons[buttonMappings.DOWN]?.pressed) {
+        ctx.drawImage(loadedImages.DOWN, 0, 0, canvas.width, canvas.height);
+      }
+
+      ['A', 'B', 'C'].forEach(key => {
+        if (buttons[buttonMappings[key]]?.pressed) {
+          ctx.drawImage(loadedImages[key], 0, 0, canvas.width, canvas.height);
+        }
+      });
+
+        // Set the opacity to 0.5 (50%)
+        ctx.globalAlpha = 0.68;
+
+        // Coin Circle
+        if (buttons[buttonMappings.COIN]?.pressed) {
+        ctx.beginPath();
+        ctx.arc(canvas.width - 80, 90, 16, 0, Math.PI * 2);
+        ctx.fillStyle = '#FFD700';
+        ctx.fill();
+        }
+
+        // Start Circle
+        if (buttons[buttonMappings.START]?.pressed) {
+        ctx.beginPath();
+        ctx.arc(canvas.width - 40, 90, 19, 0, Math.PI * 2);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fill();
+        }
+
+        // Reset opacity to 1 (fully opaque)
+        ctx.globalAlpha = 1;
+    } else {
+      ctx.fillStyle = '#FFF';
+      ctx.font = '20px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('Press Any Button on Controller', canvas.width / 2, canvas.height / 3.2);
     }
-  
-    function updatePrompt(message) {
-      configurePrompt.textContent = message;
-    }
-  
-    function startConfiguration() {
-      isConfiguring = true;
-      configSteps = ['dpadUp', 'dpadDown', 'dpadLeft', 'dpadRight', 'A', 'B', 'C'];
-      configIndex = 0;
-      waitingForRelease = false;
-      updatePrompt(`Press the button for: ${displayNames[configSteps[configIndex]]}`);
-    }
-  
-    configureButton.addEventListener('click', startConfiguration);
-  
-    window.addEventListener('gamepadconnected', (e) => console.log('Gamepad connected:', e.gamepad));
-    window.addEventListener('gamepaddisconnected', (e) => console.log('Gamepad disconnected:', e.gamepad));
-  
-    update();
-  </script>
+
+    requestAnimationFrame(update);
+  }
+
+  function updatePrompt(message) {
+    configurePrompt.textContent = message;
+  }
+
+  function startConfiguration() {
+    isConfiguring = true;
+    configSteps = ['UP', 'DOWN', 'LEFT', 'RIGHT', 'A', 'B', 'C', 'COIN', 'START'];
+    configIndex = 0;
+    waitingForRelease = false;
+    updatePrompt(`Press the button for: ${displayNames[configSteps[configIndex]]}`);
+  }
+
+  configureButton.addEventListener('click', startConfiguration);
+  window.addEventListener('gamepadconnected', e => console.log('Gamepad connected:', e.gamepad));
+  window.addEventListener('gamepaddisconnected', e => console.log('Gamepad disconnected:', e.gamepad));
+
+  update();
+</script>
 
 </body>
 </html>
