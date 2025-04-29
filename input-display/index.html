@@ -1,164 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Fightstick Input Display</title>
-  <style>
-    body {
-      background: #111;
-      color: white;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-    }
-    canvas {
-      background: black;
-      width: 820px;
-      height: 285px;
-      margin: 0;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 10px;
-      margin-left: 10px;
-    }
-    #configurePrompt {
-      color: #FFF;
-      font-size: 18px;
-      margin-top: 10px;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Fightstick Input Display</title>
+    <style>
+        body {
+            background: #111;
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        canvas {
+            background: magenta;
+            /* Magenta background for color keying */
+            width: 820px;
+            height: 285px;
+            margin: 0;
+            image-rendering: pixelated;
+            /* Optional: makes pixel art look sharper */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        #configurePrompt {
+            color: #FFF;
+            font-size: 18px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
 
-  <canvas id="canvas" width="820" height="285"></canvas>
-  <button id="configureButton">Configure Buttons</button>
-  <div id="configurePrompt"></div>
+    <canvas id="canvas" width="820" height="285"></canvas>
+    <button id="configureButton">Configure Buttons</button>
+    <div id="configurePrompt"></div>
 
-  <script>
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-    const configureButton = document.getElementById('configureButton');
-    const configurePrompt = document.getElementById('configurePrompt');
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const configureButton = document.getElementById('configureButton');
+        const configurePrompt = document.getElementById('configurePrompt');
 
-    // Preload images
-    const images = {};
-    const imagePaths = {
-      neutral: '/assets/input-display/neutral.png',
-      up: '/assets/input-display/up.png',
-      down: '/assets/input-display/down.png',
-      left: '/assets/input-display/left.png',
-      right: '/assets/input-display/right.png',
-      A: '/assets/input-display/A.png',
-      B: '/assets/input-display/B.png',
-      C: '/assets/input-display/C.png'
-    };
+        // Preload images
+        const images = {};
+        const imagePaths = {
+            neutral: '/assets/input-display/neutral.png',
+            up: '/assets/input-display/up.png',
+            down: '/assets/input-display/down.png',
+            left: '/assets/input-display/left.png',
+            right: '/assets/input-display/right.png',
+            A: '/assets/input-display/A.png',
+            B: '/assets/input-display/B.png',
+            C: '/assets/input-display/C.png'
+        };
 
-    for (const [key, path] of Object.entries(imagePaths)) {
-      const img = new Image();
-      img.src = path;
-      images[key] = img;
-    }
-
-    let buttonMappings = JSON.parse(localStorage.getItem('buttonMappings')) || {
-      dpadUp: 12,
-      dpadDown: 13,
-      dpadLeft: 14,
-      dpadRight: 15,
-      A: 2,
-      B: 3,
-      C: 5,
-    };
-
-    let isConfiguring = false;
-    let configSteps = [];
-    let configIndex = 0;
-    let waitingForRelease = false;
-
-    function getFirstActiveGamepad() {
-      const gamepads = navigator.getGamepads();
-      for (let i = 0; i < gamepads.length; i++) {
-        const gp = gamepads[i];
-        if (gp && gp.connected) {
-          return gp;
-        }
-      }
-      return null;
-    }
-
-    function update() {
-      const gp = getFirstActiveGamepad();
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Always draw neutral background
-      ctx.drawImage(images.neutral, 0, 0, canvas.width, canvas.height);
-
-      if (gp) {
-        const buttons = gp.buttons || [];
-
-        // Stick directions - prioritize left/right
-        if (buttons[buttonMappings.dpadLeft]?.pressed) {
-          ctx.drawImage(images.left, 0, 0, canvas.width, canvas.height);
-        } else if (buttons[buttonMappings.dpadRight]?.pressed) {
-          ctx.drawImage(images.right, 0, 0, canvas.width, canvas.height);
-        } else if (buttons[buttonMappings.dpadUp]?.pressed) {
-          ctx.drawImage(images.up, 0, 0, canvas.width, canvas.height);
-        } else if (buttons[buttonMappings.dpadDown]?.pressed) {
-          ctx.drawImage(images.down, 0, 0, canvas.width, canvas.height);
+        for (const [key, path] of Object.entries(imagePaths)) {
+            const img = new Image();
+            img.src = path;
+            images[key] = img;
         }
 
-        // Independently draw A, B, C if pressed
-        if (buttons[buttonMappings.A]?.pressed) {
-          ctx.drawImage(images.A, 0, 0, canvas.width, canvas.height);
+        let buttonMappings = JSON.parse(localStorage.getItem('buttonMappings')) || {
+            dpadUp: 12,
+            dpadDown: 13,
+            dpadLeft: 14,
+            dpadRight: 15,
+            A: 2,
+            B: 3,
+            C: 5,
+        };
+
+        let isConfiguring = false;
+        let configSteps = [];
+        let configIndex = 0;
+        let waitingForRelease = false;
+
+        function getFirstActiveGamepad() {
+            const gamepads = navigator.getGamepads();
+            for (let i = 0; i < gamepads.length; i++) {
+                const gp = gamepads[i];
+                if (gp && gp.connected) {
+                    return gp;
+                }
+            }
+            return null;
         }
-        if (buttons[buttonMappings.B]?.pressed) {
-          ctx.drawImage(images.B, 0, 0, canvas.width, canvas.height);
+
+        function update() {
+            const gp = getFirstActiveGamepad();
+
+            // Always clear the canvas to magenta
+            ctx.fillStyle = '#FF00FF';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            if (gp) {
+                const buttons = gp.buttons || [];
+
+                if (isConfiguring && configIndex < configSteps.length) {
+                    if (!waitingForRelease) {
+                        // Look for button press
+                        for (let i = 0; i < buttons.length; i++) {
+                            if (buttons[i].pressed) {
+                                const action = configSteps[configIndex];
+                                buttonMappings[action] = i;
+                                console.log(`Mapped ${action} to button index ${i}`);
+
+                                localStorage.setItem('buttonMappings', JSON.stringify(buttonMappings));
+                                console.log("Saved button mappings to localStorage:", buttonMappings);
+
+                                waitingForRelease = true;
+                                break;
+                            }
+                        }
+                    } else {
+                        // Wait for all buttons released
+                        const buttonsReleased = buttons.every(button => !button.pressed);
+                        if (buttonsReleased) {
+                            configIndex++;
+                            if (configIndex < configSteps.length) {
+                                updatePrompt(`Press the button for: ${configSteps[configIndex]}`);
+                            } else {
+                                updatePrompt('Configuration complete!');
+                                isConfiguring = false;
+                            }
+                            waitingForRelease = false;
+                        }
+                    }
+
+                    // While configuring, optionally you can draw a special image or background
+                    ctx.fillStyle = '#222';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = '#FFF';
+                    ctx.font = '24px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(`Press button for: ${configSteps[configIndex] || 'Done'}`, canvas.width / 2, canvas.height / 2);
+                } else {
+                    // Normal input display mode
+                    ctx.drawImage(images.neutral, 0, 0, canvas.width, canvas.height);
+
+                    // Stick directions
+                    if (buttons[buttonMappings.dpadLeft]?.pressed) {
+                        ctx.drawImage(images.left, 0, 0, canvas.width, canvas.height);
+                    } else if (buttons[buttonMappings.dpadRight]?.pressed) {
+                        ctx.drawImage(images.right, 0, 0, canvas.width, canvas.height);
+                    } else if (buttons[buttonMappings.dpadUp]?.pressed) {
+                        ctx.drawImage(images.up, 0, 0, canvas.width, canvas.height);
+                    } else if (buttons[buttonMappings.dpadDown]?.pressed) {
+                        ctx.drawImage(images.down, 0, 0, canvas.width, canvas.height);
+                    }
+
+                    // Buttons
+                    if (buttons[buttonMappings.A]?.pressed) {
+                        ctx.drawImage(images.A, 0, 0, canvas.width, canvas.height);
+                    }
+                    if (buttons[buttonMappings.B]?.pressed) {
+                        ctx.drawImage(images.B, 0, 0, canvas.width, canvas.height);
+                    }
+                    if (buttons[buttonMappings.C]?.pressed) {
+                        ctx.drawImage(images.C, 0, 0, canvas.width, canvas.height);
+                    }
+                }
+            } else {
+                // No gamepad connected
+                ctx.fillStyle = '#FFF';
+                ctx.font = '20px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('Press Any Button on Controller', canvas.width / 2, canvas.height / 4);
+            }
+
+            requestAnimationFrame(update);
         }
-        if (buttons[buttonMappings.C]?.pressed) {
-          ctx.drawImage(images.C, 0, 0, canvas.width, canvas.height);
+
+
+        function updatePrompt(message) {
+            configurePrompt.textContent = message;
         }
-      } else {
-        ctx.fillStyle = '#FFF';
-        ctx.font = '20px Arial';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText('Press Any Button on Controller', canvas.width / 2, canvas.height / 4);
-      }
 
-      requestAnimationFrame(update);
-    }
+        function startConfiguration() {
+            isConfiguring = true;
+            configSteps = ['up', 'down', 'left', 'right', 'A', 'B', 'C'];
+            configIndex = 0;
+            waitingForRelease = false;
+            updatePrompt(`Press the button for: ${configSteps[configIndex]}`);
+        }
 
-    function updatePrompt(message) {
-      configurePrompt.textContent = message;
-    }
+        configureButton.addEventListener('click', startConfiguration);
 
-    function startConfiguration() {
-      isConfiguring = true;
-      configSteps = ['up', 'down', 'left', 'right', 'A', 'B', 'C'];
-      configIndex = 0;
-      waitingForRelease = false;
-      updatePrompt(`Press the button for: ${configSteps[configIndex]}`);
-    }
+        window.addEventListener('gamepadconnected', (e) => {
+            console.log('Gamepad connected:', e.gamepad);
+        });
 
-    configureButton.addEventListener('click', startConfiguration);
+        window.addEventListener('gamepaddisconnected', (e) => {
+            console.log('Gamepad disconnected:', e.gamepad);
+        });
 
-    window.addEventListener('gamepadconnected', (e) => {
-      console.log('Gamepad connected:', e.gamepad);
-    });
-
-    window.addEventListener('gamepaddisconnected', (e) => {
-      console.log('Gamepad disconnected:', e.gamepad);
-    });
-
-    update();
-  </script>
+        update();
+    </script>
 </body>
+
 </html>
