@@ -28,4 +28,4 @@ UI misbehaves locally, must be hosted on a web server to avoid CORS restrictions
 
 ## Tools
 
-- 🕹 [Input Display]((https://ntm.golf/input-display)
+- 🕹 [Input Display](https://ntm.golf/input-display)
