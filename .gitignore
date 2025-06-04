@@ -1,7 +1,9 @@
 .vscode/
 bounce-distances
 
-guides/
+guides/*
+!guides/common-styles.css
+!guides/common-functionality.js
 !guides/setting-wind-with-cheat-engine
 
 notes/shots/
