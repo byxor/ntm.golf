@@ -44,9 +44,17 @@
             transform: skew(-10deg);
         }
 
+        @font-face {
+            font-family: 'DejaVuSansMonoLocal';
+            src: url('/assets/fonts/dejavu-fonts-ttf-2.37/ttf/DejaVuSansMono.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         .title {
             margin: 0px;
-            font-family: monospace;
+            font-family: 'DejaVuSansMonoLocal', monospace;
             font-size: 40px;
             white-space: pre;
             background: linear-gradient(45deg, #ffd82b, #4b4b77);
