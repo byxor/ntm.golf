@@ -1,72 +1,45 @@
-function constrainedImage(src, alt="", classes="", fullscreen=true) {
-	if (fullscreen) {
-		classes += "constrained-image-pointer";
-	}
-	const html = `<img
-		src="${src}"
-		alt="${alt}"
-		${fullscreen ? `onclick="this.requestFullscreen({navigationUI: 'show'})"` : ""} class="constrained-image ${classes}"
-		draggable="false"
-	>
-	</img>`
-	return html;
-}
-
 // TODO: Alt text on all images.
 // TODO: Better fullscreen UX.
 
 const CONTENT = `
 <style>
 	@media (pointer: fine) {
-		.constrained-image {
-			max-width: 100%;
-		}
-	}
-	@media (pointer: coarse) {
-		.constrained-image {
-			max-width: 80%;
-		}
-	}
-	.constrained-image {
-		height: auto;
-		border: 1px solid grey;
-		border-radius: 5px;
-		box-shadow: -2px 2px #888888;
-	}
-
-	.constrained-image-pointer {
-		cursor: pointer;
-	}
-
-	@media (pointer: fine) {
 		.probability-table {
 			font-size: 18px;
 		} 
 	}
+
 	@media (pointer: coarse) {
 		.probability-table {
 			font-size: 34px;
 		}
 	}
+
 	.probability-table th {
 		background-color: #e3e3e3;
 	}
+
 	.probability-table th, .probability-table td {
 		padding: 10px;
 	 	border: 1px solid black;
 	}
+
 	.probability-table .center {
 		text-align: center;
 	}
+
 	.probability-table .right {
 		text-align: right;
 	}
+
 	.probability-table .left {
 		text-align: left;
 	}
+
 	.probability-table .holes {
 		min-width: 80px;
 	}
+
 	.probability-table .maxwind {
 		min-width: 100px;
 	}
@@ -74,6 +47,7 @@ const CONTENT = `
 	.recurring {
 		text-decoration: overline;
 	}
+
 	.grey {
 		color: #bebebe;
 	}
@@ -94,18 +68,22 @@ const CONTENT = `
 	.interactive-wind-direction * {
 		display: inline-block;
 	}
+
 	.wind-direction-container {
 		box-shadow: 0 0 0 rgba(204,169,44, 0.4);
  		animation: pulse 2s infinite;
 	}
+
 	.wind-value-container {
 		padding-left: 18px;
 	}
+
 	@media (pointer: coarse) {
 		.wind-value-container {
 			font-size: 30px;
 		}
 	}
+
 	@media (pointer: coarse) {
 		.content hr {
 			margin-top: 25px;
@@ -118,11 +96,13 @@ const CONTENT = `
 			margin-top: 40px;
 		}
 	}
+
 	@-webkit-keyframes pulse {
 		0%   { -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4); }
 		70%  { -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0); }
 		100% { -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0); }
 	}
+
 	@keyframes pulse {
 		0% {
 			-moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
@@ -139,7 +119,7 @@ const CONTENT = `
 	}
 </style>
 
-# Setting Wind in NTM (With Cheat Engine)
+${title("Setting Wind in NTM (With Cheat Engine)")}
 
 In Neo Turf Masters, the wind is controlled by random numbers.
 

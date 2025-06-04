@@ -1,6 +1,5 @@
 (() => {
 
-
     // Use UTF-8 charset.
     // const characterSetElement = document.createElement('meta');
     // characterSetElement.setAttribute('http-equiv', 'Content-Type');

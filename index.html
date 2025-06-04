@@ -1,44 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>ntm.golf - Notes & Guides</title>
-	<link rel="icon" type="image/png" href="/assets/flags/flag-circle.png"/>
-	<style>
-		body {
- 			font-family: Tahoma, sans-serif;
-		}
+    <meta charset="UTF-8">
+    <title>ntm.golf - Notes, Guides & Tools</title>
+    <link rel="icon" type="image/png" href="/assets/flags/flag-circle.png"/>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+            font-family: Tahoma, sans-serif;
+        }
 
-		html, body {
-			margin: 0;
-			height: 100%;
-		}
+        body {
+            background-color: black;
+            color: white;
+        }
 
-		app * {
-		    -webkit-touch-callout: none;
+        .title-container {
+            background-image: url('/assets/misc/germany-sky.png');
+            background-size: cover;
+            background-position: top left;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .title-container * {
+            -webkit-touch-callout: none;
 		      -webkit-user-select: none;
 		       -khtml-user-select: none;
 		         -moz-user-select: none;
 		          -ms-user-select: none;
 		              user-select: none;
-		}
-	</style>
-    <script src="/components/html-header.js"></script>
-</head>
-
-<body>
-    <style>
-        body {
-            background-color: black;
-            color: white;
         }
+
+        .title-wrapper {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
+            transform: skew(-10deg);
+        }
+
+        .title {
+            margin: 0px;
+            font-family: monospace;
+            font-size: 40px;
+            white-space: pre;
+            background: linear-gradient(45deg, #ffd82b, #4b4b77);
+            background-size: 25% 25%;
+            background-position: 0% 0%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            display: inline-block;
+            animation: gradientScroll 5.5s linear infinite, pulseOutline 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 1px white);
+        }
+
+        @keyframes gradientScroll {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        @keyframes pulseOutline {
+            0%   { filter: drop-shadow(0 0 1px rgb(85, 85, 85)); }
+            50%  { filter: drop-shadow(0 0 3px black); }
+            100% { filter: drop-shadow(0 0 1px rgb(85, 85, 85)); }
+        }
+
+        .no-margin {
+            margin: 0px;
+        }
+
         a {
             color: #dedede;
         }
+
         i {
             color: #8e8e8e;
         }
+
         .feet-up {
             height: 140px;
         }
+
         .footer {
             position: fixed;
             left: 0;
@@ -49,51 +97,111 @@
             text-align: center;
             font-size: 12px;
         }
+
         .footer p {
             padding-left: 10px;
             padding-right: 10px;
         }
+
         .footer-image {
             padding-bottom: 8px;
         }
+
         .disclaimer {
             margin-top: 4px;
         }
-    </style>
-    <img src="/assets/under-construction.gif"></img>
-    <br/>
-    <br/>
-    <br/>
-    <hr>
-    <h2>Course Notes</h2>
-    <ul>
-        <li><a href="/notes?course=germany">🌲 Germany</a></li>
-        <li><a href="/notes?course=japan">🌲 Japan</a></li>
-        <li><a href="/notes?course=australia">🌳 Australia</a></li>
-        <li><a href="/notes?course=usa">🌴 USA</a></li>
-        <li><a href="/notes?course=scotland">🌲 Scotland</a></li>
-    </ul>
-    <p><i>(Work in progress)</i></p>
-    <p>Power Golfer only for now, though more golfers may come later if I decide to learn them.</p>
-    <br/>
-    <hr>
-    <h2>Guides</h2>
-    <ul>
-        <li><a href="/guides/setting-wind-with-cheat-engine/">🦮 Guide: Setting Wind in NTM (With Cheat Engine)</a></li>
-    </ul>
-    <hr>
-    <h2>Tools</h2>
-    <ul>
-        <li><a href="/input-display/">🕹️ NTM Input Display</a></li>
-    </ul>
-    <hr>
 
-    <div class="footer">
+        .content-wrapper {
+            min-height: 100%;
+        }
+
+        .footer-spacer {
+            height: 0;
+        }
+
+        .close-footer-btn {
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            color: #cfcfcf;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .close-footer-btn:hover {
+            color: white;
+        }
+    </style>
+    <script src="/components/html-header.js"></script>
+</head>
+
+<body>
+    <div class="content-wrapper">
+
+        <!-- Background image behind just the title -->
+        <div class="title-container">
+            <div class="title-wrapper">
+                <pre class="title">           ┓┏
+┏┓╋┏┳┓ ┏┓┏┓┃╋
+┛┗┗┛┗┗•┗┫┗┛┗┛
+        ┛ </pre>
+            </div>
+        </div>
+
+        <hr class="no-margin">
+
+        <h2>Course Notes</h2>
+        <ul>
+            <li><a href="/notes?course=germany">🌲 Germany</a></li>
+            <li><a href="/notes?course=japan">🌲 Japan</a></li>
+            <li><a href="/notes?course=australia">🌳 Australia</a></li>
+            <li><a href="/notes?course=usa">🌴 USA</a></li>
+            <li><a href="/notes?course=scotland">🌲 Scotland</a></li>
+        </ul>
+        <p><i>(Work in progress)</i></p>
+        <p>Power Golfer only for now, though more golfers may come later if I decide to learn them.</p>
+        <br/>
+        <hr>
+        <h2>Guides</h2>
+        <ul>
+            <li><a href="/guides/setting-wind-with-cheat-engine">🦮 Guide: Setting Wind in NTM (With Cheat Engine)</a></li>
+        </ul>
+        <hr>
+        <h2>Tools</h2>
+        <ul>
+            <li><a href="/input-display">🕹️ NTM Input Display</a></li>
+            <br>
+            <!-- <li><a href="/pin-randomizer">⛳ NTM Pin Randomizer (ROM Hack)</a></li> -->
+        </ul>
+        <hr>
+
+        <!-- Spacer to be dynamically resized -->
+        <div class="footer-spacer"></div>
+    </div>
+
+    <div class="footer" id="footer">
+        <button class="close-footer-btn" onclick="document.getElementById('footer').style.display='none'; updateFooterSpacer();">×</button>
         <br>
-        <img src="/assets/official-endorsement-2025.png" class="footer-image"></img>
-        <img src="/assets/feet-up.gif" class="footer-image feet-up"></img>
+        <img src="/assets/official-endorsement-2025.png" class="footer-image">
+        <img src="/assets/feet-up.gif" class="footer-image feet-up">
         <br>
         <p class="disclaimer"><b>ntm.golf</b> is an independent fan website and is not affiliated with, endorsed by, or in any way officially connected with the Neo Turf Masters franchise, its developers, SNK, or any of its subsidiaries. All trademarks, game screenshots, and logos appearing on the site are the property of their respective owners. Any reference to the Neo Turf Masters game is for descriptive purposes only and does not imply any association with or endorsement by the game's creators.</p>
     </div>
 
+    <script>
+        function updateFooterSpacer() {
+            const footer = document.getElementById('footer');
+            const spacer = document.querySelector('.footer-spacer');
+            if (footer && spacer) {
+                const newHeight = footer.offsetHeight;
+                spacer.style.height = newHeight + 'px';
+            }
+        }
+        window.addEventListener('load', updateFooterSpacer);
+        window.addEventListener('resize', updateFooterSpacer);
+    </script>
 </body>
+</html>

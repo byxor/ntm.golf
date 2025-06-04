@@ -1,0 +1,27 @@
+<head>
+    <meta charset="UTF-8">
+    <title>NTM Pin Randomizer</title>
+    <link rel="icon" type="image/png" href="/assets/flags/flag-circle.png"/>
+
+    <link rel="stylesheet" href="/guides/common-styles.css">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js
+    "></script>
+
+    <script src="/guides/common-functionality.js"></script>
+    <script src="./content.js"></script>
+    <script src="/components/html-header.js"></script>
+
+    <div class="content">
+	</div>
+
+    <script>
+		const contentContainer = document.querySelector('.content');
+
+		const converter = new showdown.Converter();
+		const html = converter.makeHtml(CONTENT);
+		contentContainer.innerHTML = html;
+	</script>
+</body>
