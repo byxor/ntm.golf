@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="/components/site_banner/site_banner.js" defer></script>
     <meta charset="UTF-8">
     <title>ntm.golf - Notes, Guides & Tools</title>
     <link rel="icon" type="image/png" href="/assets/flags/flag-circle.png"/>
@@ -16,73 +17,6 @@
             color: white;
         }
 
-        .title-container {
-            background-image: url('/assets/misc/germany-sky.png');
-            background-size: cover;
-            background-position: top left;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-
-        .title-container * {
-            -webkit-touch-callout: none;
-		      -webkit-user-select: none;
-		       -khtml-user-select: none;
-		         -moz-user-select: none;
-		          -ms-user-select: none;
-		              user-select: none;
-        }
-
-        .title-wrapper {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px 20px;
-            border-radius: 10px;
-            transform: skew(-10deg);
-        }
-
-        @font-face {
-            font-family: 'DejaVuSansMonoLocal';
-            src: url('/assets/fonts/dejavu-fonts-ttf-2.37/ttf/DejaVuSansMono.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        .title {
-            margin: 0px;
-            font-family: 'DejaVuSansMonoLocal', monospace;
-            font-size: 40px;
-            white-space: pre;
-            background: linear-gradient(45deg, #ffd82b, #4b4b77);
-            background-size: 25% 25%;
-            background-position: 0% 0%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-            display: inline-block;
-            animation: gradientScroll 5.5s linear infinite, pulseOutline 2s ease-in-out infinite;
-            filter: drop-shadow(0 0 1px white);
-        }
-
-        @keyframes gradientScroll {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
-        }
-
-        @keyframes pulseOutline {
-            0%   { filter: drop-shadow(0 0 1px rgb(85, 85, 85)); }
-            50%  { filter: drop-shadow(0 0 3px black); }
-            100% { filter: drop-shadow(0 0 1px rgb(85, 85, 85)); }
-        }
-
-        .no-margin {
-            margin: 0px;
-        }
-
         a {
             color: #dedede;
         }
@@ -91,8 +25,18 @@
             color: #8e8e8e;
         }
 
+        .no-notes-container {
+            opacity: 0.6;
+        }
+
+        .no-notes {
+            width: 2em;
+            vertical-align: -0.6em;
+            opacity: 0.9;
+        }
+
         .feet-up {
-            height: 140px;
+            /* height: 140px; */
         }
 
         .footer {
@@ -112,11 +56,17 @@
         }
 
         .footer-image {
+            height: 125px;
             padding-bottom: 8px;
         }
 
         .disclaimer {
             margin-top: 4px;
+        }
+
+        img { /* bit hacky */
+            user-select: none;
+            -webkit-user-drag: none;
         }
 
         .content-wrapper {
@@ -134,7 +84,7 @@
             background: transparent;
             border: none;
             color: #cfcfcf;
-            font-size: 16px;
+            font-size: 60px;
             cursor: pointer;
             z-index: 10;
         }
@@ -149,18 +99,6 @@
 <body>
     <div class="content-wrapper">
 
-        <!-- Background image behind just the title -->
-        <div class="title-container">
-            <div class="title-wrapper">
-                <pre class="title">           ┓┏
-┏┓╋┏┳┓ ┏┓┏┓┃╋
-┛┗┗┛┗┗•┗┫┗┛┗┛
-        ┛ </pre>
-            </div>
-        </div>
-
-        <hr class="no-margin">
-
         <h2>Course Notes</h2>
         <ul>
             <li><a href="/notes?course=germany">🌲 Germany</a></li>
@@ -172,21 +110,27 @@
         <p><i>(Work in progress)</i></p>
         <p>Power Golfer only for now, though more golfers may come later if I decide to learn them.</p>
         <br/>
+        <div class="no-notes-container">
+            &nbsp;&nbsp;<span><img title="Shoutouts to the NNC (&quot;No Notes Club&quot;)" class="no-notes" src="/assets/misc/no-notes-shaded-128.png"> <i>Playing without notes is cool too. I recommend learning both playstyles.</i></span>
+        </div>
+        <br>
+        <br>
         <hr>
         <h2>Guides</h2>
         <ul>
             <li><a href="/guides/setting-wind-with-cheat-engine">🦮 Guide: Setting Wind in NTM (With Cheat Engine)</a></li>
         </ul>
+            <br/>
         <hr>
         <h2>Tools</h2>
         <ul>
             <li><a href="/input-display">🕹️ NTM Input Display</a></li>
             <br>
-            <!-- <li><a href="/pin-randomizer">⛳ NTM Pin Randomizer (ROM Hack)</a></li> -->
+            <li><a href="/pin-randomizer">⛳ NTM Pin Randomizer (ROM Hack)</a></li>
+            <br>
         </ul>
         <hr>
 
-        <!-- Spacer to be dynamically resized -->
         <div class="footer-spacer"></div>
     </div>
 

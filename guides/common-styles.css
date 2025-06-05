@@ -1,8 +1,16 @@
+html, body {
+    margin: 0;
+}
+
+/* --------------------------- */
+
 .header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 10px;
+    padding-left: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .home-link {
@@ -27,6 +35,7 @@
 
 .content {
     font-family: Arial Narrow, Arial, sans-serif; 
+    margin-left: 12px;
 }
 
 .content h1 {

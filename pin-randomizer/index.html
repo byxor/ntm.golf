@@ -1,12 +1,15 @@
 <head>
+    <script src="/components/site_banner/site_banner.js" defer></script>
+
     <meta charset="UTF-8">
-    <title>NTM Pin Randomizer</title>
+    <title>NTM Pin Randomizer (ROM Hack)</title>
     <link rel="icon" type="image/png" href="/assets/flags/flag-circle.png"/>
 
     <link rel="stylesheet" href="/guides/common-styles.css">
 </head>
 
 <body>
+
     <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js
     "></script>
 
@@ -19,9 +22,6 @@
 
     <script>
 		const contentContainer = document.querySelector('.content');
-
-		const converter = new showdown.Converter();
-		const html = converter.makeHtml(CONTENT);
-		contentContainer.innerHTML = html;
+		contentContainer.innerHTML = markdownToHtml(CONTENT);
 	</script>
 </body>

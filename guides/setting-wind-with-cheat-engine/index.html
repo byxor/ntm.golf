@@ -1,4 +1,6 @@
 <head>
+	<script src="/components/site_banner/site_banner.js" defer></script>
+	
 	<meta charset="UTF-8">
 	<link rel="icon" type="image/png" href="../../assets/flags/flag-circle.png"/>
 
@@ -47,10 +49,7 @@ This guide explains how to manually set the wind strength and direction on PC, f
 
 	<script>
 		const contentContainer = document.querySelector('.content');
-
-		const converter = new showdown.Converter();
-		const html = converter.makeHtml(CONTENT);
-		contentContainer.innerHTML = html;
+		contentContainer.innerHTML = markdownToHtml(CONTENT);
 
 		const windDirectionContainer = contentContainer.querySelector('.wind-direction-container');
 		const windValueContainer = contentContainer.querySelector('.wind-value-container');

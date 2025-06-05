@@ -1,0 +1,82 @@
+/* components/site_banner/site_banner.css */
+@font-face {
+    font-family: 'DejaVuSansMonoLocal';
+    src: url('/assets/fonts/dejavu-fonts-ttf-2.37/ttf/DejaVuSansMono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.title-container {
+    background-image: url('/assets/misc/germany-sky.png');
+    background-size: cover;
+    background-position: top left;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.title-container * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.title-wrapper {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+    transform: skew(-10deg);
+    transition: transform 0.3s ease;
+  }
+  
+.title-wrapper:hover {
+    transform: skew(-10deg) scale(1.02);
+}
+
+.title {
+    margin: 0px;
+    font-family: 'DejaVuSansMonoLocal', monospace;
+    font-size: 40px;
+    white-space: pre;
+    background: linear-gradient(45deg, #ffd82b, #4b4b77);
+    background-size: 25% 25%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+    animation: gradientScroll 5.5s linear infinite, pulseOutline 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 1px white);
+}
+
+@keyframes gradientScroll {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+@keyframes pulseOutline {
+    0%   { filter: drop-shadow(0 0 1px rgb(85, 85, 85)); }
+    50%  { filter: drop-shadow(0 0 3px black); }
+    100% { filter: drop-shadow(0 0 1px rgb(85, 85, 85)); }
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.no-pointer {
+    cursor: default;
+    pointer-events: none;
+}
+
+.no-drag * {
+    user-select: none;
+    -webkit-user-drag: none;
+}

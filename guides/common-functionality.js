@@ -26,3 +26,9 @@ function title(title) {
         <h1>${title}</h1>
     </div>`;
 }
+
+function markdownToHtml(markdown) {
+	const converter = new showdown.Converter();
+	const html = converter.makeHtml(markdown);
+	return html;
+}
