@@ -1,4 +1,3 @@
-/* components/site_banner/site_banner.css */
 @font-face {
     font-family: 'DejaVuSansMonoLocal';
     src: url('/assets/fonts/dejavu-fonts-ttf-2.37/ttf/DejaVuSansMono.ttf') format('truetype');
@@ -34,10 +33,66 @@
     border-radius: 10px;
     transform: skew(-10deg);
     transition: transform 0.3s ease;
-  }
-  
+    position: relative;
+    overflow: hidden;
+}
+
 .title-wrapper:hover {
     transform: skew(-10deg) scale(1.02);
+}
+
+.reflection-strip {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    transform: skew(-10deg);
+    pointer-events: none;
+    opacity: 0;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    animation-iteration-count: 1;
+}
+
+.top-reflection {
+    top: 0;
+    left: -100%;
+    background: white;
+    animation-name: reflectionGlide;
+}
+
+.bottom-reflection {
+    bottom: 0;
+    right: -100%;
+    background: rgba(0, 0, 0, 0.4);
+    animation-name: reflectionGlideReverse;
+}
+
+.title-wrapper:hover .top-reflection {
+    animation-play-state: running;
+    animation-name: reflectionGlide;
+}
+
+.title-wrapper:hover .bottom-reflection {
+    animation-play-state: running;
+    animation-name: reflectionGlideReverse;
+}
+
+@keyframes reflectionGlide {
+    0% { left: -100%; opacity: 0; }
+    20% { opacity: 1; }
+    50% { left: 100%; opacity: 0.9; }
+    80% { opacity: 0; }
+    100% { left: 100%; opacity: 0; }
+}
+
+@keyframes reflectionGlideReverse {
+    0% { right: -100%; opacity: 0; }
+    20% { opacity: 1; }
+    50% { right: 100%; opacity: 0.9; }
+    80% { opacity: 0; }
+    100% { right: 100%; opacity: 0; }
 }
 
 .title {
@@ -62,8 +117,8 @@
 }
 
 @keyframes pulseOutline {
-    0%   { filter: drop-shadow(0 0 1px rgb(85, 85, 85)); }
-    50%  { filter: drop-shadow(0 0 3px black); }
+    0% { filter: drop-shadow(0 0 1px rgb(85, 85, 85)); }
+    50% { filter: drop-shadow(0 0 3px black); }
     100% { filter: drop-shadow(0 0 1px rgb(85, 85, 85)); }
 }
 

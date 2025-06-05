@@ -2,6 +2,10 @@ function subtleHr() {
   return `<p class="subtle-hr"></p>`;
 }
 
+function subtlerHr() {
+  return `<p class="subtler-hr"></p>`;
+}
+
 function newTabLink(href, text) {
   return `<a href="${href}" target="_blank">${text}</a>`;
 }
@@ -42,6 +46,12 @@ const CONTENT = `
       border-bottom: 1px solid rgb(136, 136, 136, 0.2);
     }
 
+    .subtler-hr {
+      border-top: 1px solid rgb(230, 210, 189);
+      border-bottom: 1px solid rgb(136, 136, 136, 0.2);
+      margin-right: 15%;
+    }
+
     .squeeze {
       margin-left: 2%;
       margin-right: 2%;
@@ -65,18 +75,77 @@ const CONTENT = `
       margin-bottom: 0px;
     }
 
+  .embla {
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .embla__container {
+    display: flex;
+  }
+
+  .embla__slide {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .embla__slide img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.0) !important;
+    border-radius: 7px;
+  }
+
+  .embla__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .embla__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .embla__dot--selected {
+    background: #333;
+  }
+
   </style>
 
-${title("NTM Pin Randomizer (ROM Hack)")}
+${title("NTM Pin Randomizer (ROM Hack) 💾")}
 
 
 <div class="squeeze">
+
+<div class="embla">
+  <div class="embla__container">
+    <div class="embla__slide">${constrainedImage("images/demo-1.png")}</div>
+    <div class="embla__slide">${constrainedImage("images/demo-2.png")}</div>
+    <div class="embla__slide">${constrainedImage("images/demo-3.png")}</div>
+    <div class="embla__slide">${constrainedImage("images/demo-5.png")}</div>
+  </div>
+</div>
+<div class="embla__dots"></div>
 
 <h2>Overview</h2>
 
 ${markdownToHtml(`
 
 ${subtleHr()}
+
 
 This ROM Hack generates new pin positions for every hole in the game (MVS/AES version).
 
@@ -90,7 +159,6 @@ ${markdownToHtml(`
 
 `)}
 
-<br>
 ${subtleHr()}
 
 ${markdownToHtml(`
@@ -104,7 +172,7 @@ ${markdownToHtml(`
 `)}
 </div>
 - ❌ Neo Geo CD version.
-    - Not compatible yet.
+    - Not compatible.
     - Scotland would be a fun challenge, so maybe I'll add this later.
 `)}
 <br>
@@ -128,11 +196,11 @@ ${markdownToHtml(`
 <div class="squeeze">
 ${markdownToHtml(`
 
-  - [Download](#download)
+  - [Download(s)](#download)
       - [v0.0.0 (Latest)](#v0.0.0)
   - [How to Apply the Patch](#how-to-apply-the-patch)
       - [Requirements](#requirements)
-      - [Steps](#instructions)
+      - [Instructions](#instructions)
   - [Technical Details](#technical-details)
       - [How does pin selection work in NTM?](#how-pin-selection-works-in-NTM)
       - [How are the pins randomized in this hack?](#how-the-pins-are-randomized)
@@ -150,7 +218,7 @@ ${markdownToHtml(`
 
 <br>
 
-## Download
+## Download(s)
 
 Unfortunately, for legal reasons, I can't link a copy of the ROM directly.
 
@@ -162,6 +230,8 @@ Once you have a copy of the game (\`turfmast.zip\`), you can apply a patch to ge
 
 ⚠ broken links, work in progress.
 
+${subtlerHr()}
+
 <div id="v0.0.0"></div>
 #### v0.0.0 (Latest):
 
@@ -169,7 +239,6 @@ Once you have a copy of the game (\`turfmast.zip\`), you can apply a patch to ge
 - ${mac()} ${newTabLink("www.com", "Download (patcher) — macOS (Universal)")}.
 - ${linux()} ${newTabLink("www.com", "Download (patcher) — Linux (x86_64)")}.
 - ${linux()} ${newTabLink("www.com", "Download ? — Linux (ARM64 / Raspberry Pi)")}.
-
 
 
 - ${sourceCode()} ${newTabLink("www.com", "Source Code  — (Portable)")}.
@@ -183,6 +252,9 @@ Once you have a copy of the game (\`turfmast.zip\`), you can apply a patch to ge
 
 <br>
 
+<span class="subtle">If you have any trouble downloading or running the patcher, please let me know.</subtle>
+
+
 ---
 
 <br>
@@ -192,7 +264,7 @@ Once you have a copy of the game (\`turfmast.zip\`), you can apply a patch to ge
 ## How to Apply the Patch
 
 <div id="requirements"></div>
-#### Requirements:
+#### You need:
 
 - 📚 A copy of the original \`turfmast.zip\` ROM.
 <!-- - 🐍 ${newTabLink("https://www.python.org/downloads/release/python-380/", "Python 3.8+")} (installed). -->
@@ -208,6 +280,8 @@ Once you have a copy of the game (\`turfmast.zip\`), you can apply a patch to ge
 4. Copy or move the new ROM into your ROMs folder.<br><br>
 5. Replace \`turfmast.zip\` with the new ROM.
 
+<br>
+(GIF of ROM being patched)
 
 <div id="technical-details"></div>
 
@@ -228,7 +302,7 @@ This is a ROM Hack for the MVS/AES version of Neo Turf Masters.
 ${markdownToHtml(`
 In this version of the game...
 - The ROM has 576 pins total.
-- Every hole has 8 pins. <span class="subtle">(e.g. USA 12)</span>
+- Every hole has 8 pins. <span class="subtle">(e.g. screenshot of USA 12 pins - by LithyV)</span>
 
     - ${constrainedImage("/assets/pins/U.S.A/U.S.A12detailed.png", "All default pin positions on U.S.A 12")}
 <br><br>
@@ -242,7 +316,7 @@ In this version of the game...
     - When the hole loads, 1 of the 6 pins is selected at random.
     - These pins are distributed non-uniformly, meaning some pins are more likely to appear than others.<br><br>
 - This is well documented in Mountainmanjed's disassembly.
-    - See: <a href="https://github.com/mountainmanjed/BTG-dasm">${githubLogo()} mountainmanjed/BTG-dasm</a>
+    - See: ${newTabLink("https://github.com/mountainmanjed/BTG-dasm", githubLogo() + "mountainmanjed/BTG-dasm")}.
 
 <br>
 _**Note:** <span class="note">The Neo Geo CD release has extra pin positions in its "Grand Slam" gamemode. These are unavailable on the MVS/AES release._</span>
@@ -250,7 +324,7 @@ _**Note:** <span class="note">The Neo Geo CD release has extra pin positions in 
 <div id="how-the-pins-are-randomized"></div>
 ### How are the pins randomized in this hack?
 
-This ROM Hack randomizes the pin with a very primitive algorithm.
+This ROM Hack randomizes the pins with a very primitive algorithm.
 
 For each hole, the patcher will...
 1. Draw a rectangular boundary around the existing pin positions.
@@ -259,24 +333,24 @@ For each hole, the patcher will...
 
 This means the pins can sometimes be positioned off the green, or on top of hazards, which may not be ideal.
 
-**Note:** The game physics don't check for pin collisions when the ball bounces outside the green. This is an optimization by the developers to reduce unnecessary checks during normal gameplay. Unfortunately it makes these rogue pins rather difficult to hit, as the ball must stop directly on the hole to go in.
+**Note:** The game physics don't check for chip-ins when the ball bounces outside the green. This is an optimization by the developers to reduce unnecessary checks during normal gameplay. Unfortunately, this makes these rogue pins rather difficult to hit, as the ball must come to a stop directly on the hole to go in.
 
-I expect to tweak/improve this approach in future releases.
+Additionally, this approach also has a high chance of placing pins on flat parts of the green. Difficulty can fluctuate wildly between each hole, which is fun, but could definitely be improved.
+
+I intend to update/improve this algorithm in future releases.
 
 
 <br>
-
 <div id="special-thanks"></div>
 
 ---
 
-<br>
 
 ## Special Thanks ⭐
 
-- Mountainmanjed - for the disassembly.
-- StiNKz - for showing me how to patch Neo Geo ROMs.
-- LithyV - for the pin images & testing.
+- Mountainmanjed - _for the ${newTabLink("https://github.com/mountainmanjed/BTG-Dasm", "disassembly")}._
+- StiNKz - _for teaching me how to patch Neo Geo ROMs._
+- LithyV - _for the ${newTabLink("https://drive.google.com/drive/folders/1cIc8o-PyDO2J1ZwrOSWSzFLURBgv0gWZ", "pin images")} & testing the ROM on a flash cart._
 
 <br>
 

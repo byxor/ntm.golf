@@ -3,9 +3,10 @@
 
     <meta charset="UTF-8">
     <title>NTM Pin Randomizer (ROM Hack)</title>
-    <link rel="icon" type="image/png" href="/assets/flags/flag-circle.png"/>
+    <link rel="icon" type="image/png" href="/assets/flags/flag-circle.png" />
 
     <link rel="stylesheet" href="/guides/common-styles.css">
+
 </head>
 
 <body>
@@ -13,15 +14,54 @@
     <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js
     "></script>
 
+    <link rel="stylesheet" href="https://unpkg.com/embla-carousel/embla.min.css" />
+    <script src="https://unpkg.com/embla-carousel@8.0.0/embla-carousel.umd.js"></script>
+
+
     <script src="/guides/common-functionality.js"></script>
     <script src="./content.js"></script>
     <script src="/components/html-header.js"></script>
 
     <div class="content">
-	</div>
+    </div>
 
     <script>
-		const contentContainer = document.querySelector('.content');
-		contentContainer.innerHTML = markdownToHtml(CONTENT);
-	</script>
+        const contentContainer = document.querySelector('.content');
+        contentContainer.innerHTML = markdownToHtml(CONTENT);
+
+        (() => {
+            const emblaNode = document.querySelector('.embla');
+            const embla = EmblaCarousel(emblaNode, { loop: true });
+
+            const dotsContainer = document.querySelector('.embla__dots');
+            const slideCount = embla.slideNodes().length;
+            const dots = [];
+
+            // Create dot elements
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('embla__dot');
+                dot.addEventListener('click', () => embla.scrollTo(i));
+                dotsContainer.appendChild(dot);
+                dots.push(dot);
+            }
+
+            function updateDots() {
+                const selectedIndex = embla.selectedScrollSnap();
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('embla__dot--selected', index === selectedIndex);
+                });
+            }
+
+            embla.on('select', updateDots);
+            updateDots(); // Set initial state
+
+            // Optional: autoplay
+            let autoplay = setInterval(() => embla.scrollNext(), 5000);
+            emblaNode.addEventListener('mouseenter', () => clearInterval(autoplay));
+            emblaNode.addEventListener('mouseleave', () => {
+                autoplay = setInterval(() => embla.scrollNext(), 5000);
+            });
+        })()
+    </script>
 </body>
