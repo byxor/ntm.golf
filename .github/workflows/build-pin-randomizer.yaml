@@ -21,7 +21,8 @@ jobs:
 
       - name: Build EXE with PyInstaller
         run: |
-          pyinstaller --onefile --noconsole --icon=icon.ico ^
+          pyinstaller --onefile --noconsole ^
+            --icon=pin-randomizer/src/icon.ico ^
             --name=NTM-pin-randomizer-v0.0.0-patcher ^
             pin-randomizer/src/randomize-pins.py
 
@@ -48,7 +49,8 @@ jobs:
 
       - name: Build macOS binary
         run: |
-          pyinstaller --onefile --windowed --icon=icon.ico \
+          pyinstaller --onefile --windowed \
+            --icon=pin-randomizer/src/icon.ico \
             --name=NTM-pin-randomizer-v0.0.0-patcher \
             pin-randomizer/src/randomize-pins.py
 
@@ -75,7 +77,8 @@ jobs:
 
       - name: Build Linux binary
         run: |
-          pyinstaller --onefile --noconsole --icon=icon.ico \
+          pyinstaller --onefile --noconsole \
+            --icon=pin-randomizer/src/icon.ico \
             --name=NTM-pin-randomizer-v0.0.0-patcher \
             pin-randomizer/src/randomize-pins.py
 
