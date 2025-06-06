@@ -12,6 +12,6 @@
 
     const link = document.getElementById('homepage-link');
     if (window.location.pathname === link.pathname) {
-        link.setAttribute("title", "Welcome home. You're here.");
+        link.setAttribute("title", "Welcome home.");
     }
 })();

@@ -183,7 +183,7 @@ ${markdownToHtml(`
 
 <span class="subtle">_(At the time of writing)_</span> <span class="disclaimer">I must give some credit to StiNKz, who's currently also working on a pin randomizer, and other more ambitious ROM Hacks which I'm eager to play. <s>Unfortunately, their randomizer hasn't been released yet, so please excuse me for making one in the meantime.</s></span>
 
-<span class="disclaimer">EDIT: StiNKz just released their first version as I was writing this!</span> 🎉 <span class="disclaimer">Give theirs a try at some point too.</span>
+<span class="disclaimer">EDIT: StiNKz just released their first version as I was writing this!</span> 🎉 <span class="disclaimer">I recommend giving their version a try at some point too.</span>
 
 <span class="disclaimer">Thankfully there's a lot of potential to get creative with the pin placements, so there's plenty of room for variety &amp; improvement.</span>
 
@@ -220,7 +220,7 @@ ${markdownToHtml(`
 
 ## Download(s)
 
-Unfortunately, for legal reasons, I can't link a copy of the ROM directly.
+Unfortunately, for legal reasons, I can't link a copy of the ROM.
 
 <span class="subtle">_(If you contact the right people, they'll be able to help you find a copy_ 😇_)._</span>
 
@@ -261,7 +261,7 @@ ${subtlerHr()}
 
 <div id="how-to-apply-the-patch"></div>
 
-## How to Apply the Patch
+## To Apply the Patch
 
 <div id="requirements"></div>
 #### You need:
@@ -316,7 +316,7 @@ In this version of the game...
     - When the hole loads, 1 of the 6 pins is selected at random.
     - These pins are distributed non-uniformly, meaning some pins are more likely to appear than others.<br><br>
 - This is well documented in Mountainmanjed's disassembly.
-    - See: ${newTabLink("https://github.com/mountainmanjed/BTG-dasm", githubLogo() + "mountainmanjed/BTG-dasm")}.
+    - See: ${newTabLink("https://github.com/mountainmanjed/BTG-Dasm/blob/462ac494c5cba2ef69ddb3fb4b2bca118a528bc9/m68k/banks/bank05.68k#L6055", githubLogo() + "&nbsp;&nbsp;mountainmanjed/BTG-dasm&nbsp;&nbsp;<code>(bank05.68k: Pin_Spawn)</code>")}.
 
 <br>
 _**Note:** <span class="note">The Neo Geo CD release has extra pin positions in its "Grand Slam" gamemode. These are unavailable on the MVS/AES release._</span>
