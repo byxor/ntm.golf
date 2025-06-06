@@ -235,10 +235,10 @@ ${subtlerHr()}
 <div id="v0.0.0"></div>
 #### v0.0.0 (Latest):
 
-- ${windows()} ${newTabLink("www.com", "Download (patcher.exe) — Windows 64-bit")}.
-- ${mac()} ${newTabLink("www.com", "Download (patcher) — macOS (Universal)")}.
-- ${linux()} ${newTabLink("www.com", "Download (patcher) — Linux (x86_64)")}.
-- ${linux()} ${newTabLink("www.com", "Download ? — Linux (ARM64 / Raspberry Pi)")}.
+- ${windows()} ${newTabLink("https://github.com/byxor/ntm.golf/actions/runs/15482223786/artifacts/3272926766", "Download (ZIP) — Windows 64-bit")}.
+- ${mac()} ${newTabLink("https://github.com/byxor/ntm.golf/actions/runs/15482223786/artifacts/3272923742", "Download (ZIP) — macOS (Universal)")}.
+- ${linux()} ${newTabLink("https://github.com/byxor/ntm.golf/actions/runs/15482223786/artifacts/3272924088", "Download (ZIP) — Linux (x86_64)")}.
+- ${linux()} ${newTabLink("https://github.com/byxor/ntm.golf/actions/runs/15482223786/artifacts/3272933006", "Download (ZIP) — Linux (ARM64 / Raspberry Pi)")}.
 
 
 - ${sourceCode()} ${newTabLink("www.com", "Source Code  — (Portable)")}.
