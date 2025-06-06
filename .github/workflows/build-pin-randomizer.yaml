@@ -18,12 +18,12 @@ jobs:
         run: pip install pyinstaller
 
       - name: Build Windows executable
+        shell: cmd
         run: |
-          pyinstaller --onefile --noconsole \
-            --icon=pin-randomizer/src/icon.ico \
-            --name=NTM-pin-randomizer-v0.0.0-patcher \
+          pyinstaller --onefile --noconsole ^
+            --icon=pin-randomizer/src/icon.ico ^
+            --name=NTM-pin-randomizer-v0.0.0-patcher ^
             pin-randomizer/src/randomize-pins.py
-        shell: bash
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -88,21 +88,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Enable QEMU for ARM64 emulation
+        run: |
+          docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+
       - name: Build in Docker for ARM64
         run: |
           docker run --rm --platform linux/arm64 \
             -v "$(pwd)":/src \
             -w /src \
-            --entrypoint /bin/bash \
-            --name pin-arm64-builder \
-            multiarch/qemu-user-static --reset -p yes && \
-          docker run --rm --platform linux/arm64 \
-            -v "$(pwd)":/src \
-            -w /src \
             arm64v8/python:3.11-slim \
-            bash -c "pip install pyinstaller && pyinstaller --onefile \
-              --name=NTM-pin-randomizer-v0.0.0-patcher \
-              pin-randomizer/src/randomize-pins.py"
+            bash -c "apt-get update && apt-get install -y build-essential && \
+                     pip install pyinstaller && \
+                     pyinstaller --onefile \
+                       --name=NTM-pin-randomizer-v0.0.0-patcher \
+                       pin-randomizer/src/randomize-pins.py"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
