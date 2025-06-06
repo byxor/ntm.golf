@@ -18,18 +18,21 @@ jobs:
         run: pip install pyinstaller
 
       - name: Build Windows executable
-        shell: cmd
         run: |
-          pyinstaller --onefile --noconsole ^
-            --icon=pin-randomizer/src/icon.ico ^
-            --name=NTM-pin-randomizer-v0.0.0-patcher ^
+          pyinstaller --onefile --noconsole \
+            --icon=pin-randomizer/src/icon.ico \
+            --name=NTM-pin-randomizer-v0.0.0-patcher \
             pin-randomizer/src/randomize-pins.py
+        shell: bash
+
+      - name: Zip artifact
+        run: zip pin-randomizer-v0.0.0-windows.zip dist/NTM-pin-randomizer-v0.0.0-patcher.exe
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pin-randomizer-windows
-          path: dist/NTM-pin-randomizer-v0.0.0-patcher.exe
+          name: pin-randomizer-v0.0.0-windows
+          path: pin-randomizer-v0.0.0-windows.zip
 
   build-macos:
     runs-on: macos-latest
@@ -52,11 +55,14 @@ jobs:
             --name=NTM-pin-randomizer-v0.0.0-patcher \
             pin-randomizer/src/randomize-pins.py
 
+      - name: Zip artifact
+        run: zip pin-randomizer-v0.0.0-macos.zip dist/NTM-pin-randomizer-v0.0.0-patcher
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pin-randomizer-macos
-          path: dist/NTM-pin-randomizer-v0.0.0-patcher
+          name: pin-randomizer-v0.0.0-macos
+          path: pin-randomizer-v0.0.0-macos.zip
 
   build-linux-x64:
     runs-on: ubuntu-latest
@@ -77,11 +83,14 @@ jobs:
             --name=NTM-pin-randomizer-v0.0.0-patcher \
             pin-randomizer/src/randomize-pins.py
 
+      - name: Zip artifact
+        run: zip pin-randomizer-v0.0.0-linux-x64.zip dist/NTM-pin-randomizer-v0.0.0-patcher
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pin-randomizer-linux-x64
-          path: dist/NTM-pin-randomizer-v0.0.0-patcher
+          name: pin-randomizer-v0.0.0-linux-x64
+          path: pin-randomizer-v0.0.0-linux-x64.zip
 
   build-linux-arm64:
     runs-on: ubuntu-latest
@@ -104,8 +113,11 @@ jobs:
                        --name=NTM-pin-randomizer-v0.0.0-patcher \
                        pin-randomizer/src/randomize-pins.py"
 
+      - name: Zip artifact
+        run: zip pin-randomizer-v0.0.0-linux-arm64.zip dist/NTM-pin-randomizer-v0.0.0-patcher
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pin-randomizer-linux-arm64
-          path: dist/NTM-pin-randomizer-v0.0.0-patcher
+          name: pin-randomizer-v0.0.0-linux-arm64
+          path: pin-randomizer-v0.0.0-linux-arm64.zip
