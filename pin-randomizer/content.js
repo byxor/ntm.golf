@@ -195,7 +195,7 @@ ${markdownToHtml(`
 <hr>
 <div class="squeeze">
 ${markdownToHtml(`
-
+<br>
   - [Download(s)](#download)
       - [v0.0.0 (Latest)](#v0.0.0)
   - [How to Apply the Patch](#how-to-apply-the-patch)
@@ -207,7 +207,6 @@ ${markdownToHtml(`
   - [Special Thanks](#special-thanks)
 <br>
 
-<div id="download"></div>
 
 <br>
 `)}
@@ -218,6 +217,8 @@ ${markdownToHtml(`
 
 <br>
 
+<div id="download"></div>
+
 ## Download(s)
 
 Unfortunately, for legal reasons, I can't link a copy of the ROM.
@@ -227,8 +228,6 @@ Unfortunately, for legal reasons, I can't link a copy of the ROM.
 Once you have a copy of the game (\`turfmast.zip\`), you can apply a patch to get a modified copy of the ROM.
 
 <span class="subtle">An advantage to patching the ROM yourself is the ability to regenerate the pin positions with different seeds. Every seed will produce a fresh new set of pins.</span>
-
-⚠ broken links, work in progress.
 
 ${subtlerHr()}
 
@@ -244,7 +243,7 @@ ${subtlerHr()}
 - ${sourceCode()} ${newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-source.zip", "Source Code  — (Portable)")}.
 
 ##### Release Date:
-- 5th June 2025.
+- 6th June 2025.
 
 ##### Changes:
 - First release.
@@ -253,7 +252,7 @@ ${subtlerHr()}
 <br>
 
 <span class="subtle">If you have any trouble downloading or running the patcher, please let me know.</subtle>
-<span class="subtle">I've only tested this on Windows...</subtle>
+<span class="subtle">I've only tested this on Windows, so it could be completely broken...</subtle>
 
 
 ---
@@ -286,13 +285,14 @@ ${subtlerHr()}
 
 Now you can launch turfmast.zip and you'll be playing the mod.
 
-<div id="technical-details"></div>
 
 <br>
 
 ---
 
 <br>
+
+<div id="technical-details"></div>
 
 ## Technical Details
 
@@ -312,7 +312,7 @@ In this version of the game...
 `)}
 </div>
 
-- _During gameplay..._
+- _During gameplay... <span class="subtle">(roughly speaking...)</span>_
     - A subset of 6 pins is available per hole.
     - This set is determined by the difficulty level.
         - <span class="subtle">NAZCA did this by design, so easier pins are granted on easier levels, and harder pins are granted on harder levels.</span>
@@ -344,10 +344,10 @@ I intend to update/improve this algorithm in future releases.
 
 
 <br>
-<div id="special-thanks"></div>
 
 ---
 
+<div id="special-thanks"></div>
 
 ## Special Thanks ⭐
 
@@ -359,7 +359,7 @@ I intend to update/improve this algorithm in future releases.
 
 ---
 
-_(Last updated: 5th June 2025)_
+_(Last updated: 6th June 2025)_
 <br><br>
 
 If you have any questions, suggestions or concerns, contact **@byxor** on Discord.
