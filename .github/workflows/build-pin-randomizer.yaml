@@ -25,16 +25,11 @@ jobs:
             --name=NTM-pin-randomizer-v0.0.0-patcher ^
             pin-randomizer/src/randomize-pins.py
 
-      - name: Zip artifact
-        shell: pwsh
-        run: |
-          Compress-Archive -Path dist/NTM-pin-randomizer-v0.0.0-patcher.exe -DestinationPath NTM-pin-randomizer-v0.0.0-windows.zip
-
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: NTM-pin-randomizer-v0.0.0-windows
-          path: NTM-pin-randomizer-v0.0.0-windows.zip
+          path: dist/NTM-pin-randomizer-v0.0.0-patcher.exe
 
   build-macos:
     runs-on: macos-latest
@@ -57,14 +52,11 @@ jobs:
             --name=NTM-pin-randomizer-v0.0.0-patcher \
             pin-randomizer/src/randomize-pins.py
 
-      - name: Zip artifact
-        run: zip NTM-pin-randomizer-v0.0.0-macos.zip dist/NTM-pin-randomizer-v0.0.0-patcher
-
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: NTM-pin-randomizer-v0.0.0-macos
-          path: NTM-pin-randomizer-v0.0.0-macos.zip
+          path: dist/NTM-pin-randomizer-v0.0.0-patcher
 
   build-linux-x64:
     runs-on: ubuntu-latest
@@ -85,14 +77,11 @@ jobs:
             --name=NTM-pin-randomizer-v0.0.0-patcher \
             pin-randomizer/src/randomize-pins.py
 
-      - name: Zip artifact
-        run: zip NTM-pin-randomizer-v0.0.0-linux-x64.zip dist/NTM-pin-randomizer-v0.0.0-patcher
-
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: NTM-pin-randomizer-v0.0.0-linux-x64
-          path: NTM-pin-randomizer-v0.0.0-linux-x64.zip
+          path: dist/NTM-pin-randomizer-v0.0.0-patcher
 
   build-linux-arm64:
     runs-on: ubuntu-latest
@@ -115,11 +104,8 @@ jobs:
                        --name=NTM-pin-randomizer-v0.0.0-patcher \
                        pin-randomizer/src/randomize-pins.py"
 
-      - name: Zip artifact
-        run: zip NTM-pin-randomizer-v0.0.0-linux-arm64.zip dist/NTM-pin-randomizer-v0.0.0-patcher
-
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: NTM-pin-randomizer-v0.0.0-linux-arm64
-          path: NTM-pin-randomizer-v0.0.0-linux-arm64.zip
+          path: dist/NTM-pin-randomizer-v0.0.0-patcher
