@@ -235,13 +235,13 @@ ${subtlerHr()}
 <div id="v0.0.0"></div>
 #### v0.0.0 (Latest):
 
-- ${windows()} ${newTabLink("https://github.com/byxor/ntm.golf/actions/runs/15482223786/artifacts/3272926766", "Download (ZIP) — Windows 64-bit")}.
-- ${mac()} ${newTabLink("https://github.com/byxor/ntm.golf/actions/runs/15482223786/artifacts/3272923742", "Download (ZIP) — macOS (Universal)")}.
-- ${linux()} ${newTabLink("https://github.com/byxor/ntm.golf/actions/runs/15482223786/artifacts/3272924088", "Download (ZIP) — Linux (x86_64)")}.
-- ${linux()} ${newTabLink("https://github.com/byxor/ntm.golf/actions/runs/15482223786/artifacts/3272933006", "Download (ZIP) — Linux (ARM64 / Raspberry Pi)")}.
+- ${windows()} ${newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-windows.zip", "Download (ZIP) — Windows 64-bit")}.
+- ${mac()} ${    newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-macos.zip", "Download (ZIP) — macOS (Universal)")}.
+- ${linux()} ${  newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-linux-x64.zip", "Download (ZIP) — Linux (x86_64)")}.
+- ${linux()} ${  newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-linux-arm64.zip", "Download (ZIP) — Linux (ARM64 / Raspberry Pi)")}.
 
 
-- ${sourceCode()} ${newTabLink("www.com", "Source Code  — (Portable)")}.
+- ${sourceCode()} ${newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-source.zip", "Source Code  — (Portable)")}.
 
 ##### Release Date:
 - 5th June 2025.
