@@ -1,4 +1,4 @@
-name: Build Pin Randomizer Binaries (Manually) - v0.0.0
+name: Build Pin Randomizer Binaries (Manual)
 
 on:
   workflow_dispatch:
@@ -17,16 +17,18 @@ jobs:
       - name: Install dependencies
         run: pip install pyinstaller
 
-      - name: Build EXE
+      - name: Build Windows executable
         run: |
-          pyinstaller --onefile --noconsole ^
-            --icon=pin-randomizer/src/icon.ico ^
-            --name=NTM-pin-randomizer-v0.0.0-patcher ^
+          pyinstaller --onefile --noconsole \
+            --icon=pin-randomizer/src/icon.ico \
+            --name=NTM-pin-randomizer-v0.0.0-patcher \
             pin-randomizer/src/randomize-pins.py
+        shell: bash
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: ntm-pin-randomizer-windows
+          name: pin-randomizer-windows
           path: dist/NTM-pin-randomizer-v0.0.0-patcher.exe
 
   build-macos:
@@ -40,18 +42,20 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install pyinstaller pillow
+        run: |
+          pip install pyinstaller pillow
 
-      - name: Build App
+      - name: Build macOS app
         run: |
           pyinstaller --onefile --windowed \
             --icon=pin-randomizer/src/icon.icns \
             --name=NTM-pin-randomizer-v0.0.0-patcher \
             pin-randomizer/src/randomize-pins.py
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: ntm-pin-randomizer-macos
+          name: pin-randomizer-macos
           path: dist/NTM-pin-randomizer-v0.0.0-patcher
 
   build-linux-x64:
@@ -67,40 +71,41 @@ jobs:
       - name: Install dependencies
         run: pip install pyinstaller
 
-      - name: Build binary
+      - name: Build Linux x64 executable
         run: |
-          pyinstaller --onefile --noconsole \
-            --icon=pin-randomizer/src/icon.ico \
+          pyinstaller --onefile \
             --name=NTM-pin-randomizer-v0.0.0-patcher \
             pin-randomizer/src/randomize-pins.py
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: ntm-pin-randomizer-linux-x64
+          name: pin-randomizer-linux-x64
           path: dist/NTM-pin-randomizer-v0.0.0-patcher
 
   build-linux-arm64:
     runs-on: ubuntu-latest
-    container: arm64v8/python:3.11-slim
     steps:
-      - name: Install build dependencies
-        run: apt-get update && apt-get install -y build-essential git zip
+      - uses: actions/checkout@v4
 
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Install pyinstaller
-        run: pip install pyinstaller
-
-      - name: Build binary (ARM64)
+      - name: Build in Docker for ARM64
         run: |
-          pyinstaller --onefile --noconsole \
-            --icon=pin-randomizer/src/icon.ico \
-            --name=NTM-pin-randomizer-v0.0.0-patcher \
-            pin-randomizer/src/randomize-pins.py
+          docker run --rm --platform linux/arm64 \
+            -v "$(pwd)":/src \
+            -w /src \
+            --entrypoint /bin/bash \
+            --name pin-arm64-builder \
+            multiarch/qemu-user-static --reset -p yes && \
+          docker run --rm --platform linux/arm64 \
+            -v "$(pwd)":/src \
+            -w /src \
+            arm64v8/python:3.11-slim \
+            bash -c "pip install pyinstaller && pyinstaller --onefile \
+              --name=NTM-pin-randomizer-v0.0.0-patcher \
+              pin-randomizer/src/randomize-pins.py"
 
-      - name: Upload ARM64 binary
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ntm-pin-randomizer-linux-arm64
+          name: pin-randomizer-linux-arm64
           path: dist/NTM-pin-randomizer-v0.0.0-patcher
