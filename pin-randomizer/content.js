@@ -253,6 +253,7 @@ ${subtlerHr()}
 <br>
 
 <span class="subtle">If you have any trouble downloading or running the patcher, please let me know.</subtle>
+<span class="subtle">I've only tested this on Windows...</subtle>
 
 
 ---
