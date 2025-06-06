@@ -1,84 +1,86 @@
-name: Build Pin Randomizer Binaries (Manual)
+name: build pin randomizer binaries (manual)
 
 on:
   workflow_dispatch:
 
 jobs:
   build-windows:
-    name: Build for Windows
+    name: Build Windows Binary
     runs-on: windows-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: '3.x'
 
       - name: Install PyInstaller
         run: pip install pyinstaller
 
-      - name: Clean old builds
+      - name: Build EXE with PyInstaller
         run: |
-          if (Test-Path build) { Remove-Item build -Recurse -Force }
-          if (Test-Path dist) { Remove-Item dist -Recurse -Force }
-          if (Test-Path randomize-pins.spec) { Remove-Item randomize-pins.spec }
+          pyinstaller --onefile --noconsole --icon=icon.ico ^
+            --name=NTM-pin-randomizer-v0.0.0-patcher ^
+            pin-randomizer/src/pin-randomizer.py
 
-      - name: Build EXE
-        run: |
-          pyinstaller --onefile --noconsole --icon=icon.ico --name=NTM-pin-randomizer-v0.0.0-patcher randomize-pins.py
-
-      - name: Upload Windows EXE
+      - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ntm-patcher-windows
+          name: windows-exe
           path: dist/NTM-pin-randomizer-v0.0.0-patcher.exe
 
   build-macos:
-    name: Build for macOS
+    name: Build macOS Binary
     runs-on: macos-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: '3.x'
 
       - name: Install PyInstaller
         run: pip install pyinstaller
 
-      - name: Build binary
-        run: pyinstaller --onefile --noconsole --name=ntm-patcher-macos randomize-pins.py
+      - name: Build macOS binary
+        run: |
+          pyinstaller --onefile --windowed --icon=icon.ico \
+            --name=NTM-pin-randomizer-v0.0.0-patcher \
+            pin-randomizer/src/pin-randomizer.py
 
-      - name: Upload macOS binary
+      - name: Upload macOS artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ntm-patcher-macos
-          path: dist/ntm-patcher-macos
+          name: macos-binary
+          path: dist/NTM-pin-randomizer-v0.0.0-patcher
 
   build-linux:
-    name: Build for Linux
+    name: Build Linux Binary
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: '3.x'
 
       - name: Install PyInstaller
         run: pip install pyinstaller
 
-      - name: Build binary
-        run: pyinstaller --onefile --noconsole --name=ntm-patcher-linux randomize-pins.py
+      - name: Build Linux binary
+        run: |
+          pyinstaller --onefile --noconsole --icon=icon.ico \
+            --name=NTM-pin-randomizer-v0.0.0-patcher \
+            pin-randomizer/src/pin-randomizer.py
 
-      - name: Upload Linux binary
+      - name: Upload Linux artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ntm-patcher-linux
-          path: dist/ntm-patcher-linux
+          name: linux-binary
+          path: dist/NTM-pin-randomizer-v0.0.0-patcher
