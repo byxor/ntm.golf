@@ -318,7 +318,7 @@ In this version of the game...
         - <span class="subtle">NAZCA did this by design, so easier pins are granted on easier levels, and harder pins are granted on harder levels.</span>
     - When the hole loads, 1 of the 6 pins is selected at random.
     - These pins are distributed non-uniformly, meaning some pins are more likely to appear than others.<br><br>
-- This is well documented in Mountainmanjed's disassembly.
+- This is documented in Mountainmanjed's disassembly.
     - See: ${newTabLink("https://github.com/mountainmanjed/BTG-Dasm/blob/462ac494c5cba2ef69ddb3fb4b2bca118a528bc9/m68k/banks/bank05.68k#L6055", githubLogo() + "&nbsp;&nbsp;mountainmanjed/BTG-dasm&nbsp;&nbsp;<code>(bank05.68k: Pin_Spawn)</code>")}.
 
 <br>
