@@ -18,4 +18,4 @@ Run with:
 
 - `python3 randomize-pins.py`
 
-Or use PyInstaller to create a native executable.
+Or use PyInstaller to create a native executable. (I manually run GitHub actions to do this)

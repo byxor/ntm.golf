@@ -273,16 +273,18 @@ ${subtlerHr()}
 <div id="instructions"></div>
 #### Steps:
 
-1. Make a backup of the original \`turfmast.zip\` (so you can revert it later).<br><br>
-2. Drag the original \`turfmast.zip\` onto the patcher.<br><br>
-3. A new ROM will be created in the same folder.
-    - e.g. <span class="subtle">\`turfmast.pin_randomizer_v0_0_0_._1749095404.zip\`</span>.
+1. Download & run the ROM patcher for your operating system.<br><br>
+2. Open the original \`turfmast.zip\`.<br><br>
+3. Save the new ROM into your ROMs folder.<br><br>
+    - e.g. <span class="subtle">\`turfmast.pin-randomizer_v0.0.0_1749180756.zip\`</span>.
     - Note: <span class="subtle">the filename includes the version of the patcher and the seed used to generate the pins.</span><br><br>
-4. Copy or move the new ROM into your ROMs folder.<br><br>
-5. Replace \`turfmast.zip\` with the new ROM.
+4. Replace \`turfmast.zip\` (in your ROMs folder) with the new ROM.
 
 <br>
-(GIF of ROM being patched)
+
+**Note:** The original ROM will be backed up to \`turfmast.backup.zip\`.
+
+Now you can launch turfmast.zip and you'll be playing the mod.
 
 <div id="technical-details"></div>
 
