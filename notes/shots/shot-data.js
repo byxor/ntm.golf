@@ -1186,7 +1186,7 @@ const SHOT_OPTIONS_BY_DISTANCE = (() => {
 
     // ----------------------------------------------------------------------------------
     // debug info
-    _(999, FAIRWAY, ZERO_WIND, DS, [-120, -110, -100, -90, -80, -70, -60, -50, -40, -30], C_120, "max% multi^", NS, []);
+    _(999, FAIRWAY, ZERO_WIND, DS, [-120, -110, -100, -90, -80, -70, -60, -50, -40, -30, -20, -10], C_120, "max% multi^", NS, []);
     _(1000, FAIRWAY, ZERO_WIND, DS, [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0], C_120, "max% multi^", NS, []);
 
     // hook/slice "magic pixels" cheat sheet
