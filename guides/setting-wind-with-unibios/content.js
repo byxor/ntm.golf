@@ -165,7 +165,7 @@ This guide explains how to manually set the wind strength and direction on any s
 ---
 
 1. [Applying UniBIOS](#applying-unibios)
-2. [Launching The Game](#launching-the-game)
+2. [Launching the Game](#launching-the-game)
 3. [Enabling Wind Control](#enabling-wind-control)
 4. [Controlling the wind](#controlling-the-wind)
 
@@ -210,7 +210,7 @@ For other emulators or official hardware please refer to the emulator documentat
 
 
 <div id="launching-the-game"></div>
-## 2. Launching The Game
+## 2. Launching the Game
 
 After a reset/reboot, if UniBIOS is configured, you'll see the splash screen before the game loads:
 
@@ -241,7 +241,7 @@ Now you're ready to control the wind.
 
 
 <div id="controlling-the-wind"></div>
-## 4. Controlling The Wind
+## 4. Controlling the Wind
 
 You can control the wind with Player 2's inputs.
 
