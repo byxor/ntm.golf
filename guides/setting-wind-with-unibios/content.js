@@ -167,7 +167,7 @@ This guide explains how to manually set the wind strength and direction on any s
 1. [Applying UniBIOS](#applying-unibios)
 2. [Launching the Game](#launching-the-game)
 3. [Enabling Wind Control](#enabling-wind-control)
-4. [Controlling the wind](#controlling-the-wind)
+4. [Controlling the Wind](#controlling-the-wind)
 
 
 ---
