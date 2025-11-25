@@ -119,7 +119,13 @@ const CONTENT = `
 	}
 </style>
 
-${title("Setting Wind in NTM (With Cheat Engine)")}
+${title("Setting Wind in NTM (With Cheat Engine) <span class=\"grey\">(outdated)</span>")}
+
+${cautionPanel(`
+&nbsp;This guide is outdated.<br><br>
+There's an easier way to set the wind that doesn't require external software.<br><br>
+See: <a href="/guides/setting-wind-with-unibios">Setting Wind in NTM with UniBIOS 🐕‍🦺</a>
+`)}
 
 In Neo Turf Masters, the wind is controlled by random numbers.
 
@@ -400,7 +406,7 @@ Have fun learning new setups!
 
 ---
 
-_(Last updated: 12th October 2024)_  
+_(Last updated: 25th November 2025)_  
 <br/>
 <br/>
 If you have any questions, suggestions or concerns, contact **@byxor** on Discord.

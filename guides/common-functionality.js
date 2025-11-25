@@ -27,6 +27,54 @@ function title(title) {
     </div>`;
 }
 
+let _panelId = 0;
+
+function cautionPanel(contents) {
+	return genericPanel(
+		"⚠️",
+		"#403717",
+		"#e0ce90",
+		contents
+	);
+}
+
+function successPanel(contents) {
+	return genericPanel(
+		"✅",
+		"#275731",
+		"#bbfac9",
+		contents
+	);
+}
+
+function successPanel2(contents) {
+	return genericPanel(
+		"✅",
+		"white",
+		"#275731",
+		contents
+	);
+}
+
+function genericPanel(emoji, textColor, backgroundColor, contents) {
+		_panelId++;
+		return `
+<style>
+	.caution-panel-${_panelId} {
+		color: ${textColor};
+		background-color: ${backgroundColor};
+		border: 1px solid ${textColor};
+		border-radius: 4px;
+		padding: 10px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+</style>
+<div class="caution-panel-${_panelId}">
+	${emoji} ${contents}
+</div>`;
+}
+
 function markdownToHtml(markdown) {
 	const converter = new showdown.Converter();
 	const html = converter.makeHtml(markdown);

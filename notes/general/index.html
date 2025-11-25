@@ -1,0 +1,76 @@
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../../guides/common-styles.css">
+</head>
+<body>
+    <script src="/components/site_banner/site_banner.js" defer></script>
+
+    <div id="content" class="content">
+        <div id="title"></div>
+        <h2>Club Overview</h2>
+        <!-- <p>
+            <ul>
+                <li>Wind adjustments</li>
+                <li>Power adjustments</li>
+                <li>Height adjustments</li>
+                <li>Spin adjustments</li>
+            </ul>
+        </p> -->
+        <div id="club-matrix"></div>
+        <h6 style="margin-bottom: 4px;">Key:</h6>
+        <!--<ul class="color:">
+            <li>-->
+                <table style="font-size: 7px; text-align: center; border-width: 1px; border-style: solid; border-color: #dddddd; border-collapse: collapse;">
+                <tbody>
+                    <tr>
+                    <td style="width: 20px; height: 20px; border-width: 1px; border-style: solid; border-color: #dddddd; border-collapse: collapse;"></td>
+                    <td style="width: 20px; height: 20px; border-width: 1px; border-style: solid; border-color: #dddddd; border-collapse: collapse;"></td>
+                    <td style="width: 20px; height: 20px; border-width: 1px; border-style: solid; border-color: #dddddd; border-collapse: collapse;"></td>
+                    <td style="width: 20px; height: 20px; background-color: rgb(74, 122, 102)">Low</td>
+                    </tr>
+                    <tr>
+                    <td style="width: 20px; height: 20px; border-width: 1px; border-style: solid; border-color: #dddddd; border-collapse: collapse;"></td>
+                    <td style="width: 20px; height: 20px; border-width: 1px; border-style: solid; border-color: #dddddd; border-collapse: collapse;"></td>
+                    <td style="width: 20px; height: 20px; border-width: 1px; border-style: solid; border-color: #dddddd; border-collapse: collapse;"></td>
+                    <td style="width: 20px; height: 20px; background-color: rgb(121, 168, 160)">Nice</td>
+                    </tr style="height: 20px">
+                    <tr>
+                    <td style="width: 20px; height: 20px; border-width: 1px; border-style: solid; border-color: #dddddd; border-collapse: collapse;"></td>
+                    <td style="width: 20px; height: 20px; border-width: 1px; border-style: solid; border-color: #dddddd; border-collapse: collapse;"></td>
+                    <td style="width: 20px; height: 20px; border-width: 1px; border-style: solid; border-color: #dddddd; border-collapse: collapse;"></td>
+                    <td style="width: 20px; height: 20px; background-color: aqua">High</td>
+                    </tr>
+                    <tr>
+                    <td style="width: 20px; height: 20px; background-color: orangered">99%</td>
+                    <td style="width: 20px; height: 20px; background-color: orange">105%</td>
+                    <td style="width: 20px; height: 20px; background-color: green">max%</td>
+                    <td style="width: 20px; height: 20px; "></td>
+                    </tr>
+                </tbody>
+                </table>
+            <!--</li>
+            <li>(crosswind)</li>
+            <li>(headwind)</li>
+            <li>(backspin)</li>
+            <li>(nospin)</li>
+            <li>(topspin)</li>
+        </ul>-->
+        <h2>Recovery</h2>
+        <h2>Off-Green Putts</h2>
+        <h2>Hooks/Slices</h2>
+        <h2>Putting</h2>
+    </div>
+
+    <script src="../../guides/common-functionality.js"></script>
+    <script src="/components/index.js"></script>
+    <script src="./club-matrix.js"></script>
+    <script>
+        const titleContainer = document.getElementById("title");
+        titleContainer.innerHTML = title("General Notes");
+        
+        const clubMatrixContainer = document.getElementById("club-matrix");
+        const clubMatrixComponent = document.createElement("club-matrix");
+        clubMatrixContainer.appendChild(clubMatrixComponent)
+    </script>
+</body>

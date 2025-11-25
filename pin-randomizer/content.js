@@ -240,7 +240,7 @@ ${subtlerHr()}
 - ${linux()} ${  newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-linux-arm64.zip", "Download (ZIP) — Linux (ARM64 / Raspberry Pi)")}.
 
 
-- ${sourceCode()} ${newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-source.zip", "Source Code  — (Portable)")}.
+- ${sourceCode()} ${newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-source.zip", "Source Code  — Python 3 (Portable)")}.
 
 ##### Release Date:
 - 6th June 2025.
@@ -313,12 +313,13 @@ In this version of the game...
 </div>
 
 - _During gameplay... <span class="subtle">(roughly speaking...)</span>_
-    - A subset of 6 pins is available per hole.
+    - A subset of 6 pins is available per hole
+        - <span class="subtle">(Note: There are 6 possible pins on Level 8, though this may vary for other difficulty levels. Not 100% sure yet).</span>
     - This set is determined by the difficulty level.
         - <span class="subtle">NAZCA did this by design, so easier pins are granted on easier levels, and harder pins are granted on harder levels.</span>
     - When the hole loads, 1 of the 6 pins is selected at random.
     - These pins are distributed non-uniformly, meaning some pins are more likely to appear than others.<br><br>
-- This is documented in Mountainmanjed's disassembly.
+- This is better documented in Mountainmanjed's disassembly.
     - See: ${newTabLink("https://github.com/mountainmanjed/BTG-Dasm/blob/462ac494c5cba2ef69ddb3fb4b2bca118a528bc9/m68k/banks/bank05.68k#L6055", githubLogo() + "&nbsp;&nbsp;mountainmanjed/BTG-dasm&nbsp;&nbsp;<code>(bank05.68k: Pin_Spawn)</code>")}.
 
 <br>
