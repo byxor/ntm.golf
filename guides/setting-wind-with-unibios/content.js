@@ -1,4 +1,4 @@
-CONTENT = `
+const CONTENT = `
 <style>
 	@media (pointer: fine) {
 		.probability-table {

@@ -98,7 +98,7 @@ class Hole:
         bottom_y = max([pin_position.y for pin_position in self.pin_positions])
 
         # Expand it a bit
-        padding = 38 # 25 is safer
+        padding = 8
         left_x -= padding
         right_x += padding
         top_y -= padding
@@ -141,6 +141,7 @@ class Courses:
     japan: Course
     australia: Course
     usa: Course
+    scotland: Course
 
 
 """
@@ -893,6 +894,191 @@ DEFAULT_COURSES = Courses(
                 dc.w $0118,$0110
             """),
         ]
+    ),
+    Course(
+        "Scotland",
+        [
+            Hole.from_disassembly(1, """
+                dc.w $0118,$00e8
+                dc.w $00c8,$00e8
+                dc.w $00e5,$0106
+                dc.w $00f0,$00c0
+                dc.w $00d0,$00c0
+                dc.w $0118,$00ff
+                dc.w $00f6,$00b0
+                dc.w $011f,$00d0
+            """),
+            Hole.from_disassembly(2, """
+                dc.w $013b,$0108
+                dc.w $0128,$00f8
+                dc.w $0117,$00d7
+                dc.w $0114,$0116
+                dc.w $014a,$00f0
+                dc.w $00f8,$00f0
+                dc.w $0110,$00c8
+                dc.w $0108,$00f8
+            """),
+            Hole.from_disassembly(3, """
+                dc.w $01e8,$00d8
+                dc.w $0218,$0108
+                dc.w $0208,$00f0
+                dc.w $01f0,$0100
+                dc.w $0208,$0118
+                dc.w $01d8,$00e8
+                dc.w $0210,$00d0
+                dc.w $0220,$00e0
+            """),
+            Hole.from_disassembly(4, """
+                dc.w $0117,$013a
+                dc.w $00e8,$0150
+                dc.w $0128,$0118
+                dc.w $0120,$0160
+                dc.w $0150,$0138
+                dc.w $00ef,$011d
+                dc.w $0120,$017e
+                dc.w $0151,$0162
+            """),
+            Hole.from_disassembly(5, """
+                dc.w $010f,$00ef
+                dc.w $0146,$0103
+                dc.w $0121,$010d
+                dc.w $0130,$0125
+                dc.w $0145,$00c4
+                dc.w $0150,$00e0
+                dc.w $0130,$00d0
+                dc.w $0116,$0117
+            """),
+            Hole.from_disassembly(6, """
+                dc.w $0190,$014c
+                dc.w $0155,$0176
+                dc.w $0178,$012c
+                dc.w $017c,$0161
+                dc.w $0176,$0153
+                dc.w $01ad,$0158
+                dc.w $017f,$0145
+                dc.w $017d,$017b
+            """),
+            Hole.from_disassembly(7, """
+                dc.w $0150,$0131
+                dc.w $015f,$0107
+                dc.w $0100,$00f0
+                dc.w $0101,$0130
+                dc.w $0118,$0110
+                dc.w $011f,$00f8
+                dc.w $012d,$00e9
+                dc.w $011e,$012b
+            """),
+            Hole.from_disassembly(8, """
+                dc.w $010f,$0124
+                dc.w $00ef,$0100
+                dc.w $0107,$00c0
+                dc.w $0140,$0117
+                dc.w $0143,$00e9
+                dc.w $012a,$011a
+                dc.w $011c,$00f8
+                dc.w $0125,$00ca
+            """),
+            Hole.from_disassembly(9, """
+                dc.w $0130,$0128
+                dc.w $0118,$00e8
+                dc.w $0140,$00ef
+                dc.w $0144,$00db
+                dc.w $0163,$0103
+                dc.w $0150,$00d0
+                dc.w $0138,$00c5
+                dc.w $015e,$00ec
+            """),
+            Hole.from_disassembly(10, """
+                dc.w $0140,$00cf
+                dc.w $00e8,$00c8
+                dc.w $00e0,$0110
+                dc.w $0112,$00ec
+                dc.w $0108,$010b
+                dc.w $0132,$00ff
+                dc.w $00ff,$00c1
+                dc.w $0107,$0128
+            """),
+            Hole.from_disassembly(11, """
+                dc.w $0138,$00e5
+                dc.w $0130,$011c
+                dc.w $011d,$014d
+                dc.w $014e,$0116
+                dc.w $011f,$011d
+                dc.w $013e,$0143
+                dc.w $0140,$012d
+                dc.w $011c,$0104
+            """),
+            Hole.from_disassembly(12, """
+                dc.w $0116,$0109
+                dc.w $00d1,$0108
+                dc.w $0106,$0129
+                dc.w $00e1,$012c
+                dc.w $0101,$00f8
+                dc.w $00db,$00e5
+                dc.w $00f4,$0126
+                dc.w $011d,$0131
+            """),
+            Hole.from_disassembly(13, """
+                dc.w $013a,$0128
+                dc.w $012d,$00c3
+                dc.w $0140,$00de
+                dc.w $0128,$0110
+                dc.w $0108,$0108
+                dc.w $00f8,$00f8
+                dc.w $0118,$00e8
+                dc.w $0100,$00d0
+            """),
+            Hole.from_disassembly(14, """
+                dc.w $0108,$00a8
+                dc.w $0110,$00c0
+                dc.w $00e7,$00e8
+                dc.w $010f,$010b
+                dc.w $0120,$00f0
+                dc.w $0120,$00d8
+                dc.w $00d8,$00c0
+                dc.w $00e1,$010c
+            """),
+            Hole.from_disassembly(15, """
+                dc.w $0148,$00e8
+                dc.w $011f,$0100
+                dc.w $00ff,$00e3
+                dc.w $0128,$00e8
+                dc.w $0144,$010b
+                dc.w $00f8,$0107
+                dc.w $0114,$0120
+                dc.w $012c,$0135
+            """),
+            Hole.from_disassembly(16, """
+                dc.w $0190,$00c8
+                dc.w $016f,$00c1
+                dc.w $0191,$00e3
+                dc.w $01a8,$00f8
+                dc.w $0146,$00e0
+                dc.w $0160,$00e0
+                dc.w $0161,$00f8
+                dc.w $0181,$010f
+            """),
+            Hole.from_disassembly(17, """
+                dc.w $0156,$00b6
+                dc.w $0168,$00e8
+                dc.w $0189,$00d7
+                dc.w $0140,$00e8
+                dc.w $0160,$0110
+                dc.w $013b,$0112
+                dc.w $018b,$00eb
+                dc.w $0138,$00cf
+            """),
+            Hole.from_disassembly(18, """
+                dc.w $0178,$00c8
+                dc.w $01c8,$0118
+                dc.w $0198,$00e8
+                dc.w $016a,$0107
+                dc.w $01b0,$00c8
+                dc.w $01a1,$0105
+                dc.w $01d0,$00c9
+                dc.w $01bb,$00f3
+            """),
+        ]
     )
 )
 
@@ -944,7 +1130,7 @@ def main():
 
 
 def prompt_for_turfmast_zip(context):
-    print("\nOpen the original ROM...")
+    print("\nOpening the original ROM...")
 
     filename = askopenfilename(
         title="Open the original 'turfmast.zip'",
@@ -969,7 +1155,6 @@ def prompt_for_turfmast_zip(context):
         print(f"Backup created at: {backup_path}")
     else:
         print(f"Backup already exists at: {backup_path}")
-
 
 
 def create_temp_directory(context):
@@ -1031,6 +1216,8 @@ def load_courses_from_program_rom(context):
         load_course(DEFAULT_COURSES.japan),
         load_course(DEFAULT_COURSES.australia),
         load_course(DEFAULT_COURSES.usa),
+        DEFAULT_COURSES.scotland
+        # load_course(DEFAULT_COURSES.scotland),
     )
 
 
@@ -1060,6 +1247,7 @@ def randomize_pins(context):
     update_program_rom_for_course(context.loaded_courses.japan)
     update_program_rom_for_course(context.loaded_courses.australia)
     update_program_rom_for_course(context.loaded_courses.usa)
+    # update_program_rom_for_course(context.loaded_courses.scotland)
 
     if not updated_one:
         messagebox.showerror("No pin positions were updated", "Did you provide the original 'turfmast.zip'? No pin positions were found.", parent=context.tk_root)

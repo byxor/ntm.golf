@@ -7,7 +7,8 @@ https://ntm.golf
 ## Tools
 
 - 🕹 [Input Display](https://ntm.golf/input-display)
-- ⛳ [Pin Randomizer RomHACK](https://ntm.golf/pin-randomizer)
+- ⛳ [Pin Randomizer ROM Hack](https://ntm.golf/pin-randomizer)
+- 🎵 [No Music ROM Hack](https://ntm.golf/no-music)
 
 ## Guides
 

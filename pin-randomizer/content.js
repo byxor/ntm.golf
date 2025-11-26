@@ -36,6 +36,10 @@ const CONTENT = `
       /* color:rgb(190, 190, 190); */
     }
 
+    .subtle-black {
+      font-size: 14px;
+    }
+
     .subtle {
       color: grey;
       font-size: 14px;
@@ -123,6 +127,10 @@ const CONTENT = `
     background: #333;
   }
 
+  .older-version-section {
+    color: #686868ff;
+  }
+
   </style>
 
 ${title("NTM Pin Randomizer (ROM Hack) 💾")}
@@ -197,7 +205,8 @@ ${markdownToHtml(`
 ${markdownToHtml(`
 <br>
   - [Download(s)](#download)
-      - [v0.0.0 (Latest)](#v0.0.0)
+      - [v0.0.1 (Latest)](#v0.0.1)
+      - [v0.0.0](#v0.0.0)
   - [How to Apply the Patch](#how-to-apply-the-patch)
       - [Requirements](#requirements)
       - [Instructions](#instructions)
@@ -231,15 +240,48 @@ Once you have a copy of the game (\`turfmast.zip\`), you can apply a patch to ge
 
 ${subtlerHr()}
 
+<div id="v0.0.1"></div>
+#### v0.0.1 (Latest):
+
+- ${windows()} ${newTabLink("/pin-randomizer/releases/v0.0.1/NTM-pin-randomizer-v0.0.1-windows.zip", "Download (ZIP) — Windows 64-bit")}.
+- ${mac()} ${    newTabLink("/pin-randomizer/releases/v0.0.1/NTM-pin-randomizer-v0.0.1-macos.zip", "Download (ZIP) — macOS (Universal)")}.
+- ${linux()} ${  newTabLink("/pin-randomizer/releases/v0.0.1/NTM-pin-randomizer-v0.0.1-linux-x64.zip", "Download (ZIP) — Linux (x86_64)")}.
+- ${linux()} ${  newTabLink("/pin-randomizer/releases/v0.0.1/NTM-pin-randomizer-v0.0.1-linux-arm64.zip", "Download (ZIP) — Linux (ARM64 / Raspberry Pi)")}.
+- ${sourceCode()} ${newTabLink("/pin-randomizer/releases/v0.0.1/NTM-pin-randomizer-v0.0.1-source.zip", "Source Code  — Python 3 (Portable)")}.
+
+<span class="subtle-black">If you have any trouble downloading or running the patcher, please let me know.</span>
+<span class="subtle-black">I've only tested it on Windows, so it could be broken on other systems...</span>
+
+##### Release Date:
+- 25th November 2025.
+
+##### Changes:
+
+<!--
+- Now compatible with Neo Geo CD version.
+    - Grand Slam pins are not randomized in this version.
+<br><br>
+- Courses: Germany, Japan, Australia, USA, **Scotland**.
+<br><br>-->
+- Small stability/balance tweak.
+- Green padding decreased from 38 units to 8 units (for the rectangular boundary where pins can spawn).
+    - This lowers the chance of pins spawning off the green.
+    - Also lowers the chance of pins on the green fringe.
+
+<br>
+
+${subtlerHr()}
+
 <div id="v0.0.0"></div>
-#### v0.0.0 (Latest):
+
+<div class="older-version-section">
+${markdownToHtml(`
+#### v0.0.0 (Old):
 
 - ${windows()} ${newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-windows.zip", "Download (ZIP) — Windows 64-bit")}.
 - ${mac()} ${    newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-macos.zip", "Download (ZIP) — macOS (Universal)")}.
 - ${linux()} ${  newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-linux-x64.zip", "Download (ZIP) — Linux (x86_64)")}.
 - ${linux()} ${  newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-linux-arm64.zip", "Download (ZIP) — Linux (ARM64 / Raspberry Pi)")}.
-
-
 - ${sourceCode()} ${newTabLink("/pin-randomizer/releases/v0.0.0/NTM-pin-randomizer-v0.0.0-source.zip", "Source Code  — Python 3 (Portable)")}.
 
 ##### Release Date:
@@ -247,13 +289,12 @@ ${subtlerHr()}
 
 ##### Changes:
 - First release.
-
+- Compatible with AES/MVS version.
+- Courses: Germany, Japan, Australia, USA.
+`)}
+</div>
 
 <br>
-
-<span class="subtle">If you have any trouble downloading or running the patcher, please let me know.</subtle>
-<span class="subtle">I've only tested this on Windows, so it could be completely broken...</subtle>
-
 
 ---
 
@@ -360,7 +401,7 @@ I intend to update/improve this algorithm in future releases.
 
 ---
 
-_(Last updated: 6th June 2025)_
+_(Last updated: 26th November 2025)_
 <br><br>
 
 If you have any questions, suggestions or concerns, contact **@byxor** on Discord.

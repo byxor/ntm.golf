@@ -1,0 +1,115 @@
+<head>
+    <script src="/components/site_banner/site_banner.js" defer></script>
+    <meta charset="UTF-8">
+    <title>NTM No Music (ROM Hack)</title>
+
+    <meta name="description" content="This ROM hack disables the in-game music (MVS/AES version).
+
+Latest release: v0.0.0
+
+Useful for:
+• Peace and focus.
+• Playing your own music in the background.
+
+Downloads available for:
+• ROM patcher.
+• Source Code (Python 3.8+).">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://ntm.golf">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NTM No Music (ROM Hack) - v0.0.0 💾">
+    <meta property="og:description" content="This ROM hack disables the in-game music (MVS/AES version).
+
+Latest release: v0.0.0
+
+Useful for:
+• Peace and focus.
+• Playing your own music in the background.
+
+Downloads available for:
+• ROM patcher.
+• Source Code (Python 3.8+).">
+    <meta property="og:image"
+        content="https://ntm.golf/assets/misc/logo-transparent-cropped.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="ntm.golf">
+    <meta property="twitter:url" content="https://ntm.golf">
+    <meta name="twitter:title" content="NTM No Music (ROM Hack) - v0.0.0 💾">
+    <meta name="twitter:description" content="This ROM hack disables the in-game music (MVS/AES version).
+
+Latest release: v0.0.0
+
+Useful for:
+• Peace and focus.
+• Playing your own music in the background.
+
+Downloads available for:
+• ROM patcher.
+• Source Code (Python 3.8+).">
+    <meta name="twitter:image"
+        content="https://ntm.golf/assets/misc/logo-transparent-cropped.png">
+
+    <link rel="icon" type="image/png" href="/assets/flags/flag-circle.png" />
+    <link rel="stylesheet" href="/guides/common-styles.css">
+
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js
+    "></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/embla-carousel/embla.min.css" />
+    <script src="https://unpkg.com/embla-carousel@8.0.0/embla-carousel.umd.js"></script>
+
+
+    <script src="/guides/common-functionality.js"></script>
+    <script src="./content.js"></script>
+    <script src="/components/html-header.js"></script>
+
+    <div class="content">
+    </div>
+
+    <script>
+        const contentContainer = document.querySelector('.content');
+        contentContainer.innerHTML = markdownToHtml(CONTENT);
+
+        // (() => {
+        //     const emblaNode = document.querySelector('.embla');
+        //     const embla = EmblaCarousel(emblaNode, { loop: true });
+
+        //     const dotsContainer = document.querySelector('.embla__dots');
+        //     const slideCount = embla.slideNodes().length;
+        //     const dots = [];
+
+        //     // Create dot elements
+        //     for (let i = 0; i < slideCount; i++) {
+        //         const dot = document.createElement('button');
+        //         dot.classList.add('embla__dot');
+        //         dot.addEventListener('click', () => embla.scrollTo(i));
+        //         dotsContainer.appendChild(dot);
+        //         dots.push(dot);
+        //     }
+
+        //     function updateDots() {
+        //         const selectedIndex = embla.selectedScrollSnap();
+        //         dots.forEach((dot, index) => {
+        //             dot.classList.toggle('embla__dot--selected', index === selectedIndex);
+        //         });
+        //     }
+
+        //     embla.on('select', updateDots);
+        //     updateDots(); // Set initial state
+
+        //     // Optional: autoplay
+        //     let autoplay = setInterval(() => embla.scrollNext(), 5000);
+        //     emblaNode.addEventListener('mouseenter', () => clearInterval(autoplay));
+        //     emblaNode.addEventListener('mouseleave', () => {
+        //         autoplay = setInterval(() => embla.scrollNext(), 5000);
+        //     });
+        // })()
+    </script>
+</body>
