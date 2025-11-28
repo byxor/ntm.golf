@@ -125,3 +125,4 @@ jobs:
           path: |-
             no-music/src/no-music.py
             no-music/src/README.md
+            no-music/src/requirements.txt

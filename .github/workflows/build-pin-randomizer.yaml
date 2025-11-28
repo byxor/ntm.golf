@@ -125,3 +125,4 @@ jobs:
           path: |-
             pin-randomizer/src/randomize-pins.py
             pin-randomizer/src/README.md
+            pin-randomizer/src/requirements.txt
