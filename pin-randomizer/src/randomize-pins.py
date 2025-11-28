@@ -1085,7 +1085,7 @@ DEFAULT_COURSES = Courses(
 
 @dataclass
 class Context:
-    version: str = "v0.0.0"
+    version: str = "v0.0.1"
 
     seed: int = 0
 

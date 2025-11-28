@@ -1,59 +1,7 @@
-function subtleHr() {
-  return `<p class="subtle-hr"></p>`;
-}
-
-function subtlerHr() {
-  return `<p class="subtler-hr"></p>`;
-}
-
-function newTabLink(href, text) {
-  return `<a href="${href}" target="_blank">${text}</a>`;
-}
-
-function os(src) {
-  return `<img class="os" src="${src}"></img>`;
-}
-
-function windows() {
-  return os("/assets/platforms/windows.svg");
-}
-
-function mac() {
-  return os("/assets/platforms/apple.svg");
-}
-
-function linux() {
-  return os("/assets/platforms/linux.svg");
-}
-
-function sourceCode() {
-  return os("/assets/github/github-mark.svg")
-}
-
 const CONTENT = `
   <style>
     .note {
       /* color:rgb(190, 190, 190); */
-    }
-
-    .subtle-black {
-      font-size: 14px;
-    }
-
-    .subtle {
-      color: grey;
-      font-size: 14px;
-    }
-
-    .subtle-hr {
-      border-top: 1px solid rgb(230, 210, 189);
-      border-bottom: 1px solid rgb(136, 136, 136, 0.2);
-    }
-
-    .subtler-hr {
-      border-top: 1px solid rgb(230, 210, 189);
-      border-bottom: 1px solid rgb(136, 136, 136, 0.2);
-      margin-right: 15%;
     }
 
     .squeeze {
@@ -302,21 +250,21 @@ ${markdownToHtml(`
 
 <div id="how-to-apply-the-patch"></div>
 
-## To Apply the Patch
+##How To Apply the Patch
 
 <div id="requirements"></div>
 #### You need:
 
-- 📚 A copy of the original \`turfmast.zip\` ROM.
+- 📚 A copy of the game's ROM: \`turfmast.zip\`.
 <!-- - 🐍 ${newTabLink("https://www.python.org/downloads/release/python-380/", "Python 3.8+")} (installed). -->
 
 <div id="instructions"></div>
-#### Steps:
+#### Instructions:
 
 1. Download & run the ROM patcher for your operating system.<br><br>
 2. Open the original \`turfmast.zip\`.<br><br>
-3. Save the new ROM into your ROMs folder.<br><br>
-    - e.g. <span class="subtle">\`turfmast.pin-randomizer_v0.0.0_1749180756.zip\`</span>.
+3. Save the new ROM to your ROMs folder.<br><br>
+    - e.g. <span class="subtle">\`turfmast.pin-randomizer_v0.0.1_822873600.zip\`</span>.
     - Note: <span class="subtle">the filename includes the version of the patcher and the seed used to generate the pins.</span><br><br>
 4. Replace \`turfmast.zip\` (in your ROMs folder) with the new ROM.
 
@@ -401,7 +349,7 @@ I intend to update/improve this algorithm in future releases.
 
 ---
 
-_(Last updated: 26th November 2025)_
+_(Last updated: 28th November 2025)_
 <br><br>
 
 If you have any questions, suggestions or concerns, contact **@byxor** on Discord.

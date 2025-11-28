@@ -1,0 +1,127 @@
+name: Build No Music Binaries (Manual)
+
+on:
+  workflow_dispatch:
+
+env:
+  VERSION: v0.0.1
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pyinstaller
+
+      - name: Build Windows executable
+        shell: cmd
+        run: |
+          pyinstaller --onefile --noconsole ^
+            --icon=no-music/src/icon.ico ^
+            --name=NTM-no-music-${{ env.VERSION }}-patcher ^
+            no-music/src/no-music.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NTM-no-music-${{ env.VERSION }}-windows
+          path: dist/NTM-no-music-${{ env.VERSION }}-patcher.exe
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pyinstaller pillow
+
+      - name: Build macOS app
+        run: |
+          pyinstaller --onefile --windowed \
+            --icon=no-music/src/icon.icns \
+            --name=NTM-no-music-${{ env.VERSION }}-patcher \
+            no-music/src/no-music.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NTM-no-music-${{ env.VERSION }}-macos
+          path: dist/NTM-no-music-${{ env.VERSION }}-patcher
+
+  build-linux-x64:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pyinstaller
+
+      - name: Build Linux x64 executable
+        run: |
+          pyinstaller --onefile \
+            --name=NTM-no-music-${{ env.VERSION }}-patcher \
+            no-music/src/no-music.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NTM-no-music-${{ env.VERSION }}-linux-x64
+          path: dist/NTM-no-music-${{ env.VERSION }}-patcher
+
+  build-linux-arm64:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable QEMU for ARM64 emulation
+        run: |
+          docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+
+      - name: Build in Docker for ARM64
+        run: |
+          docker run --rm --platform linux/arm64 \
+            -v "$(pwd)":/src \
+            -w /src \
+            arm64v8/python:3.11-slim \
+            bash -c "apt-get update && apt-get install -y build-essential && \
+                     pip install pyinstaller && \
+                     pyinstaller --onefile \
+                       --name=NTM-no-music-${{ env.VERSION }}-patcher \
+                       no-music/src/no-music.py"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NTM-no-music-${{ env.VERSION }}-linux-arm64
+          path: dist/NTM-no-music-${{ env.VERSION }}-patcher
+
+  upload-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload source file
+        uses: actions/upload-artifact@v4
+        with:
+          name: NTM-no-music-${{ env.VERSION }}-source
+          path: |-
+            no-music/src/no-music.py
+            no-music/src/README.md

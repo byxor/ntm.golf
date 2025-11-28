@@ -67,5 +67,39 @@ html, body {
     cursor: pointer;
 }
 
+.serif {
+    font-family: 'Times New Roman', serif;
+}
+
+.italic {
+    font-style: italic;
+}
+
 /* --------------------------- */
 
+.subtle-black {
+    font-size: 14px;
+}
+
+.subtle {
+    color: grey;
+    font-size: 14px;
+}
+
+.subtler {
+    color: rgb(163, 163, 163);
+    font-size: 12px;  
+}
+
+.subtle-hr {
+    border-top: 1px solid rgb(230, 210, 189);
+    border-bottom: 1px solid rgb(136, 136, 136, 0.2);
+}
+
+.subtler-hr {
+    border-top: 1px solid rgb(230, 210, 189);
+    border-bottom: 1px solid rgb(136, 136, 136, 0.2);
+    margin-right: 15%;
+}
+
+/* --------------------------- */

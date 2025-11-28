@@ -1,3 +1,35 @@
+function subtleHr() {
+  return `<p class="subtle-hr"></p>`;
+}
+
+function subtlerHr() {
+  return `<p class="subtler-hr"></p>`;
+}
+
+function newTabLink(href, text) {
+  return `<a href="${href}" target="_blank">${text}</a>`;
+}
+
+function os(src) {
+  return `<img class="os" src="${src}"></img>`;
+}
+
+function windows() {
+  return os("/assets/platforms/windows.svg");
+}
+
+function mac() {
+  return os("/assets/platforms/apple.svg");
+}
+
+function linux() {
+  return os("/assets/platforms/linux.svg");
+}
+
+function sourceCode() {
+  return os("/assets/github/github-mark.svg")
+}
+
 function githubLogo() {
     return `<img
       src="/assets/github/github-mark.svg"
@@ -34,6 +66,15 @@ function cautionPanel(contents) {
 		"⚠️",
 		"#403717",
 		"#e0ce90",
+		contents
+	);
+}
+
+function infoPanel(contents) {
+	return genericPanel(
+		"ℹ",
+		"#1d1740ff",
+		"#dce5ffff",
 		contents
 	);
 }
