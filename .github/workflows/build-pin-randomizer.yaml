@@ -122,4 +122,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: NTM-pin-randomizer-${{ env.VERSION }}-source
-          path: pin-randomizer/src/randomize-pins.py
+          path: |-
+            pin-randomizer/src/randomize-pins.py
+            pin-randomizer/src/README.md
