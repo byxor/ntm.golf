@@ -1,3 +1,5 @@
 exclude:
   - notes/shots/
-  - notes/general
+  - notes/almeida/
+  - notes/landolt/
+  - pbs/
