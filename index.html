@@ -146,6 +146,15 @@
             vertical-align: -0.55em;
         }
 
+        .inline-icon-4 {
+            height: 4em;
+            width: 4em;
+            display: inline-block;
+            vertical-align: -1.6em;
+            margin-right: -14px;
+            margin-left: -12px;
+        }
+
         .translucent {
             opacity: 0.5;
         }
@@ -160,6 +169,10 @@
 
         .blueish {
             color: blue;
+        }
+
+        .course-note-course-list {
+            padding-left: 14px;
         }
     </style>
     <script src="/components/html-header.js"></script>
@@ -198,13 +211,15 @@
 
         <details>
             <summary> &nbsp;<img class="inline-icon-2 translucent partial-greyscale" src="/assets/misc/almeida-head-outlined.png" alt="Power Golfer"></img> &nbsp;Power Golfer &nbsp;&nbsp;<i>(discontinued)</i></summary>
-            <ul>
-                <li><a href="/notes?course=germany"><span class="gentle-greyscale">🌲</span> Germany</a></li>
-                <li><a href="/notes?course=japan"><span class="gentle-greyscale">🌲</span> Japan</a></li>
-                <li><a href="/notes?course=australia"><span class="gentle-greyscale">🌳</span> Australia</a></li>
-                <li><a href="/notes?course=usa"><span class="gentle-greyscale">🌴</span> USA</a></li>
-                <li><a href="/notes?course=scotland"><span class="gentle-greyscale">🌲</span> Scotland</a></li>
-            </ul>
+            <div class="course-note-course-list">
+                <ul>
+                    <li>&nbsp;&nbsp;<a href="/notes?course=germany"><span class="gentle-greyscale">🌲</span> Germany</a></li>
+                    <li>&nbsp;&nbsp;<a href="/notes?course=japan"><span class="gentle-greyscale">🌲</span> Japan</a></li>
+                    <li>&nbsp;&nbsp;<a href="/notes?course=australia"><span class="gentle-greyscale">🌳</span> Australia</a></li>
+                    <li>&nbsp;&nbsp;<a href="/notes?course=usa"><span class="gentle-greyscale">🌴</span> USA</a></li>
+                    <li>&nbsp;&nbsp;<a href="/notes?course=scotland"><span class="gentle-greyscale">🌲</span> Scotland</a></li>
+                </ul>
+            </div>
         </details>
 
         
@@ -231,8 +246,29 @@
     </div>
 
     <script>
+        document.querySelectorAll("details").forEach(details => {
+            const img = details.querySelector("summary img");
+
+            const powerGolferCollapsedImage = "/assets/misc/almeida-head-outlined.png";
+            const powerGolferExpandedImage = "/assets/misc/almeida-head-outlined-angery.png";
+
+            const preload = new Image();
+            preload.src = powerGolferExpandedImage;
+
+            details.addEventListener("toggle", () => {
+                img.src = details.open
+                    ? powerGolferExpandedImage
+                    : powerGolferCollapsedImage;
+
+                img.classList.toggle("partial-greyscale", !details.open);
+                img.classList.toggle("translucent", !details.open);
+                img.classList.toggle("inline-icon-2", !details.open);
+                img.classList.toggle("inline-icon-4", details.open);
+            });
+        });
+
+
         const notesBrowserCautionPanel = document.getElementById('notes-browser-caution-panel');
-        
         notesBrowserCautionPanel.innerHTML = cautionPanel(`
 &nbsp;In the interest of fairness, I'd be keen to replace this browser with a more "static" format like PDF.<br><br><span >It's totally do-able since the setups are in plain .TXT format (See:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 <a href="/notes/germany.txt" target="_blank">germany.txt</a>,<br>
