@@ -1,26 +1,154 @@
 <head>
+    <script src="/components/site_banner/site_banner.js" defer></script>
     <meta charset="UTF-8">
+    <title>Robert Landolt (Shot Maker)</title>
+    <link rel="icon" type="image/png" href="./landolt.png"/>
 
     <link rel="stylesheet" href="../../guides/common-styles.css">
+    <script src="/components/html-header.js"></script>
 </head>
 <body>
-    <script src="/components/site_banner/site_banner.js" defer></script>
 
     <div id="content" class="content">
         <div id="title"></div>
-        <h2>Shot Overview</h2>
+        <h2>Shot Graphs</h2>
+
+        <div id="combined-shot-graph-container"></div>
+        <br></br>
+        <div id="110-shot-graph-container"></div>
+        <br></br>
+        <div id="100-shot-graph-container"></div>
+        <br></br>
+        <div id="95-shot-graph-container"></div>
 
     </div>
 
     <script src="../../guides/common-functionality.js"></script>
     <script src="/components/index.js"></script>
-    <!-- <script src="./club-matrix.js"></script> -->
+    <script src="./shot-graphs.js"></script>
+    <script src="./shot-graph-data.js"></script>
     <script>
         const titleContainer = document.getElementById("title");
-        titleContainer.innerHTML = title("General Notes (Landolt)");
+        titleContainer.innerHTML = title("Robert Landolt (Shot Maker)");
         
-        // const clubMatrixContainer = document.getElementById("club-matrix");
-        // const clubMatrixComponent = document.createElement("club-matrix");
-        // clubMatrixContainer.appendChild(clubMatrixComponent)
+        (() => {
+            const lineupChains110 = Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["straight"])
+                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
+                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
+                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
+                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
+                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1), [1,1,1,1,1], ['green', 'green', 'green', 'green', 'green'])));
+
+            const lineupChains100 = Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["straight"])
+                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
+                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
+                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
+                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
+                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1), [1,1,1,1,1], ['green', 'green', 'green', 'green', 'green'])));
+
+            const lineupChains95 = [];
+
+            const lineupChains = lineupChains110.concat(lineupChains100).concat(lineupChains95);
+
+            const upperDistance = 250;
+            const lowerDistance = 162;
+
+            const shotGraphContainer = document.getElementById("110-shot-graph-container");
+            const shotGraphComponent = document.createElement("shot-graph");
+            shotGraphComponent.init(
+                lineupChains,
+                upperDistance,
+                lowerDistance,
+            );
+            shotGraphContainer.appendChild(shotGraphComponent);
+        })();
+
+
+        (() => {
+            const lineupChains = Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["straight"])
+                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
+                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
+                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
+                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
+                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1), [1,1,1,1,1], ['green', 'green', 'green', 'green', 'green'])));
+
+            const upperDistance = 250;
+            const lowerDistance = 162;
+
+            const shotGraphContainer = document.getElementById("110-shot-graph-container");
+            const shotGraphComponent = document.createElement("shot-graph");
+            shotGraphComponent.init(
+                lineupChains,
+                upperDistance,
+                lowerDistance,
+            );
+            shotGraphContainer.appendChild(shotGraphComponent);
+        })();
+
+        (() => {
+            const lineupChains = Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["straight"])
+                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
+                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
+                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
+                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
+                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1), [1,1,1,1,1], ['green', 'green', 'green', 'green', 'green'])));
+
+            const upperDistance = 230;
+            const lowerDistance = 142;
+
+            const shotGraphContainer = document.getElementById("100-shot-graph-container");
+            const shotGraphComponent = document.createElement("shot-graph");
+            shotGraphComponent.init(
+                lineupChains,
+                upperDistance,
+                lowerDistance,
+            );
+            shotGraphContainer.appendChild(shotGraphComponent);
+        })();
+
+        // const lineupChains = findLineupChains(_100PERCENT_BACKSPIN_N.rawData)
+
+        // const lineupChains = findLineups(_110PERCENT_BACKSPIN_N_CUTOFFS).map(lineup => {
+            // return new LineupChain([lineup], 200);
+        // });
+
+        // this.lineups = lineups;
+        // this.rootDistance = rootDistance;
+        // this.dotScales = dotScales;
+        // this.dotColors = dotColors;
+        // this.lineColors = lineColors;
+
+        // function findByType(type, root) {
+        //     const results = [];
+        //     const visited = new Set();
+        //     function traverse(value) {
+        //         if (value === null || typeof value !== "object") return;
+        //         if (visited.has(value)) return;
+        //         visited.add(value);
+        //         if (value instanceof type) {
+        //             results.push(value);
+        //         }
+        //         if (Array.isArray(value)) {
+        //             for (const item of value) {
+        //                 traverse(item);
+        //             }
+        //         } else {
+        //             for (const key in value) {
+        //                 traverse(value[key]);
+        //             }
+        //         }
+        //     }
+        //     traverse(root);
+        //     return results;
+        // }
+
+        // function findLineups(root) {
+        //     return findByType(Lineup, root);
+        // }
+
+        // function findLineupChains(root) {
+        //     return findByType(LineupChain, root);
+        // }
+
     </script>
 </body>
