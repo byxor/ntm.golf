@@ -41,7 +41,14 @@ class NotesBrowserComponent extends HTMLElement {
 			<style>
 				.container {
 					position: relative;
-					background: linear-gradient(118deg, rgba(255,255,255,1) 0%, rgba(0,212,255,1) 38%, rgba(9,42,121,1) 81%);
+					
+					/* old: nice relaxing blue colors */ 
+					/* background: linear-gradient(118deg, rgba(255,255,255,1) 0%, rgba(0,212,255,1) 38%, rgba(9,42,121,1) 81%); */
+
+					/* new: darker colors */ 
+					background: linear-gradient(118deg, hsl(0, 24%, 56%) 0%, hsl(0, 31%, 27%) 38%, hsl(0, 0%, 0%) 62%);
+
+
 					margin-top: 2px;
 				}
 

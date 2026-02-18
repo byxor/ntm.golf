@@ -30,6 +30,10 @@
             color: #616161;
         }
 
+        .greyer {
+            color: #333333;
+        }
+
         .no-notes-container {
             opacity: 0.6;
         }
@@ -74,6 +78,14 @@
             -webkit-user-drag: none;
         }
 
+        details {
+            padding-left: 20px;
+        }
+
+        summary {
+            color:#d1d1d1;
+        }
+
         .content-wrapper {
             min-height: 100%;
         }
@@ -106,6 +118,36 @@
         #notes-browser-caution-panel a {
             color: blue;
         }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .gentle-greyscale {
+            filter: grayscale(70%);
+        }
+
+        .partial-greyscale {
+            filter: grayscale(89%);
+        }
+
+        .inline-icon {
+            height: 1em;
+            width: 1em;
+            display: inline-block;
+            vertical-align: -0.15em;
+        }
+
+        .inline-icon-2 {
+            height: 2em;
+            width: 2em;
+            display: inline-block;
+            vertical-align: -0.55em;
+        }
+
+        .translucent {
+            opacity: 0.5;
+        }
     </style>
     <script src="/components/html-header.js"></script>
 </head>
@@ -133,20 +175,29 @@
         </ul>
             <br/>
         <hr>
-        <h2>Course Notes <span class="grey">(Setup Browser)</span></h2>
-        <ul>
-            <li><a href="/notes?course=germany">🌲 Germany</a></li>
-            <li><a href="/notes?course=japan">🌲 Japan</a></li>
-            <li><a href="/notes?course=australia">🌳 Australia</a></li>
-            <li><a href="/notes?course=usa">🌴 USA</a></li>
-            <li><a href="/notes?course=scotland">🌲 Scotland</a></li>
-        </ul>
-        <br/>
-        <p>Power Golfer only <i>(discontinued)</i>.</p>
-        <br/>
+        <h2>Course Notes <span class="grey">(Setup Browser)</span> <span class="greyer italic">(discontinued)</span></h2>
+        <br>
         <div class="no-notes-container">
-            &nbsp;&nbsp;<span><img title="Shoutouts to the NNC (&quot;No Notes Club&quot;)" class="no-notes" src="/assets/misc/no-notes-shaded-128.png"> <i>Playing <b>without notes</b> is recommended for a <b>fairer experience.</b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overreliance on notes can <b>inhibit deeper intuition</b> of the game's mechanics.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use at your own risk (and always be transparent if you use notes for score attempts).<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span>
+            &nbsp;&nbsp;<span><img title="Shoutouts to the NNC (&quot;No Notes Club&quot;)" class="no-notes" src="/assets/misc/no-notes-shaded-128.png"> <i>Playing <b>without notes</b> is recommended for a <b>fairer experience.</b><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overreliance on notes can <b>inhibit deeper intuition</b> of the game's mechanics.<br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use at your own risk (and always be transparent if you use notes for score attempts).<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span>
         </div>
+
+        <details>
+            <summary> &nbsp;<img class="inline-icon-2 translucent partial-greyscale" src="/assets/misc/almeida-head-outlined.png" alt="Power Golfer"></img> &nbsp;Power Golfer &nbsp;&nbsp;<i>(discontinued)</i></summary>
+            <ul>
+                <li><a href="/notes?course=germany"><span class="gentle-greyscale">🌲</span> Germany</a></li>
+                <li><a href="/notes?course=japan"><span class="gentle-greyscale">🌲</span> Japan</a></li>
+                <li><a href="/notes?course=australia"><span class="gentle-greyscale">🌳</span> Australia</a></li>
+                <li><a href="/notes?course=usa"><span class="gentle-greyscale">🌴</span> USA</a></li>
+                <li><a href="/notes?course=scotland"><span class="gentle-greyscale">🌲</span> Scotland</a></li>
+            </ul>
+        </details>
+
+        
+        <br/>
+        <br/>
+
 
         <div id="notes-browser-caution-panel"></div>
 
@@ -170,14 +221,16 @@
         const notesBrowserCautionPanel = document.getElementById('notes-browser-caution-panel');
         
         notesBrowserCautionPanel.innerHTML = cautionPanel(`
-&nbsp;In the interest of fairness, I'd be keen to replace this browser with a more "static" format like PDF.<br><br>It's totally do-able since the setups are in plain .TXT format (See:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/notes/germany.txt" target="_blank">germany.txt</a>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/notes/japan.txt" target="_blank">japan.txt</a>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/notes/australia.txt" target="_blank">australia.txt</a>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/notes/usa.txt" target="_blank">usa.txt</a>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/notes/scotland.txt" target="_blank">scotland.txt</a>
+&nbsp;In the interest of fairness, I'd be keen to replace this browser with a more "static" format like PDF.<br><br><span >It's totally do-able since the setups are in plain .TXT format (See:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 <a href="/notes/germany.txt" target="_blank">germany.txt</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 <a href="/notes/japan.txt" target="_blank">japan.txt</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 <a href="/notes/australia.txt" target="_blank">australia.txt</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 <a href="/notes/usa.txt" target="_blank">usa.txt</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 <a href="/notes/scotland.txt" target="_blank">scotland.txt</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🖼 <a href="/assets/references" target="_blank">references (screenshots)</a>
 
-<br>)<br><br>but it isn't worth the time investment right now given there are no active Almeida players.<br>
+<br>)</span><br><br>but it isn't worth the time investment right now given there are no active Almeida players.<br>
         `)
 
         function updateFooterSpacer() {
