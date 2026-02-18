@@ -158,7 +158,7 @@ The exact probabilities are as follows:
 	</tbody>
 </table>
 
-On later holes, this means you have a **~6.25% chance** of getting **zero** wind, or a **~0.39% chance** of getting the **non-zero** strength and direction you're looking for. This quickly becomes **time consuming** for learning setups.
+On later holes, this means you have a **~6.25% chance** of getting **zero** wind, or a **~0.39% chance** of getting the **non-zero** strength and direction you're looking for. This quickly becomes **time consuming** for learning setups or studying wind.
 
 This guide explains how to manually set the wind strength and direction on any system using UniBIOS. Unlike the cheat engine approach, this method works on real hardware.
 

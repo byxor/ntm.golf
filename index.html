@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <script src="/components/site_banner/site_banner.js" defer></script>
+    <script src="/guides/common-functionality.js"></script>
     <meta charset="UTF-8">
-    <title>ntm.golf - Notes, Guides & Tools</title>
-    <link rel="icon" type="image/png" href="/assets/flags/flag-circle.png"/>
+    <title>ntm.golf - Tools, Guides, Notes, etc.</title>
+    <link rel="icon" type="image/png" href="/assets/misc/titlescreen-golfer-circle-nobg.png"/>
     <style>
         html, body {
             margin: 0;
@@ -23,6 +24,10 @@
 
         i {
             color: #8e8e8e;
+        }
+
+        .grey {
+            color: #616161;
         }
 
         .no-notes-container {
@@ -92,6 +97,15 @@
         .close-footer-btn:hover {
             color: white;
         }
+
+        #notes-browser-caution-panel {
+            width: 800px;
+            padding-left: 20px;
+        }
+
+        #notes-browser-caution-panel a {
+            color: blue;
+        }
     </style>
     <script src="/components/html-header.js"></script>
 </head>
@@ -111,7 +125,7 @@
         <hr>
         <h2>Guides</h2>
         <ul>
-            <li>🦮 Guide - Setting Wind in NTM:</li>
+            <li>🦮 Guide - Setting Wind in NTM - Practice:</li>
             <ul>
                 <li><a href="/guides/setting-wind-with-cheat-engine"><s>With Cheat Engine</s> (outdated) ⚠️</a></li>
                 <li><a href="/guides/setting-wind-with-unibios">With UniBIOS (recommended) ✅</a></li>
@@ -119,7 +133,7 @@
         </ul>
             <br/>
         <hr>
-        <h2>Course Notes</h2>
+        <h2>Course Notes <span class="grey">(Setup Browser)</span></h2>
         <ul>
             <li><a href="/notes?course=germany">🌲 Germany</a></li>
             <li><a href="/notes?course=japan">🌲 Japan</a></li>
@@ -127,12 +141,15 @@
             <li><a href="/notes?course=usa">🌴 USA</a></li>
             <li><a href="/notes?course=scotland">🌲 Scotland</a></li>
         </ul>
-        <p><i><s>(Work in progress)</s></i></p>
-        <p>Power Golfer only for now, though more golfers may come later if I decide to learn them.</p>
+        <br/>
+        <p>Power Golfer only <i>(discontinued)</i>.</p>
         <br/>
         <div class="no-notes-container">
-            &nbsp;&nbsp;<span><img title="Shoutouts to the NNC (&quot;No Notes Club&quot;)" class="no-notes" src="/assets/misc/no-notes-shaded-128.png"> <i>Playing without notes is cool too. I recommend learning both playstyles.</i></span>
+            &nbsp;&nbsp;<span><img title="Shoutouts to the NNC (&quot;No Notes Club&quot;)" class="no-notes" src="/assets/misc/no-notes-shaded-128.png"> <i>Playing <b>without notes</b> is recommended for a <b>fairer experience.</b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overreliance on notes can <b>inhibit deeper intuition</b> of the game's mechanics.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use at your own risk (and always be transparent if you use notes for score attempts).<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span>
         </div>
+
+        <div id="notes-browser-caution-panel"></div>
+
         <br>
         <br>
         <hr>
@@ -150,6 +167,19 @@
     </div>
 
     <script>
+        const notesBrowserCautionPanel = document.getElementById('notes-browser-caution-panel');
+        
+        notesBrowserCautionPanel.innerHTML = cautionPanel(`
+&nbsp;In the interest of fairness, I'd be keen to replace this browser with a more "static" format like PDF.<br><br>It's totally do-able since the setups are in plain .TXT format (See:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/notes/germany.txt" target="_blank">germany.txt</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/notes/japan.txt" target="_blank">japan.txt</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/notes/australia.txt" target="_blank">australia.txt</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/notes/usa.txt" target="_blank">usa.txt</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/notes/scotland.txt" target="_blank">scotland.txt</a>
+
+<br>)<br><br>but it isn't worth the time investment right now given there are no active Almeida players.<br>
+        `)
+
         function updateFooterSpacer() {
             const footer = document.getElementById('footer');
             const spacer = document.querySelector('.footer-spacer');
