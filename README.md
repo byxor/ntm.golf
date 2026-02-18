@@ -12,13 +12,13 @@ https://ntm.golf
 
 ## Guides
 
-- 🦮 Setting Wind in NTM:
+- 🦮 Setting Wind in NTM - Practice:
     - [With Cheat Engine (outdated) ⚠️](https://ntm.golf/guides/setting-wind-with-cheat-engine)
     - [With UniBIOS (recommended) ✅](https://ntm.golf/guides/setting-wind-with-unibios)
 
-## Course Notes
+## Course Notes (Setup Browser) (Discontinued)
 
-Course notes for Fernando Almeida (Power Golfer). More golfers may come later if I decide to learn them.
+Course notes for Fernando Almeida (Power Golfer) (discontinued).
 
 Notes get parsed from the `notes/` folder:
 - 📄 [notes/germany.txt](/notes/germany.txt)
@@ -31,5 +31,3 @@ Notes get parsed from the `notes/` folder:
 Built with HTML/CSS/JS/WebComponents, no external dependencies.
 
 UI misbehaves locally, must be hosted on a web server to avoid CORS restrictions on image masks.
-
-[Check it out](https://ntm.golf/notes)... :warning: **Work in progress...**
