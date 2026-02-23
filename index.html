@@ -26,6 +26,10 @@
             color: #8e8e8e;
         }
 
+        .primary-section {
+            padding-left: 10px;
+        }
+
         .grey {
             color: #616161;
         }
@@ -112,7 +116,7 @@
 
         #notes-browser-caution-panel {
             max-width: 800px;
-            padding-left: 20px;
+            padding-left: 10px;
             padding-right: 20px;
         }
 
@@ -168,11 +172,23 @@
         }
 
         .blueish {
-            color: blue;
+            color: rgb(145, 174, 255);
         }
 
         .course-note-course-list {
             padding-left: 14px;
+        }
+
+        *.unselectable {
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        *.pointer {
+            cursor: pointer;
         }
     </style>
     <script src="/components/html-header.js"></script>
@@ -180,57 +196,62 @@
 
 <body>
     <div class="content-wrapper">
-
-        <h2>Tools </h2>
-        <ul>
-            <li><a href="/input-display">🕹️ NTM Input Display</a></li>
-            <br>
-            <li><a href="/pin-randomizer">⛳ NTM Pin Randomizer (ROM Hack)</a></li>
-            <br>
-            <li><a href="/no-music">🎵 NTM No Music (ROM Hack)</a></li>
-            <br>
-        </ul>
-        <hr>
-        <h2>Guides</h2>
-        <ul>
-            <li>🦮 Guide - Setting Wind in NTM - Practice:</li>
+        <div class="primary-section">
+            <h2>Tools </h2>
             <ul>
-                <li><a href="/guides/setting-wind-with-cheat-engine"><s>With Cheat Engine</s> (outdated) ⚠️</a></li>
-                <li><a href="/guides/setting-wind-with-unibios">With UniBIOS (recommended) ✅</a></li>
+                <li><a href="/input-display">🕹️ NTM Input Display</a></li>
+                <br>
+                <li><a href="/pin-randomizer">⛳ NTM Pin Randomizer (ROM Hack)</a></li>
+                <br>
+                <li><a href="/no-music">🎵 NTM No Music (ROM Hack)</a></li>
+                <br>
             </ul>
-        </ul>
-            <br/>
-        <hr>
-        <h2>Course Notes <span class="grey">(Setup Browser)</span> <span class="greyer italic">(discontinued)</span></h2>
-        <br>
-        <div class="no-notes-container">
-            &nbsp;&nbsp;<span><img title="Shoutouts to the NNC (&quot;No Notes Club&quot;)" class="no-notes" src="/assets/misc/no-notes-shaded-128.png"> <i>Playing <b>without notes</b> is recommended for a <b class="greenish">fairer experience.</b><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overreliance on notes can <b class="redish">inhibit deeper intuition</b> of the game's mechanics.<br><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use at your own risk (and always be transparent if you use notes for score attempts).<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span>
         </div>
-
-        <details>
-            <summary> &nbsp;<img class="inline-icon-2 translucent partial-greyscale" src="/assets/misc/almeida-head-outlined.png" alt="Power Golfer"></img> &nbsp;Power Golfer &nbsp;&nbsp;<i>(discontinued)</i></summary>
-            <div class="course-note-course-list">
+        <hr>
+        <div class="primary-section">
+            <h2>Guides</h2>
+            <ul>
+                <li>🦮 Guide - Setting Wind in NTM - Practice:</li>
                 <ul>
-                    <li>&nbsp;&nbsp;<a href="/notes?course=germany"><span class="gentle-greyscale">🌲</span> Germany</a></li>
-                    <li>&nbsp;&nbsp;<a href="/notes?course=japan"><span class="gentle-greyscale">🌲</span> Japan</a></li>
-                    <li>&nbsp;&nbsp;<a href="/notes?course=australia"><span class="gentle-greyscale">🌳</span> Australia</a></li>
-                    <li>&nbsp;&nbsp;<a href="/notes?course=usa"><span class="gentle-greyscale">🌴</span> USA</a></li>
-                    <li>&nbsp;&nbsp;<a href="/notes?course=scotland"><span class="gentle-greyscale">🌲</span> Scotland</a></li>
+                    <li><a href="/guides/setting-wind-with-cheat-engine"><s>With Cheat Engine</s> (outdated) ⚠️</a></li>
+                    <li><a href="/guides/setting-wind-with-unibios">With UniBIOS (recommended) ✅</a></li>
                 </ul>
+            </ul>
+            <br/>
+        </div>
+        <hr>
+        <div class="primary-section">
+            <h2>Course Notes <span class="grey">(Setup Browser)</span> <span class="greyer italic">(discontinued)</span></h2>
+            <br>
+            <div class="no-notes-container">
+                &nbsp;&nbsp;<span><img title="Shoutouts to the NNC (&quot;No Notes Club&quot;)" class="no-notes" src="/assets/misc/no-notes-shaded-128.png"> <i>Playing <b>without notes</b> is recommended for a <b class="greenish">fairer experience.</b><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overreliance on notes can <b class="redish">inhibit deeper intuition</b> of the game's mechanics.<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use at your own risk (and <b class="blueish">always be transparent</b> if you use notes for score attempts).<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span>
             </div>
-        </details>
 
-        
-        <br/>
-        <br/>
+            <details>
+                <summary class="unselectable pointer" style="max-width: 300px;"> &nbsp;<img class="inline-icon-2 translucent partial-greyscale"  src="/assets/misc/almeida-head-outlined.png" alt="Power Golfer"></img> &nbsp;Power Golfer &nbsp;&nbsp;<i>(discontinued)</i></summary>
+                <div class="course-note-course-list">
+                    <ul>
+                        <li>&nbsp;&nbsp;<a href="/notes?course=germany"><span class="gentle-greyscale">🌲</span> Germany</a></li>
+                        <li>&nbsp;&nbsp;<a href="/notes?course=japan"><span class="gentle-greyscale">🌲</span> Japan</a></li>
+                        <li>&nbsp;&nbsp;<a href="/notes?course=australia"><span class="gentle-greyscale">🌳</span> Australia</a></li>
+                        <li>&nbsp;&nbsp;<a href="/notes?course=usa"><span class="gentle-greyscale">🌴</span> USA</a></li>
+                        <li>&nbsp;&nbsp;<a href="/notes?course=scotland"><span class="gentle-greyscale">🌲</span> Scotland</a></li>
+                    </ul>
+                </div>
+            </details>
+
+            
+            <br/>
+            <br/>
 
 
-        <div id="notes-browser-caution-panel"></div>
+            <div id="notes-browser-caution-panel"></div>
 
-        <br>
-        <br>
+            <br>
+            <br>
+        </div>
         <hr>
 
         <div class="footer-spacer"></div>
@@ -259,6 +280,8 @@
                 img.src = details.open
                     ? powerGolferExpandedImage
                     : powerGolferCollapsedImage;
+
+                img.title = details.open ? "angery... >:(" : "";
 
                 img.classList.toggle("partial-greyscale", !details.open);
                 img.classList.toggle("translucent", !details.open);

@@ -33,6 +33,8 @@ class ShotGraphComponent extends HTMLElement {
         lineupChains = undefined,
         upperDistance = NaN,
         lowerDistance = NaN,
+        drawLines = false,
+        drawDistanceText = false,
     ) {
         const uuid = crypto.randomUUID();
         this.scaleContainerId = `shot-graph-scale-container-${uuid}`;
@@ -44,8 +46,8 @@ class ShotGraphComponent extends HTMLElement {
         this.upperDistance = upperDistance;
         this.lowerDistance = lowerDistance;
 
-        this.drawLines = false;
-        this.drawDistanceText = false;
+        this.drawLines = drawLines;
+        this.drawDistanceText = drawDistanceText;
     }
 
     connectedCallback() {
@@ -150,6 +152,8 @@ class ShotGraphComponent extends HTMLElement {
         }
 
         const drawLineupDot = (lineup, indexInChain, color = 'black', size=1) => {
+            // TODO: cull dots below landolt's head.
+
             const borderColor = 'black';
             const borderSize = 4;
 
@@ -281,7 +285,13 @@ class ShotGraphComponent extends HTMLElement {
             drawLineCenteredAtOffset(-30);
             drawLineCenteredAtOffset(-20);
             drawLineCenteredAtOffset(-10);
+
+            // drawLineCenteredAtOffset(-0.1);
+            // drawLineCenteredAtOffset(-0.05);
             drawLineCenteredAtOffset(0);
+            // drawLineCenteredAtOffset(0.05);
+            // drawLineCenteredAtOffset(0.1);
+
             drawLineCenteredAtOffset(10);
             drawLineCenteredAtOffset(20);
             drawLineCenteredAtOffset(30);
@@ -357,7 +367,7 @@ class ShotGraphComponent extends HTMLElement {
             }
 
             // draw center line (putter pixel)
-            // drawLineAtOffset(0);
+            // drawLineAtOffset(0); // too harsh
 
             // draw lineup image
             context.imageSmoothingEnabled = false;
@@ -398,6 +408,8 @@ class ShotGraphComponent extends HTMLElement {
                     );
                 }
 
+                // TODO: move distance text to own function.
+                // TODO: cull distance text below landolt's head.
                 // draw distance text for 1st lineup (carry)
                 if (this.drawDistanceText && firstLineup && !isNaN(firstLineup.distance)) {
                     context.font = "50px Tahoma";

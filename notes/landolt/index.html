@@ -37,28 +37,39 @@
                 .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
                 .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
                 .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
-                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1), [1,1,1,1,1], ['green', 'green', 'green', 'green', 'green'])));
+                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['green']));
 
             const lineupChains100 = Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["straight"])
                 .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
                 .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
                 .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
                 .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
-                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1), [1,1,1,1,1], ['green', 'green', 'green', 'green', 'green'])));
+                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['yellow']));
 
-            const lineupChains95 = [];
+            const lineupChains95 = Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["straight"])
+                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
+                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
+                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
+                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
+                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['red']));
+
 
             const lineupChains = lineupChains110.concat(lineupChains100).concat(lineupChains95);
 
             const upperDistance = 250;
             const lowerDistance = 162;
 
-            const shotGraphContainer = document.getElementById("110-shot-graph-container");
+            const drawLines = false;
+            const drawDistanceText = false;
+
+            const shotGraphContainer = document.getElementById("combined-shot-graph-container");
             const shotGraphComponent = document.createElement("shot-graph");
             shotGraphComponent.init(
                 lineupChains,
                 upperDistance,
                 lowerDistance,
+                drawLines,
+                drawDistanceText,
             );
             shotGraphContainer.appendChild(shotGraphComponent);
         })();
@@ -70,10 +81,13 @@
                 .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
                 .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
                 .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
-                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1), [1,1,1,1,1], ['green', 'green', 'green', 'green', 'green'])));
+                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['green']));
 
             const upperDistance = 250;
             const lowerDistance = 162;
+
+            const drawLines = false;
+            const drawDistanceText = true;
 
             const shotGraphContainer = document.getElementById("110-shot-graph-container");
             const shotGraphComponent = document.createElement("shot-graph");
@@ -81,6 +95,8 @@
                 lineupChains,
                 upperDistance,
                 lowerDistance,
+                drawLines,
+                drawDistanceText,
             );
             shotGraphContainer.appendChild(shotGraphComponent);
         })();
@@ -91,10 +107,13 @@
                 .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
                 .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
                 .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
-                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1), [1,1,1,1,1], ['green', 'green', 'green', 'green', 'green'])));
+                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['yellow']));
 
             const upperDistance = 230;
             const lowerDistance = 142;
+
+            const drawLines = false;
+            const drawDistanceText = true;
 
             const shotGraphContainer = document.getElementById("100-shot-graph-container");
             const shotGraphComponent = document.createElement("shot-graph");
@@ -102,6 +121,34 @@
                 lineupChains,
                 upperDistance,
                 lowerDistance,
+                drawLines,
+                drawDistanceText,
+            );
+            shotGraphContainer.appendChild(shotGraphComponent);
+        })();
+
+        (() => {
+            const lineupChains = Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["straight"])
+                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
+                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
+                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
+                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
+                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1,1,1,1,1], ['red', 'red', 'red', 'red', 'red']));
+
+            const upperDistance = 220;
+            const lowerDistance = 132;
+
+            const drawLines = false;
+            const drawDistanceText = true;
+
+            const shotGraphContainer = document.getElementById("95-shot-graph-container");
+            const shotGraphComponent = document.createElement("shot-graph");
+            shotGraphComponent.init(
+                lineupChains,
+                upperDistance,
+                lowerDistance,
+                drawLines,
+                drawDistanceText,
             );
             shotGraphContainer.appendChild(shotGraphComponent);
         })();
