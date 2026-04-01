@@ -1,3 +1,17 @@
+const clubLineups = {
+    "100Y": new Lineup(NaN, NaN),
+    "130Y": new Lineup(NaN, NaN),
+    "150Y": new Lineup(NaN, NaN),
+    "160Y": new Lineup(NaN, NaN),
+    "170Y": new Lineup(NaN, NaN),
+    "180Y": new Lineup(NaN, NaN),
+    "190Y": new Lineup(NaN, NaN),
+    "200Y": new Lineup(NaN, NaN),
+    "210Y": new Lineup(NaN, NaN),
+    "220Y": new Lineup(NaN, NaN),
+    "230Y": new Lineup(NaN, NaN),
+};
+
 const _110PERCENT_BACKSPIN_N_CUTOFFS = {
     "2hook":  {
         "100Y": new Lineup(102, -38),
@@ -146,7 +160,7 @@ const _95PERCENT_BACKSPIN_N_CUTOFFS = {
         "200Y": new Lineup(183, -35),
         "210Y": new Lineup(193, -36),
         "220Y": new Lineup(204, -37),
-        "230Y": new Lineup(213, -37),
+        "230Y": new Lineup(213, -37), // this one SUX, barely goes in tbh
     },
     "1hook":  {
         "100Y": new Lineup(90, -16), // works better at 89 tbh
@@ -202,360 +216,796 @@ const _95PERCENT_BACKSPIN_N_CUTOFFS = {
     },
 }
 
+// ----------------- wind plots -----------------
 
+const windLineups = {
+    "0": new Lineup(NaN, NaN),
+    "1": new Lineup(NaN, NaN),
+    "2": new Lineup(NaN, NaN),
+    "3": new Lineup(NaN, NaN),
+    "4": new Lineup(NaN, NaN),
+    "5": new Lineup(NaN, NaN),
+    "6": new Lineup(NaN, NaN),
+    "7": new Lineup(NaN, NaN),
+    "8": new Lineup(NaN, NaN),
+    "9": new Lineup(NaN, NaN),
+    "10": new Lineup(NaN, NaN),
+    "11": new Lineup(NaN, NaN),
+    "12": new Lineup(NaN, NaN),
+    "13": new Lineup(NaN, NaN),
+    "14": new Lineup(NaN, NaN),
+    "15": new Lineup(NaN, NaN),
+};
 
-// const _100PERCENT_BACKSPIN_N = new ShotType(
-//     "100%",
-//     "backspin",
-//     "N",
-//     {
-//         // lineup chains = [carry, cutoff, total]
+const clubWindLineups = {
+    "230Y": {...windLineups},
+    "220Y": {...windLineups},
+    "210Y": {...windLineups},
+    "200Y": {...windLineups},
+    "190Y": {...windLineups},
+    "180Y": {...windLineups},
+    "170Y": {...windLineups},
+    "160Y": {...windLineups},
+    "150Y": {...windLineups},
+    "130Y": {...windLineups},
+    "100Y": {...windLineups},
+};
 
-//         "2hook": {
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_N = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(248.25, -38),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": new Lineup(255.00, 0),
+        },
+    },
+};
 
-//             "100Y": new LineupChain([
-//                 // new Lineup(91, -31),
-//                 // new Lineup(93, -34),
-//                 // new Lineup(85, 4),
-//             ], 100),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_N1 = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(248.00, -23),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": new Lineup(252.75, 15),
+        },
+    },
+};
 
-//             "130Y": new LineupChain([
-//                 // new Lineup(115, -30),
-//                 // new Lineup(122, -36),
-//                 // new Lineup(128, -27),
-//             ], 130),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(240.00, -10),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": new Lineup(243.75, 29),
+        },
+    },
+};
 
-//             "150Y": new LineupChain([
-//                 new Lineup(132, -30),
-//                 new Lineup(142, -37),
-//                 // new Lineup(141, -30),
-//             ], 150),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE1 = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(229.70, -2),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": new Lineup(230.75, 37),
+        },
+    },
+};
 
-//             "160Y": new LineupChain([
-//                 new Lineup(140, -30),
-//                 new Lineup(152, -36),
-//                 // new Lineup(152, -31),
-//             ], 160),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_E = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(215, 1),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": new Lineup(216.0, 40),
+        },
+    },
+};
 
-//             "170Y": new LineupChain([
-//                 new Lineup(149, -30),
-//                 new Lineup(162, -37),
-//                 // new Lineup(162, -37),
-//             ], 170),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_E1 = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(201.75, -2),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": new Lineup(201.75, 36),
+        },
+    },
+};
 
-//             "180Y": new LineupChain([
-//                 new Lineup(156, -29),
-//                 new Lineup(172, -36),
-//                 // new Lineup(172, -36),
-//             ], 180),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(189.75, -9),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": new Lineup(190.25, 28),
+        },
+    },
+};
 
-//             "190Y": new LineupChain([
-//                 new Lineup(164, -29),
-//                 new Lineup(181, -37),
-//                 // new Lineup(181, -37),
-//             ], 190),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE1 = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(181.10, -20),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": new Lineup(182.75, 15),
+        },
+    },
+};
 
-//             "200Y": new LineupChain([
-//                 new Lineup(173, -29),
-//                 new Lineup(191, -38),
-//                 // new Lineup(191, -38),
-//             ], 200),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_S = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(177.00, -34),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": new Lineup(180.00, 0),
+        },
+    },
+};
 
-//             "210Y": new LineupChain([
-//                 new Lineup(182, -29),
-//                 new Lineup(200, -37),
-//                 // new Lineup(202, -39),
-//             ], 210),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_S1 = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(178.00, -48),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": mirrorHorizontally(_95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE1["straight"]["230Y"]["15"]),
+        },
+    },
+};
 
-//             "220Y": new LineupChain([
-//                 new Lineup(190, -29),
-//                 new Lineup(211, -37),
-//                 // new Lineup(211, -37),
-//             ], 220),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SW = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(183.10, -62),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": mirrorHorizontally(_95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE["straight"]["230Y"]["15"]),
+        },
+    },
+};
 
-//             "230Y": new LineupChain([
-//                 new Lineup(197, -28),
-//                 new Lineup(219, -37),
-//                 // new Lineup(222, -39),
-//             ], 230),
-//         },
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SW1 = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(193.25, -72),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": mirrorHorizontally(_95PERCENT_BACKSPIN_N_CUTOFFS_WIND_E1["straight"]["230Y"]["15"]),
+        },
+    },
+};
 
-//         "1hook": {
-            
-//             "100Y": new LineupChain([
-//                 // new Lineup(91, -16),
-//                 // new Lineup(94, -17),
-//                 // new Lineup(80, 8),
-//             ], 100),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_W = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(207.50, -76),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": mirrorHorizontally(_95PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["230Y"]["15"]), // new Lineup(216.0, -39),
+        },
+    },
+};
 
-//             "130Y": new LineupChain([
-//                 // new Lineup(117, -15),
-//                 // new Lineup(123, -18),
-//                 // new Lineup(124, -2),
-//             ], 130),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_W1 = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(221.00, -74),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": mirrorHorizontally(_95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE1["straight"]["230Y"]["15"]),
+        },
+    },
+};
 
-//             "150Y": new LineupChain([
-//                 new Lineup(133, -15),
-//                 new Lineup(143, -18),
-//                 // new Lineup(140, -14),
-//             ], 150),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NW = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(234.00, -66),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": mirrorHorizontally(_95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE["straight"]["230Y"]["15"]),
+        },
+    },
+};
 
-//             "160Y": new LineupChain([
-//                 new Lineup(142, -15),
-//                 new Lineup(154, -18),
-//                 // new Lineup(154, -15),
-//             ], 160),
+const _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NW1 = {
+    "2hook": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]["230Y"],
+            "15": new Lineup(244.75, -53),
+        },
+    },
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _95PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": mirrorHorizontally(_95PERCENT_BACKSPIN_N_CUTOFFS_WIND_N1["straight"]["230Y"]["15"]),
+        },
+    },
+};
 
-//             "170Y": new LineupChain([
-//                 new Lineup(150, -15),
-//                 new Lineup(163, -18),
-//                 // new Lineup(163, -18),
-//             ], 170),
+// 100 percent backspin N
 
-//             "180Y": new LineupChain([
-//                 new Lineup(158, -15),
-//                 new Lineup(173, -18),
-//                 new Lineup(NaN, NaN),
-//             ], 180),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_N = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+        },
+    },
+};
 
-//             "190Y": new LineupChain([
-//                 new Lineup(167, -15),
-//                 new Lineup(184, -19),
-//                 new Lineup(NaN, NaN),
-//             ], 190),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_N1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+        },
+    },
+};
 
-//             "200Y": new LineupChain([
-//                 new Lineup(175, -15),
-//                 new Lineup(194, -19),
-//                 new Lineup(NaN, NaN),
-//             ], 200),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+        },
+    },
+};
 
-//             "210Y": new LineupChain([
-//                 new Lineup(183, -15),
-//                 new Lineup(205, -19),
-//                 new Lineup(NaN, NaN),
-//             ], 210),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+        },
+    },
+};
 
-//             "220Y": new LineupChain([
-//                 new Lineup(191, -14),
-//                 new Lineup(215, -19),
-//                 new Lineup(NaN, NaN),
-//             ], 220),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E = {
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": new Lineup(223.25, 42),
+        },
+        "220Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["220Y"],
+            "15": new Lineup(0, 0),
+        },
+        "210Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["210Y"],
+            "15": new Lineup(0, 0),
+        },
+        "200Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["200Y"],
+            "15": new Lineup(0, 0),
+        },
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": new Lineup(0, 0),
+        },
+        "180Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["180Y"],
+            "15": new Lineup(0, 0),
+        },
+        "170Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["170Y"],
+            "15": new Lineup(0, 0),
+        },
+        "160Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["160Y"],
+            "15": new Lineup(0, 0),
+        },
+        "150Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["150Y"],
+            "15": new Lineup(140.25, 66),
+        },
+    },
+};
 
-//             "230Y": new LineupChain([
-//                 new Lineup(199, -13),
-//                 new Lineup(224, -19),
-//                 new Lineup(224, NaN),
-//             ], 230),
-//         },
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+        },
+    },
+};
 
-//         "straight": {
-            
-//             "100Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+        },
+    },
+};
 
-//             "130Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+        },
+    },
+};
 
-//             "150Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_S = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+        },
+    },
+};
 
-//             "160Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_S1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_100PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE1["straight"]["190Y"]["15"]),
+        },
+    },
+};
 
-//             "170Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_SW = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_100PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE["straight"]["190Y"]["15"]), // new Lineup(165.25, -40),
+        },
+    },
+};
 
-//             "180Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_SW1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E1["straight"]["190Y"]["15"]),
+        },
+    },
+};
 
-//             "190Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_W = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["190Y"]["15"]),// new Lineup(199.0, -61),
+        },
+    },
+};
 
-//             "200Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_W1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_100PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE1["straight"]["190Y"]["15"]), // new Lineup(179.75, -55),
+        },
+    },
+};
 
-//             "210Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_NW = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_100PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE["straight"]["190Y"]["15"]),
+        },
+    },
+};
 
-//             "220Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_NW1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _100PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_100PERCENT_BACKSPIN_N_CUTOFFS_WIND_N1["straight"]["190Y"]["15"]),
+        },
+    },
+};
 
-//             "230Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
-//         },
+// 110 percent backspin N
 
-//         "1slice": {
-            
-//             "100Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_N = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": new Lineup(259.50, 0),
+        },
+    },
+};
 
-//             "130Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_N1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": new Lineup(254.25, 24),
+        },
+    },
+};
 
-//             "150Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": new Lineup(239.75, 44),
+        },
+    },
+};
 
-//             "160Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": new Lineup(220.00, 58),
+        },
+    },
+};
 
-//             "170Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E = {
+    "straight": {
+        "230Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["230Y"],
+            "15": new Lineup(244.75, 49),
+        },
+        "220Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["220Y"],
+            "15": new Lineup(234.00, 53),
+        },
+        "210Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["210Y"],
+            "15": new Lineup(222.25, 57),
+        },
+        "200Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["200Y"],
+            "15": new Lineup(210.25, 59),
+        },
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": new Lineup(199.00, 62),
+        },
+        "180Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["180Y"],
+            "15": new Lineup(187.50, 64),
+        },
+        "170Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["170Y"],
+            "15": new Lineup(176.25, 68),
+        },
+        "160Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["160Y"],
+            "15": new Lineup(164.25, 72),
+        },
+        "150Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["150Y"],
+            "15": new Lineup(152.75, 76),
+        },
+        "130Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["130Y"],
+            "15": new Lineup(128.50, 94),
+        },
+        "100Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["100Y"],
+            "15": new Lineup(93.50, 129),
+        },
+    },
+};
 
-//             "180Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": new Lineup(179.75, 56),
+        },
+    },
+};
 
-//             "190Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": new Lineup(165.25, 41),
+        },
+    },
+};
 
-//             "200Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": new Lineup(156.50, 22),
+        },
+    },
+};
 
-//             "210Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_S = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": new Lineup(153.25, 0),
+        },
+    },
+};
 
-//             "220Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_S1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_110PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE1["straight"]["190Y"]["15"]),
+        },
+    },
+};
 
-//             "230Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
-//         },
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_SW = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_110PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE["straight"]["190Y"]["15"]), // new Lineup(165.25, -40),
+        },
+    },
+};
 
-//         "2slice": {
-            
-//             "100Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_SW1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E1["straight"]["190Y"]["15"]),
+        },
+    },
+};
 
-//             "130Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_W = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["190Y"]["15"]),// new Lineup(199.0, -61),
+        },
+    },
+};
 
-//             "150Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_W1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_110PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE1["straight"]["190Y"]["15"]), // new Lineup(179.75, -55),
+        },
+    },
+};
 
-//             "160Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_NW = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_110PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE["straight"]["190Y"]["15"]),
+        },
+    },
+};
 
-//             "170Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_NW1 = {
+    "straight": {
+        "190Y": {
+            ...windLineups,
+            "0": _110PERCENT_BACKSPIN_N_CUTOFFS["straight"]["190Y"],
+            "15": mirrorHorizontally(_110PERCENT_BACKSPIN_N_CUTOFFS_WIND_N1["straight"]["190Y"]["15"]),
+        },
+    },
+};
 
-//             "180Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+function mirrorHorizontally(lineup) {
+    if (lineup.isKnown()) {
+        const newOffset = lineup.offset === 0 ? 0 : ((-1) * lineup.offset) + 1;
+        return new Lineup(lineup.distance, newOffset);
+    }
+    return lineup;
+}
 
-//             "190Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+function fractionalOffset(lineup, fraction) {
+    if (lineup.isKnown()) {
+        const newOffset = lineup.offset * fraction;
+        return new Lineup(lineup.distance, newOffset);
+    }
+    return lineup;
+}
 
-//             "200Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+// ----------------- crosswind graphs -----------------
 
-//             "210Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+const _BACKSPIN_N_CUTOFF_15_CROSSWIND = {
+    "230Y": [
+        undefined,
+        _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["230Y"]["15"],
+        _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["230Y"]["15"],
+    ],
+    "220Y": [
+        undefined,
+        _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["220Y"]["15"],
+        _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["220Y"]["15"],
+    ],
+    "210Y": [
+        undefined,
+        _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["210Y"]["15"],
+        _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["210Y"]["15"],
+    ],
+    "200Y": [
+        undefined,
+        _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["200Y"]["15"],
+        _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["200Y"]["15"],
+    ],
+    "190Y": [
+        undefined,
+        _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["190Y"]["15"],
+        _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["190Y"]["15"],
+    ],
+    "180Y": [
+        undefined,
+        _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["180Y"]["15"],
+        _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["180Y"]["15"],
+    ],
+    "170Y": [
+        undefined,
+        _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["170Y"]["15"],
+        _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["170Y"]["15"],
+    ],
+    "160Y": [
+        undefined,
+        _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["160Y"]["15"],
+        _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["160Y"]["15"],
+    ],
+    "150Y": [
+        undefined,
+        _100PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["150Y"]["15"],
+        _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["150Y"]["15"],
+    ],
+    // "130Y": [
+    //     undefined,
+    //     undefined,
+    //     _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["130Y"]["15"],
+    // ],
+    // "100Y": [
+    //     undefined,
+    //     undefined,
+    //     _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"]["100Y"]["15"],
+    // ],
 
-//             "220Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
+    // build this dynamically?
+    // should it be for 5 wind? 3 wind? 15 wind? why not all 3? (all 15 would be too much)
 
-//             "230Y": new LineupChain([
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//                 new Lineup(NaN, NaN),
-//             ]),
-//         },
-
-//         // maybe need wind units here somehow?
-//     }
-// )
+    // should we have 4 per club? 95/100/101/110
+}

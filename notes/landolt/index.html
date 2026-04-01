@@ -20,6 +20,17 @@
         <div id="100-shot-graph-container"></div>
         <br></br>
         <div id="95-shot-graph-container"></div>
+        <br></br>
+        <div id="95-percent-230y-2-hook-wind-plot-container"></div>
+        <br></br>
+        <div id="95-percent-230y-straight-wind-plot-container"></div>
+        <br></br>
+        <div id="110-percent-190y-straight-wind-plot-container"></div>
+        <br></br>
+        <div id="crosswind-graph-container"></div>
+        <br></br>
+        <div id="headwind-tailwind-graph-container"></div> <!-- this one wont be symmetrical -->
+        <br></br>
 
     </div>
 
@@ -31,38 +42,512 @@
         const titleContainer = document.getElementById("title");
         titleContainer.innerHTML = title("Robert Landolt (Shot Maker)");
         
+        // (() => {
+        //     const lineupChains110 = Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["straight"])
+        //         .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
+        //         .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
+        //         .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
+        //         .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
+        //         .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['green']));
+
+        //     const lineupChains100 = Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["straight"])
+        //         .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
+        //         .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
+        //         .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
+        //         .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
+        //         .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['yellow']));
+
+        //     const lineupChains95 = Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["straight"])
+        //         .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
+        //         .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
+        //         .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
+        //         .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
+        //         .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['red']));
+
+
+        //     const lineupChains = lineupChains110.concat(lineupChains100).concat(lineupChains95);
+
+        //     const upperDistance = 250;
+        //     const lowerDistance = 162;
+
+        //     const drawLines = false;
+        //     const drawDistanceText = false;
+
+        //     const shotGraphContainer = document.getElementById("combined-shot-graph-container");
+        //     const shotGraphComponent = document.createElement("shot-graph");
+        //     shotGraphComponent.init(
+        //         lineupChains,
+        //         upperDistance,
+        //         lowerDistance,
+        //         drawLines,
+        //         drawDistanceText,
+        //     );
+        //     shotGraphContainer.appendChild(shotGraphComponent);
+        // })();
+
+
+        // (() => {
+        //     const lineupChains = Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["straight"])
+        //         .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
+        //         .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
+        //         .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
+        //         .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
+        //         .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['green']));
+
+        //     const upperDistance = 250;
+        //     const lowerDistance = 162;
+
+        //     const drawLines = false;
+        //     const drawDistanceText = true;
+
+        //     const shotGraphContainer = document.getElementById("110-shot-graph-container");
+        //     const shotGraphComponent = document.createElement("shot-graph");
+        //     shotGraphComponent.init(
+        //         lineupChains,
+        //         upperDistance,
+        //         lowerDistance,
+        //         drawLines,
+        //         drawDistanceText,
+        //     );
+        //     shotGraphContainer.appendChild(shotGraphComponent);
+        // })();
+
+        // (() => {
+        //     const lineupChains = Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["straight"])
+        //         .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
+        //         .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
+        //         .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
+        //         .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
+        //         .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['yellow']));
+
+        //     const upperDistance = 230;
+        //     const lowerDistance = 142;
+
+        //     const drawLines = false;
+        //     const drawDistanceText = true;
+
+        //     const shotGraphContainer = document.getElementById("100-shot-graph-container");
+        //     const shotGraphComponent = document.createElement("shot-graph");
+        //     shotGraphComponent.init(
+        //         lineupChains,
+        //         upperDistance,
+        //         lowerDistance,
+        //         drawLines,
+        //         drawDistanceText,
+        //     );
+        //     shotGraphContainer.appendChild(shotGraphComponent);
+        // })();
+
+        // (() => {
+        //     const lineupChains = Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["straight"])
+        //         .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
+        //         .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
+        //         .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
+        //         .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
+        //         .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['red']));
+
+        //     const upperDistance = 220;
+        //     const lowerDistance = 132;
+
+        //     const drawLines = false;
+        //     const drawDistanceText = true;
+
+        //     const shotGraphContainer = document.getElementById("95-shot-graph-container");
+        //     const shotGraphComponent = document.createElement("shot-graph");
+        //     shotGraphComponent.init(
+        //         lineupChains,
+        //         upperDistance,
+        //         lowerDistance,
+        //         drawLines,
+        //         drawDistanceText,
+        //     );
+        //     shotGraphContainer.appendChild(shotGraphComponent);
+        // })();
+
+        function mapToLineupChainsForWindPlot([club, x], directionIndex) {
+            const rootDistance = parseInt(club.substring(0,club.length-1));
+            const lineups = Object.entries(x).map(([windString, lineup]) => lineup/*.floored()*/);
+
+            // Fill lineup gaps via linear interpolation between known data
+            let lowerKnownIndex = 0;
+            let upperKnownIndex = 0;
+            let lowerKnownLineup = lineups[0];
+            let upperKnownLineup =  lineups[0];
+            for (let i = 0; i < lineups.length - 1; i++) {
+                const lineup = lineups[i];
+        
+                if (lineup.isKnown()) {
+                    lowerKnownIndex = i;
+                    lowerKnownLineup = lineups[i];
+                    continue;
+                }
+
+                if (upperKnownIndex <= i) {
+                    for (j = i + 1; j < lineups.length; j++) {
+                        const potentialLineup = lineups[j];
+        
+                        if (potentialLineup.isKnown()) {
+                            upperKnownIndex = j;
+                            upperKnownLineup = lineups[j];
+                            break;
+                        }
+                    }
+                }
+
+                const gapBetweenKnownLineups = upperKnownIndex - lowerKnownIndex;
+                const t = (i - lowerKnownIndex) / gapBetweenKnownLineups;
+
+                const distance = interpolate(t, lowerKnownLineup.distance, upperKnownLineup.distance);
+                const offset = interpolate(t, lowerKnownLineup.offset, upperKnownLineup.offset);
+                lineups[i] = new Lineup(distance, offset);
+            }
+
+            // Scale dots based on wind strength
+            const dotScales = Array(16).fill(0);
+            for (let i = 0; i < dotScales.length; i++) {
+                const min = 0.65;
+            }
+            dotScales[0] = 0.45;
+            // dotScales[1] = 0.45;
+            dotScales[5] = directionIndex % 2 === 0 ? 0.8 : 0;
+            dotScales[10] = directionIndex % 4 === 0 ? 0.7 : 0;
+            dotScales[15] = directionIndex % 4 === 0 ? -0.4 : 0;
+
+            // Color dots based on wind strength
+            const dotColors = Array(16).fill('red');
+            for (let i = 0; i < dotColors.length; i++) {
+                dotColors[i] = interpolateColor(i / dotColors.length, '#c7ffc2', 'yellow', 'red');
+            }
+            dotColors[0] = 'white';
+            // dotColors[5] = '#191919';
+            // dotColors[10] = '#191919';
+
+            // Normalize lineup distances/offsets to integers
+            for (let i = 0; i < lineups.length; i++) {
+                // lineups[i] = lineups[i].floored();
+                // lineups[i] = new Lineup(lineups[i].distance, Math.round(lineups[i].offset));
+            }
+
+            let lineColors = Array(322).fill('black');
+            if (directionIndex % 4 === 0) {
+                lineColors = Array(322).fill('black') 
+            } else if ((directionIndex + 2) % 4 === 0) {
+                lineColors = Array(322).fill('black')
+            } else {
+                lineColors = Array(322).fill('rgba(135, 135, 135, 0.5)');
+            }
+            
+
+            return new LineupChain(lineups, rootDistance, dotScales, dotColors, lineColors);
+        }
+
+        function connectWindDirectionsWithWeb(lineupChains) {
+            const newLineupChains = [];
+
+            const newLineupChain = (lineups, windStrength) => {
+                const rootDistance = NaN;
+
+                const dotScales = Array(32).fill(0);
+                const dotColors = Array(32).fill('black');
+                let lineColors = Array(32).fill('rgba(135, 135, 135, 0.48)');
+
+                if (windStrength === 1 || windStrength === 5 || windStrength === 15) {
+                    lineColors = Array(32).fill('black');
+                } else if (windStrength === 10) {
+                    lineColors = Array(32).fill('grey');
+                }
+
+                return new LineupChain(
+                    lineups,
+                    rootDistance,
+                    dotScales,
+                    dotColors,
+                    lineColors,
+                );         
+            }
+
+            // connect N -> NW+1 -> N
+            for (let i = 0; i < 16; i++) {
+                const lineups = [
+                ];
+                for (let j = 0; j < lineupChains[i].lineups.length; j++) {
+                    lineups.push(
+                        lineupChains[j].lineups[i]
+                    );
+                }
+                if (i > 0) {
+                    lineups.push(
+                        lineupChains[0].lineups[i]
+                    );
+                    newLineupChains.push(newLineupChain(lineups, i));
+                }
+            }
+
+            return newLineupChains.concat(lineupChains);
+        }
+
+        function createWindPlotLabels(lineupChains) {
+            const labels = [];
+            for (let directionIndex = 0; directionIndex < 16; directionIndex++) {
+                const lineupChainIndex = lineupChains.length - 16 + directionIndex;
+
+                const zeroLineup = lineupChains[lineupChainIndex].lineups[0];
+                const fifteenLineup = lineupChains[lineupChainIndex].lineups[15];
+
+                const xDeltaPerWind = (fifteenLineup.offset - zeroLineup.offset) / 15;
+                const yDeltaPerWind = (fifteenLineup.distance - zeroLineup.distance) / 15;
+                const xt = 15.9;
+                const yt = 17.9;
+
+                const xlabelLineup = new Lineup(
+                    zeroLineup.distance + (xt * yDeltaPerWind),
+                    zeroLineup.offset + (xt * xDeltaPerWind)
+                )
+
+                const ylabelLineup = new Lineup(
+                    zeroLineup.distance + (yt * yDeltaPerWind),
+                    zeroLineup.offset + (yt * xDeltaPerWind)
+                )
+
+                const xText = (xDeltaPerWind === 0 ? '0' : (xDeltaPerWind > 0 ? `${xDeltaPerWind.toFixed(1)}→` : `←${Math.abs(xDeltaPerWind.toFixed(1))}`)) + `(${Math.round(xDeltaPerWind * 15)})`;
+                const yText = (yDeltaPerWind === 0 ? '0' : (yDeltaPerWind > 0 ? `${yDeltaPerWind.toFixed(1)}↑` : `${Math.abs(yDeltaPerWind.toFixed(1))}↓ `)) + `(${Math.round(yDeltaPerWind * 15)})`;
+
+                // labels.push(new Label(
+                //     xText,
+                //     xlabelLineup,
+                //     "center",
+                //     "Verdana",
+                //     1.4,
+                //     "black",
+                //     0.25,
+                // ));
+
+                labels.push(new Label(
+                    yText,
+                    ylabelLineup,
+                    "center",
+                    "Verdana",
+                    2,
+                    "black",
+                    0.25,
+                ));
+            }
+            return labels;
+        }
+
         (() => {
-            const lineupChains110 = Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["straight"])
-                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
-                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
-                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
-                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
-                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['green']));
+            const club = "230Y";
 
-            const lineupChains100 = Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["straight"])
-                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
-                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
-                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
-                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
-                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['yellow']));
+            const lineupChains = connectWindDirectionsWithWeb(
+                [[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_N["2hook"][club]]]
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_N1["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE1["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_E1["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE1["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_S["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_S1["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SW["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SW1["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_W["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_W1["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NW["2hook"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NW1["2hook"][club]]])
+                .map(mapToLineupChainsForWindPlot)
+            );
 
-            const lineupChains95 = Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["straight"])
-                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
-                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
-                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
-                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
-                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['red']));
+            const upperDistance = 220 + 52 - 13;
+            const lowerDistance = 132 + 52;
 
+            const drawLines = true;
+            const drawDistanceText = false;
 
-            const lineupChains = lineupChains110.concat(lineupChains100).concat(lineupChains95);
+            const labels = createWindPlotLabels(lineupChains);
 
-            const upperDistance = 250;
-            const lowerDistance = 162;
+            const extraRows = 16;
+
+            const shotGraphContainer = document.getElementById("95-percent-230y-2-hook-wind-plot-container");
+            const shotGraphComponent = document.createElement("shot-graph");
+            shotGraphComponent.init(
+                lineupChains,
+                upperDistance,
+                lowerDistance,
+                drawLines,
+                drawDistanceText,
+                labels,
+                extraRows,
+            );
+            shotGraphContainer.appendChild(shotGraphComponent);
+        })();
+
+        (() => {
+            const club = "230Y";
+
+            const lineupChains = connectWindDirectionsWithWeb(
+                [[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_N["straight"][club]]]
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_N1["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE1["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_E1["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE1["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_S["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_S1["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SW["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_SW1["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_W["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_W1["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NW["straight"][club]]])
+                .concat([[club, _95PERCENT_BACKSPIN_N_CUTOFFS_WIND_NW1["straight"][club]]])
+                .map(mapToLineupChainsForWindPlot)
+            );
+
+            const upperDistance = 220 + 48 - 13;
+            const lowerDistance = 132 + 48;
+
+            const drawLines = true;
+            const drawDistanceText = false;
+
+            const labels = createWindPlotLabels(lineupChains);
+
+            const shotGraphContainer = document.getElementById("95-percent-230y-straight-wind-plot-container");
+            const shotGraphComponent = document.createElement("shot-graph");
+            shotGraphComponent.init(
+                lineupChains,
+                upperDistance,
+                lowerDistance,
+                drawLines,
+                drawDistanceText,
+                labels,
+            );
+            shotGraphContainer.appendChild(shotGraphComponent);
+        })();
+
+        (() => {
+            const club = "190Y";
+
+            const lineupChains = 
+            connectWindDirectionsWithWeb(
+                [[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_N["straight"][club]]]
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_N1["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_NE1["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_E1["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_SE1["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_S["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_S1["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_SW["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_SW1["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_W["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_W1["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_NW["straight"][club]]])
+                .concat([[club, _110PERCENT_BACKSPIN_N_CUTOFFS_WIND_NW1["straight"][club]]])
+                .map(mapToLineupChainsForWindPlot)
+            );
+
+            const upperDistance = 220 + 64 - 13;
+            const lowerDistance = 132 + 64;
+
+            const drawLines = true;
+            const drawDistanceText = false;
+
+            const labels = createWindPlotLabels(lineupChains);
+
+            const extraRows = 48;
+
+            const shotGraphContainer = document.getElementById("110-percent-190y-straight-wind-plot-container");
+            const shotGraphComponent = document.createElement("shot-graph");
+            shotGraphComponent.init(
+                lineupChains,
+                upperDistance,
+                lowerDistance,
+                drawLines,
+                drawDistanceText,
+                labels,
+                extraRows,
+            );
+            shotGraphContainer.appendChild(shotGraphComponent);
+        })();
+
+        (() => {
+
+            const lineupChains = Object.entries(_BACKSPIN_N_CUTOFF_15_CROSSWIND)
+                .map(([club, [_95Lineup, _100Lineup, _110Lineup]]) => {
+                    const rootDistance = parseInt(club.substring(0, club.length-1));
+
+                    const f = (lineup, y) => {
+                        const offsetPerWind = lineup.offset / 15;
+
+                        easternLineup = new Lineup(y, offsetPerWind * 5);
+                        westernLineup = mirrorHorizontally(easternLineup);
+
+                        return [
+                            fractionalOffset(easternLineup, 3),
+                            fractionalOffset(easternLineup, 2),
+                            easternLineup,
+                            fractionalOffset(easternLineup, 4/5),
+                            fractionalOffset(easternLineup, 3/5),
+                            fractionalOffset(easternLineup, 2/5),
+                            fractionalOffset(easternLineup, 1/5),
+                            new Lineup(y, 0),
+                            fractionalOffset(westernLineup, 1/5),
+                            fractionalOffset(westernLineup, 2/5),
+                            fractionalOffset(westernLineup, 3/5),
+                            fractionalOffset(westernLineup, 4/5),
+                            westernLineup,
+                            fractionalOffset(westernLineup, 2),
+                            fractionalOffset(westernLineup, 3),
+                        ];
+                    }
+
+                    const endSize = -0.2;
+                    const defaultSize = 0.5;
+                    const zeroSize = 0.2;
+
+                    const defaultColor = 'grey';
+                    const zeroColor = 'white'
+
+                    const adjusted100Lineups = f(_100Lineup, rootDistance);
+                    const _100LineupChain = new LineupChain(
+                        adjusted100Lineups,
+                        rootDistance,
+                        [defaultSize, defaultSize, endSize, defaultSize, defaultSize, defaultSize, defaultSize, zeroSize, defaultSize, defaultSize, defaultSize, defaultSize, endSize, defaultSize, defaultSize],
+                        [defaultColor,  defaultColor, 'yellow', defaultColor, defaultColor, defaultColor, defaultColor, zeroColor, defaultColor, defaultColor, defaultColor, defaultColor, 'yellow', defaultColor,  defaultColor],
+                        Array(15).fill('black'),
+                    );
+
+                    const adjusted110Lineups = f(_110Lineup, rootDistance + 3);
+                    const _110LineupChain = new LineupChain(
+                        adjusted110Lineups,
+                        rootDistance,
+                        [defaultSize, defaultSize, endSize, defaultSize, defaultSize, defaultSize, defaultSize, zeroSize, defaultSize, defaultSize, defaultSize, defaultSize, endSize, defaultSize, defaultSize],
+                        [defaultColor,  defaultColor, 'green', defaultColor, defaultColor, defaultColor, defaultColor, zeroColor, defaultColor, defaultColor, defaultColor, defaultColor, 'green', defaultColor,  defaultColor],
+                        Array(15).fill('black'),
+                    );
+                    
+                    return [
+                        _100LineupChain,
+                        _110LineupChain 
+                    ]
+                })
+                .reduce((a, b) => a.concat(b), []);
+
+            const upperDistance = 235;
+            const lowerDistance = 160;
 
             const drawLines = false;
             const drawDistanceText = false;
 
-            const shotGraphContainer = document.getElementById("combined-shot-graph-container");
+            const labels = []; //createWindPlotLabels(lineupChains);
+
+            const extraRows = 10//65;
+
+            const shotGraphContainer = document.getElementById("crosswind-graph-container");
             const shotGraphComponent = document.createElement("shot-graph");
             shotGraphComponent.init(
                 lineupChains,
@@ -70,100 +555,11 @@
                 lowerDistance,
                 drawLines,
                 drawDistanceText,
+                labels,
+                extraRows,
             );
             shotGraphContainer.appendChild(shotGraphComponent);
         })();
-
-
-        (() => {
-            const lineupChains = Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["straight"])
-                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
-                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
-                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
-                .concat(Object.entries(_110PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
-                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['green']));
-
-            const upperDistance = 250;
-            const lowerDistance = 162;
-
-            const drawLines = false;
-            const drawDistanceText = true;
-
-            const shotGraphContainer = document.getElementById("110-shot-graph-container");
-            const shotGraphComponent = document.createElement("shot-graph");
-            shotGraphComponent.init(
-                lineupChains,
-                upperDistance,
-                lowerDistance,
-                drawLines,
-                drawDistanceText,
-            );
-            shotGraphContainer.appendChild(shotGraphComponent);
-        })();
-
-        (() => {
-            const lineupChains = Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["straight"])
-                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
-                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
-                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
-                .concat(Object.entries(_100PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
-                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1], ['yellow']));
-
-            const upperDistance = 230;
-            const lowerDistance = 142;
-
-            const drawLines = false;
-            const drawDistanceText = true;
-
-            const shotGraphContainer = document.getElementById("100-shot-graph-container");
-            const shotGraphComponent = document.createElement("shot-graph");
-            shotGraphComponent.init(
-                lineupChains,
-                upperDistance,
-                lowerDistance,
-                drawLines,
-                drawDistanceText,
-            );
-            shotGraphContainer.appendChild(shotGraphComponent);
-        })();
-
-        (() => {
-            const lineupChains = Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["straight"])
-                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["1hook"]))
-                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["2hook"]))
-                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["1slice"]))
-                .concat(Object.entries(_95PERCENT_BACKSPIN_N_CUTOFFS["2slice"]))
-                .map(([club, lineup]) => new LineupChain([lineup], parseInt(club.substring(0,club.length-1)), [1,1,1,1,1], ['red', 'red', 'red', 'red', 'red']));
-
-            const upperDistance = 220;
-            const lowerDistance = 132;
-
-            const drawLines = false;
-            const drawDistanceText = true;
-
-            const shotGraphContainer = document.getElementById("95-shot-graph-container");
-            const shotGraphComponent = document.createElement("shot-graph");
-            shotGraphComponent.init(
-                lineupChains,
-                upperDistance,
-                lowerDistance,
-                drawLines,
-                drawDistanceText,
-            );
-            shotGraphContainer.appendChild(shotGraphComponent);
-        })();
-
-        // const lineupChains = findLineupChains(_100PERCENT_BACKSPIN_N.rawData)
-
-        // const lineupChains = findLineups(_110PERCENT_BACKSPIN_N_CUTOFFS).map(lineup => {
-            // return new LineupChain([lineup], 200);
-        // });
-
-        // this.lineups = lineups;
-        // this.rootDistance = rootDistance;
-        // this.dotScales = dotScales;
-        // this.dotColors = dotColors;
-        // this.lineColors = lineColors;
 
         // function findByType(type, root) {
         //     const results = [];
@@ -196,6 +592,53 @@
         // function findLineupChains(root) {
         //     return findByType(LineupChain, root);
         // }
+
+        function interpolate(t, from, to) {
+            return from + (t * (to - from));
+        }
+
+        function interpolateColor(
+            t,
+            c1 = "red",
+            c2 = "yellow",
+            c3 = "green"
+        ) {
+            t = Math.max(0, Math.min(1, t));
+
+            const parse = (c) => {
+                const ctx = document.createElement("canvas").getContext("2d");
+                ctx.fillStyle = c;
+                const s = ctx.fillStyle;
+
+                if (s.startsWith("#")) {
+                    let hex = s.slice(1);
+                if (hex.length === 3) hex = hex.split("").map(x => x + x).join("");
+                    const n = parseInt(hex, 16);
+                    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+                }
+
+                const m = s.match(/\d+/g).map(Number);
+                return [m[0], m[1], m[2]];
+            };
+
+            const a = parse(c1);
+            const b = parse(c2);
+            const c = c3 ? parse(c3) : null;
+
+            const lerp = (x, y, t) => Math.round(x + (y - x) * t);
+
+            if (!c) {
+                return `rgb(${lerp(a[0], b[0], t)}, ${lerp(a[1], b[1], t)}, ${lerp(a[2], b[2], t)})`;
+            }
+
+            if (t <= 0.5) {
+                const tt = t / 0.5;
+                return `rgb(${lerp(a[0], b[0], tt)}, ${lerp(a[1], b[1], tt)}, ${lerp(a[2], b[2], tt)})`;
+            }
+
+            const tt = (t - 0.5) / 0.5;
+            return `rgb(${lerp(b[0], c[0], tt)}, ${lerp(b[1], c[1], tt)}, ${lerp(b[2], c[2], tt)})`;
+        }
 
     </script>
 </body>

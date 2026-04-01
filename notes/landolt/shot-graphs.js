@@ -6,6 +6,14 @@ class Lineup {
         this.distance = distance;
         this.offset = offset;
     }
+
+    floored() {
+        return new Lineup(Math.floor(this.distance), this.offset);
+    }
+
+    isKnown() {
+        return (!isNaN(this.distance)) && (!isNaN(this.offset));
+    }
 }
 
 class LineupChain {
@@ -14,7 +22,7 @@ class LineupChain {
         rootDistance = NaN, // e.g. 160 if shooting with a 160y club
         dotScales = [0.8, 1, 0.75],
         dotColors = ['red', 'gold', 'green'],
-        lineColors = ['black', 'black'], //['#ff0000', '#ffef62', 'grey'],
+        lineColors = [], //['#ff0000', '#ffef62', 'grey'],
     ) {
         this.lineups = lineups;
         this.rootDistance = rootDistance;
@@ -28,6 +36,26 @@ class LineupChain {
     }
 }
 
+class Label {
+    constructor(
+        text = "<?>",
+        lineup = new Lineup(200, 0),
+        anchor = "centered",
+        fontFamily,
+        fontSize,
+        fontColor,
+        alpha,
+    ) {
+        this.text = text;
+        this.lineup = lineup;
+        this.anchor = anchor;
+        this.fontFamily = fontFamily;
+        this.fontSize = fontSize;
+        this.fontColor = fontColor;
+        this.alpha = alpha;
+    }
+}
+
 class ShotGraphComponent extends HTMLElement {
     init(
         lineupChains = undefined,
@@ -35,12 +63,14 @@ class ShotGraphComponent extends HTMLElement {
         lowerDistance = NaN,
         drawLines = false,
         drawDistanceText = false,
+        labels = undefined,
+        extraRows = 0,
     ) {
         const uuid = crypto.randomUUID();
         this.scaleContainerId = `shot-graph-scale-container-${uuid}`;
         this.cropContainerId = `shot-graph-crop-container-${uuid}`;
         this.canvasId = `shot-graph-canvas-${uuid}`;
-        this.scale = 32;
+        this.scale = 5//5//40;//18//12//22;//32;
 
         this.lineupChains = lineupChains;
         this.upperDistance = upperDistance;
@@ -48,6 +78,10 @@ class ShotGraphComponent extends HTMLElement {
 
         this.drawLines = drawLines;
         this.drawDistanceText = drawDistanceText;
+
+        this.labels = labels === undefined ? [] : labels;
+
+        this.extraRows = extraRows;
     }
 
     connectedCallback() {
@@ -66,7 +100,7 @@ class ShotGraphComponent extends HTMLElement {
 
                 #${this.cropContainerId} {
                     width: ${300 * scale}px;
-                    height: ${200 * scale}px;
+                    height: ${(200 + 24 - 8 + this.extraRows) * scale}px;
                     overflow: hidden;
                     position: relative;
                 }
@@ -75,7 +109,8 @@ class ShotGraphComponent extends HTMLElement {
                     position: absolute;
                     image-rendering: pixelated;
                     image-rendering: crisp-edges;
-                    left: ${-54 * scale}px;
+                    /*left: ${-54 * scale}px;*/
+                    left: ${-30 * scale}px;
                 }
             </style>
 
@@ -103,8 +138,8 @@ class ShotGraphComponent extends HTMLElement {
             });
         };
 
-        const columnOrRowToGlobalPixel = (column) => {
-            return column * scale;
+        const columnOrRowToGlobalPixel = (n) => {
+            return n * scale;
         }
 
         const distanceToRow = distance => {
@@ -154,6 +189,10 @@ class ShotGraphComponent extends HTMLElement {
         const drawLineupDot = (lineup, indexInChain, color = 'black', size=1) => {
             // TODO: cull dots below landolt's head.
 
+            if (size === 0) {
+                return;
+            }
+
             const borderColor = 'black';
             const borderSize = 4;
 
@@ -178,6 +217,13 @@ class ShotGraphComponent extends HTMLElement {
         }
 
         const drawLineBetweenLineupDots = (lineup1, lineup2, indexInChain, color = 'grey') => {
+            if (lineup1 === undefined || lineup2 === undefined) {
+                return;
+            }
+            // if (!(lineup1.isKnown() && lineup2.isKnown())) {
+            //     return;
+            // }
+            
             const xPos1 = columnOrRowToGlobalPixel(offsetToColumn(lineup1.offset)) + (scale / 2);
             const yPos1 = columnOrRowToGlobalPixel(distanceToRow(lineup1.distance)) + (scale / 2);
 
@@ -203,6 +249,40 @@ class ShotGraphComponent extends HTMLElement {
             context.fillRect(columnOrRowToGlobalPixel(offsetToColumn(fromOffset)), 0, columnOrRowToGlobalPixel(widthInColumns), canvas.height);
         }
 
+        const drawLabel = label => {
+            const oldTextAlign = context.textAlign;
+            const oldAlpha = context.globalAlpha;
+            const oldTextBaseline = context.textBaseline;
+            const oldFont = context.font;
+            // const oldFontFamily = context.fontFamily;
+            // const oldFontSize = context.fontSize;
+            // const oldFontColor = context.fontColor;
+            const oldFillStyle = context.fillStyle;
+
+            context.textAlign = label.anchor;
+            context.globalAlpha = label.alpha;
+            context.textBaseline = "middle";
+            // context.fontFamily = label.fontFamily;
+            // context.fontSize = label.fontSize;
+            // context.fontColor = label.fontColor;
+            context.font = `${label.fontSize * scale}px ${label.fontFamily}`;
+            context.fillStyle = label.fontColor;
+
+            const xPos = columnOrRowToGlobalPixel(offsetToColumn(label.lineup.offset));
+            const yPos = columnOrRowToGlobalPixel(distanceToRow(label.lineup.distance));
+            // context.strokeText(label.text, xPos, yPos);
+            context.fillText(label.text, xPos, yPos);
+
+            context.globalAlpha = oldAlpha;
+            context.textAlign = oldTextAlign;
+            context.textBaseline = oldTextBaseline;
+            // context.fontFamily = oldFontFamily;
+            // context.fontSize = oldFontSize;
+            // context.fontColor = oldFontColor;
+            context.font = oldFont;
+            context.fillStyle = oldFillStyle;
+        };
+
         // TODO: draw arrows on the chain lines? for things like backspin
 
         // --------------------------------
@@ -214,7 +294,7 @@ class ShotGraphComponent extends HTMLElement {
             const [lineupImage] = images;
 
             canvas.width = lineupImage.width * scale;
-            canvas.height = lineupImage.height * scale;
+            canvas.height = (this.extraRows + lineupImage.height) * scale;
 
             // draw background
             context.fillStyle = 'white';
@@ -229,7 +309,14 @@ class ShotGraphComponent extends HTMLElement {
             drawPatch(-15/*-21*/, 0, 'rgba(207, 238, 198, 0.3)'); // green arrow 1hook
             drawPatch(-31, -16, 'rgba(218, 115, 231, 0.2)'); // wedge hair
             drawPatch(-47, -32, 'rgba(73, 176, 202, 0.2)'); // wood hair
-            drawPatch(-78, -48, 'rgba(233, 118, 41, 0.1)'); // shirt/back
+            drawPatch(-74, -48, 'rgba(233, 118, 41, 0.1)'); // shirt/back
+            drawPatch(-78, -75 , 'rgba(102, 164, 223, 0.15)'); // trousers
+            // left grey bar border (dark part)
+            drawPatch(-55, -55 , 'rgba(102, 164, 223, 0.15)');
+            drawPatch(-56, -56 , 'rgba(102, 164, 223, 0.3)');
+            // right grey bar border (dark part)
+            drawPatch(55, 55 , 'rgba(102, 164, 223, 0.15)');
+            drawPatch(56, 56 , 'rgba(102, 164, 223, 0.3)');
 
             // draw distance grid
             drawLineCenteredAtRow(distanceToRow(300), 'black');
@@ -280,11 +367,37 @@ class ShotGraphComponent extends HTMLElement {
             drawLineCenteredAtRow(distanceToRow(95), fiveLineColor);
             drawLineCenteredAtRow(distanceToRow(85), fiveLineColor);
 
+            drawLineCenteredAtOffset(-90);
+            drawLineCenteredAtOffset(-80);
+            drawLineCenteredAtOffset(-70);
+            drawLineCenteredAtOffset(-60);
             drawLineCenteredAtOffset(-50);
             drawLineCenteredAtOffset(-40);
             drawLineCenteredAtOffset(-30);
             drawLineCenteredAtOffset(-20);
             drawLineCenteredAtOffset(-10);
+
+            drawLineCenteredAtOffset(-95, fiveLineColor);
+            drawLineCenteredAtOffset(-85, fiveLineColor);
+            drawLineCenteredAtOffset(-75, fiveLineColor);
+            drawLineCenteredAtOffset(-65, fiveLineColor);
+            drawLineCenteredAtOffset(-55, fiveLineColor);
+            drawLineCenteredAtOffset(-45, fiveLineColor);
+            drawLineCenteredAtOffset(-35, fiveLineColor);
+            drawLineCenteredAtOffset(-25, fiveLineColor);
+            drawLineCenteredAtOffset(-15, fiveLineColor);
+            drawLineCenteredAtOffset(-5, fiveLineColor);
+
+            drawLineCenteredAtOffset(95, fiveLineColor);
+            drawLineCenteredAtOffset(85, fiveLineColor);
+            drawLineCenteredAtOffset(75, fiveLineColor);
+            drawLineCenteredAtOffset(65, fiveLineColor);
+            drawLineCenteredAtOffset(55, fiveLineColor);
+            drawLineCenteredAtOffset(45, fiveLineColor);
+            drawLineCenteredAtOffset(35, fiveLineColor);
+            drawLineCenteredAtOffset(25, fiveLineColor);
+            drawLineCenteredAtOffset(15, fiveLineColor);
+            drawLineCenteredAtOffset(5, fiveLineColor);
 
             // drawLineCenteredAtOffset(-0.1);
             // drawLineCenteredAtOffset(-0.05);
@@ -297,6 +410,10 @@ class ShotGraphComponent extends HTMLElement {
             drawLineCenteredAtOffset(30);
             drawLineCenteredAtOffset(40);
             drawLineCenteredAtOffset(50);
+            drawLineCenteredAtOffset(60);
+            drawLineCenteredAtOffset(70);
+            drawLineCenteredAtOffset(80);
+            drawLineCenteredAtOffset(90);
 
             // const d1 = 20;
             // const d2 = 35;
@@ -344,26 +461,30 @@ class ShotGraphComponent extends HTMLElement {
 
             // draw distance grid units
             const drawDistanceGridUnit = (distance) => {
-                    context.font = "92px Tahoma";
-                    context.lineWidth = 6;
-                    context.lineJoin = "round";
-                    context.miterLimit = 2;
-                    context.strokeStyle = "black";
-                    context.fillStyle = "grey";
+                return;
+                context.font = "92px Tahoma";
+                context.lineWidth = 6;
+                context.lineJoin = "round";
+                context.miterLimit = 2;
+                context.strokeStyle = "black";
+                context.fillStyle = "grey";
 
-                    const distanceText =  `${distance}`;
-                    const xPos = columnOrRowToGlobalPixel(offsetToColumn(-51)/*53*/);
-                    const yPos = columnOrRowToGlobalPixel(distanceToRow(distance)) + 43;
+                const distanceText =  `${distance}`;
+                const xPos = columnOrRowToGlobalPixel(offsetToColumn(0) + 2.78/*offsetToColumn(-51)*/);
+                const yPos = columnOrRowToGlobalPixel(distanceToRow(distance)) + 43;
 
-                    context.globalAlpha = 0.45;
-                    const oldTextAlign = context.textAlign;
-                    context.textAlign = "right";
-                    context.fillText(distanceText, xPos, yPos);
-                    context.globalAlpha = 1;
-                    context.textAlign = oldTextAlign;
+                context.globalAlpha = 0.45 / 2.0;
+                const oldTextAlign = context.textAlign;
+                context.textAlign = "right";
+                context.fillText(distanceText, xPos, yPos);
+                context.globalAlpha = 1;
+                context.textAlign = oldTextAlign;
             }
-            for (let distance = 300; distance >= 80; distance -= 10) {
-                drawDistanceGridUnit(distance);
+            for (let distance = 300; distance >= 80; distance -= 5) {
+                // drawDistanceGridUnit(distance);
+                if (distance % 10 === 0) {
+                    drawDistanceGridUnit(distance);
+                }
             }
 
             // draw center line (putter pixel)
@@ -374,38 +495,42 @@ class ShotGraphComponent extends HTMLElement {
             context.webkitImageSmoothingEnabled = false;
             context.mozImageSmoothingEnabled = false;
             context.msImageSmoothingEnabled = false;
-            context.drawImage(lineupImage, 0, 0, lineupImage.width * scale, lineupImage.height * scale);
+            context.drawImage(lineupImage, 0, this.extraRows * scale, lineupImage.width * scale, lineupImage.height * scale);
 
             // draw lineup chains
             this.lineupChains.forEach((lineupChain, chainIndex) => {
 
-                // draw lines between dots
-                lineupChain.forEach((_, indexInChain) => {
-                    if (indexInChain >= lineupChain.lineups.length - 1) {
-                        return;
-                    }
-
-                    drawLineBetweenLineupDots(
-                        lineupChain.lineups[indexInChain],
-                        lineupChain.lineups[indexInChain+1],
-                        indexInChain,
-                        lineupChain.lineColors[indexInChain]
-                    );
-                });
-
                 const firstLineup = lineupChain.lineups[0];
                 const secondLineup = lineupChain.lineups[1];
-
                 // draw gentle line to the root distance (from the cutoff) (or whatever else i set the target to)
                 const targetLineup = firstLineup;
                 if (this.drawLines && targetLineup && !isNaN(targetLineup.distance)) {
-                    drawLineBetweenLineupDots(
-                        new Lineup(lineupChain.rootDistance, 0),
-                        targetLineup,
-                        NaN,
-                        'rgba(29, 51, 110, 0.88)'
-                        // 'rgba(84, 124, 235, 0.43)'
-                    );
+                    const skip = true;
+                    if (!skip) {
+                        drawLineBetweenLineupDots(
+                            new Lineup(lineupChain.rootDistance, 0),
+                            targetLineup,
+                            NaN,
+                            'rgba(29, 51, 110, 0.88)'
+                            // 'rgba(84, 124, 235, 0.43)'
+                        );
+                    }
+                }
+
+                if (this.drawLines) {
+                    // draw lines between dots
+                    lineupChain.forEach((_, indexInChain) => {
+                        if (indexInChain >= lineupChain.lineups.length - 1) {
+                            return;
+                        }
+
+                        drawLineBetweenLineupDots(
+                            lineupChain.lineups[indexInChain],
+                            lineupChain.lineups[indexInChain+1],
+                            indexInChain,
+                            lineupChain.lineColors[indexInChain]
+                        );
+                    });
                 }
 
                 // TODO: move distance text to own function.
@@ -456,6 +581,11 @@ class ShotGraphComponent extends HTMLElement {
                     drawLineupDot(lineup, indexInChain, lineupChain.dotColors[indexInChain], lineupChain.dotScales[indexInChain]);
                 });
             });
+
+            // draw labels
+            if (this.labels) {
+                this.labels.forEach(drawLabel);
+            }
         });
     }
 }

@@ -38,9 +38,9 @@ def run(context: Context):
     load_courses(context)
 
     # Make some edits
-    # _hack_make_training_course(context)
-    edit_courses(context)
-    edit_courses_backwards(context)
+    _hack_make_training_course(context)
+    # edit_courses(context)
+    # edit_courses_backwards(context)
 
     # Write the output
     context.rom.write_zip("C:/Users/Brandon/Documents/Fightcade/emulator/fbneo/ROMs/turfmast.zip")
@@ -96,6 +96,9 @@ def _hack_make_training_course(context: Context):
         tile_map.set_tile_at(21, y, Tile.FAIRWAY.id_)
         # tile_map.set_tile_at(13, y, Tile.FAIRWAY.id_)
 
+    # Extend green
+    tile_map.set_tiles_between(16, 19, 23, 31, Tile.GREEN.id_)
+
     # Remove trees and bunkers from objects
     object_map.objects = [
         object
@@ -124,8 +127,6 @@ def _hack_make_training_course(context: Context):
 
     print("\n".join(str(pin) for pin in pin_map))
 
-
-
     green_index = 0
     for object in object_map:
         if object.id_ == GameObjectId.GREEN:
@@ -138,7 +139,7 @@ def _hack_make_training_course(context: Context):
     green_x = object_map[green_index].x
     green_y = object_map[green_index].y
 
-    pin_type = "front_of_green"
+    pin_type = "back_of_green"
     for i in range(0, len(pin_map)):
         pin_map[i].x = green_x
         if pin_type == "back_of_green":
