@@ -4,7 +4,7 @@
     <script src="/components/site_banner/site_banner.js" defer></script>
     <script src="/guides/common-functionality.js"></script>
     <meta charset="UTF-8">
-    <title>ntm.golf - Tools, Guides, Notes, etc.</title>
+    <title>ntm.golf - Tools, Guides, etc.</title>
     <link rel="icon" type="image/png" href="/assets/misc/titlescreen-golfer-circle-nobg.png"/>
     <style>
         html, body {
@@ -38,20 +38,6 @@
             color: #333333;
         }
 
-        .no-notes-container {
-            opacity: 0.6;
-        }
-
-        .no-notes {
-            width: 2em;
-            vertical-align: -0.6em;
-            opacity: 0.9;
-        }
-
-        .feet-up {
-            /* height: 140px; */
-        }
-
         .footer {
             position: fixed;
             left: 0;
@@ -75,6 +61,7 @@
 
         .disclaimer {
             margin-top: 4px;
+            margin-right: 50px;
         }
 
         img { /* bit hacky */
@@ -112,16 +99,6 @@
 
         .close-footer-btn:hover {
             color: white;
-        }
-
-        #notes-browser-caution-panel {
-            max-width: 800px;
-            padding-left: 10px;
-            padding-right: 20px;
-        }
-
-        #notes-browser-caution-panel a {
-            color: blue;
         }
 
         .italic {
@@ -175,10 +152,6 @@
             color: rgb(145, 174, 255);
         }
 
-        .course-note-course-list {
-            padding-left: 14px;
-        }
-
         *.unselectable {
             -moz-user-select: -moz-none;
             -khtml-user-select: none;
@@ -219,40 +192,6 @@
             </ul>
             <br/>
         </div>
-        <hr>
-        <div class="primary-section">
-            <h2>Course Notes <span class="grey">(Setup Browser)</span> <span class="greyer italic">(discontinued)</span></h2>
-            <br>
-            <div class="no-notes-container">
-                &nbsp;&nbsp;<span><img title="Shoutouts to the NNC (&quot;No Notes Club&quot;)" class="no-notes" src="/assets/misc/no-notes-shaded-128.png"> <i>Playing <b>without notes</b> is recommended for a <b class="greenish">fairer experience.</b><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overreliance on notes can <b class="redish">inhibit deeper intuition</b> of the game's mechanics.<br><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use at your own risk (and <b class="blueish">always be transparent</b> if you use notes for score attempts).<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span>
-            </div>
-
-            <details>
-                <summary class="unselectable pointer" style="max-width: 300px;"> &nbsp;<img class="inline-icon-2 translucent partial-greyscale"  src="/assets/misc/almeida-head-outlined.png" alt="Power Golfer"></img> &nbsp;Power Golfer &nbsp;&nbsp;<i>(discontinued)</i></summary>
-                <div class="course-note-course-list">
-                    <ul>
-                        <li>&nbsp;&nbsp;<a href="/notes?course=germany"><span class="gentle-greyscale">🌲</span> Germany</a></li>
-                        <li>&nbsp;&nbsp;<a href="/notes?course=japan"><span class="gentle-greyscale">🌲</span> Japan</a></li>
-                        <li>&nbsp;&nbsp;<a href="/notes?course=australia"><span class="gentle-greyscale">🌳</span> Australia</a></li>
-                        <li>&nbsp;&nbsp;<a href="/notes?course=usa"><span class="gentle-greyscale">🌴</span> USA</a></li>
-                        <li>&nbsp;&nbsp;<a href="/notes?course=scotland"><span class="gentle-greyscale">🌲</span> Scotland</a></li>
-                    </ul>
-                </div>
-            </details>
-
-            
-            <br/>
-            <br/>
-
-
-            <div id="notes-browser-caution-panel"></div>
-
-            <br>
-            <br>
-        </div>
-        <hr>
 
         <div class="footer-spacer"></div>
     </div>
@@ -260,51 +199,10 @@
     <div class="footer" id="footer">
         <button class="close-footer-btn" onclick="document.getElementById('footer').style.display='none'; updateFooterSpacer();">×</button>
         <br>
-        <img src="/assets/official-endorsement-2025.png" class="footer-image">
-        <img src="/assets/feet-up.gif" class="footer-image feet-up">
-        <br>
         <p class="disclaimer"><b>ntm.golf</b> is an independent fan website and is not affiliated with, endorsed by, or in any way officially connected with the Neo Turf Masters franchise, its developers, SNK, or any of its subsidiaries. All trademarks, game screenshots, and logos appearing on the site are the property of their respective owners. Any reference to the Neo Turf Masters game is for descriptive purposes only and does not imply any association with or endorsement by the game's creators.</p>
     </div>
 
     <script>
-        document.querySelectorAll("details").forEach(details => {
-            const img = details.querySelector("summary img");
-
-            const powerGolferCollapsedImage = "/assets/misc/almeida-head-outlined.png";
-            const powerGolferExpandedImage = "/assets/misc/almeida-head-outlined-angery.png";
-
-            const preload = new Image();
-            preload.src = powerGolferExpandedImage;
-
-            details.addEventListener("toggle", () => {
-                img.src = details.open
-                    ? powerGolferExpandedImage
-                    : powerGolferCollapsedImage;
-
-                img.title = details.open ? "angery... >:(" : "";
-
-                img.classList.toggle("partial-greyscale", !details.open);
-                img.classList.toggle("translucent", !details.open);
-                img.classList.toggle("inline-icon-2", !details.open);
-                img.classList.toggle("inline-icon-4", details.open);
-            });
-        });
-
-
-        const notesBrowserCautionPanel = document.getElementById('notes-browser-caution-panel');
-        notesBrowserCautionPanel.innerHTML = cautionPanel(`
-&nbsp;In the interest of fairness, I'd be keen to replace this browser with a more "static" format like PDF.<br><br><span >It's totally do-able since the setups are in plain .TXT format (See:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 <a href="/notes/germany.txt" target="_blank">germany.txt</a>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 <a href="/notes/japan.txt" target="_blank">japan.txt</a>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 <a href="/notes/australia.txt" target="_blank">australia.txt</a>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 <a href="/notes/usa.txt" target="_blank">usa.txt</a>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📄 <a href="/notes/scotland.txt" target="_blank">scotland.txt</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🖼 <a href="/assets/references" target="_blank">references (screenshots)</a>
-
-<br>)</span><br><br>but it isn't worth the time investment right now given there are no active Almeida players.<br>
-        `)
-
         function updateFooterSpacer() {
             const footer = document.getElementById('footer');
             const spacer = document.querySelector('.footer-spacer');

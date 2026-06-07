@@ -10,7 +10,7 @@
 		html, body {
 			margin: 0;
 			height: 100%;
-
+			background-color: black;
 		}
 		#app * {
 		    -webkit-touch-callout: none;
@@ -20,64 +20,197 @@
 		          -ms-user-select: none;
 		              user-select: none;
 		}
+
+		a {
+            color: #dedede;
+        }
+
+        i {
+            color: #8e8e8e;
+        }
+
+        .primary-section {
+            padding-left: 10px;
+        }
+
+        .grey {
+            color: #616161;
+        }
+
+        .greyer {
+            color: #333333;
+        }
+
+        .no-notes-container {
+            opacity: 0.6;
+        }
+
+        .no-notes {
+            width: 2em;
+            vertical-align: -0.6em;
+            opacity: 0.9;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #4e4e4e;
+            color: #a4a4a4;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .footer p {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .footer-image {
+            height: 125px;
+            padding-bottom: 8px;
+        }
+
+        .disclaimer {
+            margin-top: 4px;
+        }
+
+        img { /* bit hacky */
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        details {
+            padding-left: 20px;
+        }
+
+        summary {
+            color:#d1d1d1;
+        }
+
+        .content-wrapper {
+            min-height: 100%;
+        }
+
+        .footer-spacer {
+            height: 0;
+        }
+
+        .close-footer-btn {
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            color: #cfcfcf;
+            font-size: 60px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .close-footer-btn:hover {
+            color: white;
+        }
+
+        #notes-browser-caution-panel {
+            max-width: 800px;
+            padding-left: 10px;
+            padding-right: 20px;
+        }
+
+        #notes-browser-caution-panel a {
+            color: blue;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .gentle-greyscale {
+            filter: grayscale(70%);
+        }
+
+        .partial-greyscale {
+            filter: grayscale(89%);
+        }
+
+        .inline-icon {
+            height: 1em;
+            width: 1em;
+            display: inline-block;
+            vertical-align: -0.15em;
+        }
+
+        .inline-icon-2 {
+            height: 2em;
+            width: 2em;
+            display: inline-block;
+            vertical-align: -0.55em;
+        }
+
+        .inline-icon-4 {
+            height: 4em;
+            width: 4em;
+            display: inline-block;
+            vertical-align: -1.6em;
+            margin-right: -14px;
+            margin-left: -12px;
+        }
+
+        .translucent {
+            opacity: 0.5;
+        }
+
+        .greenish {
+            color: rgb(97, 163, 97);
+        }
+
+        .redish {
+            color: rgb(184, 91, 91);
+        }
+
+        .blueish {
+            color: rgb(145, 174, 255);
+        }
+
+        .course-note-course-list {
+            padding-left: 14px;
+        }
+
+		        *.unselectable {
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        *.pointer {
+            cursor: pointer;
+        }
+
+		.smaller-line-break {
+		    line-height: 0.5em;
+		}
+
 	</style>
 </head>
 
 <body>
-	<script src="/models/wind.js"></script>
-	<script src="/models/reference.js"></script>
-	<script src="/models/subpixel.js"></script>
-	<script src="/models/surface.js"></script>
-	<script src="/models/stance.js"></script>
-	<script src="/models/club.js"></script>
-	<script src="/models/power.js"></script>
-	<script src="/models/height.js"></script>
-	<script src="/models/spin.js"></script>
-	<script src="/models/outcome.js"></script>
-	<script src="/models/setup.js"></script>
-	<script src="/models/pin.js"></script>
-	<script src="/models/hole.js"></script>
-	<script src="/models/coverage.js"></script>
-	<script src="/models/hole-note.js"></script>
-	<script src="/models/course.js"></script>
-
-	<script src="/notes/parser/index.js"></script>
-	<script src="/notes/browser/index.js"></script>
-
 	<script src="/components/index.js"></script>
 	<script src="/components/html-header.js"></script>
-	<script src="/notes/browser/components/breadcrumb.js"></script>
-	<script src="/notes/browser/components/breadcrumbs.js"></script>
-	<script src="/notes/browser/components/club.js"></script>
-	<script src="/notes/browser/components/course-select.js"></script>
-	<script src="/notes/browser/components/course.js"></script>
-	<script src="/notes/browser/components/graphical-pin-select.js"></script>
-	<script src="/notes/browser/components/hole-select.js"></script>
-	<script src="/notes/browser/components/hole-notes.js"></script>
-	<script src="/notes/browser/components/hole.js"></script>
-	<script src="/notes/browser/components/notes-browser.js"></script>
-	<script src="/notes/browser/components/notes.js"></script>
-	<script src="/notes/browser/components/outcome.js"></script>
-	<script src="/notes/browser/components/pin-select.js"></script>
-	<script src="/notes/browser/components/progress.js"></script>
-	<script src="/notes/browser/components/setup.js"></script>
-	<script src="/notes/browser/components/setups.js"></script>
-	<script src="/notes/browser/components/shot-meter.js"></script>
-	<script src="/notes/browser/components/stance.js"></script>
-	<script src="/notes/browser/components/wind-select.js"></script>
 
-	<div id="app">
-		<div id="notes-browser"></div>
+	<video src="/assets/ntm-instructional-intro.mp4" controls width="100%" height="auto"></video>
+
+	<div class="no-notes-container">
+	&nbsp;&nbsp;<span><img title="Shoutouts to the NNC (&quot;No Notes Club&quot;)" class="no-notes" src="/assets/misc/no-notes-shaded-128.png"> <i>Playing <b>without notes</b> is recommended for a <b class="greenish">fairer experience.</b><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Overreliance on notes can <b class="redish">inhibit deeper intuition</b> of the game's mechanics.<br><span class="smaller-line-break"><br></span>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="blueish">Always be transparent</b> if you use notes for score attempts.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></span>
 	</div>
 
 	<script async>
-		async function setup() {
-			const notesBrowser = await NotesBrowser.create("notes-browser");
-		}
-
-		setup().catch(error => {
-			console.error('Error initializing NotesBrowser:', error);
-		});
+		window.history.replaceState({}, '', window.location.pathname);
 	</script>
 
 </body>

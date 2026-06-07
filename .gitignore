@@ -1,16 +1,10 @@
 .vscode/
-bounce-distances
 
 guides/*
 !guides/common-styles.css
 !guides/common-functionality.js
 !guides/setting-wind-with-cheat-engine
 !guides/setting-wind-with-unibios
-
-notes/shots/
-
-notes/mistakes.txt
-models/bounces.js
 
 turfmast*.zip
 200-c1.c1

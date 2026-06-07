@@ -97,7 +97,7 @@ def _hack_make_training_course(context: Context):
         # tile_map.set_tile_at(13, y, Tile.FAIRWAY.id_)
 
     # Extend green
-    tile_map.set_tiles_between(16, 19, 23, 31, Tile.GREEN.id_)
+    tile_map.set_tiles_between(16, 19, 24, 31, Tile.GREEN.id_)
 
     # Remove trees and bunkers from objects
     object_map.objects = [
