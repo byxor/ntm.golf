@@ -1,0 +1,30 @@
+<head>
+	<script src="/components/site_banner/site_banner.js" defer></script>
+	
+	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="./images/favicon3.png"/>
+
+	<title>How To Rotate Wind Units</title>
+	
+
+	<link rel="stylesheet" href="../common-styles.css">
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js
+"></script>
+
+	<script src="../common-functionality.js"></script>
+	<script src="./content.js"></script>
+	<script src="/components/index.js"></script>
+	<script src="/components/html-header.js"></script>
+
+	<div class="content">
+	</div>
+
+	<script>
+		const contentContainer = document.querySelector('.content');
+		contentContainer.innerHTML = markdownToHtml(CONTENT);
+	</script>
+
+	<!-- <script src="./draw-unit-circle.js"></script> -->
+</body>
