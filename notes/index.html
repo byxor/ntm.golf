@@ -174,11 +174,7 @@
             color: rgb(145, 174, 255);
         }
 
-        .course-note-course-list {
-            padding-left: 14px;
-        }
-
-		        *.unselectable {
+		*.unselectable {
             -moz-user-select: -moz-none;
             -khtml-user-select: none;
             -webkit-user-select: none;
@@ -194,6 +190,11 @@
 		    line-height: 0.5em;
 		}
 
+		.video-container {
+			width: 100%;
+			height: auto;
+		}
+
 	</style>
 </head>
 
@@ -201,7 +202,9 @@
 	<script src="/components/index.js"></script>
 	<script src="/components/html-header.js"></script>
 
-	<video src="/assets/ntm-instructional-intro.mp4" controls width="100%" height="auto"></video>
+	<div class="video-container">
+		<video src="/assets/ntm-instructional-intro.mp4" controls width="100%" height=auto></video>
+	</div>
 
 	<div class="no-notes-container">
 	&nbsp;&nbsp;<span><img title="Shoutouts to the NNC (&quot;No Notes Club&quot;)" class="no-notes" src="/assets/misc/no-notes-shaded-128.png"> <i>Playing <b>without notes</b> is recommended for a <b class="greenish">fairer experience.</b><br>
