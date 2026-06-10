@@ -45,10 +45,18 @@ const STYLES = `<style>
     /*font-size: 0.5em;*/
   }
 
-	.wind-indicator {
-		height: 35px;
-	}
-  
+  @media (pointer: fine) {
+  	.wind-indicator {
+      height: 35px;
+    }
+  }
+
+  @media (pointer: coarse) {
+    .wind-indicator {
+      height: 2em;
+    }
+  }
+	
 	.greyscale {
 		filter: grayscale(60%);
 	}
@@ -94,7 +102,7 @@ const STYLES = `<style>
 
   .image-caption {
     font-style: italic;
-    font-size: 14px;
+    font-size: 0.75em;
     color: #8b8b8b;
   }
 
@@ -103,7 +111,7 @@ const STYLES = `<style>
   }
 
   .wind-effect-table th math {
-    font-size: 0.7em;
+    font-size: 0.75em;
     font-weight: normal;
     margin-top: 0.25rem;
   }
@@ -111,207 +119,7 @@ const STYLES = `<style>
 </style>
 `;
 
-const CONTENT = `
-${STYLES}
-
-${title("How To Rotate Wind Units")}
-<!--${title("Wind Units (And How To Rotate Them)")}-->
-
-**Disclaimer**:
-
-The purpose of this guide isn't to encourage excessive calculation during play,
-but instead to give some insight into how it works.
-
-You only have 30 seconds per shot, so make them count.
-
-${constrainedImage('./images/slow-play-2.png', 'in-game hurry-up slow-play warning', '', false)}
-
----
-
-Wind units are a quick way to predict/control the ball flight.
-
-e.g.
-
-- **Horizontal unit:**&nbsp;&nbsp; ←/→ &nbsp;&nbsp;\`3\` taps per wind.
-- **Vertical unit:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +/- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\`3.5\` yards per wind.
-
-${infoPanel(`&nbsp; These units were chosen arbitrarily.
-  
-  Units will vary based on:
-<ul>
-  <li>Club</li>
-  <li>Power</li>
-  <li>Height</li>
-</ul>
-
-Ultimately, the longer the ball is in the air, the more it will be affected by wind.
-`)}
-<table class="wind-effect-table">
-  <thead>
-    <tr>
-      <th>Wind</th>
-
-      <th>
-        Horizontal Adjustment
-        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-          <mo>=</mo>
-          <mo>(</mo>
-          <mi>wind</mi>
-          <mo>&times;</mo>
-          <msub>
-            <mi>unit</mi>
-            <mi>h</mi>
-          </msub>
-          <mo>)</mo>
-        </math>
-      </th>
-
-      <th>
-        Vertical Adjustment
-        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-          <mo>=</mo>
-          <mo>(</mo>
-          <mi>wind</mi>
-          <mo>&times;</mo>
-          <msub>
-            <mi>unit</mi>
-            <mi>v</mi>
-          </msub>
-          <mo>)</mo>
-        </math>
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td class="wind-reading-cell">${windReading(1, "S")}</td>
-      <td class="adjustment-cell grey">-</td>
-      <td class="adjustment-cell">Aim 3.5 yards long</td>
-    </tr>
-
-    <tr>
-      <td class="wind-reading-cell">${windReading(2, "N")}</td>
-      <td class="adjustment-cell grey">-</td>
-      <td class="adjustment-cell">Aim 7 yards short</td>
-    </tr>
-
-    <tr>
-      <td class="wind-reading-cell">${windReading(10, "W")}</td>
-      <td class="adjustment-cell">30 taps right ⇨</td>
-      <td class="adjustment-cell grey">-</td>
-    </tr>
-
-    <tr>
-      <td class="wind-reading-cell">${windReading(15, "E")}</td>
-      <td class="adjustment-cell">45 taps left ⇦</td>
-      <td class="adjustment-cell grey">-</td>
-    </tr>
-  </tbody>
-</table>
-
-These units are effective when the wind is aligned North/East/South/West...
-
-But how can we apply them when the wind is angled?
-
-<div class="angled-wind-container">
-${windDirection("N+1")}${windDirection("NE")}${windDirection("NE+1")}${windDirection("E+1")}${windDirection("SE")}${windDirection("SE+1")}${windDirection("S+1")}${windDirection("SW")}${windDirection("SW+1")}${windDirection("W+1")}${windDirection("NW")}${windDirection("NW+1")}
-</div>
-
----
-
-The secret is:
-
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-    <mtable columnalign="left center left">
-        <mtr>
-            <mtd><msub><mi>effect</mi><mi>h</mi></msub></mtd>
-            <mtd><mo>=</mo></mtd>
-            <mtd>
-                <mi>sin</mi>
-                <mo>&ApplyFunction;</mo>
-                <mo>(</mo>
-                <mi>&theta;</mi>
-                <mo>)</mo>
-            </mtd>
-        </mtr>
-        <mtr>
-            <mtd><msub><mi>effect</mi><mi>v</mi></msub></mtd>
-            <mtd><mo>=</mo></mtd>
-            <mtd>
-                <mi>cos</mi>
-                <mo>&ApplyFunction;</mo>
-                <mo>(</mo>
-                <mi>&theta;</mi>
-                <mo>)</mo>
-            </mtd>
-        </mtr>
-    </mtable>
-</math>
-
-Where:
-
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-    <mtable columnalign="left center left">
-        <mtr>
-            <mtd><msub><mi>effect</mi><mi>h</mi></msub></mtd>
-            <mtd><mo>=</mo></mtd>
-            <mtd><mtext>Horizontal effect (Between 0 &ndash; 1)</mtext></mtd>
-        </mtr>
-        <mtr>
-            <mtd><msub><mi>effect</mi><mi>v</mi></msub></mtd>
-            <mtd><mo>=</mo></mtd>
-            <mtd><mtext>Vertical effect (Between 0 &ndash; 1)</mtext></mtd>
-        </mtr>
-        <mtr>
-            <mtd><mi>θ</mi></mtd>
-            <mtd><mo>=</mo></mtd>
-            <mtd>
-              <mtext>Wind angle (</mtext>
-              <mstyle mathvariant="italic">
-                  <mtext>0° = North</mtext>
-              </mstyle>
-              <mtext>)</mtext>
-            </mtd>
-        </mtr>
-    </mtable>
-</math>
-
-<br>
-
-You can calculate the wind as normal, then multiply by some number between 0 and 1 to handle rotation.
-
-<br>
-
-${constrainedImage('./images/Circle_cos_sin.gif', 'Circle sin/cos animation', 'captioned-image', false)}
-<span class="image-caption">Diagram: Measuring the horizontal/vertical offsets of a unit circle with sin/cos.<br><br>Note: &theta; is rotated by 90&deg; in this GIF, so the sin &amp; cos functions are swapped, but the illustration still applies.</span>
-
----
-
-You might think that diagonal wind would have 50% of the horizontal effect, and 50% of the vertical effect, but this isn't the case.
-
-Instead, it has 71% of the horizontal effect, and 71% of the vertical effect.
-
-
-${constrainedImage('./images/unit-circle.png', '', 'captioned-image', false)}
-<span class="image-caption">Common sin/cos values for the 16 cardinal wind directions (as percentages).<br><br>Tip: You only need to memorise one quarter of the circle to reconstruct the rest.<br><br>Remember: 0/100, 38/92, 71/71, 92/38, 100/0.</span>
-
-<br>
-
-
-
----
-
-<br>
-
-## Examples
-
-Let's re-use our wind units from before:
-
-- **Horizontal unit:**&nbsp;&nbsp; ←/→ &nbsp;&nbsp;\`3\` taps per wind.
-- **Vertical unit:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +/- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\`3.5\` yards per wind.
-
-
+const BIG_WIND_EFFECT_TABLE = `
 <table class="wind-effect-table">
   <thead>
     <tr>
@@ -947,15 +755,245 @@ Let's re-use our wind units from before:
 
   </tbody>
 </table>
+`;
+
+const CONTENT = `
+${STYLES}
+
+${title("How To Rotate Wind Units")}
+<!--${title("Wind Units (And How To Rotate Them)")}-->
+
+(Page is still W.I.P/unfinished, publishing early to preview on mobile)
+
+**Disclaimer**:
+
+The purpose of this guide isn't to encourage excessive calculation during play,
+but instead to give some insights into how wind works.
+
+You only have 30 seconds per shot, so make them count.
+
+${constrainedImage('./images/slow-play-2.png', 'in-game hurry-up slow-play warning', 'fit-width', false)}
+
+---
+
+Wind units are a quick way to predict/control the ball flight.
+
+e.g.
+
+- **Horizontal unit:**&nbsp;&nbsp; ←/→ &nbsp;&nbsp;\`3\` taps per wind.
+- **Vertical unit:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +/- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\`3.5\` yards per wind.
+
+${infoPanel(`&nbsp; These units were chosen arbitrarily.
+  
+  Units will vary based on:
+<ul>
+  <li>Club</li>
+  <li>Power</li>
+  <li>Height</li>
+</ul>
+
+Ultimately, the longer the ball is in the air, the more it will be affected by wind.
+`)}
+
+<table class="wind-effect-table">
+  <thead>
+    <tr>
+      <th>Wind</th>
+
+      <th>
+        Horizontal Adjustment
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mo>=</mo>
+          <mo>(</mo>
+          <mi>wind</mi>
+          <mo>&times;</mo>
+          <msub>
+            <mi>unit</mi>
+            <mi>h</mi>
+          </msub>
+          <mo>)</mo>
+        </math>
+      </th>
+
+      <th>
+        Vertical Adjustment
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mo>=</mo>
+          <mo>(</mo>
+          <mi>wind</mi>
+          <mo>&times;</mo>
+          <msub>
+            <mi>unit</mi>
+            <mi>v</mi>
+          </msub>
+          <mo>)</mo>
+        </math>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td class="wind-reading-cell">${windReading(1, "S")}</td>
+      <td class="adjustment-cell grey">-</td>
+      <td class="adjustment-cell">Aim 3.5 yards long</td>
+    </tr>
+
+    <tr>
+      <td class="wind-reading-cell">${windReading(2, "N")}</td>
+      <td class="adjustment-cell grey">-</td>
+      <td class="adjustment-cell">Aim 7 yards short</td>
+    </tr>
+
+    <tr>
+      <td class="wind-reading-cell">${windReading(10, "W")}</td>
+      <td class="adjustment-cell">30 taps right ⇨</td>
+      <td class="adjustment-cell grey">-</td>
+    </tr>
+
+    <tr>
+      <td class="wind-reading-cell">${windReading(15, "E")}</td>
+      <td class="adjustment-cell">45 taps left ⇦</td>
+      <td class="adjustment-cell grey">-</td>
+    </tr>
+  </tbody>
+</table>
+
+These units are effective when the wind is aligned North/East/South/West...
+
+But how can we apply them when the wind is angled?
+
+${constrainedImage('./images/angled-winds-2.png', 'Various wind directions', 'fit-width', false)}
+
+
+We can calculate the wind as normal, then multiply by some number between 0 and 1 to handle rotation.
+
+But how much?
+
+---
+
+<br>
+
+The secret is:
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+    <mtable columnalign="left center left">
+        <mtr>
+            <mtd><msub><mi>effect</mi><mi>h</mi></msub></mtd>
+            <mtd><mo>=</mo></mtd>
+            <mtd>
+                <mi>sin</mi>
+                <mo>&ApplyFunction;</mo>
+                <mo>(</mo>
+                <mi>&theta;</mi>
+                <mo>)</mo>
+            </mtd>
+        </mtr>
+        <mtr>
+            <mtd><msub><mi>effect</mi><mi>v</mi></msub></mtd>
+            <mtd><mo>=</mo></mtd>
+            <mtd>
+                <mi>cos</mi>
+                <mo>&ApplyFunction;</mo>
+                <mo>(</mo>
+                <mi>&theta;</mi>
+                <mo>)</mo>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>
+
+Where:
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+    <mtable columnalign="left center left">
+        <mtr>
+            <mtd><msub><mi>effect</mi><mi>h</mi></msub></mtd>
+            <mtd><mo>=</mo></mtd>
+            <mtd><mtext>Horizontal effect (Between 0 &ndash; 1)</mtext></mtd>
+        </mtr>
+        <mtr>
+            <mtd><msub><mi>effect</mi><mi>v</mi></msub></mtd>
+            <mtd><mo>=</mo></mtd>
+            <mtd><mtext>Vertical effect (Between 0 &ndash; 1)</mtext></mtd>
+        </mtr>
+        <mtr>
+            <mtd><mi>θ</mi></mtd>
+            <mtd><mo>=</mo></mtd>
+            <mtd>
+              <mtext>Wind angle (</mtext>
+              <mstyle mathvariant="italic">
+                  <mtext>0° = North</mtext>
+              </mstyle>
+              <mtext>)</mtext>
+            </mtd>
+        </mtr>
+    </mtable>
+</math>
+
+<br>
+
+
+_(\`sin\` / \`cos\` tell us how much to multiply):_
+
+${constrainedImage('./images/Circle_cos_sin.gif', 'Circle sin/cos animation', 'captioned-image fit-width', false)}
+<span class="image-caption">Diagram: measuring horizontal & vertical components with sin & cos.</span>
+
+
+<br>
+
+- It can be tricky to calculate these within the time limit.
+
+- You can speed things up by memorising some values of sin/cos:
+
+${constrainedImage('./images/unit-circle.png', '', 'captioned-image', false)}
+<span class="image-caption">Tip: You only need to memorise one quarter of the circle to reconstruct the rest.<br><br>Remember: 0/100, 38/92, 71/71, 92/38, 100/0.</span>
+
+<br>
+
+---
+
+<br>
+
+### Examples
+
+Let's calculate some examples with the wind units from before:
+
+- **Horizontal unit:**&nbsp;&nbsp; ←/→ &nbsp;&nbsp;\`3\` taps per wind.
+- **Vertical unit:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +/- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\`3.5\` yards per wind.
+
+
+${BIG_WIND_EFFECT_TABLE}
+
+It can be tricky to calculate this within the time limit.
+
+
+<br>
+
+
+
+---
+
+
+You might think that diagonal wind would have 50% of the horizontal effect, and 50% of the vertical effect, but this isn't the case.
+
+Instead, it has 71% of the horizontal effect, and 71% of the vertical effect.
+
+
+
+<br>
+
+
+
 
 <br>
 
 <div class="image-caption">
 <b>Tips:</b>
 <ul>
-  <li>You only need to memorise one quarter circle to reconstruct the rest.</li><br>
-  <li>Diagonal wind has equal horizontal and vertical effect (71% each).</li><br>
-  <li>You can precompute frequently-used wind units at various angles. This reduces calculation time, but requires more memorisation.
+  <li>You only need to memorise a quarter circle to reconstruct the rest.</li><br>
+  <li>Diagonal wind always has equal horizontal and vertical effect (71% each).</li><br>
+  <li>You can precompute frequently-used wind units at various angles. This reduces calculation time, but requires extra memorisation.
 </ul>
 
 
@@ -966,9 +1004,11 @@ Let's re-use our wind units from before:
 
 # Final Notes
 
-- Once again, please be mindful that you only have 30 seconds.
+- Be mindful that you only have 30 seconds.
 
-- I hope you can internalise this information and use it to develop fast & accurate aiming systems. I know I can't...
+- Overcalculation can blind intuition; trust your gut.
+
+- I hope you can internalise this information in some manner, and use it to develop fast & accurate aiming systems. I know I can't...
 
 ${cautionPanel(`Please be aware that the wind effect will change as soon as you rotate your aim. Further adjustments are required to compensate for this (which aren't covered here).`)}
 
