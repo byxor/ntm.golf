@@ -119,6 +119,73 @@ const STYLES = `<style>
 </style>
 `;
 
+const SMALL_WIND_EFFECT_TABLE = `
+
+<table class="wind-effect-table">
+  <thead>
+    <tr>
+      <th>Wind</th>
+
+      <th>
+        Horizontal Adjustment
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mo>=</mo>
+          <mo>(</mo>
+          <mi>wind</mi>
+          <mo>&times;</mo>
+          <msub>
+            <mi>unit</mi>
+            <mi>h</mi>
+          </msub>
+          <mo>)</mo>
+        </math>
+      </th>
+
+      <th>
+        Vertical Adjustment
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mo>=</mo>
+          <mo>(</mo>
+          <mi>wind</mi>
+          <mo>&times;</mo>
+          <msub>
+            <mi>unit</mi>
+            <mi>v</mi>
+          </msub>
+          <mo>)</mo>
+        </math>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td class="wind-reading-cell">${windReading(1, "S")}</td>
+      <td class="adjustment-cell grey">-</td>
+      <td class="adjustment-cell">Aim 3.5 yards long</td>
+    </tr>
+
+    <tr>
+      <td class="wind-reading-cell">${windReading(2, "N")}</td>
+      <td class="adjustment-cell grey">-</td>
+      <td class="adjustment-cell">Aim 7 yards short</td>
+    </tr>
+
+    <tr>
+      <td class="wind-reading-cell">${windReading(10, "W")}</td>
+      <td class="adjustment-cell">30 taps right ⇨</td>
+      <td class="adjustment-cell grey">-</td>
+    </tr>
+
+    <tr>
+      <td class="wind-reading-cell">${windReading(15, "E")}</td>
+      <td class="adjustment-cell">45 taps left ⇦</td>
+      <td class="adjustment-cell grey">-</td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 const BIG_WIND_EFFECT_TABLE = `
 <table class="wind-effect-table">
   <thead>
@@ -795,69 +862,7 @@ ${infoPanel(`&nbsp; These units were chosen arbitrarily.
 Ultimately, the longer the ball is in the air, the more it will be affected by wind.
 `)}
 
-<table class="wind-effect-table">
-  <thead>
-    <tr>
-      <th>Wind</th>
-
-      <th>
-        Horizontal Adjustment
-        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-          <mo>=</mo>
-          <mo>(</mo>
-          <mi>wind</mi>
-          <mo>&times;</mo>
-          <msub>
-            <mi>unit</mi>
-            <mi>h</mi>
-          </msub>
-          <mo>)</mo>
-        </math>
-      </th>
-
-      <th>
-        Vertical Adjustment
-        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-          <mo>=</mo>
-          <mo>(</mo>
-          <mi>wind</mi>
-          <mo>&times;</mo>
-          <msub>
-            <mi>unit</mi>
-            <mi>v</mi>
-          </msub>
-          <mo>)</mo>
-        </math>
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td class="wind-reading-cell">${windReading(1, "S")}</td>
-      <td class="adjustment-cell grey">-</td>
-      <td class="adjustment-cell">Aim 3.5 yards long</td>
-    </tr>
-
-    <tr>
-      <td class="wind-reading-cell">${windReading(2, "N")}</td>
-      <td class="adjustment-cell grey">-</td>
-      <td class="adjustment-cell">Aim 7 yards short</td>
-    </tr>
-
-    <tr>
-      <td class="wind-reading-cell">${windReading(10, "W")}</td>
-      <td class="adjustment-cell">30 taps right ⇨</td>
-      <td class="adjustment-cell grey">-</td>
-    </tr>
-
-    <tr>
-      <td class="wind-reading-cell">${windReading(15, "E")}</td>
-      <td class="adjustment-cell">45 taps left ⇦</td>
-      <td class="adjustment-cell grey">-</td>
-    </tr>
-  </tbody>
-</table>
+${SMALL_WIND_EFFECT_TABLE}
 
 These units are effective when the wind is aligned North/East/South/West...
 
@@ -866,9 +871,9 @@ But how can we apply them when the wind is angled?
 ${constrainedImage('./images/angled-winds-2.png', 'Various wind directions', 'fit-width', false)}
 
 
-We can calculate the wind as normal, then multiply by some number between 0 and 1 to handle rotation.
+We can calculate our wind units as normal, then multiply by some number between 0 and 1 to handle rotation.
 
-But how much?
+But how much do we multiply?
 
 ---
 
