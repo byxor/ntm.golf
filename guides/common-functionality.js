@@ -40,7 +40,7 @@ function githubLogo() {
 
 function constrainedImage(src, alt="", classes="", fullscreen=true) {
 	if (fullscreen) {
-		classes += "constrained-image-pointer";
+		classes += " constrained-image-pointer";
 	}
 	const html = `<img
 		src="${src}"
@@ -61,9 +61,9 @@ function title(title) {
 
 let _panelId = 0;
 
-function cautionPanel(contents) {
+function cautionPanel(contents, emoji="⚠️") {
 	return genericPanel(
-		"⚠️",
+		emoji,
 		"#403717",
 		"#e0ce90",
 		contents

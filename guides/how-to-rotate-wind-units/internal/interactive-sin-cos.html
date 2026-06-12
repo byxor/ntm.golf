@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sine and Cosine Components</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        canvas {
+            border: 1px solid #ccc;
+            cursor: grab;
+            touch-action: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<canvas id="canvas" width="500" height="500"></canvas>
+
+<script>
+
+const SIN_COLOR = "green";
+const COS_COLOR = "blue";
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+const cx = 250;
+const cy = 250;
+const radius = 180;
+
+let theta = Math.PI / 6;   // 30° from north
+let dragging = false;
+
+function draw() {
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const sinVal = Math.sin(theta);
+    const cosVal = Math.cos(theta);
+
+    // Point on circumference
+    const px = cx + radius * sinVal;
+    const py = cy - radius * cosVal;
+
+    // Axes
+    ctx.strokeStyle = "#cccccc";
+    ctx.lineWidth = 1;
+
+    ctx.beginPath();
+    ctx.moveTo(50, cy);
+    ctx.lineTo(450, cy);
+
+    ctx.moveTo(cx, 50);
+    ctx.lineTo(cx, 450);
+    ctx.stroke();
+
+    // Circle
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 2;
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Radius line
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(px, py);
+    ctx.stroke();
+
+    // Vertical component (cos θ)
+    ctx.strokeStyle = COS_COLOR;
+    ctx.lineWidth = 3;
+
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx, py);
+    ctx.stroke();
+
+    // Horizontal component (sin θ)
+    ctx.strokeStyle = SIN_COLOR;
+
+    ctx.beginPath();
+    ctx.moveTo(cx, py);
+    ctx.lineTo(px, py);
+    ctx.stroke();
+
+    // Point on circle
+    ctx.fillStyle = "red";
+
+    ctx.beginPath();
+    ctx.arc(px, py, 8, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Theta arc
+    ctx.strokeStyle = "purple";
+    ctx.lineWidth = 2;
+
+    ctx.beginPath();
+    ctx.arc(
+        cx,
+        cy,
+        40,
+        -Math.PI / 2,
+        -Math.PI / 2 + theta
+    );
+    ctx.stroke();
+
+    // Labels
+    ctx.font = "16px Arial";
+
+    // sin θ label
+    ctx.fillStyle = SIN_COLOR;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "bottom";
+
+    ctx.fillText(
+        `sin θ = ${sinVal.toFixed(2)}`,
+        cx + (px - cx) / 2,
+        py - 8
+    );
+
+    // cos θ label (left side of vertical axis)
+    ctx.fillStyle = COS_COLOR;
+    ctx.textAlign = "right";
+    ctx.textBaseline = "middle";
+
+    ctx.fillText(
+        `cos θ = ${cosVal.toFixed(2)}`,
+        cx - 10,
+        cy + (py - cy) / 2
+    );
+
+    // Theta label
+    ctx.fillStyle = "purple";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    const midAngle = theta / 2;
+    const thetaLabelRadius = 60;
+
+    ctx.fillText(
+        `θ = ${(theta * 180 / Math.PI).toFixed(0)}°`,
+        cx + 13 +  thetaLabelRadius * Math.sin(midAngle),
+        cy - thetaLabelRadius * Math.cos(midAngle)
+    );
+}
+
+function updateFromPointer(clientX, clientY) {
+
+    const rect = canvas.getBoundingClientRect();
+
+    const x = clientX - rect.left - cx;
+    const y = cy - (clientY - rect.top);
+
+    // Angle measured clockwise from north
+    theta = Math.atan2(x, y);
+
+    if (theta < 0) {
+        theta += Math.PI * 2;
+    }
+
+    draw();
+}
+
+// Mouse support
+canvas.addEventListener("mousedown", (e) => {
+    dragging = true;
+    canvas.style.cursor = "grabbing";
+    updateFromPointer(e.clientX, e.clientY);
+});
+
+window.addEventListener("mousemove", (e) => {
+    if (dragging) {
+        updateFromPointer(e.clientX, e.clientY);
+    }
+});
+
+window.addEventListener("mouseup", () => {
+    dragging = false;
+    canvas.style.cursor = "grab";
+});
+
+// Touch support
+canvas.addEventListener("touchstart", (e) => {
+    dragging = true;
+
+    updateFromPointer(
+        e.touches[0].clientX,
+        e.touches[0].clientY
+    );
+});
+
+canvas.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+
+    if (dragging) {
+        updateFromPointer(
+            e.touches[0].clientX,
+            e.touches[0].clientY
+        );
+    }
+});
+
+canvas.addEventListener("touchend", () => {
+    dragging = false;
+});
+
+// Initial render
+draw();
+
+</script>
+
+</body>
+</html>

@@ -1,2 +1,3 @@
 exclude:
   - pbs/
+  - guides/how-to-rotate-wind-units/interactive-sin-cos.html

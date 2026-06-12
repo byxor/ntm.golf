@@ -787,7 +787,7 @@ const BIG_WIND_EFFECT_TABLE = `
                 <mi>cos</mi>
                 <mo>&ApplyFunction;</mo>
                 <mo>(</mo>
-                <mi>0&deg;</mi>
+                <mi>90&deg;</mi>
                 <mo>)</mo>
               </mtd>
             </mtr>
@@ -824,64 +824,7 @@ const BIG_WIND_EFFECT_TABLE = `
 </table>
 `;
 
-const CONTENT = `
-${STYLES}
-
-${title("How To Rotate Wind Units")}
-<!--${title("Wind Units (And How To Rotate Them)")}-->
-
-(Page is still W.I.P/unfinished, publishing early to preview on mobile)
-
-**Disclaimer**:
-
-The purpose of this guide isn't to encourage excessive calculation during play,
-but instead to give some insights into how wind works.
-
-You only have 30 seconds per shot, so make them count.
-
-${constrainedImage('./images/slow-play-2.png', 'in-game hurry-up slow-play warning', 'fit-width', false)}
-
----
-
-Wind units are a quick way to predict/control the ball flight.
-
-e.g.
-
-- **Horizontal unit:**&nbsp;&nbsp; ←/→ &nbsp;&nbsp;\`3\` taps per wind.
-- **Vertical unit:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +/- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\`3.5\` yards per wind.
-
-${infoPanel(`&nbsp; These units were chosen arbitrarily.
-  
-  Units will vary based on:
-<ul>
-  <li>Club</li>
-  <li>Power</li>
-  <li>Height</li>
-</ul>
-
-Ultimately, the longer the ball is in the air, the more it will be affected by wind.
-`)}
-
-${SMALL_WIND_EFFECT_TABLE}
-
-These units are effective when the wind is aligned North/East/South/West...
-
-But how can we apply them when the wind is angled?
-
-${constrainedImage('./images/angled-winds-2.png', 'Various wind directions', 'fit-width', false)}
-
-
-We can calculate our wind units as normal, then multiply by some number between 0 and 1 to handle rotation.
-
-But how much do we multiply?
-
----
-
-<br>
-
-The secret is:
-
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+const THE_FORMULAS = `<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
     <mtable columnalign="left center left">
         <mtr>
             <mtd><msub><mi>effect</mi><mi>h</mi></msub></mtd>
@@ -934,55 +877,178 @@ Where:
             </mtd>
         </mtr>
     </mtable>
-</math>
+</math>`;
+
+const CONTENT = `
+${STYLES}
+
+${title("How To Rotate Wind Units")}
+<!--${title("Wind Units (And How To Rotate Them)")}-->
+
+
+${cautionPanel(`
+  <b>Disclaimer:</b>
+
+  <br><br>
+
+  Most people will understand this concept intuitively. To those people, I encourage you not to read into this as it may only cause confusion.
+
+  <br><br>
+
+  The purpose of this guide isn't to encourage excessive calculation during play,
+  but instead to offer mathematical insights into how wind works at different angles.
+  
+  <br><br>
+
+  You only have <b>30 seconds per shot</b>, so make your time count.
+
+
+`, '')
+}
+
+${constrainedImage('./images/slow-play-2.png', 'in-game hurry-up slow-play warning', 'fit-width', false)}
+
+Contents:
+- [Wind Units & Formulas](#wu)
+- [Optimisation: Memorising values of sin/cos](#o1)
+- [Optimisation: The 10% Trick](#o2)
+- [Optimisation: Memorising Wind Units](#o3)
+- [Example Calculations](#example-calculations)
+
+---
+
+<div id="wu"></div>
+
+**Wind units** are a quick way to predict/control the ball flight.
+
+e.g.
+
+- **Horizontal unit:**&nbsp;&nbsp; ←/→ &nbsp;&nbsp;\`3\` taps per wind.
+- **Vertical unit:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +/- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\`3.5\` yards per wind.
+
+${infoPanel(`&nbsp; These units were chosen arbitrarily.
+  
+  Units will vary based on:
+<ul>
+  <li>Club</li>
+  <li>Power</li>
+  <li>Height</li>
+</ul>
+
+Ultimately, the longer the ball is in the air, the more it will be affected by wind.
+`)}
+
+${SMALL_WIND_EFFECT_TABLE}
+
+These units are effective when the wind is aligned North/East/South/West...
+
+But how can we apply them when the wind is angled?
+
+${constrainedImage('./images/angled-winds-2.png', 'Various wind directions', 'fit-width', false)}
+
+
+We can calculate our wind units as normal, then multiply by some number between 0 and 1 to handle rotation.
+
+But how much do we multiply?
+
+---
+
+<br>
+
+The secret is:
+
+${THE_FORMULAS}
 
 <br>
 
 
 _(\`sin\` / \`cos\` tell us how much to multiply):_
 
+${constrainedImage('./images/sin_cos_example_2.png', 'sin/cos illustration', 'fit-width', false)}
+
+<!--
 ${constrainedImage('./images/Circle_cos_sin.gif', 'Circle sin/cos animation', 'captioned-image fit-width', false)}
 <span class="image-caption">Diagram: measuring horizontal & vertical components with sin & cos.</span>
+-->
 
+- In the example above, we can multiply our horizontal unit by **0.9** (90%), and our vertical unit by **0.43** (43%).
 
-<br>
+- It can be tricky to calculate this in your head within the time limit.
 
-- It can be tricky to calculate these within the time limit.
+- You can speed the calculations up with some of the optimisations below:
 
-- You can speed things up by memorising some values of sin/cos:
+---
 
-${constrainedImage('./images/unit-circle.png', '', 'captioned-image', false)}
+<div id="o1"></div>
+
+## Optimisation: Memorising values of sin/cos
+
+${constrainedImage('./images/unit-circle.png', '', 'captioned-image', true)}
 <span class="image-caption">Tip: You only need to memorise one quarter of the circle to reconstruct the rest.<br><br>Remember: 0/100, 38/92, 71/71, 92/38, 100/0.</span>
 
 <br>
 
+_**A common misconception:**_
+
+You might think that diagonal wind would have 50% of the horizontal effect, and 50% of the vertical effect, but this isn't the case.
+
+Instead, it has 71% of the horizontal effect, and 71% of the vertical effect.
+
 ---
 
-<br>
+<div id="o2"></div>
 
-### Examples
+## Optimisation: The "10%" Trick
+
+Have you ever tried to calculate 38% of a number on the spot?
+
+For those with good mental arithmetic, it might be a simple task. Personally mine isn't that great.
+
+A **quick approximation** you can use is to **calculate 10% by moving the decimal place**.
+e.g. 10% of 52 is 5.2.
+
+For instance, if I want to find 71% of a number, I can find 10% and subtract it three times, to approximate my answer.
+
+If I want to find 38%, I can find 10% and multiply it by 4.
+
+These are only approximations, but the time saved is worth it, for a minimal tradeoff in accuracy.
+
+---
+
+<div id="o3"></div>
+
+## Optimisation: Memorising Wind Units At Various Angles
+
+Rather than calculating sin/cos on the spot, you can take your wind units and multiply them by the relevant values of sin/cos in advance.
+
+
+---
+
+<div id="example-calculations"></div>
+
+# Example Calculations 🧮
 
 Let's calculate some examples with the wind units from before:
 
 - **Horizontal unit:**&nbsp;&nbsp; ←/→ &nbsp;&nbsp;\`3\` taps per wind.
 - **Vertical unit:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +/- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\`3.5\` yards per wind.
 
+I've written the formulas in full, but remember that you canuse the previous optimisations to save time.
+
+<details>
+
+<summary>Warning: &nbsp;📐🧮 &nbsp;&nbsp;(click to expand)</summary>
 
 ${BIG_WIND_EFFECT_TABLE}
 
-It can be tricky to calculate this within the time limit.
-
+</details>
 
 <br>
-
-
 
 ---
 
 
-You might think that diagonal wind would have 50% of the horizontal effect, and 50% of the vertical effect, but this isn't the case.
-
-Instead, it has 71% of the horizontal effect, and 71% of the vertical effect.
+<br>
 
 
 
@@ -1025,7 +1091,7 @@ ${cautionPanel(`Please be aware that the wind effect will change as soon as you 
 
 ---
 
-_(Last updated: 9th June 2025)_  
+_(Last updated: 11th June 2025)_  
 <br/>
 <br/>
 If you have any questions, suggestions or concerns, contact **@byxor** on Discord.
