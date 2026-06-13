@@ -910,10 +910,11 @@ ${constrainedImage('./images/slow-play-2.png', 'in-game hurry-up slow-play warni
 
 Contents:
 - [Wind Units & Formulas](#wu)
-- [Optimisation: Memorising values of sin/cos](#o1)
-- [Optimisation: The 10% Trick](#o2)
-- [Optimisation: Memorising Wind Units](#o3)
-- [Example Calculations](#example-calculations)
+- [&nbsp;Optimisation: Memorising values of sin/cos](#o1)
+- [&nbsp;Optimisation: The 10% Trick](#o2)
+- [&nbsp;Optimisation: Memorising Wind Units](#o3)
+- [&nbsp;Optimisation: Cardinal Alignment](#o4)
+- [Examples & Calculations](#example-calculations)
 
 ---
 
@@ -971,9 +972,19 @@ ${constrainedImage('./images/Circle_cos_sin.gif', 'Circle sin/cos animation', 'c
 <span class="image-caption">Diagram: measuring horizontal & vertical components with sin & cos.</span>
 -->
 
+${cautionPanel(`
+<b>Common misconception:</b>
+<p>
+You might think that diagonal wind would have 50% of the horizontal effect, and 50% of the vertical effect, but this is <b>false</b>.
+</p>
+
+Instead, it has <b>71%</b> of the horizontal effect, and <b>71%</b> of the vertical effect.
+`)
+}
+
 - In the example above, we can multiply our horizontal unit by **0.9** (90%), and our vertical unit by **0.43** (43%).
 
-- It can be tricky to calculate this in your head within the time limit.
+- It can be tricky to calculate these in your head within the time limit.
 
 - You can speed the calculations up with some of the optimisations below:
 
@@ -988,11 +999,9 @@ ${constrainedImage('./images/unit-circle.png', '', 'captioned-image', true)}
 
 <br>
 
-_**A common misconception:**_
 
-You might think that diagonal wind would have 50% of the horizontal effect, and 50% of the vertical effect, but this isn't the case.
 
-Instead, it has 71% of the horizontal effect, and 71% of the vertical effect.
+
 
 ---
 
@@ -1007,9 +1016,9 @@ For those with good mental arithmetic, it might be a simple task. Personally min
 A **quick approximation** you can use is to **calculate 10% by moving the decimal place**.
 e.g. 10% of 52 is 5.2.
 
-For instance, if I want to find 71% of a number, I can find 10% and subtract it three times, to approximate my answer.
+For instance, to find 71% of a number, you can find 10% and subtract it three times, to approximate the answer.
 
-If I want to find 38%, I can find 10% and multiply it by 4.
+To find 38%, you can find 10% and multiply it by 4.
 
 These are only approximations, but the time saved is worth it, for a minimal tradeoff in accuracy.
 
@@ -1019,14 +1028,35 @@ These are only approximations, but the time saved is worth it, for a minimal tra
 
 ## Optimisation: Memorising Wind Units At Various Angles
 
-Rather than calculating sin/cos on the spot, you can take your wind units and multiply them by the relevant values of sin/cos in advance.
+Rather than multiplying your units by sin/cos on the spot, you can multiply them by sin/cos in advance.
 
+${infoPanel('&nbsp;<b>TODO:</b> add examples')}
+
+<br>
+
+---
+
+<div id="o4"></div>
+
+## Optimisation: Cardinal Alignment
+
+You can position the ball so that it's cardinally-aligned with the flag, to simplify your approach shot.
+
+${constrainedImage('./images/cardinal-positioning-comparison.png', 'On the left: The ball is aligned with the compass (easier shot). On the right: the ball is NOT aligned (harder shot).', 'fit-width', false)}
+
+- This isn't always possible due to the course layouts & hazards, but it can often be beneficial.
+
+<br><br><br>
 
 ---
 
 <div id="example-calculations"></div>
 
-# Example Calculations 🧮
+# Examples & Calculations
+
+<details>
+
+<summary>Warning: &nbsp;👩‍🏫📐🧮 &nbsp;&nbsp;(click to expand)</summary>
 
 Let's calculate some examples with the wind units from before:
 
@@ -1035,9 +1065,6 @@ Let's calculate some examples with the wind units from before:
 
 I've written the formulas in full, but remember that you canuse the previous optimisations to save time.
 
-<details>
-
-<summary>Warning: &nbsp;📐🧮 &nbsp;&nbsp;(click to expand)</summary>
 
 ${BIG_WIND_EFFECT_TABLE}
 
@@ -1045,8 +1072,6 @@ ${BIG_WIND_EFFECT_TABLE}
 
 <br>
 
----
-
 
 <br>
 
@@ -1058,18 +1083,6 @@ ${BIG_WIND_EFFECT_TABLE}
 
 
 <br>
-
-<div class="image-caption">
-<b>Tips:</b>
-<ul>
-  <li>You only need to memorise a quarter circle to reconstruct the rest.</li><br>
-  <li>Diagonal wind always has equal horizontal and vertical effect (71% each).</li><br>
-  <li>You can precompute frequently-used wind units at various angles. This reduces calculation time, but requires extra memorisation.
-</ul>
-
-
-</div>
-
 
 ---
 
@@ -1079,7 +1092,9 @@ ${BIG_WIND_EFFECT_TABLE}
 
 - Overcalculation can blind intuition; trust your gut.
 
-- I hope you can internalise this information in some manner, and use it to develop fast & accurate aiming systems. I know I can't...
+- Often the best shots happen when you don't think too much; you can just "feel" the shot.
+
+- I hope you can internalise this information in some manner, and use it to develop fast & accurate aiming systems.
 
 ${cautionPanel(`Please be aware that the wind effect will change as soon as you rotate your aim. Further adjustments are required to compensate for this (which aren't covered here).`)}
 
