@@ -91,6 +91,11 @@ const STYLES = `<style>
     text-align: center;
   }
 
+  .padded-adjustment-cell {
+    padding-left: 1ch;
+    padding-right: 1ch;
+  }
+
   .angled-wind-container {
     font-size: 0px;
     padding-bottom: 20px;
@@ -136,14 +141,12 @@ const SMALL_WIND_EFFECT_TABLE = `
         Horizontal Adjustment
         <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
           <mo>=</mo>
-          <mo>(</mo>
           <mi>wind</mi>
           <mo>&times;</mo>
           <msub>
             <mi>unit</mi>
             <mi>h</mi>
           </msub>
-          <mo>)</mo>
         </math>
       </th>
 
@@ -151,14 +154,12 @@ const SMALL_WIND_EFFECT_TABLE = `
         Vertical Adjustment
         <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
           <mo>=</mo>
-          <mo>(</mo>
           <mi>wind</mi>
           <mo>&times;</mo>
           <msub>
             <mi>unit</mi>
             <mi>v</mi>
           </msub>
-          <mo>)</mo>
         </math>
       </th>
     </tr>
@@ -211,9 +212,7 @@ const BIG_WIND_EFFECT_TABLE = `
           <mo>&times;</mo>
           <mi>sin</mi>
           <mo>&ApplyFunction;</mo>
-          <mo>(</mo>
           <mi>&theta;</mi>
-          <mo>)</mo>
         </math>
       </th>
 
@@ -230,9 +229,7 @@ const BIG_WIND_EFFECT_TABLE = `
           <mo>&times;</mo>
           <mi>cos</mi>
           <mo>&ApplyFunction;</mo>
-          <mo>(</mo>
           <mi>&theta;</mi>
-          <mo>)</mo>
         </math>
       </th>
     </tr>
@@ -280,7 +277,7 @@ const BIG_WIND_EFFECT_TABLE = `
 
             <mtr>
               <mtd>
-                <mo>≈</mo>
+                <mo>=</mo>
                 <mi>30</mi>
                 <mo>&times;</mo>
                 <mi>0</mi>
@@ -289,7 +286,7 @@ const BIG_WIND_EFFECT_TABLE = `
 
             <mtr>
               <mtd>
-              <mo>≈</mo>
+              <mo>=</mo>
               <mi>0</mi>
               </mtd>
             </mtr>
@@ -331,7 +328,7 @@ const BIG_WIND_EFFECT_TABLE = `
 
             <mtr>
               <mtd>
-                <mo>≈</mo>
+                <mo>=</mo>
                 <mi>35</mi>
                 <mo>&times;</mo>
                 <mi>1</mi>
@@ -340,7 +337,7 @@ const BIG_WIND_EFFECT_TABLE = `
 
             <mtr>
               <mtd>
-              <mo>≈</mo>
+              <mo>=</mo>
               <mi>35</mi>
               </mtd>
             </mtr>
@@ -749,7 +746,7 @@ const BIG_WIND_EFFECT_TABLE = `
 
             <mtr>
               <mtd>
-                <mo>≈</mo>
+                <mo>=</mo>
                 <mi>30</mi>
                 <mo>&times;</mo>
                 <mi>1</mi>
@@ -758,7 +755,7 @@ const BIG_WIND_EFFECT_TABLE = `
 
             <mtr>
               <mtd>
-              <mo>≈</mo>
+              <mo>=</mo>
               <mi>30</mi>
               </mtd>
             </mtr>
@@ -800,7 +797,7 @@ const BIG_WIND_EFFECT_TABLE = `
 
             <mtr>
               <mtd>
-                <mo>≈</mo>
+                <mo>=</mo>
                 <mi>35</mi>
                 <mo>&times;</mo>
                 <mi>0</mi>
@@ -809,7 +806,7 @@ const BIG_WIND_EFFECT_TABLE = `
 
             <mtr>
               <mtd>
-              <mo>≈</mo>
+              <mo>=</mo>
               <mi>0</mi>
               </mtd>
             </mtr>
@@ -818,7 +815,7 @@ const BIG_WIND_EFFECT_TABLE = `
 
         <br>
 
-        -
+        No Adjustment.
 
         <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
           <mspace height="1.5em" />
@@ -828,6 +825,481 @@ const BIG_WIND_EFFECT_TABLE = `
 
   </tbody>
 </table>
+`;
+
+const PRECALCULATED_TABLE = `
+<table class="wind-effect-table">
+  <thead>
+    <tr>
+      <th>Wind</th>
+
+      <th>
+        Horizontal Unit
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mo>=</mo>
+          <msub>
+            <mi>unit</mi>
+            <mi>h</mi>
+          </msub>
+          <mo>&times;</mo>
+          <mi>sin</mi>
+          <mo>&ApplyFunction;</mo>
+          <mi>&theta;</mi>
+        </math>
+      </th>
+
+      <th>
+        Vertical Unit
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mo>=</mo>
+          <msub>
+            <mi>unit</mi>
+            <mi>v</mi>
+          </msub>
+          <mo>&times;</mo>
+          <mi>cos</mi>
+          <mo>&ApplyFunction;</mo>
+          <mi>&theta;</mi>
+        </math>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+ <tbody>
+
+    <tr>
+      <td class="wind-reading-cell">
+        ${windDirection("N")}${windDirection("S")}
+        <br><br>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <mo>(</mo>
+          <mi>&theta;</mi>
+          <mo>=</mo>
+          <mn>0</mn>
+          <mo>&deg;</mo>
+          <mo>)</mo>
+        </math>
+      </td>
+      <td class="adjustment-cell grey padded-adjustment-cell">
+        <span class="grey">-</span>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mspace height="1.5em" />
+        </math>
+      </td>
+      <td class="adjustment-cell padded-adjustment-cell">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mtable>
+            <mtr>
+              <mtd>
+                <mspace height="1em" />
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>=</mo>
+                <mi>3.5</mi>
+                <mo>&times;</mo>
+                <mi>cos</mi>
+                <mo>&ApplyFunction;</mo>
+                <mo>(</mo>
+                <mi>0&deg;</mi>
+                <mo>)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>=</mo>
+                <mi>3.5</mi>
+                <mo>&times;</mo>
+                <mi>1</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+              <mo>=</mo>
+              <mi>3.5</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+        </math>
+        <br>
+        +/- 3.5 yards per wind.
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mspace height="1.5em" />
+        </math>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="wind-reading-cell">
+        ${windDirection("NW+1")}${windDirection("N+1")}
+        <br>
+        ${windDirection("S+1")}${windDirection("SE+1")}
+        <br><br>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <mo>(</mo>
+          <mi>&theta;</mi>
+          <mo>=</mo>
+          <mn>22.5</mn>
+          <mo>&deg;</mo>
+          <mo>)</mo>
+        </math>
+      </td>
+      <td class="adjustment-cell padded-adjustment-cell">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mtable>
+            <mtr>
+              <mtd>
+                <mspace height="1em" />
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>=</mo>
+                <mi>3</mi>
+                <mo>&times;</mo>
+                <mi>sin</mi>
+                <mo>&ApplyFunction;</mo>
+                <mo>(</mo>
+                <mi>22.5&deg;</mi>
+                <mo>)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>≈</mo>
+                <mi>3</mi>
+                <mo>&times;</mo>
+                <mi>0.38</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+              <mo>≈</mo>
+              <mi>1.14</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+        </math>
+        <br>
+        ←/→ &nbsp;1.1 taps per wind.
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mspace height="1.5em" />
+        </math>
+      </td>
+      <td class="adjustment-cell padded-adjustment-cell">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mtable>
+            <mtr>
+              <mtd>
+                <mspace height="1em" />
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>=</mo>
+                <mi>3.5</mi>
+                <mo>&times;</mo>
+                <mi>cos</mi>
+                <mo>&ApplyFunction;</mo>
+                <mo>(</mo>
+                <mi>22.5&deg;</mi>
+                <mo>)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>≈</mo>
+                <mi>3.5</mi>
+                <mo>&times;</mo>
+                <mi>0.92  </mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+              <mo>≈</mo>
+              <mi>3.22</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+        </math>
+        <br>
+        +/- 3.2 yards per wind.
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mspace height="1.5em" />
+        </math>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="wind-reading-cell">
+        ${windDirection("NW")}${windDirection("NE")}
+        <br>
+        ${windDirection("SW")}${windDirection("SE")}
+        <br><br>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <mo>(</mo>
+          <mi>&theta;</mi>
+          <mo>=</mo>
+          <mn>45</mn>
+          <mo>&deg;</mo>
+          <mo>)</mo>
+        </math>
+      </td>
+      <td class="adjustment-cell padded-adjustment-cell">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mtable>
+            <mtr>
+              <mtd>
+                <mspace height="1em" />
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>=</mo>
+                <mi>3</mi>
+                <mo>&times;</mo>
+                <mi>sin</mi>
+                <mo>&ApplyFunction;</mo>
+                <mo>(</mo>
+                <mi>45&deg;</mi>
+                <mo>)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>≈</mo>
+                <mi>3</mi>
+                <mo>&times;</mo>
+                <mi>0.71</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+              <mo>≈</mo>
+              <mi>2.13</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+        </math>
+        <br>
+        ←/→ &nbsp;2.1 taps per wind.
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mspace height="1.5em" />
+        </math>
+      </td>
+      <td class="adjustment-cell padded-adjustment-cell">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mtable>
+            <mtr>
+              <mtd>
+                <mspace height="1em" />
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>=</mo>
+                <mi>3.5</mi>
+                <mo>&times;</mo>
+                <mi>cos</mi>
+                <mo>&ApplyFunction;</mo>
+                <mo>(</mo>
+                <mi>45&deg;</mi>
+                <mo>)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>≈</mo>
+                <mi>3.5</mi>
+                <mo>&times;</mo>
+                <mi>0.71</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+              <mo>≈</mo>
+              <mi>2.485</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+        </math>
+        <br>
+        +/- 2.5 yards per wind.
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mspace height="1.5em" />
+        </math>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="wind-reading-cell">
+        ${windDirection("W+1")}${windDirection("NE+1")}
+        <br>
+        ${windDirection("SW+1")}${windDirection("E+1")}
+        <br><br>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <mo>(</mo>
+          <mi>&theta;</mi>
+          <mo>=</mo>
+          <mn>67.5</mn>
+          <mo>&deg;</mo>
+          <mo>)</mo>
+        </math>
+      </td>
+      <td class="adjustment-cell padded-adjustment-cell">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mtable>
+            <mtr>
+              <mtd>
+                <mspace height="1em" />
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>=</mo>
+                <mi>3</mi>
+                <mo>&times;</mo>
+                <mi>sin</mi>
+                <mo>&ApplyFunction;</mo>
+                <mo>(</mo>
+                <mi>67.5&deg;</mi>
+                <mo>)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>≈</mo>
+                <mi>3</mi>
+                <mo>&times;</mo>
+                <mi>0.92</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+              <mo>≈</mo>
+              <mi>2.76</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+        </math>
+        <br>
+        ←/→ &nbsp;2.8 taps per wind.
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mspace height="1.5em" />
+        </math>
+      </td>
+      <td class="adjustment-cell padded-adjustment-cell">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mtable>
+            <mtr>
+              <mtd>
+                <mspace height="1em" />
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>=</mo>
+                <mi>3.5</mi>
+                <mo>&times;</mo>
+                <mi>cos</mi>
+                <mo>&ApplyFunction;</mo>
+                <mo>(</mo>
+                <mi>67.5&deg;</mi>
+                <mo>)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>≈</mo>
+                <mi>3.5</mi>
+                <mo>&times;</mo>
+                <mi>0.38</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+              <mo>≈</mo>
+              <mi>1.33</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+        </math>
+        <br>
+        +/- 1.3 yards per wind.
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mspace height="1.5em" />
+        </math>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="wind-reading-cell">
+        ${windDirection("W")}${windDirection("E")}
+        <br><br>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <mo>(</mo>
+          <mi>&theta;</mi>
+          <mo>=</mo>
+          <mn>90</mn>
+          <mo>&deg;</mo>
+          <mo>)</mo>
+        </math>
+      </td>
+      <td class="adjustment-cell padded-adjustment-cell">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mtable>
+            <mtr>
+              <mtd>
+                <mspace height="1em" />
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>=</mo>
+                <mi>3</mi>
+                <mo>&times;</mo>
+                <mi>sin</mi>
+                <mo>&ApplyFunction;</mo>
+                <mo>(</mo>
+                <mi>90&deg;</mi>
+                <mo>)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>=</mo>
+                <mi>3</mi>
+                <mo>&times;</mo>
+                <mi>1</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+              <mo>=</mo>
+              <mi>3</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+        </math>
+        <br>
+        ←/→ &nbsp;3 taps per wind.
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mspace height="1.5em" />
+        </math>
+      </td>
+      <td class="adjustment-cell grey padded-adjustment-cell">
+        <span class="grey">-</span>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mspace height="1.5em" />
+        </math>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
 `;
 
 const THE_FORMULAS = `<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -957,6 +1429,17 @@ We can calculate our wind units as normal, then multiply by some number between 
 
 But how much do we multiply?
 
+
+${cautionPanel(`
+<b>Common misconception:</b>
+<p>
+You might think that diagonal wind would have 50% of the horizontal effect, and 50% of the vertical effect, but this is <b>false</b>.
+</p>
+
+Instead, it has <b>71%</b> of the horizontal effect, and <b>71%</b> of the vertical effect.
+`)
+}
+
 ---
 
 <br>
@@ -977,21 +1460,13 @@ ${constrainedImage('./images/Circle_cos_sin.gif', 'Circle sin/cos animation', 'c
 <span class="image-caption">Diagram: measuring horizontal & vertical components with sin & cos.</span>
 -->
 
-${cautionPanel(`
-<b>Common misconception:</b>
-<p>
-You might think that diagonal wind would have 50% of the horizontal effect, and 50% of the vertical effect, but this is <b>false</b>.
-</p>
-
-Instead, it has <b>71%</b> of the horizontal effect, and <b>71%</b> of the vertical effect.
-`)
-}
 
 - In the example above, we can multiply our horizontal unit by **0.9** (90%), and our vertical unit by **0.43** (43%).
 
 - It can be tricky to calculate these in your head within the time limit.
 
-- You can speed the calculations up with some optimisations below:
+- You can speed up calculation with some optimisations below:
+    - _Note: Some optimisations might not make sense at first, but should hopefully become clear once you've seen the full calculations at the end._
 
 <br><br>
 
@@ -1002,19 +1477,24 @@ Instead, it has <b>71%</b> of the horizontal effect, and <b>71%</b> of the verti
 ## Optimisation: Memorising values of sin/cos
 
 ${infoPanel(`
-  &nbsp;Memorising pairs of sin/cos (e.g. for the 16 cardinal wind directions) can speed you up.
+  &nbsp;You can memorise pairs of sin/cos (e.g. the 16 cardinal wind directions) for speed.
   <br><br>
   Some people can figure it out intuitively for any angle, but memorisation is a decent compromise if you're unable.
 `)}
 
-${constrainedImage('./images/unit-circle.png', '', 'captioned-image', true)}
+${constrainedImage('./images/unit-circle.png', '', 'captioned-image', false)}
 <span class="image-caption">Tip: You only need to memorise one quarter of the circle to reconstruct the rest.<br><br>Remember: 0/100, 38/92, 71/71, 92/38, 100/0.</span>
 
+e.g.
+
+- ${windDirection("N")} has **0%** horizontal effect and **100%** vertical effect.
+- ${windDirection("N+1")} has **38%** horizontal effect and **92%** vertical effect.
+- ${windDirection("NE")} has **71%** horizontal effect and **71%** vertical effect.
+- ${windDirection("NE+1")} has **92%** horizontal effect and **38%** vertical effect.
+- ${windDirection("E")} has **100%** horizontal effect and **0%** vertical effect.
+
+
 <br>
-
-
-
-
 
 ---
 
@@ -1022,14 +1502,14 @@ ${constrainedImage('./images/unit-circle.png', '', 'captioned-image', true)}
 
 ## Optimisation: The "10%" Trick
 
-Have you ever tried to calculate 38% of a number on the spot?
-
-For those with good mental arithmetic, it might be a simple task. Personally mine isn't that great.
+${infoPanel(`
+&nbsp; You can quickly approximate percentages with the 10% trick.
+`)}
 
 A **quick approximation** you can use is to **calculate 10% by moving the decimal place**.
 e.g. 10% of 52 is 5.2.
 
-For instance, to find 71% of a number, you can find 10% and subtract it three times, to approximate the answer.
+To find 71% of a number, you can find 10% and subtract it three times, to approximate the answer.
 
 To find 38%, you can find 10% and multiply it by 4.
 
@@ -1043,10 +1523,21 @@ These are only approximations, but the time saved is worth it, for a minimal tra
 
 ## Optimisation: Pre-Calculating Wind Units At Angles
 
-Rather than multiplying your units by sin/cos on the spot, you can multiply them in advance for various wind directions.
+${infoPanel(`
+&nbsp;You can multiply your wind units by sin/cos in advance, rather than doing it in-game every time.  
 
-${infoPanel('&nbsp;<b>TODO:</b> add examples')}
+<br><br>
+Let's use the wind units from before:
 
+  <ul>
+    <li><b>Horizontal unit:</b>&nbsp;&nbsp; ←/→ &nbsp;&nbsp;<code>3</code> taps per wind.
+    <li><b>Vertical unit:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +/- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>3.5</code> yards per wind.
+  </ul>
+`)}
+
+${PRECALCULATED_TABLE}
+
+${/*`_Note: you don't necessarily need to use a tap system for horizontal units. The same logic is applicable for visual lineups._`*/``}
 <br>
 
 ---
@@ -1073,12 +1564,21 @@ ${constrainedImage('./images/cardinal-positioning-comparison.png', 'On the left:
 
 <summary>Warning: &nbsp;👩‍🏫📐🧮 &nbsp;&nbsp;(click to expand)</summary>
 
-Let's use the wind units from before:
+${infoPanel(`
+  &nbsp;Let's use the wind units from before:
 
-- **Horizontal unit:**&nbsp;&nbsp; ←/→ &nbsp;&nbsp;\`3\` taps per wind.
-- **Vertical unit:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +/- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\`3.5\` yards per wind.
+  <ul>
+    <li><b>Horizontal unit:</b>&nbsp;&nbsp; ←/→ &nbsp;&nbsp;<code>3</code> taps per wind.
+    <li><b>Vertical unit:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +/- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>3.5</code> yards per wind.
+  </ul>
 
-I've written the formulas in full, but remember that you can use the previous optimisations to save time.
+
+I've written the formulas in full, but you can use the previous optimisations to save time.
+
+  
+  
+  `)
+}
 
 
 ${BIG_WIND_EFFECT_TABLE}
