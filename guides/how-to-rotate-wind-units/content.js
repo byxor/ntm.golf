@@ -61,6 +61,12 @@ const STYLES = `<style>
 		filter: grayscale(60%);
 	}
 
+  .angled-winds {
+    /*filter: hue-rotate(90deg);*/
+    border: none !important;
+    box-shadow: none !important;
+  }
+
   .wind-effect-table {
     padding-top: 10px;
   }
@@ -912,7 +918,7 @@ Contents:
 - [Wind Units & Formulas](#wu)
 - [&nbsp;Optimisation: Memorising values of sin/cos](#o1)
 - [&nbsp;Optimisation: The 10% Trick](#o2)
-- [&nbsp;Optimisation: Memorising Wind Units](#o3)
+- [&nbsp;Optimisation: Pre-Calculating Wind Units](#o3)
 - [&nbsp;Optimisation: Cardinal Alignment](#o4)
 - [Examples & Calculations](#example-calculations)
 
@@ -945,8 +951,7 @@ These units are effective when the wind is aligned North/East/South/West...
 
 But how can we apply them when the wind is angled?
 
-${constrainedImage('./images/angled-winds-2.png', 'Various wind directions', 'fit-width', false)}
-
+${constrainedImage('./images/angled-winds-5.png', 'Various wind directions', 'fit-width angled-winds', false)}
 
 We can calculate our wind units as normal, then multiply by some number between 0 and 1 to handle rotation.
 
@@ -986,13 +991,21 @@ Instead, it has <b>71%</b> of the horizontal effect, and <b>71%</b> of the verti
 
 - It can be tricky to calculate these in your head within the time limit.
 
-- You can speed the calculations up with some of the optimisations below:
+- You can speed the calculations up with some optimisations below:
+
+<br><br>
 
 ---
 
 <div id="o1"></div>
 
 ## Optimisation: Memorising values of sin/cos
+
+${infoPanel(`
+  &nbsp;Memorising pairs of sin/cos (e.g. for the 16 cardinal wind directions) can speed you up.
+  <br><br>
+  Some people can figure it out intuitively for any angle, but memorisation is a decent compromise if you're unable.
+`)}
 
 ${constrainedImage('./images/unit-circle.png', '', 'captioned-image', true)}
 <span class="image-caption">Tip: You only need to memorise one quarter of the circle to reconstruct the rest.<br><br>Remember: 0/100, 38/92, 71/71, 92/38, 100/0.</span>
@@ -1022,13 +1035,15 @@ To find 38%, you can find 10% and multiply it by 4.
 
 These are only approximations, but the time saved is worth it, for a minimal tradeoff in accuracy.
 
+<br>
+
 ---
 
 <div id="o3"></div>
 
-## Optimisation: Memorising Wind Units At Various Angles
+## Optimisation: Pre-Calculating Wind Units At Angles
 
-Rather than multiplying your units by sin/cos on the spot, you can multiply them by sin/cos in advance.
+Rather than multiplying your units by sin/cos on the spot, you can multiply them in advance for various wind directions.
 
 ${infoPanel('&nbsp;<b>TODO:</b> add examples')}
 
@@ -1040,11 +1055,11 @@ ${infoPanel('&nbsp;<b>TODO:</b> add examples')}
 
 ## Optimisation: Cardinal Alignment
 
-You can position the ball so that it's cardinally-aligned with the flag, to simplify your approach shot.
+${infoPanel(`&nbsp;Position the ball so that it's cardinally-aligned with the flag, to simplify your approach shot.`)}
 
 ${constrainedImage('./images/cardinal-positioning-comparison.png', 'On the left: The ball is aligned with the compass (easier shot). On the right: the ball is NOT aligned (harder shot).', 'fit-width', false)}
 
-- This isn't always possible due to the course layouts & hazards, but it can often be beneficial.
+- This isn't always possible due to course layouts & hazards, but is often beneficial.
 
 <br><br><br>
 
@@ -1058,12 +1073,12 @@ ${constrainedImage('./images/cardinal-positioning-comparison.png', 'On the left:
 
 <summary>Warning: &nbsp;👩‍🏫📐🧮 &nbsp;&nbsp;(click to expand)</summary>
 
-Let's calculate some examples with the wind units from before:
+Let's use the wind units from before:
 
 - **Horizontal unit:**&nbsp;&nbsp; ←/→ &nbsp;&nbsp;\`3\` taps per wind.
 - **Vertical unit:**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +/- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\`3.5\` yards per wind.
 
-I've written the formulas in full, but remember that you canuse the previous optimisations to save time.
+I've written the formulas in full, but remember that you can use the previous optimisations to save time.
 
 
 ${BIG_WIND_EFFECT_TABLE}
@@ -1094,6 +1109,8 @@ ${BIG_WIND_EFFECT_TABLE}
 
 - Often the best shots happen when you don't think too much; you can just "feel" the shot.
 
+- I'm not a terribly accurate player yet, so take my advice with a pinch of salt. However, this guide is intended to be objectively mathematical rather than subjective.
+
 - I hope you can internalise this information in some manner, and use it to develop fast & accurate aiming systems.
 
 ${cautionPanel(`Please be aware that the wind effect will change as soon as you rotate your aim. Further adjustments are required to compensate for this (which aren't covered here).`)}
@@ -1106,7 +1123,7 @@ ${cautionPanel(`Please be aware that the wind effect will change as soon as you 
 
 ---
 
-_(Last updated: 11th June 2025)_  
+_(Last updated: 13th June 2026)_  
 <br/>
 <br/>
 If you have any questions, suggestions or concerns, contact **@byxor** on Discord.
