@@ -12,7 +12,7 @@ function windReading(strength, direction) {
   `;
 }
 
-function windDirection(direction) {
+function windDirection(direction, extraClasses="") {
   const directionPart = {
     'N': '00-north',
     'N+1': '01-north',
@@ -36,7 +36,7 @@ function windDirection(direction) {
 
   const directionAltText = `wind direction ${direction}`;
 
-  return constrainedImage(directionImage, directionAltText, "wind-indicator", false);
+  return constrainedImage(directionImage, directionAltText, `wind-indicator ${extraClasses}`, false);
 }
 
 const STYLES = `<style>
@@ -125,6 +125,14 @@ const STYLES = `<style>
     font-size: 0.75em;
     font-weight: normal;
     margin-top: 0.25rem;
+  }
+
+  .wind-icon-alignment {
+    vertical-align: -0.7em;
+  }
+
+  .wind-icon-list-spacing {
+    margin-bottom: 0.5em;
   }
 
 </style>
@@ -1487,12 +1495,13 @@ ${constrainedImage('./images/unit-circle.png', '', 'captioned-image', false)}
 
 e.g.
 
-- ${windDirection("N")} has **0%** horizontal effect and **100%** vertical effect.
-- ${windDirection("N+1")} has **38%** horizontal effect and **92%** vertical effect.
-- ${windDirection("NE")} has **71%** horizontal effect and **71%** vertical effect.
-- ${windDirection("NE+1")} has **92%** horizontal effect and **38%** vertical effect.
-- ${windDirection("E")} has **100%** horizontal effect and **0%** vertical effect.
-
+<ul>
+<li class="wind-icon-list-spacing">${windDirection("N", "wind-icon-alignment")} has <b>0%</b> horizontal effect and <b>100%</b> vertical effect.</li>
+<li class="wind-icon-list-spacing">${windDirection("N+1", "wind-icon-alignment")} has <b>38%</b> horizontal effect and <b>92%</b> vertical effect.</li>
+<li class="wind-icon-list-spacing">${windDirection("NE", "wind-icon-alignment")} has <b>71%</b> horizontal effect and <b>71%</b> vertical effect.</li>
+<li class="wind-icon-list-spacing">${windDirection("NE+1", "wind-icon-alignment")} has <b>92%</b> horizontal effect and <b>38%</b> vertical effect.</li>
+<li class="wind-icon-list-spacing">${windDirection("E", "wind-icon-alignment")} has <b>100%</b> horizontal effect and <b>0%</b> vertical effect.</li>
+</ul>
 
 <br>
 
@@ -1623,7 +1632,7 @@ ${cautionPanel(`Please be aware that the wind effect will change as soon as you 
 
 ---
 
-_(Last updated: 13th June 2026)_  
+_(Last updated: 14th June 2026)_  
 <br/>
 <br/>
 If you have any questions, suggestions or concerns, contact **@byxor** on Discord.
