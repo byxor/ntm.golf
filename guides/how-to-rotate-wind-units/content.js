@@ -1395,16 +1395,16 @@ ${cautionPanel(`
 ${constrainedImage('./images/slow-play-2.png', 'in-game hurry-up slow-play warning', 'fit-width', false)}
 
 Contents:
-- [Wind Units & Formulas](#wu)
-- [&nbsp;Optimisation: Memorising values of sin/cos](#o1)
-- [&nbsp;Optimisation: The 10% Trick](#o2)
-- [&nbsp;Optimisation: Pre-Calculating Wind Units](#o3)
-- [&nbsp;Optimisation: Cardinal Alignment](#o4)
-- [Examples & Calculations](#example-calculations)
+- [Wind Units & Formulas](#wind-units-and-formulas)
+- [&nbsp;Optimisation: Memorising values of sin/cos](#optimisation--memorising-sin-and-cos)
+- [&nbsp;Optimisation: The 10% Trick](#optimisation--ten-percent-trick)
+- [&nbsp;Optimisation: Pre-Calculating Wind Units](#optimisation--pre-calculating-wind-units)
+- [&nbsp;Optimisation: Cardinal Alignment](#optimisation--cardinal-alignment)
+- [Examples & Calculations](#examples-and-calculations)
+
+<div id="wind-units-and-formulas"></div>
 
 ---
-
-<div id="wu"></div>
 
 **Wind units** are a quick way to predict/control the ball flight.
 
@@ -1480,7 +1480,7 @@ ${constrainedImage('./images/Circle_cos_sin.gif', 'Circle sin/cos animation', 'c
 
 ---
 
-<div id="o1"></div>
+<div id="optimisation--memorising-sin-and-cos"></div>
 
 ## Optimisation: Memorising values of sin/cos
 
@@ -1507,7 +1507,7 @@ e.g.
 
 ---
 
-<div id="o2"></div>
+<div id="optimisation--ten-percent-trick"></div>
 
 ## Optimisation: The "10%" Trick
 
@@ -1528,7 +1528,7 @@ These are only approximations, but the time saved is worth it, for a minimal tra
 
 ---
 
-<div id="o3"></div>
+<div id="optimisation--pre-calculating-wind-units"></div>
 
 ## Optimisation: Pre-Calculating Wind Units At Angles
 
@@ -1551,7 +1551,7 @@ ${/*`_Note: you don't necessarily need to use a tap system for horizontal units.
 
 ---
 
-<div id="o4"></div>
+<div id="optimisation--cardinal-alignment"></div>
 
 ## Optimisation: Cardinal Alignment
 
@@ -1565,7 +1565,7 @@ ${constrainedImage('./images/cardinal-positioning-comparison.png', 'On the left:
 
 ---
 
-<div id="example-calculations"></div>
+<div id="examples-and-calculations"></div>
 
 # Examples & Calculations
 
